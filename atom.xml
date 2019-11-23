@@ -46,10 +46,10 @@
   
   <entry>
     <title>Welcome to my new blog</title>
-    <link href="http://yoursite.com/2019/11/23/%E2%80%9CHelloWorld%E2%80%9D/"/>
-    <id>http://yoursite.com/2019/11/23/%E2%80%9CHelloWorld%E2%80%9D/</id>
+    <link href="http://yoursite.com/2019/11/23/Welcome-to-my-new-blog/"/>
+    <id>http://yoursite.com/2019/11/23/Welcome-to-my-new-blog/</id>
     <published>2019-11-23T04:55:54.000Z</published>
-    <updated>2019-11-23T11:13:34.513Z</updated>
+    <updated>2019-11-23T11:20:10.371Z</updated>
     
     <content type="html"><![CDATA[<p>欢迎来到我的博客，更多精彩请点进来</p><a id="more"></a><h3 id="我的主页"><a href="#我的主页" class="headerlink" title="我的主页"></a>我的主页</h3><p><a href="https://www.guanacossj.com" target="_blank" rel="noopener" title="https://www.guanacossj.com">https://www.guanacossj.com</a></p><h3 id="Github-Page"><a href="#Github-Page" class="headerlink" title="Github Page"></a>Github Page</h3><p><a href="https://www.guanacossj.com" target="_blank" rel="noopener" title="https://arithmeticjia.github.io/">https://arithmeticjia.github.io/</a></p>]]></content>
     
