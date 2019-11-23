@@ -49,20 +49,19 @@
     <link href="http://yoursite.com/2019/11/23/%E2%80%9CHelloWorld%E2%80%9D/"/>
     <id>http://yoursite.com/2019/11/23/%E2%80%9CHelloWorld%E2%80%9D/</id>
     <published>2019-11-23T04:55:54.000Z</published>
-    <updated>2019-11-23T08:37:29.092Z</updated>
+    <updated>2019-11-23T11:13:34.513Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="我的主页"><a href="#我的主页" class="headerlink" title="我的主页"></a>我的主页</h3><p><a href="https://www.guanacossj.com" target="_blank" rel="noopener" title="https://www.guanacossj.com">https://www.guanacossj.com</a></p><h3 id="Github-Page"><a href="#Github-Page" class="headerlink" title="Github Page"></a>Github Page</h3><p><a href="https://www.guanacossj.com" target="_blank" rel="noopener" title="https://arithmeticjia.github.io/">https://arithmeticjia.github.io/</a></p>]]></content>
+    <content type="html"><![CDATA[<p>欢迎来到我的博客，更多精彩请点进来</p><a id="more"></a><h3 id="我的主页"><a href="#我的主页" class="headerlink" title="我的主页"></a>我的主页</h3><p><a href="https://www.guanacossj.com" target="_blank" rel="noopener" title="https://www.guanacossj.com">https://www.guanacossj.com</a></p><h3 id="Github-Page"><a href="#Github-Page" class="headerlink" title="Github Page"></a>Github Page</h3><p><a href="https://www.guanacossj.com" target="_blank" rel="noopener" title="https://arithmeticjia.github.io/">https://arithmeticjia.github.io/</a></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h3 id=&quot;我的主页&quot;&gt;&lt;a href=&quot;#我的主页&quot; class=&quot;headerlink&quot; title=&quot;我的主页&quot;&gt;&lt;/a&gt;我的主页&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://www.guanacossj.com&quot; target=&quot;_blank&quot; rel=&quot;noop
-      
+      &lt;p&gt;欢迎来到我的博客，更多精彩请点进来&lt;/p&gt;
     
     </summary>
     
     
+    
+      <category term="blog" scheme="http://yoursite.com/tags/blog/"/>
     
   </entry>
   
