@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="alternate" href="/atom.xml" title="请叫我算术嘉的博客" type="application/atom+xml">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-mac-osx.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://arithmeticjia.github.io').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.5.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":true},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: 'search.xml',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    sidebarPadding: 40
+  };
+</script>
+
+  <meta name="description" content="Django Rest Framework 是一个强大且灵活的工具包，用以构建Web APIDjango REST Framework可以在Django的基础上迅速实现API，并且自身还带有WEB的测试页面，可以方便的测试自己的API">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django个人博客搭建教程---REST风格API">
+<meta property="og:url" content="http:&#x2F;&#x2F;arithmeticjia.github.io&#x2F;2019&#x2F;11&#x2F;24&#x2F;Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-REST%E9%A3%8E%E6%A0%BCAPI&#x2F;index.html">
+<meta property="og:site_name" content="请叫我算术嘉的博客">
+<meta property="og:description" content="Django Rest Framework 是一个强大且灵活的工具包，用以构建Web APIDjango REST Framework可以在Django的基础上迅速实现API，并且自身还带有WEB的测试页面，可以方便的测试自己的API">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-11-24T08:12:48.082Z">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://arithmeticjia.github.io/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-REST%E9%A3%8E%E6%A0%BCAPI/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true,
+    isPage: false,
+    isArchive: false
+  };
+</script>
+
+  <title>Django个人博客搭建教程---REST风格API | 请叫我算术嘉的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">请叫我算术嘉的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="搜索..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://arithmeticjia.github.io/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-REST%E9%A3%8E%E6%A0%BCAPI/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://www.guanacossj.com/media/jiablogimages/IMG_0323.JPG">
+      <meta itemprop="name" content="请叫我算术嘉">
+      <meta itemprop="description" content="遇事不决，量子力学">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="请叫我算术嘉的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Django个人博客搭建教程---REST风格API
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-11-24 16:03:17 / 修改时间：16:12:48" itemprop="dateCreated datePublished" datetime="2019-11-24T16:03:17+08:00">2019-11-24</time>
+            </span>
+
+          
+            <span id="/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-REST%E9%A3%8E%E6%A0%BCAPI/" class="post-meta-item leancloud_visitors" data-flag-title="Django个人博客搭建教程---REST风格API" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>Django Rest Framework 是一个强大且灵活的工具包，用以构建Web API<br>Django REST Framework可以在Django的基础上迅速实现API，并且自身还带有WEB的测试页面，可以方便的测试自己的API</p>
+<a id="more"></a>
+<h3 id="一、安装依赖"><a href="#一、安装依赖" class="headerlink" title="一、安装依赖"></a>一、安装依赖</h3><p><code>pip3 install djangorestframewor</code></p>
+<h3 id="二、在settings-py中添加应用"><a href="#二、在settings-py中添加应用" class="headerlink" title="二、在settings.py中添加应用"></a>二、在settings.py中添加应用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    ....</span><br><span class="line"> </span><br><span class="line"><span class="string">'rest_framework'</span>,    <span class="comment"># 加上这句，加在api的前面</span></span><br><span class="line">    ....             <span class="comment"># 后面是你的应用名称</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="三、路由注册"><a href="#三、路由注册" class="headerlink" title="三、路由注册"></a>三、路由注册</h3><p>子urls.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url,include</span><br><span class="line"><span class="keyword">from</span> JiaBlog <span class="keyword">import</span> views</span><br><span class="line"><span class="keyword">from</span> rest_framework <span class="keyword">import</span> routers</span><br><span class="line"> </span><br><span class="line">app_name = <span class="string">'JiaBlog'</span></span><br><span class="line"> </span><br><span class="line"><span class="comment"># 定义路由地址</span></span><br><span class="line">route = routers.DefaultRouter()</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 注册新的路由地址</span></span><br><span class="line">route.register(<span class="string">r'getarticleinfo'</span> , views.GetArticleInfo)</span><br><span class="line"> </span><br><span class="line">urlpatterns = [</span><br><span class="line">    ...</span><br><span class="line">    url(<span class="string">'api/'</span>, include(route.urls)),</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>主urls.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""MyBlog URL Configuration</span></span><br><span class="line"><span class="string">The `urlpatterns` list routes URLs to views. For more information please see:</span></span><br><span class="line"><span class="string">    https://docs.djangoproject.com/en/2.1/topics/http/urls/</span></span><br><span class="line"><span class="string">Examples:</span></span><br><span class="line"><span class="string">Function views</span></span><br><span class="line"><span class="string">    1. Add an import:  from my_app import views</span></span><br><span class="line"><span class="string">    2. Add a URL to urlpatterns:  path('', views.home, name='home')</span></span><br><span class="line"><span class="string">Class-based views</span></span><br><span class="line"><span class="string">    1. Add an import:  from other_app.views import Home</span></span><br><span class="line"><span class="string">    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')</span></span><br><span class="line"><span class="string">Including another URLconf</span></span><br><span class="line"><span class="string">    1. Import the include() function: from django.urls import include, path</span></span><br><span class="line"><span class="string">    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="keyword">from</span> django.contrib <span class="keyword">import</span> admin</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> include</span><br><span class="line"><span class="keyword">from</span> django.conf.urls <span class="keyword">import</span> url</span><br><span class="line"><span class="keyword">from</span> django.urls <span class="keyword">import</span> path</span><br><span class="line"><span class="keyword">from</span> django.conf <span class="keyword">import</span> settings</span><br><span class="line"><span class="keyword">from</span> MyBlog.settings <span class="keyword">import</span> MEDIA_ROOT</span><br><span class="line"><span class="keyword">from</span> django.conf.urls.static <span class="keyword">import</span> static</span><br><span class="line"><span class="keyword">from</span> JiaBlog <span class="keyword">import</span> views</span><br><span class="line"><span class="keyword">from</span> haystack.views <span class="keyword">import</span> SearchView</span><br><span class="line"><span class="keyword">from</span> django.views.static <span class="keyword">import</span> serve</span><br><span class="line"><span class="comment">#from django.views import static</span></span><br><span class="line"> </span><br><span class="line">urlpatterns = [</span><br><span class="line">    url(<span class="string">r'^$'</span>, views.blog_index),</span><br><span class="line">    path(<span class="string">'admin/'</span>, admin.site.urls),</span><br><span class="line">    path(<span class="string">'JiaBlog/'</span>, include(<span class="string">'JiaBlog.urls'</span>, namespace=<span class="string">"JiaBlog"</span>)),</span><br><span class="line">]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)</span><br></pre></td></tr></table></figure>
+<h3 id="四、视图函数"><a href="#四、视图函数" class="headerlink" title="四、视图函数"></a>四、视图函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> rest_framework <span class="keyword">import</span> serializers,viewsets</span><br><span class="line"><span class="keyword">from</span> JiaBlog.models <span class="keyword">import</span> Articles</span><br><span class="line"><span class="comment"># Create your views here.</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArticlesSerializers</span><span class="params">(serializers.ModelSerializer)</span>:</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        model = Articles                        <span class="comment"># 指定的模型类</span></span><br><span class="line">        fields = (<span class="string">'id'</span>, <span class="string">'title'</span>, <span class="string">'body'</span>, <span class="string">'timestamp'</span>,<span class="string">'authorname'</span>,<span class="string">'views'</span>,<span class="string">'tags'</span>,<span class="string">'category'</span>)  <span class="comment"># 需要序列化的属性</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GetArticleInfo</span><span class="params">(viewsets.ModelViewSet)</span>:</span></span><br><span class="line">    queryset = Articles.objects.all().order_by(<span class="string">'-id'</span>)</span><br><span class="line">    serializer_class = ArticlesSerializers</span><br></pre></td></tr></table></figure>
+<h3 id="五、数据模型"><a href="#五、数据模型" class="headerlink" title="五、数据模型"></a>五、数据模型</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Articles</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    id = models.AutoField(primary_key=<span class="literal">True</span>)                         <span class="comment"># id</span></span><br><span class="line">    title = models.CharField(max_length = <span class="number">150</span>)                      <span class="comment"># 博客标题</span></span><br><span class="line">    body = models.TextField()                                       <span class="comment"># 博客正文</span></span><br><span class="line">    timestamp = models.DateTimeField()                              <span class="comment"># 创建时间</span></span><br><span class="line">    authorname = models.ForeignKey(<span class="string">'JiaBlog.BlogUser'</span>,on_delete=models.CASCADE)        <span class="comment"># 作者姓名</span></span><br><span class="line">    views = models.PositiveIntegerField(default=<span class="number">0</span>)</span><br><span class="line">    category = models.ForeignKey(Category,on_delete=models.CASCADE,primary_key=<span class="literal">False</span>)</span><br><span class="line">    tags = models.ManyToManyField(Tag, blank=<span class="literal">True</span>,null=<span class="literal">True</span>)</span><br><span class="line">    greats = models.PositiveIntegerField(default=<span class="number">0</span>)</span><br><span class="line">    comments = models.IntegerField(default=<span class="number">0</span>)</span><br><span class="line">    status = models.CharField(max_length=<span class="number">20</span>, default=<span class="string">"DEL"</span>)</span><br><span class="line">    brief = models.CharField(max_length=<span class="number">200</span>,blank=<span class="literal">True</span>,null=<span class="literal">True</span>)</span><br><span class="line">    pic = models.ImageField(upload_to=<span class="string">'jiablogimages'</span>)</span><br><span class="line">    <span class="comment"># bodypic = models.ImageField(upload_to='jiablogimages',blank=True,null=True)</span></span><br><span class="line">    istop = models.CharField(max_length=<span class="number">5</span>,default=<span class="string">''</span>,null=<span class="literal">True</span>,blank=<span class="literal">True</span>)</span><br><span class="line">    articlebodybrief = models.TextField(blank=<span class="literal">True</span>,null=<span class="literal">True</span>)</span><br><span class="line">    last_edit_timestamp = models.DateTimeField(auto_now=<span class="literal">True</span>,verbose_name=<span class="string">"更新时间"</span>,editable=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h3><figure class="highlight taggerscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">GET /JiaBlog/api/getarticleinfo/</span><br><span class="line">HTTP 200 OK</span><br><span class="line">Allow: GET, POST, HEAD, OPTIONS</span><br><span class="line">Content-Type: application/json</span><br><span class="line">Vary: Accept</span><br><span class="line"> </span><br><span class="line">[</span><br><span class="line">&#123;</span><br><span class="line">        "id": 3,</span><br><span class="line">        "title": "python中的GIL锁",</span><br><span class="line">        "body": "为什么我们说python中无法实现真正的多线程呢，这是因为在C语言写的python解释器中存在全局解释器锁，由于全局解释器锁的存在，在同一时间内，python解释器只能运行一个线程的代码，这大大影响了python多线程的性能。而这个解释器锁由于历史原因，现在几乎无法消除。<span class="symbol">\r</span><span class="symbol">\n</span><span class="symbol">\r</span><span class="symbol">\n</span>python GIL 之所以会影响多线程等性能，是因为在多线程的情况下，只有当线程获得了一个全局锁的时候，那么该线程的代码才能运行，而全局锁只有一个，所以使用python多线程，在同一时刻也只有一个线程在运行，因此在即使在多核的情况下也只能发挥出单核的性能。<span class="symbol">\r</span><span class="symbol">\n</span><span class="symbol">\r</span><span class="symbol">\n</span>任何Python线程执行前，必须先获得GIL锁，然后，每执行100条字节码，解释器就自动释放GIL锁，让别的线程有机会执行。这个GIL全局锁实际上把所有线程的执行代码都给上了锁，所以，多线程在Python中只能交替执行，即使100个线程跑在100核CPU上，也只能用到1个核。<span class="symbol">\r</span><span class="symbol">\n</span><span class="symbol">\r</span><span class="symbol">\n</span>对于有io操作的线程，当一个线程在做io操作的时候，因为io操作不需要cpu，所以，这个时候，python会释放python全局锁，这样其他需要运行的线程就会使用该锁。",</span><br><span class="line">        "timestamp": "2019-02-21T22:01:52",</span><br><span class="line">        "authorname": 1,</span><br><span class="line">        "views": 2249,</span><br><span class="line">        "tags": [</span><br><span class="line">            3</span><br><span class="line">        ],</span><br><span class="line">        "category": 2</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        "id": 2,</span><br><span class="line">        "title": "Django和Flask的区别",</span><br><span class="line">        "body": "##写在最前面：<span class="symbol">\r</span><span class="symbol">\n</span>python web开发有很多常用的框架，主要包括Django，Flask，Tornado，Diesel，Cubes，Pulsar，Falcon，webpy，大家最熟知的还是Django和Flask，今天就来简单介绍一下Django和Flask的区别，本博客就是使用Django开发的，Flask不是很了解，因为没有用过，今天就借花献佛，简单介绍一下。<span class="symbol">\r</span><span class="symbol">\n</span><span class="symbol">\r</span><span class="symbol">\n</span>##Flask<span class="symbol">\r</span><span class="symbol">\n</span><span class="symbol">\r</span><span class="symbol">\n</span>Flask确实很“轻”，不愧是Micro Framework，从Django转向Flask的开发者一定会如此感慨，除非二者均为深入使用过<span class="symbol">\r</span><span class="symbol">\n</span>Flask自由、灵活，可扩展性强，第三方库的选择面广，开发时可以结合自己最喜欢用的轮子，也能结合最流行最强大的Python库<span class="symbol">\r</span><span class="symbol">\n</span>    入门简单，即便没有多少web开发经验，也能很快做出网站<span class="symbol">\r</span><span class="symbol">\n</span>    非常适用于小型网站<span class="symbol">\r</span><span class="symbol">\n</span>    非常适用于开发web服务的API<span class="symbol">\r</span><span class="symbol">\n</span>    开发大型网站无压力，但代码架构需要自己设计，开发成本取决于开发者的能力和经验<span class="symbol">\r</span><span class="symbol">\n</span>    各方面性能均等于或优于Django<span class="symbol">\r</span><span class="symbol">\n</span>    Django自带的或第三方的好评如潮的功能，Flask上总会找到与之类似第三方库<span class="symbol">\r</span><span class="symbol">\n</span>    Flask灵活开发，Python高手基本都会喜欢Flask，但对Django却可能褒贬不一<span class="symbol">\r</span><span class="symbol">\n</span>    Flask与关系型数据库的配合使用不弱于Django，而其与NoSQL数据库的配合远远优于Django<span class="symbol">\r</span><span class="symbol">\n</span>    Flask比Django更加Pythonic，与Python的philosophy更加吻合<span class="symbol">\r</span><span class="symbol">\n</span><span class="symbol">\r</span><span class="symbol">\n</span>##Django<span class="symbol">\r</span><span class="symbol">\n</span><span class="symbol">\r</span><span class="symbol">\n</span>Django太重了，除了web框架，自带ORM和模板引擎，灵活和自由度不够高<span class="symbol">\r</span><span class="symbol">\n</span>    Django能开发小应用，但总会有“杀鸡焉用牛刀”的感觉<span class="symbol">\r</span><span class="symbol">\n</span>    Django的自带ORM非常优秀，综合评价略高于SQLAlchemy<span class="symbol">\r</span><span class="symbol">\n</span>    Django自带的模板引擎简单好用，但其强大程度和综合评价略低于Jinja<span class="symbol">\r</span><span class="symbol">\n</span>    Django自带ORM也使Django与关系型数据库耦合度过高，如果想使用MongoDB等NoSQL数据，需要选取合适的第三方库，且总感觉Django+SQL才是天生一对的搭配，Django+NoSQL砍掉了Django的半壁江山<span class="symbol">\r</span><span class="symbol">\n</span>    Django目前支持Jinja等非官方模板引擎<span class="symbol">\r</span><span class="symbol">\n</span>    Django自带的数据库管理app好评如潮<span class="symbol">\r</span><span class="symbol">\n</span>    Django非常适合企业级网站的开发：快速、靠谱、稳定<span class="symbol">\r</span><span class="symbol">\n</span>    Django成熟、稳定、完善，但相比于Flask，Django的整体生态相对封闭<span class="symbol">\r</span><span class="symbol">\n</span>    Django是Python web框架的先驱，用户多，第三方库最丰富，最好的Python库，如果不能直接用到Django中，也一定能找到与之对应的移植<span class="symbol">\r</span><span class="symbol">\n</span>    Django上手也比较容易，开发文档详细、完善，相关资料丰富",</span><br><span class="line">        "timestamp": "2019-02-21T21:25:28",</span><br><span class="line">        "authorname": 1,</span><br><span class="line">        "views": 2599,</span><br><span class="line">        "tags": [</span><br><span class="line">            1,</span><br><span class="line">            2</span><br><span class="line">        ],</span><br><span class="line">        "category": 1</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        "id": 1,</span><br><span class="line">        "title": "用Django写一个自己的博客网站",</span><br><span class="line">        "body": "##写在最前面：<span class="symbol">\r</span><span class="symbol">\n</span>想用Django写网站很久了，本地也建立过很多demo，对于整个框架的入门算是熟练了。用pycharm可 <span class="symbol">\r</span><span class="symbol">\n</span>以很方便的新建一个Django工程。专业版的Pycharm是自带Django的，目前Diango的最新版本应该是2.1。<span class="symbol">\r</span><span class="symbol">\n</span><span class="symbol">\r</span><span class="symbol">\n</span>IDE:Pycharm<span class="symbol">\r</span><span class="symbol">\n</span>python版本：3.6<span class="symbol">\r</span><span class="symbol">\n</span>操作系统：macOS Mojave<span class="symbol">\r</span><span class="symbol">\n</span><span class="symbol">\r</span><span class="symbol">\n</span>![图片](/media/images/blog1body1.png)<span class="symbol">\r</span><span class="symbol">\n</span><span class="symbol">\r</span><span class="symbol">\n</span>这是用Django2.1写的一个个人博客的展示，还有一个含有带登录、注册、登出的session控制的监控系统，博客本身内置下载、天气查询、Google在线翻译，还可以发送QQ邮件。<span class="symbol">\r</span><span class="symbol">\n</span>下面先贴一下目录结构：<span class="symbol">\r</span><span class="symbol">\n</span><span class="symbol">\r</span><span class="symbol">\n</span>![图片](/static/images/blog1body2.jpg)",</span><br><span class="line">        "timestamp": "2019-02-21T21:20:23",</span><br><span class="line">        "authorname": 1,</span><br><span class="line">        "views": 2657,</span><br><span class="line">        "tags": [</span><br><span class="line">            1</span><br><span class="line">        ],</span><br><span class="line">        "category": 1</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="请叫我算术嘉 微信支付">
+        <p>微信支付</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/11/23/Vue-js%E5%85%A5%E9%97%A8%EF%BC%88%E5%9B%9B%EF%BC%89-%E7%94%A8Pycharm%E5%88%9B%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84HelloVue/" rel="prev" title="Vue.js入门（四）---用Pycharm创建你的第一个完整的HelloVue">
+      <i class="fa fa-chevron-left"></i> Vue.js入门（四）---用Pycharm创建你的第一个完整的HelloVue
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、安装依赖"><span class="nav-number">1.</span> <span class="nav-text">一、安装依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、在settings-py中添加应用"><span class="nav-number">2.</span> <span class="nav-text">二、在settings.py中添加应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、路由注册"><span class="nav-number">3.</span> <span class="nav-text">三、路由注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、视图函数"><span class="nav-number">4.</span> <span class="nav-text">四、视图函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、数据模型"><span class="nav-number">5.</span> <span class="nav-text">五、数据模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果"><span class="nav-number">6.</span> <span class="nav-text">效果</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="请叫我算术嘉"
+      src="https://www.guanacossj.com/media/jiablogimages/IMG_0323.JPG">
+  <p class="site-author-name" itemprop="name">请叫我算术嘉</p>
+  <div class="site-description" itemprop="description">遇事不决，量子力学</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="feed-link motion-element">
+    <a href="/atom.xml" rel="alternate">
+      <i class="fa fa-rss"></i>RSS
+    </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ArithmeticJia" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ArithmeticJia" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/mailto:bluesalt@gmail.com" title="E-Mail → mailto:bluesalt@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/Bluesalted" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;Bluesalted" rel="noopener" target="_blank"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/Bluesaltssj" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;Bluesaltssj" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">请叫我算术嘉</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="站点总字数">12k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">11 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">主题 – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.5.0
+  </div>
+
+        
+
+
+
+
+
+
+  <script>
+  function leancloudSelector(url) {
+    return document.getElementById(url).querySelector('.leancloud-visitors-count');
+  }
+  if (CONFIG.page.isPost) {
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = visitors.getAttribute('id').trim();
+      var title = visitors.getAttribute('data-flag-title').trim();
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .then(response => response.json())
+              .then(() => {
+                leancloudSelector(url).innerText = counter.time + 1;
+              })
+              .catch(error => {
+                console.log('Failed to save visitor count', error);
+              })
+          } else {
+              Counter('post', '/classes/Counter', { title: title, url: url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.log('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  } else {
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return element.getAttribute('id').trim();
+      });
+
+      Counter('get', `/classes/Counter?where=${JSON.stringify({ url: { '$in': entries } })}`)
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length === 0) {
+            document.querySelectorAll('.leancloud_visitors .leancloud-visitors-count').forEach(element => {
+              element.innerText = 0;
+            });
+            return;
+          }
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            leancloudSelector(url).innerText = time;
+          }
+          for (var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = leancloudSelector(url);
+            if (element.innerText == '') {
+              element.innerText = 0;
+            }
+          }
+        })
+        .catch(error => {
+          console.log('LeanCloud Counter Error', error);
+        });
+    }
+  }
+
+  fetch('https://app-router.leancloud.cn/2/route?appId=A6FGcrm4rLLxP4xSGUfKABVk-gzGzoHsz')
+    .then(response => response.json())
+    .then(({ api_server }) => {
+      var Counter = (method, url, data) => {
+        return fetch(`https://${api_server}/1.1${url}`, {
+          method: method,
+          headers: {
+            'X-LC-Id': 'A6FGcrm4rLLxP4xSGUfKABVk-gzGzoHsz',
+            'X-LC-Key': 'UJhICArc0XJuKm1IrVjXA2uk',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+        
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script>
+<script src="/js/schemes/pisces.js"></script>
+<script src="/js/next-boot.js"></script>
+
+
+
+  
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
