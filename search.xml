@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>GitHub博客Hexo配合next主题增加搜索引擎验证</title>
+    <url>/2019/11/24/GitHub%E5%8D%9A%E5%AE%A2Hexo%E9%85%8D%E5%90%88next%E4%B8%BB%E9%A2%98%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E9%AA%8C%E8%AF%81/</url>
+    <content><![CDATA[<p>GitHub博客Hexo配合next主题增加搜索引擎验证，Github 上利用 hexo 建立的博客是无法被搜索引擎搜索到的。</p>
+<a id="more"></a>
+<p>Github 本身也不会将信息提交给引擎。所以，为了让博客信息被检索到，我们需要手动将博客网站提交给搜索引擎并验证，实际上就是验证网站是我们自己的</p>
+<h3 id="提交Google站点"><a href="#提交Google站点" class="headerlink" title="提交Google站点"></a>提交Google站点</h3><p><a href="https://www.google.com/webmasters/tools/home?hl=zh-CN" target="_blank" rel="noopener">Google</a></p>
+<h3 id="选择HTML-meta-标签验证"><a href="#选择HTML-meta-标签验证" class="headerlink" title="选择HTML meta 标签验证"></a>选择HTML meta 标签验证</h3><p>Next 主题下，页面的 header 设置在</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">```</span><br><span class="line">&#123;%- if theme.google_site_verification %&#125;</span><br><span class="line">  &lt;meta name=&quot;google-site-verification&quot; content=&quot;RkRVaaOa4vX520pamxy6ip0HfuaQ-NCyM1SvGbzqUFA&quot;&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>这里的content从Google控制台获取</p>
+<h3 id="提交Baidu站点"><a href="#提交Baidu站点" class="headerlink" title="提交Baidu站点"></a>提交Baidu站点</h3><p><a href="http://www.baidu.com/search/url_submit.htm" target="_blank" rel="noopener">Baidu</a></p>
+<h3 id="选择HTML-meta-标签验证-1"><a href="#选择HTML-meta-标签验证-1" class="headerlink" title="选择HTML meta 标签验证"></a>选择HTML meta 标签验证</h3><p>Next 主题下，页面的 header 设置在</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">```</span><br><span class="line">&#123;%- if theme.baidu_site_verification %&#125;</span><br><span class="line">  &lt;meta name=&quot;baidu-site-verification&quot; content=&quot;es0rExrlvZ&quot;&gt;</span><br><span class="line">&#123;%- endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>这里的content从Baidu控制台获取</p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>next</tag>
+        <tag>github</tag>
+        <tag>baidu</tag>
+        <tag>google</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>MacOS下Git与GitHub</title>
     <url>/2019/11/24/MacOS%E4%B8%8BGit%E4%B8%8EGitHub/</url>
     <content><![CDATA[<p>还是不知道写啥，本文是有关Mac OS上Git与GitHub相关配置的介绍说明</p>
@@ -23,8 +49,8 @@
         <category>Git</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>github</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
