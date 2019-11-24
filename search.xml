@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Django个人博客搭建教程---阿里云部署（Ubuntu+Nginx+uwsgi）升级https</title>
+    <url>/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2%EF%BC%88Ubuntu-Nginx-uwsgi%EF%BC%89%E5%8D%87%E7%BA%A7https/</url>
+    <content><![CDATA[<p>更安全的https</p>
+<a id="more"></a>
+<h2 id="一、阿里云申请SSL证书"><a href="#一、阿里云申请SSL证书" class="headerlink" title="一、阿里云申请SSL证书"></a>一、阿里云申请SSL证书</h2><p>略</p>
+<h2 id="二、将pem和key放在nginx目录下"><a href="#二、将pem和key放在nginx目录下" class="headerlink" title="二、将pem和key放在nginx目录下"></a>二、将pem和key放在nginx目录下</h2><p>仅供参考</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/etc/nginx/cert/1831344_www.guanacossj.com.pem;      # 路径/pem文件</span><br><span class="line">/etc/nginx/cert/1831344_www.guanacossj.com.key;      # 路径/key文件</span><br></pre></td></tr></table></figure>
+<p>三、修改nginx.conf</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">http &#123;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  server &#123;</span><br><span class="line">      listen 80;</span><br><span class="line">      server_name  _;</span><br><span class="line">      return 301 https://www.guanacossj.com$request_uri;</span><br><span class="line">   &#125; </span><br><span class="line"> </span><br><span class="line">  server &#123;</span><br><span class="line">      listen       443 default_server;</span><br><span class="line">      listen       [::]:443 default_server;</span><br><span class="line">      server_name  _;</span><br><span class="line">      ssl on;</span><br><span class="line">      ssl_certificate   /etc/nginx/cert/1831344_www.guanacossj.com.pem;     # 路径/pem文件</span><br><span class="line">      ssl_certificate_key  /etc/nginx/cert/1831344_www.guanacossj.com.key;  # 路径/key文件</span><br><span class="line">      ssl_session_timeout 5m;</span><br><span class="line">      ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">      ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">      ssl_prefer_server_ciphers on;</span><br><span class="line">      charset     utf-8;</span><br><span class="line">      client_max_body_size 1000M;   # adjust to taste</span><br><span class="line">      include /etc/nginx/default.d/*.conf;</span><br><span class="line">      location /static &#123;</span><br><span class="line">      alias /home/MyBlog/static; # ָÏdjangoµÄtaticĿ¼</span><br><span class="line">      &#125;</span><br><span class="line">      location /static/rest_framework/ &#123;</span><br><span class="line">      alias /usr/local/lib/python3.6/dist-packages/rest_framework/static/rest_framework/</span><br><span class="line">    ;&#125;</span><br><span class="line"> </span><br><span class="line">    # Finally, send all non-media requests to the Django server.</span><br><span class="line">    location / &#123;</span><br><span class="line">        uwsgi_pass  127.0.0.1:8000;</span><br><span class="line">        #uwsgi_pass  django;</span><br><span class="line">        include     uwsgi_params; 	# the uwsgi_params file you installed           </span><br><span class="line">        proxy_redirect off;</span><br><span class="line">	      proxy_http_version 1.1;</span><br><span class="line">        proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">        proxy_set_header Connection "upgrade";</span><br><span class="line">	      uwsgi_send_timeout 600;</span><br><span class="line">        uwsgi_connect_timeout 600;  </span><br><span class="line">        uwsgi_read_timeout 600; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里把你原来的监听80端口改为监听443端口即可，我之前一直不成功主要是我试图再加一个443端口的监听，应该也可以吧，不管了，反正这样肯定没问题，然后如果还想让http能购访问，就做个重定向。</p>
+<p>四、重启nginx</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">service nginx restart</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Django</category>
+      </categories>
+      <tags>
+        <tag>django</tag>
+        <tag>阿里云</tag>
+        <tag>nginx</tag>
+        <tag>https</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Django个人博客搭建教程---REST风格API</title>
     <url>/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-REST%E9%A3%8E%E6%A0%BCAPI/</url>
     <content><![CDATA[<p>Django Rest Framework 是一个强大且灵活的工具包，用以构建Web API<br>Django REST Framework可以在Django的基础上迅速实现API，并且自身还带有WEB的测试页面，可以方便的测试自己的API</p>
