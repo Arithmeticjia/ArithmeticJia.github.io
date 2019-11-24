@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>MacOS下Git与GitHub</title>
+    <url>/2019/11/24/MacOS%E4%B8%8BGit%E4%B8%8EGitHub/</url>
+    <content><![CDATA[<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p><code>brew install git</code></p><h3 id="查看git指向和版本信息"><a href="#查看git指向和版本信息" class="headerlink" title="查看git指向和版本信息"></a>查看git指向和版本信息</h3><p><code>which git
+/usr/bin/git
+git --version
+git version 2.21.0 (Apple Git-122.2)</code></p>]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>github</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Django个人博客搭建教程---阿里云部署（Ubuntu+Nginx+uwsgi）升级https</title>
     <url>/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2%EF%BC%88Ubuntu-Nginx-uwsgi%EF%BC%89%E5%8D%87%E7%BA%A7https/</url>
     <content><![CDATA[<p>更安全的https</p>
