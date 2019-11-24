@@ -57,8 +57,10 @@
 <meta property="og:site_name" content="请叫我算术嘉的博客">
 <meta property="og:description" content="安装git该命令也可以升级最新的gitbrew install git查看git指向和版本信息which git &#x2F;usr&#x2F;bin&#x2F;git git --version git version 2.21.0 (Apple Git-122.2)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-24T12:41:37.363Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;E901D42E-753A-4E46-BC71-05C54C555B0D.png">
+<meta property="og:updated_time" content="2019-11-24T13:07:20.670Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;E901D42E-753A-4E46-BC71-05C54C555B0D.png">
 
 <link rel="canonical" href="http://arithmeticjia.github.io/2019/11/24/MacOS%E4%B8%8BGit%E4%B8%8EGitHub/">
 
@@ -237,7 +239,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-11-24 20:34:30 / 修改时间：20:41:37" itemprop="dateCreated datePublished" datetime="2019-11-24T20:34:30+08:00">2019-11-24</time>
+              <time title="创建时间：2019-11-24 20:34:30 / 修改时间：21:07:20" itemprop="dateCreated datePublished" datetime="2019-11-24T20:34:30+08:00">2019-11-24</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -264,7 +266,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>109</span>
+              <span>787</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -286,7 +288,21 @@
         <a id="more"></a><h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>该命令也可以升级最新的git<br><code>brew install git</code></p><h3 id="查看git指向和版本信息"><a href="#查看git指向和版本信息" class="headerlink" title="查看git指向和版本信息"></a>查看git指向和版本信息</h3><p><code>which git
 /usr/bin/git
 git --version
-git version 2.21.0 (Apple Git-122.2)</code></p>
+git version 2.21.0 (Apple Git-122.2)</code></p><a id="more"></a>
+
+
+<h3 id="配置github用户名和邮箱"><a href="#配置github用户名和邮箱" class="headerlink" title="配置github用户名和邮箱"></a>配置github用户名和邮箱</h3><p><code>git config --global user.name &quot;ArithmeticJia&quot;
+git config --global user.email &quot;1097197237@qq.com&quot;</code></p>
+<h3 id="生成ssh密钥"><a href="#生成ssh密钥" class="headerlink" title="生成ssh密钥"></a>生成ssh密钥</h3><p><code>ssh-keygen -t rsa -C &quot;1097197237@qq.com&quot;</code><br><code>Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/Arithmetic/.ssh/id_rsa): 
+/Users/Arithmetic/.ssh/id_rsa already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/Arithmetic/.ssh/id_rsa.</code></p>
+<h3 id="在GitHub上新增ssh密钥"><a href="#在GitHub上新增ssh密钥" class="headerlink" title="在GitHub上新增ssh密钥"></a>在GitHub上新增ssh密钥</h3><p>复制密钥<br><code>cat .ssh/id_rsa.pub</code><br>路径一般是<br><code>/User/ArithmeticJia/.ssh</code><br>登录GitHub（默认你已经注册了GitHub账号），添加ssh key，点击Settings，如图<br><img src="https://www.guanacossj.com/media/articlebodypics/E901D42E-753A-4E46-BC71-05C54C555B0D.png" alt></p>
+<h3 id="链接验证"><a href="#链接验证" class="headerlink" title="链接验证"></a>链接验证</h3><p><code>ssh -T git@github.com</code><br><code>Hi Arithmeticjia! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code></p>
+
     </div>
 
     
@@ -361,7 +377,7 @@ git version 2.21.0 (Apple Git-122.2)</code></p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git"><span class="nav-number">1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看git指向和版本信息"><span class="nav-number">2.</span> <span class="nav-text">查看git指向和版本信息</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git"><span class="nav-number">1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看git指向和版本信息"><span class="nav-number">2.</span> <span class="nav-text">查看git指向和版本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置github用户名和邮箱"><span class="nav-number">3.</span> <span class="nav-text">配置github用户名和邮箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成ssh密钥"><span class="nav-number">4.</span> <span class="nav-text">生成ssh密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在GitHub上新增ssh密钥"><span class="nav-number">5.</span> <span class="nav-text">在GitHub上新增ssh密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接验证"><span class="nav-number">6.</span> <span class="nav-text">链接验证</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -448,7 +464,7 @@ git version 2.21.0 (Apple Git-122.2)</code></p>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">12 分钟</span>
+    <span title="站点阅读时长">13 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
