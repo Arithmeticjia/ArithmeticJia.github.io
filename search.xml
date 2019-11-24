@@ -3,7 +3,7 @@
   <entry>
     <title>MacOS下Git与GitHub</title>
     <url>/2019/11/24/MacOS%E4%B8%8BGit%E4%B8%8EGitHub/</url>
-    <content><![CDATA[<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p><code>brew install git</code></p><h3 id="查看git指向和版本信息"><a href="#查看git指向和版本信息" class="headerlink" title="查看git指向和版本信息"></a>查看git指向和版本信息</h3><p><code>which git
+    <content><![CDATA[<a id="more"></a><h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>该命令也可以升级最新的git<br><code>brew install git</code></p><h3 id="查看git指向和版本信息"><a href="#查看git指向和版本信息" class="headerlink" title="查看git指向和版本信息"></a>查看git指向和版本信息</h3><p><code>which git
 /usr/bin/git
 git --version
 git version 2.21.0 (Apple Git-122.2)</code></p>]]></content>

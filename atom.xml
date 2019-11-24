@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://arithmeticjia.github.io/"/>
-  <updated>2019-11-24T12:37:58.571Z</updated>
+  <updated>2019-11-24T12:41:37.363Z</updated>
   <id>http://arithmeticjia.github.io/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://arithmeticjia.github.io/2019/11/24/MacOS%E4%B8%8BGit%E4%B8%8EGitHub/"/>
     <id>http://arithmeticjia.github.io/2019/11/24/MacOS%E4%B8%8BGit%E4%B8%8EGitHub/</id>
     <published>2019-11-24T12:34:30.000Z</published>
-    <updated>2019-11-24T12:37:58.571Z</updated>
+    <updated>2019-11-24T12:41:37.363Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p><code>brew install git</code></p><h3 id="查看git指向和版本信息"><a href="#查看git指向和版本信息" class="headerlink" title="查看git指向和版本信息"></a>查看git指向和版本信息</h3><p><code>which git/usr/bin/gitgit --versiongit version 2.21.0 (Apple Git-122.2)</code></p>]]></content>
+    <content type="html"><![CDATA[<a id="more"></a><h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>该命令也可以升级最新的git<br><code>brew install git</code></p><h3 id="查看git指向和版本信息"><a href="#查看git指向和版本信息" class="headerlink" title="查看git指向和版本信息"></a>查看git指向和版本信息</h3><p><code>which git/usr/bin/gitgit --versiongit version 2.21.0 (Apple Git-122.2)</code></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3 id=&quot;安装git&quot;&gt;&lt;a href=&quot;#安装git&quot; class=&quot;headerlink&quot; title=&quot;安装git&quot;&gt;&lt;/a&gt;安装git&lt;/h3&gt;&lt;p&gt;&lt;code&gt;brew install git&lt;/code&gt;&lt;/p&gt;&lt;h3 id=&quot;查看git指向和版本信息&quot;&gt;&lt;a 
+        &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;h3 id=&quot;安装git&quot;&gt;&lt;a href=&quot;#安装git&quot; class=&quot;headerlink&quot; title=&quot;安装git&quot;&gt;&lt;/a&gt;安装git&lt;/h3&gt;&lt;p&gt;该命令也可以升级最新的git&lt;br&gt;&lt;code&gt;brew install git&lt;
       
     
     </summary>
