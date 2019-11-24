@@ -3,23 +3,21 @@
   <entry>
     <title>MacOS下Git与GitHub</title>
     <url>/2019/11/24/MacOS%E4%B8%8BGit%E4%B8%8EGitHub/</url>
-    <content><![CDATA[<a id="more"></a><h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>该命令也可以升级最新的git<br><code>brew install git</code></p><h3 id="查看git指向和版本信息"><a href="#查看git指向和版本信息" class="headerlink" title="查看git指向和版本信息"></a>查看git指向和版本信息</h3><p><code>which git
-/usr/bin/git
-git --version
-git version 2.21.0 (Apple Git-122.2)</code></p><a id="more"></a>
-
-
-<h3 id="配置github用户名和邮箱"><a href="#配置github用户名和邮箱" class="headerlink" title="配置github用户名和邮箱"></a>配置github用户名和邮箱</h3><p><code>git config --global user.name &quot;ArithmeticJia&quot;
-git config --global user.email &quot;1097197237@qq.com&quot;</code></p>
-<h3 id="生成ssh密钥"><a href="#生成ssh密钥" class="headerlink" title="生成ssh密钥"></a>生成ssh密钥</h3><p><code>ssh-keygen -t rsa -C &quot;1097197237@qq.com&quot;</code><br><code>Generating public/private rsa key pair.
-Enter file in which to save the key (/Users/Arithmetic/.ssh/id_rsa): 
-/Users/Arithmetic/.ssh/id_rsa already exists.
-Overwrite (y/n)? y
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
-Your identification has been saved in /Users/Arithmetic/.ssh/id_rsa.</code></p>
-<h3 id="在GitHub上新增ssh密钥"><a href="#在GitHub上新增ssh密钥" class="headerlink" title="在GitHub上新增ssh密钥"></a>在GitHub上新增ssh密钥</h3><p>复制密钥<br><code>cat .ssh/id_rsa.pub</code><br>路径一般是<br><code>/User/ArithmeticJia/.ssh</code><br>登录GitHub（默认你已经注册了GitHub账号），添加ssh key，点击Settings，如图<br><img src="https://www.guanacossj.com/media/articlebodypics/E901D42E-753A-4E46-BC71-05C54C555B0D.png" alt></p>
-<h3 id="链接验证"><a href="#链接验证" class="headerlink" title="链接验证"></a>链接验证</h3><p><code>ssh -T git@github.com</code><br><code>Hi Arithmeticjia! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code></p>
+    <content><![CDATA[<p>还是不知道写啥，本文是有关Mac OS上Git与GitHub相关配置的介绍说明</p>
+<a id="more"></a>
+<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>该命令也可以升级最新的git</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+<h3 id="查看git指向和版本信息"><a href="#查看git指向和版本信息" class="headerlink" title="查看git指向和版本信息"></a>查看git指向和版本信息</h3><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line">which git</span><br><span class="line">/usr/bin/git</span><br><span class="line">git --version</span><br><span class="line">git version 2.21.0 (Apple Git-122.2)</span><br></pre></td></tr></table></figure>
+<h3 id="配置github用户名和邮箱"><a href="#配置github用户名和邮箱" class="headerlink" title="配置github用户名和邮箱"></a>配置github用户名和邮箱</h3><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line">git config --global user.name "ArithmeticJia"</span><br><span class="line">git config --global user.email "1097197237@qq.com"</span><br></pre></td></tr></table></figure>
+<h3 id="生成ssh密钥"><a href="#生成ssh密钥" class="headerlink" title="生成ssh密钥"></a>生成ssh密钥</h3><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "1097197237@qq.com"</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/Users/Arithmetic/.ssh/id_rsa): </span><br><span class="line">/Users/Arithmetic/.ssh/id_rsa already exists.</span><br><span class="line">Overwrite (y/n)? y</span><br><span class="line">Enter passphrase (empty for no passphrase): </span><br><span class="line">Enter same passphrase again: </span><br><span class="line">Your identification has been saved in /Users/Arithmetic/.ssh/id_rsa.</span><br></pre></td></tr></table></figure>
+<h3 id="在GitHub上新增ssh密钥"><a href="#在GitHub上新增ssh密钥" class="headerlink" title="在GitHub上新增ssh密钥"></a>在GitHub上新增ssh密钥</h3><p>复制密钥</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line">cat .ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<p>路径一般是</p>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line">/User/ArithmeticJia/.ssh</span><br></pre></td></tr></table></figure>
+<p>登录GitHub（默认你已经注册了GitHub账号），添加ssh key，点击Settings，如图<br><img src="https://www.guanacossj.com/media/articlebodypics/E901D42E-753A-4E46-BC71-05C54C555B0D.png" alt=""></p>
+<h3 id="链接验证"><a href="#链接验证" class="headerlink" title="链接验证"></a>链接验证</h3><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line">Hi Arithmeticjia! You've successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Git</category>
@@ -78,7 +76,7 @@ Your identification has been saved in /Users/Arithmetic/.ssh/id_rsa.</code></p>
   <entry>
     <title>Vue.js入门（四）---用Pycharm创建你的第一个完整的HelloVue</title>
     <url>/2019/11/23/Vue-js%E5%85%A5%E9%97%A8%EF%BC%88%E5%9B%9B%EF%BC%89-%E7%94%A8Pycharm%E5%88%9B%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84HelloVue/</url>
-    <content><![CDATA[<p>本文主要介绍了如何在Pycharm中构建一个简单的vue应用,摘要要写50个字，不然markdown格式会很丑，我也不知道要写啥，感觉没啥好写的，现在应该差不多了。</p>
+    <content><![CDATA[<p>本文主要介绍了如何在Pycharm中构建一个简单的vue应用,摘要要写50个字，不然markdown格式会很丑，我也不知道要写啥，感觉没啥好写的，现在应该差不多了</p>
 <a id="more"></a>
 <h2 id="一、在Pycharm中下载Vue-js插件"><a href="#一、在Pycharm中下载Vue-js插件" class="headerlink" title="一、在Pycharm中下载Vue.js插件"></a>一、在Pycharm中下载Vue.js插件</h2><p><img src="https://www.guanacossj.com/media/articlebodypics/1571819210811.jpg" alt=""></p>
 <h2 id="二、新建一个Vue-js项目"><a href="#二、新建一个Vue-js项目" class="headerlink" title="二、新建一个Vue.js项目"></a>二、新建一个Vue.js项目</h2><p><img src="https://www.guanacossj.com/media/articlebodypics/1571819312914.jpg" alt=""><br>然后等待安装启动完成，这里提示我要不要用淘宝源，我果断同意啊</p>
@@ -95,7 +93,7 @@ Your identification has been saved in /Users/Arithmetic/.ssh/id_rsa.</code></p>
   <entry>
     <title>腾讯云Ubuntu下Collectd+Grafana+Influxdb的搭建教程</title>
     <url>/2019/11/23/%E8%85%BE%E8%AE%AF%E4%BA%91Ubuntu%E4%B8%8BCollectd-Grafana-Influxdb%E7%9A%84%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
-    <content><![CDATA[<p>本文介绍了腾讯云服务器Ubuntu下监控平台的搭建教程，主要组件分为三个部分，grafana、collectd、influxdb。grafana主要用来作为监控的前端展示，collectd负责采集服务器性能指标，influxdb则是一款开源的时序数据库，负责采集数据的存储。</p>
+    <content><![CDATA[<p>本文介绍了腾讯云服务器Ubuntu下监控平台的搭建教程，主要组件分为三个部分，grafana、collectd、influxdb。grafana主要用来作为监控的前端展示，collectd负责采集服务器性能指标，influxdb则是一款开源的时序数据库，负责采集数据的存储</p>
 <a id="more"></a>
 <h2 id="一、安装Collectd"><a href="#一、安装Collectd" class="headerlink" title="一、安装Collectd"></a>一、安装Collectd</h2><h3 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h3><p><code>sudo apt install collectd collectd-utils</code></p>
 <h3 id="2、修改collectd-conf"><a href="#2、修改collectd-conf" class="headerlink" title="2、修改collectd.conf"></a>2、修改collectd.conf</h3><p>开启常用插件</p>

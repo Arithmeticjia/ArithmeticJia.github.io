@@ -49,15 +49,15 @@
   };
 </script>
 
-  <meta name="description" content="本文介绍了腾讯云服务器Ubuntu下监控平台的搭建教程，主要组件分为三个部分，grafana、collectd、influxdb。grafana主要用来作为监控的前端展示，collectd负责采集服务器性能指标，influxdb则是一款开源的时序数据库，负责采集数据的存储。">
+  <meta name="description" content="本文介绍了腾讯云服务器Ubuntu下监控平台的搭建教程，主要组件分为三个部分，grafana、collectd、influxdb。grafana主要用来作为监控的前端展示，collectd负责采集服务器性能指标，influxdb则是一款开源的时序数据库，负责采集数据的存储">
 <meta name="keywords" content="grafana,collectd,influxdb">
 <meta property="og:type" content="article">
 <meta property="og:title" content="腾讯云Ubuntu下Collectd+Grafana+Influxdb的搭建教程">
 <meta property="og:url" content="http:&#x2F;&#x2F;arithmeticjia.github.io&#x2F;2019&#x2F;11&#x2F;23&#x2F;%E8%85%BE%E8%AE%AF%E4%BA%91Ubuntu%E4%B8%8BCollectd-Grafana-Influxdb%E7%9A%84%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B&#x2F;index.html">
 <meta property="og:site_name" content="请叫我算术嘉的博客">
-<meta property="og:description" content="本文介绍了腾讯云服务器Ubuntu下监控平台的搭建教程，主要组件分为三个部分，grafana、collectd、influxdb。grafana主要用来作为监控的前端展示，collectd负责采集服务器性能指标，influxdb则是一款开源的时序数据库，负责采集数据的存储。">
+<meta property="og:description" content="本文介绍了腾讯云服务器Ubuntu下监控平台的搭建教程，主要组件分为三个部分，grafana、collectd、influxdb。grafana主要用来作为监控的前端展示，collectd负责采集服务器性能指标，influxdb则是一款开源的时序数据库，负责采集数据的存储">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-24T08:16:38.405Z">
+<meta property="og:updated_time" content="2019-11-24T13:17:26.753Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://arithmeticjia.github.io/2019/11/23/%E8%85%BE%E8%AE%AF%E4%BA%91Ubuntu%E4%B8%8BCollectd-Grafana-Influxdb%E7%9A%84%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/">
@@ -243,7 +243,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-24 16:16:38" itemprop="dateModified" datetime="2019-11-24T16:16:38+08:00">2019-11-24</time>
+                <time title="修改时间：2019-11-24 21:17:26" itemprop="dateModified" datetime="2019-11-24T21:17:26+08:00">2019-11-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -289,7 +289,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>本文介绍了腾讯云服务器Ubuntu下监控平台的搭建教程，主要组件分为三个部分，grafana、collectd、influxdb。grafana主要用来作为监控的前端展示，collectd负责采集服务器性能指标，influxdb则是一款开源的时序数据库，负责采集数据的存储。</p>
+        <p>本文介绍了腾讯云服务器Ubuntu下监控平台的搭建教程，主要组件分为三个部分，grafana、collectd、influxdb。grafana主要用来作为监控的前端展示，collectd负责采集服务器性能指标，influxdb则是一款开源的时序数据库，负责采集数据的存储</p>
 <a id="more"></a>
 <h2 id="一、安装Collectd"><a href="#一、安装Collectd" class="headerlink" title="一、安装Collectd"></a>一、安装Collectd</h2><h3 id="1、安装"><a href="#1、安装" class="headerlink" title="1、安装"></a>1、安装</h3><p><code>sudo apt install collectd collectd-utils</code></p>
 <h3 id="2、修改collectd-conf"><a href="#2、修改collectd-conf" class="headerlink" title="2、修改collectd.conf"></a>2、修改collectd.conf</h3><p>开启常用插件</p>
