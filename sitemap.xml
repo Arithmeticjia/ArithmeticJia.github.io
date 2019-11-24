@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://arithmeticjia.github.io/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-REST%E9%A3%8E%E6%A0%BCAPI/</loc>
+    
+    <lastmod>2019-11-24T08:17:48.980Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://arithmeticjia.github.io/2019/11/23/%E8%85%BE%E8%AE%AF%E4%BA%91Ubuntu%E4%B8%8BCollectd-Grafana-Influxdb%E7%9A%84%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</loc>
     
     <lastmod>2019-11-24T08:16:38.405Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://arithmeticjia.github.io/2019/11/23/Welcome-to-my-new-blog/</loc>
     
     <lastmod>2019-11-24T08:16:38.394Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://arithmeticjia.github.io/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-REST%E9%A3%8E%E6%A0%BCAPI/</loc>
-    
-    <lastmod>2019-11-24T08:12:48.082Z</lastmod>
     
   </url>
   
