@@ -54,7 +54,7 @@
   <entry>
     <title>Django个人博客搭建教程---REST风格API</title>
     <url>/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-REST%E9%A3%8E%E6%A0%BCAPI/</url>
-    <content><![CDATA[<p>Django Rest Framework 是一个强大且灵活的工具包，用以构建Web API<br>Django REST Framework可以在Django的基础上迅速实现API，并且自身还带有WEB的测试页面，可以方便的测试自己的API</p>
+    <content><![CDATA[<p>Django REST Framework 是一个强大且灵活的工具包，用以构建Web API<br>Django REST Framework可以在Django的基础上迅速实现API，并且自身还带有WEB的测试页面，可以方便的测试自己的API</p>
 <a id="more"></a>
 <h3 id="一、安装依赖"><a href="#一、安装依赖" class="headerlink" title="一、安装依赖"></a>一、安装依赖</h3><p><code>pip3 install djangorestframework</code></p>
 <h3 id="二、在settings-py中添加应用"><a href="#二、在settings-py中添加应用" class="headerlink" title="二、在settings.py中添加应用"></a>二、在settings.py中添加应用</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">INSTALLED_APPS = [</span><br><span class="line">    ....</span><br><span class="line"> </span><br><span class="line"><span class="string">'rest_framework'</span>,    <span class="comment"># 加上这句，加在api的前面</span></span><br><span class="line">    ....             <span class="comment"># 后面是你的应用名称</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
