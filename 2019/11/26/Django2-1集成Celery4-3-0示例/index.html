@@ -58,7 +58,7 @@
 <meta property="og:site_name" content="请叫我算术嘉的博客">
 <meta property="og:description" content="Celery 是一个简单、灵活且可靠的，处理大量消息的分布式系统，并且提供维护这样一个系统的必需工具。它是一个专注于实时处理的任务队列，同时也支持任务调度。本文演示了如何在Django中集成Celery">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-26T10:36:55.151Z">
+<meta property="og:updated_time" content="2019-11-26T12:24:37.299Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://arithmeticjia.github.io/2019/11/26/Django2-1%E9%9B%86%E6%88%90Celery4-3-0%E7%A4%BA%E4%BE%8B/">
@@ -238,7 +238,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-11-26 18:22:47 / 修改时间：18:36:55" itemprop="dateCreated datePublished" datetime="2019-11-26T18:22:47+08:00">2019-11-26</time>
+              <time title="创建时间：2019-11-26 18:22:47 / 修改时间：20:24:37" itemprop="dateCreated datePublished" datetime="2019-11-26T18:22:47+08:00">2019-11-26</time>
             </span>
 
           
@@ -254,14 +254,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>295</span>
+              <span>2.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -281,7 +281,15 @@
 <li>任务task：就是一个Python函数。</li>
 <li>队列queue：将需要执行的任务加入到队列中。</li>
 <li>工人worker：在一个新进程中，负责执行队列中的任务。</li>
-<li>代理人broker：负责调度，需要提前部署好redis。<h4 id="工程目录结构"><a href="#工程目录结构" class="headerlink" title="工程目录结构"></a>工程目录结构</h4></li>
+<li>代理人broker：负责调度，需要提前部署好redis。<h4 id="工程目录结构"><a href="#工程目录结构" class="headerlink" title="工程目录结构"></a>工程目录结构</h4><h4 id="新建app"><a href="#新建app" class="headerlink" title="新建app"></a>新建app</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py startapp jia_celery</span><br></pre></td></tr></table></figure>
+<h4 id="在项目-settings-py中安装"><a href="#在项目-settings-py中安装" class="headerlink" title="在项目/settings.py中安装"></a>在项目/settings.py中安装</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INSTALLED_APPS = (</span><br><span class="line">  ...</span><br><span class="line">  <span class="string">'jia_celery'</span></span><br><span class="line">  <span class="string">'djcelery'</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="在jia-celery目录下创建tasks-py文件"><a href="#在jia-celery目录下创建tasks-py文件" class="headerlink" title="在jia_celery目录下创建tasks.py文件"></a>在jia_celery目录下创建tasks.py文件</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> celery <span class="keyword">import</span> Celery</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个Celery类的实例对象</span></span><br><span class="line">app = Celery(<span class="string">'jia_celery.tasks'</span>, broker=<span class="string">'redis://127.0.0.1:6379/8'</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">@app.task</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">async_sayhello</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">'hello ...'</span>)</span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    print(<span class="string">'world ...'</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="打开jia-celery-views-py文件，修改视图如下："><a href="#打开jia-celery-views-py文件，修改视图如下：" class="headerlink" title="打开jia_celery/views.py文件，修改视图如下："></a>打开jia_celery/views.py文件，修改视图如下：</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> celery_tasks.tasks <span class="keyword">import</span> async_sayhello</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sayhello</span><span class="params">(request)</span>:</span></span><br><span class="line">    <span class="comment"># print('hello ...')</span></span><br><span class="line">    <span class="comment"># time.sleep(2)</span></span><br><span class="line">    <span class="comment"># print('world ...')</span></span><br><span class="line">    async_sayhello.delay()</span><br><span class="line">    <span class="keyword">return</span> HttpResponse(<span class="string">"hello world"</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="迁移数据库"><a href="#迁移数据库" class="headerlink" title="迁移数据库"></a>迁移数据库</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 manage.py migrate</span><br></pre></td></tr></table></figure>
+<h4 id="启动redis"><a href="#启动redis" class="headerlink" title="启动redis"></a>启动redis</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server</span><br></pre></td></tr></table></figure>
+<h4 id="启动worker"><a href="#启动worker" class="headerlink" title="启动worker"></a>启动worker</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">celery -A celery_tasks.tasks worker --loglevel=info</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">Arithmetic@qingjiajiadeMBP MyBlog % celery -A jia_celery.tasks worker --loglevel=info</span><br><span class="line"> </span><br><span class="line"> -------------- celery@qingjiajiadeMBP v4.3.0 (rhubarb)</span><br><span class="line">---- **** ----- </span><br><span class="line">--- * ***  * -- Darwin-19.0.0-x86_64-i386-64bit 2019-11-26 18:10:02</span><br><span class="line">-- * - **** --- </span><br><span class="line">- ** ---------- [config]</span><br><span class="line">- ** ---------- .&gt; app:         jia_celery.tasks:0x10a4c61d0</span><br><span class="line">- ** ---------- .&gt; transport:   redis://127.0.0.1:6379/8</span><br><span class="line">- ** ---------- .&gt; results:     disabled://</span><br><span class="line">- *** --- * --- .&gt; concurrency: 8 (prefork)</span><br><span class="line">-- ******* ---- .&gt; task events: OFF (enable -E to monitor tasks in this worker)</span><br><span class="line">--- ***** ----- </span><br><span class="line"> -------------- [queues]</span><br><span class="line">                .&gt; celery           exchange=celery(direct) key=celery</span><br><span class="line">                </span><br><span class="line"></span><br><span class="line">[tasks]</span><br><span class="line">  . jia_celery.tasks.async_sayhello</span><br><span class="line"></span><br><span class="line">[2019-11-26 18:10:02,289: INFO/MainProcess] Connected to redis://127.0.0.1:6379/8</span><br><span class="line">[2019-11-26 18:10:02,298: INFO/MainProcess] mingle: searching for neighbors</span><br><span class="line">[2019-11-26 18:10:03,322: INFO/MainProcess] mingle: all alone</span><br><span class="line">[2019-11-26 18:10:03,341: INFO/MainProcess] celery@qingjiajiadeMBP ready.</span><br><span class="line">[2019-11-26 18:10:13,181: INFO/MainProcess] Received task: jia_celery.tasks.async_sayhello[1f357e11-e324-4892-a7a2-f8b6b7caf4da]  </span><br><span class="line">[2019-11-26 18:10:13,185: WARNING/ForkPoolWorker-8] hello ...</span><br><span class="line">[2019-11-26 18:10:15,187: WARNING/ForkPoolWorker-8] world ...</span><br><span class="line">[2019-11-26 18:10:15,189: INFO/ForkPoolWorker-8] Task jia_celery.tasks.async_sayhello[1f357e11-e324-4892-a7a2-f8b6b7caf4da] succeeded in 2.0048450990002493s: None</span><br><span class="line">[2019-11-26 20:07:32,714: INFO/MainProcess] Received task: jia_celery.tasks.async_sayhello[07083eb8-62a5-4ddf-aff5-f47c63696148]  </span><br><span class="line">[2019-11-26 20:07:32,723: WARNING/ForkPoolWorker-2] hello ...</span><br><span class="line">[2019-11-26 20:07:34,725: WARNING/ForkPoolWorker-2] world ...</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
 
     </div>
@@ -354,7 +362,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#依赖安装"><span class="nav-number">1.</span> <span class="nav-text">依赖安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本说明"><span class="nav-number">2.</span> <span class="nav-text">版本说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#celery名词"><span class="nav-number">3.</span> <span class="nav-text">celery名词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工程目录结构"><span class="nav-number">4.</span> <span class="nav-text">工程目录结构</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#依赖安装"><span class="nav-number">1.</span> <span class="nav-text">依赖安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本说明"><span class="nav-number">2.</span> <span class="nav-text">版本说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#celery名词"><span class="nav-number">3.</span> <span class="nav-text">celery名词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工程目录结构"><span class="nav-number">4.</span> <span class="nav-text">工程目录结构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#新建app"><span class="nav-number">5.</span> <span class="nav-text">新建app</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在项目-settings-py中安装"><span class="nav-number">6.</span> <span class="nav-text">在项目/settings.py中安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在jia-celery目录下创建tasks-py文件"><span class="nav-number">7.</span> <span class="nav-text">在jia_celery目录下创建tasks.py文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#打开jia-celery-views-py文件，修改视图如下："><span class="nav-number">8.</span> <span class="nav-text">打开jia_celery/views.py文件，修改视图如下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#迁移数据库"><span class="nav-number">9.</span> <span class="nav-text">迁移数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动redis"><span class="nav-number">10.</span> <span class="nav-text">启动redis</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#启动worker"><span class="nav-number">11.</span> <span class="nav-text">启动worker</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -436,12 +444,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">15k</span>
+    <span title="站点总字数">17k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">14 分钟</span>
+    <span title="站点阅读时长">16 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
