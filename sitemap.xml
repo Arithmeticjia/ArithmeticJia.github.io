@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://arithmeticjia.github.io/2019/11/26/Django2-1%E9%9B%86%E6%88%90Celery4-3-0%E7%A4%BA%E4%BE%8B/</loc>
+    
+    <lastmod>2019-11-26T10:33:14.240Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://arithmeticjia.github.io/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B---%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2(Ubuntu+Nginx+uwsgi)%E5%8D%87%E7%BA%A7https/</loc>
+    
+    <lastmod>2019-11-26T10:33:14.236Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://arithmeticjia.github.io/2019/11/24/GitHub%E5%8D%9A%E5%AE%A2Hexo%E9%85%8D%E5%90%88next%E4%B8%BB%E9%A2%98%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E9%AA%8C%E8%AF%81/</loc>
     
     <lastmod>2019-11-24T14:05:47.010Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://arithmeticjia.github.io/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-REST%E9%A3%8E%E6%A0%BCAPI/</loc>
     
     <lastmod>2019-11-24T13:26:20.039Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://arithmeticjia.github.io/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B---%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2(Ubuntu+Nginx+uwsgi)%E5%8D%87%E7%BA%A7https/</loc>
-    
-    <lastmod>2019-11-24T13:23:50.411Z</lastmod>
     
   </url>
   
