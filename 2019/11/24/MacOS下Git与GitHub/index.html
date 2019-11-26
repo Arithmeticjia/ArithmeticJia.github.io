@@ -52,7 +52,7 @@
 </script>
 
   <meta name="description" content="还是不知道写啥，本文是有关Mac OS上Git与GitHub相关配置的介绍说明">
-<meta name="keywords" content="github,git">
+<meta name="keywords" content="git,github">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MacOS下Git与GitHub">
 <meta property="og:url" content="http:&#x2F;&#x2F;arithmeticjia.github.io&#x2F;2019&#x2F;11&#x2F;24&#x2F;MacOS%E4%B8%8BGit%E4%B8%8EGitHub&#x2F;index.html">
@@ -60,7 +60,7 @@
 <meta property="og:description" content="还是不知道写啥，本文是有关Mac OS上Git与GitHub相关配置的介绍说明">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;E901D42E-753A-4E46-BC71-05C54C555B0D.png">
-<meta property="og:updated_time" content="2019-11-24T13:17:26.757Z">
+<meta property="og:updated_time" content="2019-11-26T10:35:18.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;E901D42E-753A-4E46-BC71-05C54C555B0D.png">
 
@@ -239,10 +239,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2019-11-24 20:34:30 / 修改时间：21:17:26" itemprop="dateCreated datePublished" datetime="2019-11-24T20:34:30+08:00">2019-11-24</time>
+              <time title="创建时间：2019-11-24 20:34:30" itemprop="dateCreated datePublished" datetime="2019-11-24T20:34:30+08:00">2019-11-24</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2019-11-26 18:35:18" itemprop="dateModified" datetime="2019-11-26T18:35:18+08:00">2019-11-26</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -289,18 +295,18 @@
       
         <p>还是不知道写啥，本文是有关Mac OS上Git与GitHub相关配置的介绍说明</p>
 <a id="more"></a>
-<h3 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h3><p>该命令也可以升级最新的git</p>
+<h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><p>该命令也可以升级最新的git</p>
 <figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
-<h3 id="查看git指向和版本信息"><a href="#查看git指向和版本信息" class="headerlink" title="查看git指向和版本信息"></a>查看git指向和版本信息</h3><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">which git</span><br><span class="line">/usr/bin/git</span><br><span class="line">git --version</span><br><span class="line">git version 2.21.0 (Apple Git-122.2)</span><br></pre></td></tr></table></figure>
-<h3 id="配置github用户名和邮箱"><a href="#配置github用户名和邮箱" class="headerlink" title="配置github用户名和邮箱"></a>配置github用户名和邮箱</h3><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "ArithmeticJia"</span><br><span class="line">git config --global user.email "1097197237@qq.com"</span><br></pre></td></tr></table></figure>
-<h3 id="生成ssh密钥"><a href="#生成ssh密钥" class="headerlink" title="生成ssh密钥"></a>生成ssh密钥</h3><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "1097197237@qq.com"</span><br></pre></td></tr></table></figure>
+<h4 id="查看git指向和版本信息"><a href="#查看git指向和版本信息" class="headerlink" title="查看git指向和版本信息"></a>查看git指向和版本信息</h4><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">which git</span><br><span class="line">/usr/bin/git</span><br><span class="line">git --version</span><br><span class="line">git version 2.21.0 (Apple Git-122.2)</span><br></pre></td></tr></table></figure>
+<h4 id="配置github用户名和邮箱"><a href="#配置github用户名和邮箱" class="headerlink" title="配置github用户名和邮箱"></a>配置github用户名和邮箱</h4><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "ArithmeticJia"</span><br><span class="line">git config --global user.email "1097197237@qq.com"</span><br></pre></td></tr></table></figure>
+<h4 id="生成ssh密钥"><a href="#生成ssh密钥" class="headerlink" title="生成ssh密钥"></a>生成ssh密钥</h4><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "1097197237@qq.com"</span><br></pre></td></tr></table></figure>
 <figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/Users/Arithmetic/.ssh/id_rsa): </span><br><span class="line">/Users/Arithmetic/.ssh/id_rsa already exists.</span><br><span class="line">Overwrite (y/n)? y</span><br><span class="line">Enter passphrase (empty for no passphrase): </span><br><span class="line">Enter same passphrase again: </span><br><span class="line">Your identification has been saved in /Users/Arithmetic/.ssh/id_rsa.</span><br></pre></td></tr></table></figure>
-<h3 id="在GitHub上新增ssh密钥"><a href="#在GitHub上新增ssh密钥" class="headerlink" title="在GitHub上新增ssh密钥"></a>在GitHub上新增ssh密钥</h3><p>复制密钥</p>
+<h4 id="在GitHub上新增ssh密钥"><a href="#在GitHub上新增ssh密钥" class="headerlink" title="在GitHub上新增ssh密钥"></a>在GitHub上新增ssh密钥</h4><p>复制密钥</p>
 <figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat .ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
 <p>路径一般是</p>
 <figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/User/ArithmeticJia/.ssh</span><br></pre></td></tr></table></figure>
 <p>登录GitHub（默认你已经注册了GitHub账号），添加ssh key，点击Settings，如图<br><img src="https://www.guanacossj.com/media/articlebodypics/E901D42E-753A-4E46-BC71-05C54C555B0D.png" alt=""></p>
-<h3 id="链接验证"><a href="#链接验证" class="headerlink" title="链接验证"></a>链接验证</h3><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<h4 id="链接验证"><a href="#链接验证" class="headerlink" title="链接验证"></a>链接验证</h4><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 <figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi Arithmeticjia! You've successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -326,8 +332,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/github/" rel="tag"># github</a>
               <a href="/tags/git/" rel="tag"># git</a>
+              <a href="/tags/github/" rel="tag"># github</a>
           </div>
 
         
@@ -380,7 +386,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装git"><span class="nav-number">1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#查看git指向和版本信息"><span class="nav-number">2.</span> <span class="nav-text">查看git指向和版本信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置github用户名和邮箱"><span class="nav-number">3.</span> <span class="nav-text">配置github用户名和邮箱</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成ssh密钥"><span class="nav-number">4.</span> <span class="nav-text">生成ssh密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在GitHub上新增ssh密钥"><span class="nav-number">5.</span> <span class="nav-text">在GitHub上新增ssh密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#链接验证"><span class="nav-number">6.</span> <span class="nav-text">链接验证</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装git"><span class="nav-number">1.</span> <span class="nav-text">安装git</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看git指向和版本信息"><span class="nav-number">2.</span> <span class="nav-text">查看git指向和版本信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置github用户名和邮箱"><span class="nav-number">3.</span> <span class="nav-text">配置github用户名和邮箱</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成ssh密钥"><span class="nav-number">4.</span> <span class="nav-text">生成ssh密钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在GitHub上新增ssh密钥"><span class="nav-number">5.</span> <span class="nav-text">在GitHub上新增ssh密钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链接验证"><span class="nav-number">6.</span> <span class="nav-text">链接验证</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
