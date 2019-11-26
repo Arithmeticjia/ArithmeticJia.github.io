@@ -58,7 +58,7 @@
 <meta property="og:site_name" content="请叫我算术嘉的博客">
 <meta property="og:description" content="Celery 是一个简单、灵活且可靠的，处理大量消息的分布式系统，并且提供维护这样一个系统的必需工具。它是一个专注于实时处理的任务队列，同时也支持任务调度。本文演示了如何在Django中集成Celery">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-11-26T10:33:14.240Z">
+<meta property="og:updated_time" content="2019-11-26T10:36:55.151Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://arithmeticjia.github.io/2019/11/26/Django2-1%E9%9B%86%E6%88%90Celery4-3-0%E7%A4%BA%E4%BE%8B/">
@@ -238,7 +238,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-11-26 18:22:47 / 修改时间：18:33:14" itemprop="dateCreated datePublished" datetime="2019-11-26T18:22:47+08:00">2019-11-26</time>
+              <time title="创建时间：2019-11-26 18:22:47 / 修改时间：18:36:55" itemprop="dateCreated datePublished" datetime="2019-11-26T18:22:47+08:00">2019-11-26</time>
             </span>
 
           
@@ -254,7 +254,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>289</span>
+              <span>295</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -281,7 +281,7 @@
 <li>任务task：就是一个Python函数。</li>
 <li>队列queue：将需要执行的任务加入到队列中。</li>
 <li>工人worker：在一个新进程中，负责执行队列中的任务。</li>
-<li>代理人broker：负责调度，需要提前部署好redis。</li>
+<li>代理人broker：负责调度，需要提前部署好redis。<h4 id="工程目录结构"><a href="#工程目录结构" class="headerlink" title="工程目录结构"></a>工程目录结构</h4></li>
 </ul>
 
     </div>
@@ -354,7 +354,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#依赖安装"><span class="nav-number">1.</span> <span class="nav-text">依赖安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本说明"><span class="nav-number">2.</span> <span class="nav-text">版本说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#celery名词"><span class="nav-number">3.</span> <span class="nav-text">celery名词</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#依赖安装"><span class="nav-number">1.</span> <span class="nav-text">依赖安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本说明"><span class="nav-number">2.</span> <span class="nav-text">版本说明</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#celery名词"><span class="nav-number">3.</span> <span class="nav-text">celery名词</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工程目录结构"><span class="nav-number">4.</span> <span class="nav-text">工程目录结构</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
