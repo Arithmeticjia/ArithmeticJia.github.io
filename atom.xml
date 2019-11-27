@@ -106,11 +106,11 @@
       <category term="Hexo" scheme="http://arithmeticjia.github.io/categories/Hexo/"/>
     
     
+      <category term="github" scheme="http://arithmeticjia.github.io/tags/github/"/>
+    
       <category term="hexo" scheme="http://arithmeticjia.github.io/tags/hexo/"/>
     
       <category term="next" scheme="http://arithmeticjia.github.io/tags/next/"/>
-    
-      <category term="github" scheme="http://arithmeticjia.github.io/tags/github/"/>
     
       <category term="baidu" scheme="http://arithmeticjia.github.io/tags/baidu/"/>
     
@@ -137,9 +137,9 @@
       <category term="Git" scheme="http://arithmeticjia.github.io/categories/Git/"/>
     
     
-      <category term="github" scheme="http://arithmeticjia.github.io/tags/github/"/>
-    
       <category term="git" scheme="http://arithmeticjia.github.io/tags/git/"/>
+    
+      <category term="github" scheme="http://arithmeticjia.github.io/tags/github/"/>
     
   </entry>
   
