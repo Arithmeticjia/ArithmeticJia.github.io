@@ -200,6 +200,12 @@
 <figure class="highlight clean"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> HelloWorld <span class="keyword">from</span> <span class="string">'./components/HelloVue.vue'</span></span><br></pre></td></tr></table></figure>
 <p>效果图<br><img src="https://www.guanacossj.com/media/articlebodypics/1571819861870.jpg" alt=""></p>
 ]]></content>
+      <categories>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>vue</tag>
+      </tags>
   </entry>
   <entry>
     <title>腾讯云Ubuntu下Collectd+Grafana+Influxdb的搭建教程</title>
@@ -246,6 +252,9 @@
 <h3 id="我的主页"><a href="#我的主页" class="headerlink" title="我的主页"></a>我的主页</h3><p><a href="https://www.guanacossj.com" target="_blank" rel="noopener" title="https://www.guanacossj.com">https://www.guanacossj.com</a></p>
 <h3 id="Github-Page"><a href="#Github-Page" class="headerlink" title="Github Page"></a>Github Page</h3><p><a href="https://www.guanacossj.com" target="_blank" rel="noopener" title="https://arithmeticjia.github.io/">https://arithmeticjia.github.io/</a></p>
 ]]></content>
+      <categories>
+        <category>Welcome</category>
+      </categories>
       <tags>
         <tag>blog</tag>
       </tags>
