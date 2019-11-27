@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://arithmeticjia.github.io/"/>
-  <updated>2019-11-26T14:19:10.185Z</updated>
+  <updated>2019-11-27T13:41:35.613Z</updated>
   <id>http://arithmeticjia.github.io/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Flask入门教程-你的第一个flask程序</title>
+    <link href="http://arithmeticjia.github.io/2019/11/27/Flask%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B-%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAflask%E7%A8%8B%E5%BA%8F/"/>
+    <id>http://arithmeticjia.github.io/2019/11/27/Flask%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B-%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAflask%E7%A8%8B%E5%BA%8F/</id>
+    <published>2019-11-27T13:33:23.000Z</published>
+    <updated>2019-11-27T13:41:35.613Z</updated>
+    
+    <content type="html"><![CDATA[<p>Flask是由python实现的一个web微框架，让我们可以使用Python语言快速实现一个网站或Web服务</p><a id="more"></a><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip3 install flask</span><br></pre></td></tr></table></figure><h4 id="工程目录示例"><a href="#工程目录示例" class="headerlink" title="工程目录示例"></a>工程目录示例</h4><p>.<br>├── app.py<br>├── exts.py<br>├── manage.py<br>├── migrations<br>│   ├── README<br>│   ├── <strong>pycache</strong><br>│   ├── alembic.ini<br>│   ├── env.py<br>│   ├── script.py.mako<br>│   └── versions<br>├── models.py<br>├── prophet.py<br>├── static<br>│   ├── css<br>│   ├── data<br>│   ├── img<br>│   └── js<br>└── templates<br>    ├── imageinfo.html<br>    ├── imageinfogengduo.html<br>    ├── index.html<br>    ├── login.html<br>    ├── mp3info.html<br>    ├── test.html<br>    └── videoinfo.html</p><h4 id="返回你的第一个页面"><a href="#返回你的第一个页面" class="headerlink" title="返回你的第一个页面"></a>返回你的第一个页面</h4><p>app.py</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask,render_template</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">'Hello World!'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route('/')</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> render_template(<span class="string">'index.html'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run()</span><br></pre></td></tr></table></figure><p>在static目录下配置对于的js、css文件</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Flask是由python实现的一个web微框架，让我们可以使用Python语言快速实现一个网站或Web服务&lt;/p&gt;
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Django2.1.7集成Celery4.3.0任务队列路由</title>
