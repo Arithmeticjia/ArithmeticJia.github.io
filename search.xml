@@ -81,8 +81,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>celery</tag>
         <tag>django</tag>
+        <tag>celery</tag>
       </tags>
   </entry>
   <entry>
@@ -106,9 +106,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>hexo</tag>
         <tag>next</tag>
+        <tag>github</tag>
         <tag>baidu</tag>
         <tag>google</tag>
       </tags>
@@ -136,8 +136,8 @@
         <category>Git</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>github</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
