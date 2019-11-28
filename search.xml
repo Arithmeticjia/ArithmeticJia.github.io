@@ -180,7 +180,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Django个人博客搭建教程---REST风格API</title>
+    <title>Django个人博客搭建教程-REST风格API</title>
     <url>/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-REST%E9%A3%8E%E6%A0%BCAPI/</url>
     <content><![CDATA[<p>Django REST Framework 是一个强大且灵活的工具包，用以构建Web API<br>Django REST Framework可以在Django的基础上迅速实现API，并且自身还带有WEB的测试页面，可以方便的测试自己的API</p>
 <a id="more"></a>
