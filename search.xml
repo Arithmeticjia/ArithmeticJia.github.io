@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Django个人博客搭建教程-登录登出模块</title>
+    <url>/2019/11/28/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-%E7%99%BB%E5%BD%95%E7%99%BB%E5%87%BA%E6%A8%A1%E5%9D%97/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Flask入门教程-数据库连接与数据模型拆分</title>
     <url>/2019/11/27/Flask%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E6%8B%86%E5%88%86/</url>
     <content><![CDATA[<p>flask-SQLAlchemy是一套ORM(Object Relationship Mapping)框架，中文翻译就是模型关系映射，将数据库表映射成python中的对象，非常方便，创建一个模型，来通过模型来增删改数据库</p>
@@ -81,8 +86,8 @@
         <category>Django</category>
       </categories>
       <tags>
-        <tag>django</tag>
         <tag>celery</tag>
+        <tag>django</tag>
       </tags>
   </entry>
   <entry>
@@ -106,9 +111,9 @@
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>hexo</tag>
         <tag>next</tag>
+        <tag>github</tag>
         <tag>baidu</tag>
         <tag>google</tag>
       </tags>
@@ -136,13 +141,13 @@
         <category>Git</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>github</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
-    <title>Django个人博客搭建教程---阿里云部署(Ubuntu+Nginx+uwsgi)升级https</title>
-    <url>/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B---%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2(Ubuntu+Nginx+uwsgi)%E5%8D%87%E7%BA%A7https/</url>
+    <title>Django个人博客搭建教程-阿里云部署(Ubuntu+Nginx+uwsgi)升级https</title>
+    <url>/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2(Ubuntu+Nginx+uwsgi)%E5%8D%87%E7%BA%A7https/</url>
     <content><![CDATA[<p>更安全的https</p>
 <a id="more"></a>
 <h4 id="一、阿里云申请SSL证书"><a href="#一、阿里云申请SSL证书" class="headerlink" title="一、阿里云申请SSL证书"></a>一、阿里云申请SSL证书</h4><p>略</p>

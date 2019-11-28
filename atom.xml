@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://arithmeticjia.github.io/"/>
-  <updated>2019-11-27T14:16:15.961Z</updated>
+  <updated>2019-11-28T12:57:47.084Z</updated>
   <id>http://arithmeticjia.github.io/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django个人博客搭建教程-登录登出模块</title>
+    <link href="http://arithmeticjia.github.io/2019/11/28/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-%E7%99%BB%E5%BD%95%E7%99%BB%E5%87%BA%E6%A8%A1%E5%9D%97/"/>
+    <id>http://arithmeticjia.github.io/2019/11/28/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-%E7%99%BB%E5%BD%95%E7%99%BB%E5%87%BA%E6%A8%A1%E5%9D%97/</id>
+    <published>2019-11-28T12:57:47.000Z</published>
+    <updated>2019-11-28T12:57:47.084Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Flask入门教程-数据库连接与数据模型拆分</title>
@@ -81,9 +96,9 @@
       <category term="Django" scheme="http://arithmeticjia.github.io/categories/Django/"/>
     
     
-      <category term="django" scheme="http://arithmeticjia.github.io/tags/django/"/>
-    
       <category term="celery" scheme="http://arithmeticjia.github.io/tags/celery/"/>
+    
+      <category term="django" scheme="http://arithmeticjia.github.io/tags/django/"/>
     
   </entry>
   
@@ -106,11 +121,11 @@
       <category term="Hexo" scheme="http://arithmeticjia.github.io/categories/Hexo/"/>
     
     
-      <category term="github" scheme="http://arithmeticjia.github.io/tags/github/"/>
-    
       <category term="hexo" scheme="http://arithmeticjia.github.io/tags/hexo/"/>
     
       <category term="next" scheme="http://arithmeticjia.github.io/tags/next/"/>
+    
+      <category term="github" scheme="http://arithmeticjia.github.io/tags/github/"/>
     
       <category term="baidu" scheme="http://arithmeticjia.github.io/tags/baidu/"/>
     
@@ -137,18 +152,18 @@
       <category term="Git" scheme="http://arithmeticjia.github.io/categories/Git/"/>
     
     
-      <category term="git" scheme="http://arithmeticjia.github.io/tags/git/"/>
-    
       <category term="github" scheme="http://arithmeticjia.github.io/tags/github/"/>
+    
+      <category term="git" scheme="http://arithmeticjia.github.io/tags/git/"/>
     
   </entry>
   
   <entry>
-    <title>Django个人博客搭建教程---阿里云部署(Ubuntu+Nginx+uwsgi)升级https</title>
-    <link href="http://arithmeticjia.github.io/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B---%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2(Ubuntu+Nginx+uwsgi)%E5%8D%87%E7%BA%A7https/"/>
-    <id>http://arithmeticjia.github.io/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B---%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2(Ubuntu+Nginx+uwsgi)%E5%8D%87%E7%BA%A7https/</id>
+    <title>Django个人博客搭建教程-阿里云部署(Ubuntu+Nginx+uwsgi)升级https</title>
+    <link href="http://arithmeticjia.github.io/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2(Ubuntu+Nginx+uwsgi)%E5%8D%87%E7%BA%A7https/"/>
+    <id>http://arithmeticjia.github.io/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2(Ubuntu+Nginx+uwsgi)%E5%8D%87%E7%BA%A7https/</id>
     <published>2019-11-24T08:20:40.000Z</published>
-    <updated>2019-11-26T10:33:14.236Z</updated>
+    <updated>2019-11-28T12:58:28.157Z</updated>
     
     <content type="html"><![CDATA[<p>更安全的https</p><a id="more"></a><h4 id="一、阿里云申请SSL证书"><a href="#一、阿里云申请SSL证书" class="headerlink" title="一、阿里云申请SSL证书"></a>一、阿里云申请SSL证书</h4><p>略</p><h4 id="二、将pem和key放在nginx目录下"><a href="#二、将pem和key放在nginx目录下" class="headerlink" title="二、将pem和key放在nginx目录下"></a>二、将pem和key放在nginx目录下</h4><p>仅供参考</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/etc/nginx/cert/1831344_www.guanacossj.com.pem;      # 路径/pem文件</span><br><span class="line">/etc/nginx/cert/1831344_www.guanacossj.com.key;      # 路径/key文件</span><br></pre></td></tr></table></figure><h4 id="三、修改nginx-conf"><a href="#三、修改nginx-conf" class="headerlink" title="三、修改nginx.conf"></a>三、修改nginx.conf</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">http &#123;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">  server &#123;</span><br><span class="line">      listen 80;</span><br><span class="line">      server_name  _;</span><br><span class="line">      return 301 https://www.guanacossj.com$request_uri;</span><br><span class="line">   &#125; </span><br><span class="line"> </span><br><span class="line">  server &#123;</span><br><span class="line">      listen       443 default_server;</span><br><span class="line">      listen       [::]:443 default_server;</span><br><span class="line">      server_name  _;</span><br><span class="line">      ssl on;</span><br><span class="line">      ssl_certificate   /etc/nginx/cert/1831344_www.guanacossj.com.pem;     # 路径/pem文件</span><br><span class="line">      ssl_certificate_key  /etc/nginx/cert/1831344_www.guanacossj.com.key;  # 路径/key文件</span><br><span class="line">      ssl_session_timeout 5m;</span><br><span class="line">      ssl_ciphers ECDHE-RSA-AES128-GCM-SHA256:ECDHE:ECDH:AES:HIGH:!NULL:!aNULL:!MD5:!ADH:!RC4;</span><br><span class="line">      ssl_protocols TLSv1 TLSv1.1 TLSv1.2;</span><br><span class="line">      ssl_prefer_server_ciphers on;</span><br><span class="line">      charset     utf-8;</span><br><span class="line">      client_max_body_size 1000M;   # adjust to taste</span><br><span class="line">      include /etc/nginx/default.d/*.conf;</span><br><span class="line">      location /static &#123;</span><br><span class="line">      alias /home/MyBlog/static; # ָÏdjangoµÄtaticĿ¼</span><br><span class="line">      &#125;</span><br><span class="line">      location /static/rest_framework/ &#123;</span><br><span class="line">      alias /usr/local/lib/python3.6/dist-packages/rest_framework/static/rest_framework/</span><br><span class="line">    ;&#125;</span><br><span class="line"> </span><br><span class="line">    # Finally, send all non-media requests to the Django server.</span><br><span class="line">    location / &#123;</span><br><span class="line">        uwsgi_pass  127.0.0.1:8000;</span><br><span class="line">        #uwsgi_pass  django;</span><br><span class="line">        include     uwsgi_params; # the uwsgi_params file you installed           </span><br><span class="line">        proxy_redirect off;</span><br><span class="line">      proxy_http_version 1.1;</span><br><span class="line">        proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">        proxy_set_header Connection "upgrade";</span><br><span class="line">      uwsgi_send_timeout 600;</span><br><span class="line">        uwsgi_connect_timeout 600;  </span><br><span class="line">        uwsgi_read_timeout 600; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这里把你原来的监听80端口改为监听443端口即可，我之前一直不成功主要是我试图再加一个443端口的监听，应该也可以吧，不管了，反正这样肯定没问题，然后如果还想让http能购访问，就做个重定向。</p><h4 id="四、重启nginx"><a href="#四、重启nginx" class="headerlink" title="四、重启nginx"></a>四、重启nginx</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">service nginx restart</span><br></pre></td></tr></table></figure>]]></content>
     
