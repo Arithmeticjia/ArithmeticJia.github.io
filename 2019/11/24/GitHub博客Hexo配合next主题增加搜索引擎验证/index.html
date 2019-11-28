@@ -285,19 +285,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>GitHub博客Hexo配合next主题增加搜索引擎验证，Github 上利用 hexo 建立的博客是无法被搜索引擎搜索到的。</p>
-<a id="more"></a>
-<p>Github 本身也不会将信息提交给引擎。所以，为了让博客信息被检索到，我们需要手动将博客网站提交给搜索引擎并验证，实际上就是验证网站是我们自己的</p>
+        <p>GitHub博客Hexo配合next主题增加搜索引擎验证，Github 上利用 hexo 建立的博客是无法被搜索引擎搜索到的。<br><a id="more"></a><br>Github 本身也不会将信息提交给引擎。所以，为了让博客信息被检索到，我们需要手动将博客网站提交给搜索引擎并验证，实际上就是验证网站是我们自己的</p>
 <h3 id="提交Google站点"><a href="#提交Google站点" class="headerlink" title="提交Google站点"></a>提交Google站点</h3><p><a href="https://www.google.com/webmasters/tools/home?hl=zh-CN" target="_blank" rel="noopener">Google</a></p>
-<h3 id="选择HTML-meta-标签验证"><a href="#选择HTML-meta-标签验证" class="headerlink" title="选择HTML meta 标签验证"></a>选择HTML meta 标签验证</h3><p>Next 主题下，页面的 header 设置在</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/themes/</span>hexo-theme-<span class="keyword">next</span><span class="regexp">/layout/</span>_partials<span class="regexp">/head/</span>head.swig</span><br></pre></td></tr></table></figure>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;%- <span class="name"><span class="name">if</span></span> theme.google_site_verification %&#125;</span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"google-site-verification"</span> <span class="attr">content</span>=<span class="string">"RkRVaaOa4vX520pamxy6ip0HfuaQ-NCyM1SvGbzqUFA"</span>&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;%- <span class="name"><span class="name">endif</span></span> %&#125;</span></span><br></pre></td></tr></table></figure>
-<p>这里的content从Google控制台获取</p>
+<h3 id="选择HTML-meta-标签验证"><a href="#选择HTML-meta-标签验证" class="headerlink" title="选择HTML meta 标签验证"></a>选择HTML meta 标签验证</h3><p>Next 主题下，页面的 header 设置在<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/themes/</span>hexo-theme-<span class="keyword">next</span><span class="regexp">/layout/</span>_partials<span class="regexp">/head/</span>head.swig</span><br></pre></td></tr></table></figure><br><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;%- <span class="name"><span class="name">if</span></span> theme.google_site_verification %&#125;</span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"google-site-verification"</span> <span class="attr">content</span>=<span class="string">"RkRVaaOa4vX520pamxy6ip0HfuaQ-NCyM1SvGbzqUFA"</span>&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;%- <span class="name"><span class="name">endif</span></span> %&#125;</span></span><br></pre></td></tr></table></figure><br>这里的content从Google控制台获取</p>
 <h3 id="提交Baidu站点"><a href="#提交Baidu站点" class="headerlink" title="提交Baidu站点"></a>提交Baidu站点</h3><p><a href="http://www.baidu.com/search/url_submit.htm" target="_blank" rel="noopener">Baidu</a></p>
-<h3 id="选择HTML-meta-标签验证-1"><a href="#选择HTML-meta-标签验证-1" class="headerlink" title="选择HTML meta 标签验证"></a>选择HTML meta 标签验证</h3><p>Next 主题下，页面的 header 设置在</p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/themes/</span>hexo-theme-<span class="keyword">next</span><span class="regexp">/layout/</span>_partials<span class="regexp">/head/</span>head.swig</span><br></pre></td></tr></table></figure>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;%- <span class="name"><span class="name">if</span></span> theme.baidu_site_verification %&#125;</span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"baidu-site-verification"</span> <span class="attr">content</span>=<span class="string">"es0rExrlvZ"</span>&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;%- <span class="name"><span class="name">endif</span></span> %&#125;</span></span><br></pre></td></tr></table></figure>
-<p>这里的content从Baidu控制台获取</p>
+<h3 id="选择HTML-meta-标签验证-1"><a href="#选择HTML-meta-标签验证-1" class="headerlink" title="选择HTML meta 标签验证"></a>选择HTML meta 标签验证</h3><p>Next 主题下，页面的 header 设置在<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/themes/</span>hexo-theme-<span class="keyword">next</span><span class="regexp">/layout/</span>_partials<span class="regexp">/head/</span>head.swig</span><br></pre></td></tr></table></figure><br><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;%- <span class="name"><span class="name">if</span></span> theme.baidu_site_verification %&#125;</span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"baidu-site-verification"</span> <span class="attr">content</span>=<span class="string">"es0rExrlvZ"</span>&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;%- <span class="name"><span class="name">endif</span></span> %&#125;</span></span><br></pre></td></tr></table></figure><br>这里的content从Baidu控制台获取</p>
 
     </div>
 
@@ -317,6 +309,23 @@
       </div>
 
   </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>请叫我算术嘉
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://arithmeticjia.github.io/2019/11/24/GitHub%E5%8D%9A%E5%AE%A2Hexo%E9%85%8D%E5%90%88next%E4%B8%BB%E9%A2%98%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E9%AA%8C%E8%AF%81/" title="GitHub博客Hexo配合next主题增加搜索引擎验证">http://arithmeticjia.github.io/2019/11/24/GitHub%E5%8D%9A%E5%AE%A2Hexo%E9%85%8D%E5%90%88next%E4%B8%BB%E9%A2%98%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E9%AA%8C%E8%AF%81/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
 
 
@@ -395,20 +404,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -461,12 +470,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">29k</span>
+    <span title="站点总字数">32k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">26 分钟</span>
+    <span title="站点阅读时长">29 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
@@ -612,6 +621,8 @@
 
 
 
+
+  
 
   
 

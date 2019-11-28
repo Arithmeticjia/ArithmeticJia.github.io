@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://arithmeticjia.github.io/2019/11/28/Using-Machine-Learning-for-Data-Center-Cooling-Infrastructure-Efficiency-Prediction/</loc>
+    <lastmod>2019-11-28</lastmod>
+  </url>  <url>
+    <loc>http://arithmeticjia.github.io/2019/11/28/Machine-Learning-Applications-for-Data-Center-Optimization/</loc>
+    <lastmod>2019-11-28</lastmod>
+  </url>  <url>
     <loc>http://arithmeticjia.github.io/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-REST%E9%A3%8E%E6%A0%BCAPI/</loc>
     <lastmod>2019-11-28</lastmod>
   </url>  <url>

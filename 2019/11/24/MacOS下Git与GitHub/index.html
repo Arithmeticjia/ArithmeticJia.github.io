@@ -293,19 +293,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>还是不知道写啥，本文是有关Mac OS上Git与GitHub相关配置的介绍说明</p>
-<a id="more"></a>
-<h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><p>该命令也可以升级最新的git</p>
-<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure>
+        <p>还是不知道写啥，本文是有关Mac OS上Git与GitHub相关配置的介绍说明<br><a id="more"></a></p>
+<h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><p>该命令也可以升级最新的git<br><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure></p>
 <h4 id="查看git指向和版本信息"><a href="#查看git指向和版本信息" class="headerlink" title="查看git指向和版本信息"></a>查看git指向和版本信息</h4><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">which git</span><br><span class="line">/usr/bin/git</span><br><span class="line">git --version</span><br><span class="line">git version 2.21.0 (Apple Git-122.2)</span><br></pre></td></tr></table></figure>
 <h4 id="配置github用户名和邮箱"><a href="#配置github用户名和邮箱" class="headerlink" title="配置github用户名和邮箱"></a>配置github用户名和邮箱</h4><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "ArithmeticJia"</span><br><span class="line">git config --global user.email "1097197237@qq.com"</span><br></pre></td></tr></table></figure>
 <h4 id="生成ssh密钥"><a href="#生成ssh密钥" class="headerlink" title="生成ssh密钥"></a>生成ssh密钥</h4><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "1097197237@qq.com"</span><br></pre></td></tr></table></figure>
 <figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/Users/Arithmetic/.ssh/id_rsa): </span><br><span class="line">/Users/Arithmetic/.ssh/id_rsa already exists.</span><br><span class="line">Overwrite (y/n)? y</span><br><span class="line">Enter passphrase (empty for no passphrase): </span><br><span class="line">Enter same passphrase again: </span><br><span class="line">Your identification has been saved in /Users/Arithmetic/.ssh/id_rsa.</span><br></pre></td></tr></table></figure>
-<h4 id="在GitHub上新增ssh密钥"><a href="#在GitHub上新增ssh密钥" class="headerlink" title="在GitHub上新增ssh密钥"></a>在GitHub上新增ssh密钥</h4><p>复制密钥</p>
-<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat .ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-<p>路径一般是</p>
-<figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/User/ArithmeticJia/.ssh</span><br></pre></td></tr></table></figure>
-<p>登录GitHub（默认你已经注册了GitHub账号），添加ssh key，点击Settings，如图<br><img src="https://www.guanacossj.com/media/articlebodypics/E901D42E-753A-4E46-BC71-05C54C555B0D.png" alt=""></p>
+<h4 id="在GitHub上新增ssh密钥"><a href="#在GitHub上新增ssh密钥" class="headerlink" title="在GitHub上新增ssh密钥"></a>在GitHub上新增ssh密钥</h4><p>复制密钥<br><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat .ssh/id_rsa.pub</span><br></pre></td></tr></table></figure><br>路径一般是<br><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/User/ArithmeticJia/.ssh</span><br></pre></td></tr></table></figure><br>登录GitHub（默认你已经注册了GitHub账号），添加ssh key，点击Settings，如图<br><img src="https://www.guanacossj.com/media/articlebodypics/E901D42E-753A-4E46-BC71-05C54C555B0D.png" alt=""></p>
 <h4 id="链接验证"><a href="#链接验证" class="headerlink" title="链接验证"></a>链接验证</h4><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
 <figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi Arithmeticjia! You've successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>
 
@@ -327,6 +321,23 @@
       </div>
 
   </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>请叫我算术嘉
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://arithmeticjia.github.io/2019/11/24/MacOS%E4%B8%8BGit%E4%B8%8EGitHub/" title="MacOS下Git与GitHub">http://arithmeticjia.github.io/2019/11/24/MacOS%E4%B8%8BGit%E4%B8%8EGitHub/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
 </div>
 
 
@@ -402,20 +413,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">12</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -468,12 +479,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">29k</span>
+    <span title="站点总字数">32k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">26 分钟</span>
+    <span title="站点阅读时长">29 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
@@ -619,6 +630,8 @@
 
 
 
+
+  
 
   
 
