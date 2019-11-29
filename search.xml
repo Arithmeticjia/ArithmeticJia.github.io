@@ -35,6 +35,7 @@ COP = \frac{Q_{CoolingCircuits}}{P_{CoolingCircuits}}</script></li>
 </ul>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/1575015799772.jpg" alt></p>
 <ul>
+<li>T(WB):the wet bulb temperature</li>
 <li>P(DC):the complete power consumption of the data center</li>
 <li>P(SuperMUC IT):the power consumption profile of the deployed HPC system SuperMUC-Phase1</li>
 <li>P(DC KT+I):the power consumption of the cooling infrastructure</li>
@@ -202,8 +203,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>celery</tag>
         <tag>django</tag>
+        <tag>celery</tag>
       </tags>
   </entry>
   <entry>
