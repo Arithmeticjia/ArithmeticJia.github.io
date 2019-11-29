@@ -80,6 +80,7 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
 <li>$QKLT_{i}$amount of generated cold for a given cooling circuit (1≤ i ≤4)<script type="math/tex">KLT_{i}</script></li>
 <li>$flowRate_{KLT_{i}}$ water flow rate (before entering the hydraulic gate) for a given cooling circuit (1≤ i ≤4)<script type="math/tex">KLT_{i}</script></li>
 </ul>
+<h4 id="Prediction"><a href="#Prediction" class="headerlink" title="Prediction"></a>Prediction</h4><p><img src="https://www.guanacossj.com/media/articlebodypics/1575010626556.jpg" alt></p>
 ]]></content>
       <categories>
         <category>DataCenter</category>
