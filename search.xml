@@ -1,6 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Ubuntu安装SVN</title>
+    <url>/2019/11/30/Ubuntu%E5%AE%89%E8%A3%85SVN/</url>
+    <content><![CDATA[<p>本文简单介绍Ubuntu系统下SVN的搭建过程<br><a id="more"></a></p>
+<h4 id="更新源"><a href="#更新源" class="headerlink" title="更新源"></a>更新源</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<h4 id="安装SVN"><a href="#安装SVN" class="headerlink" title="安装SVN"></a>安装SVN</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install subversion</span><br></pre></td></tr></table></figure>
+<h4 id="创建文件夹"><a href="#创建文件夹" class="headerlink" title="创建文件夹"></a>创建文件夹</h4><figure class="highlight arduino"><table><tr><td class="code"><pre><span class="line">sudo <span class="built_in">mkdir</span> /<span class="built_in">home</span>/svn</span><br><span class="line">sudo <span class="built_in">mkdir</span> /<span class="built_in">home</span>/svn/repository</span><br><span class="line">sudo chmod -R <span class="number">777</span> /<span class="built_in">home</span>/svn/repository</span><br><span class="line">sudo svnadmin create /<span class="built_in">home</span>/svn/repository</span><br><span class="line">cd /<span class="built_in">home</span>/svn/repository/</span><br><span class="line">sudo chmod -R <span class="number">777</span> db</span><br></pre></td></tr></table></figure>
+<h4 id="修改svnserve-conf"><a href="#修改svnserve-conf" class="headerlink" title="修改svnserve.conf"></a>修改svnserve.conf</h4><figure class="highlight vim"><table><tr><td class="code"><pre><span class="line"><span class="keyword">cd</span> /home/svn/repository/<span class="keyword">conf</span>/</span><br><span class="line">sudo <span class="keyword">vi</span> svnserve.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
+<p>修改这四行如下所示<br>anon-access = none 匿名用户不可读<br>auth-access = write 权限用户可写<br>password-db = passwd 密码文件为passwd<br>authz-db = authz 权限文件为authz<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## users have read and write access to the repository.</span></span></span><br><span class="line">anon-access = none</span><br><span class="line">auth-access = write</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## The password-db option controls the location of the password</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## database file.  Unless you specify a path starting with a /,</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## the file's location is relative to the directory containing</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## this configuration file.</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## If SASL is enabled (see below), this file will NOT be used.</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## Uncomment the line below to use the default password file.</span></span></span><br><span class="line">password-db = passwd</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## The authz-db option controls the location of the authorization</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## rules for path-based access control.  Unless you specify a path</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## starting with a /, the file's location is relative to the</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## directory containing this file.  The specified path may be a</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## repository relative URL (^/) or an absolute file:// URL to a text</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## file in a Subversion repository.  If you don't specify an authz-db,</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## no path-based access control is done.</span></span></span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## Uncomment the line below to use the default authorization file.</span></span></span><br><span class="line">authz-db = authz</span><br><span class="line"><span class="meta">#</span><span class="bash"><span class="comment">## The groups-db option controls the location of the groups file.</span></span></span><br></pre></td></tr></table></figure></p>
+<h4 id="修改password文件，添加访问用户"><a href="#修改password文件，添加访问用户" class="headerlink" title="修改password文件，添加访问用户"></a>修改password文件，添加访问用户</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo vi passwd</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[users]</span><br><span class="line"><span class="meta">#</span><span class="bash"> harry = harryssecret</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> sally = sallyssecret</span></span><br><span class="line">lidata = lidata429</span><br></pre></td></tr></table></figure>
+<h4 id="给用户增加目录权限"><a href="#给用户增加目录权限" class="headerlink" title="给用户增加目录权限"></a>给用户增加目录权限</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo vi authz</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[groups]</span><br><span class="line"><span class="meta">#</span><span class="bash"> harry_and_sally = harry,sally</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> harry_sally_and_joe = harry,sally,&amp;joe</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> [/foo/bar]</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> harry = rw</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> &amp;joe = r</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> * =</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> [repository:/baz/fuz]</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> @harry_and_sally = rw</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> * = r</span></span><br><span class="line">[/]</span><br><span class="line">lidata=rw</span><br></pre></td></tr></table></figure>
+<h4 id="启动服务，并且监听81端口"><a href="#启动服务，并且监听81端口" class="headerlink" title="启动服务，并且监听81端口"></a>启动服务，并且监听81端口</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo svnserve -d -r /home/svn --listen-port 81</span><br></pre></td></tr></table></figure>
+<h4 id="查看svn是否启动"><a href="#查看svn是否启动" class="headerlink" title="查看svn是否启动"></a>查看svn是否启动</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ps -ef | grep svnserve</span><br></pre></td></tr></table></figure>
+<h4 id="停止服务"><a href="#停止服务" class="headerlink" title="停止服务"></a>停止服务</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">kill all svnserve</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>SVN</category>
+      </categories>
+      <tags>
+        <tag>svn</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo-next主题支持数学公式</title>
     <url>/2019/11/28/Hexo-next%E4%B8%BB%E9%A2%98%E6%94%AF%E6%8C%81%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/</url>
     <content><![CDATA[<p>本文主要解决Hexo-next主题支持数学公式问题<br><a id="more"></a></p>
@@ -204,8 +227,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>celery</tag>
         <tag>django</tag>
+        <tag>celery</tag>
       </tags>
   </entry>
   <entry>
@@ -221,9 +244,9 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Hexo</category>
       </categories>
       <tags>
+        <tag>github</tag>
         <tag>hexo</tag>
         <tag>next</tag>
-        <tag>github</tag>
         <tag>baidu</tag>
         <tag>google</tag>
       </tags>
@@ -245,8 +268,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Git</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>git</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
