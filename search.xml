@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Ubuntu安装SVN</title>
-    <url>/2019/11/30/Ubuntu%E5%AE%89%E8%A3%85SVN/</url>
+    <title>Ubuntu16.04.5LTS安装SVN</title>
+    <url>/2019/11/30/Ubuntu16.04.5LTS%E5%AE%89%E8%A3%85SVN/</url>
     <content><![CDATA[<p>本文简单介绍Ubuntu系统下SVN的搭建过程<br><a id="more"></a></p>
 <h4 id="更新源"><a href="#更新源" class="headerlink" title="更新源"></a>更新源</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
 <h4 id="安装SVN"><a href="#安装SVN" class="headerlink" title="安装SVN"></a>安装SVN</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install subversion</span><br></pre></td></tr></table></figure>
@@ -244,9 +244,9 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>hexo</tag>
         <tag>next</tag>
+        <tag>github</tag>
         <tag>baidu</tag>
         <tag>google</tag>
       </tags>
@@ -268,8 +268,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Git</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>github</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
