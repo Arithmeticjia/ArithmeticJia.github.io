@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://arithmeticjia.github.io/"/>
-  <updated>2019-11-30T11:23:41.988Z</updated>
+  <updated>2019-11-30T16:00:35.690Z</updated>
   <id>http://arithmeticjia.github.io/</id>
   
   <author>
@@ -15,6 +15,76 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>d</title>
+    <link href="http://arithmeticjia.github.io/2019/12/01/d/"/>
+    <id>http://arithmeticjia.github.io/2019/12/01/d/</id>
+    <published>2019-11-30T16:00:35.000Z</published>
+    <updated>2019-11-30T16:00:35.690Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>g</title>
+    <link href="http://arithmeticjia.github.io/2019/12/01/g/"/>
+    <id>http://arithmeticjia.github.io/2019/12/01/g/</id>
+    <published>2019-11-30T16:00:28.000Z</published>
+    <updated>2019-11-30T16:00:28.381Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>clean</title>
+    <link href="http://arithmeticjia.github.io/2019/12/01/clean/"/>
+    <id>http://arithmeticjia.github.io/2019/12/01/clean/</id>
+    <published>2019-11-30T16:00:25.000Z</published>
+    <updated>2019-11-30T16:00:25.507Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Flask-Vue前后端分离（一）</title>
+    <link href="http://arithmeticjia.github.io/2019/11/30/Flask-Vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%EF%BC%88%E4%B8%80%EF%BC%89/"/>
+    <id>http://arithmeticjia.github.io/2019/11/30/Flask-Vue%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB%EF%BC%88%E4%B8%80%EF%BC%89/</id>
+    <published>2019-11-30T15:43:36.000Z</published>
+    <updated>2019-11-30T16:00:17.919Z</updated>
+    
+    <content type="html"><![CDATA[<p>简单介绍下如何在Pycharm下集成Flask和Vue<br><a id="more"></a></p><h4 id="新建flask项目"><a href="#新建flask项目" class="headerlink" title="新建flask项目"></a>新建flask项目</h4><p>略<br>我这里是Jia-Prophet</p><h4 id="新建vue项目"><a href="#新建vue项目" class="headerlink" title="新建vue项目"></a>新建vue项目</h4><p>在Jia-Prophet目录下<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue init webpack jia-vue</span><br></pre></td></tr></table></figure><br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">Arithmetic@qingjiaowosuanshujiadeMacBook-Pro Jia-Prophet % vue init webpack jia-vue</span><br><span class="line"></span><br><span class="line">? Project name jia-vue</span><br><span class="line">? Project description A Vue.js project</span><br><span class="line">? Author ArithmeticJia &lt;1097197237@qq.com&gt;</span><br><span class="line">? Vue build standalone</span><br><span class="line">? Install vue-router? Yes</span><br><span class="line">? Use ESLint to lint your code? No</span><br><span class="line">? Set up unit tests No</span><br><span class="line">? Setup e2e tests with Nightwatch? No</span><br><span class="line">? Should we run `npm install` for you after the project has been created? (recommended) n</span><br><span class="line">pm</span><br><span class="line"></span><br><span class="line">   vue-cli · Generated "jia-vue".</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Installing project dependencies ...</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ========================</span></span><br><span class="line"></span><br><span class="line">npm WARN deprecated extract-text-webpack-plugin@3.0.2: Deprecated. Please use https://github.com/webpack-contrib/mini-css-extract-plugin</span><br><span class="line">npm WARN deprecated browserslist@2.11.3: Browserslist 2 could fail on reading Browserslist &gt;3.0 config used in other tools.</span><br><span class="line">npm WARN deprecated bfj-node4@5.3.1: Switch to the `bfj` package for fixes and new features!</span><br><span class="line">npm WARN deprecated core-js@2.6.10: core-js@&lt;3.0 is no longer maintained and not recommended for usage due to the number of issues. Please, upgrade your dependencies to the actual version of core-js@3.</span><br><span class="line">npm WARN deprecated fsevents@1.2.9: One of your dependencies needs to upgrade to fsevents v2: 1) Proper nodejs v10+ support 2) No more fetching binaries from AWS, smaller package size</span><br><span class="line">npm WARN deprecated browserslist@1.7.7: Browserslist 2 could fail on reading Browserslist &gt;3.0 config used in other tools.</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> fsevents@1.2.9 install /Users/Arithmetic/PycharmProjects/Jia/Jia-Prophet/jia-vue/node_modules/fsevents</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> node install</span></span><br><span class="line"></span><br><span class="line">node-pre-gyp WARN Using needle for node-pre-gyp https download </span><br><span class="line">[fsevents] Success: "/Users/Arithmetic/PycharmProjects/Jia/Jia-Prophet/jia-vue/node_modules/fsevents/lib/binding/Release/node-v72-darwin-x64/fse.node" is installed via remote</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> core-js@2.6.10 postinstall /Users/Arithmetic/PycharmProjects/Jia/Jia-Prophet/jia-vue/node_modules/core-js</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> node postinstall || <span class="built_in">echo</span> <span class="string">"ignore"</span></span></span><br><span class="line"></span><br><span class="line">Thank you for using core-js ( https://github.com/zloirock/core-js ) for polyfilling JavaScript standard library!</span><br><span class="line"></span><br><span class="line">The project needs your help! Please consider supporting of core-js on Open Collective or Patreon: </span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> https://opencollective.com/core-js </span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> https://www.patreon.com/zloirock </span></span><br><span class="line"></span><br><span class="line">Also, the author of core-js ( https://github.com/zloirock ) is looking for a good job -)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> ejs@2.7.4 postinstall /Users/Arithmetic/PycharmProjects/Jia/Jia-Prophet/jia-vue/node_modules/ejs</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> node ./postinstall.js</span></span><br><span class="line"></span><br><span class="line">Thank you for installing EJS: built with the Jake JavaScript build tool (https://jakejs.com/)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> uglifyjs-webpack-plugin@0.4.6 postinstall /Users/Arithmetic/PycharmProjects/Jia/Jia-Prophet/jia-vue/node_modules/webpack/node_modules/uglifyjs-webpack-plugin</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash"> node lib/post_install.js</span></span><br><span class="line"></span><br><span class="line">npm notice created a lockfile as package-lock.json. You should commit this file.</span><br><span class="line">npm WARN ajv-keywords@3.4.1 requires a peer of ajv@^6.9.1 but none is installed. You must install peer dependencies yourself.</span><br><span class="line"></span><br><span class="line">added 1284 packages from 686 contributors and audited 11868 packages in 47.259s</span><br><span class="line"></span><br><span class="line">11 packages are looking for funding</span><br><span class="line">  run `npm fund` for details</span><br><span class="line"></span><br><span class="line">found 11 vulnerabilities (1 low, 6 moderate, 4 high)</span><br><span class="line">  run `npm audit fix` to fix them, or `npm audit` for details</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> Project initialization finished!</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> ========================</span></span><br><span class="line"></span><br><span class="line">To get started:</span><br><span class="line"></span><br><span class="line">  cd jia-vue</span><br><span class="line">  npm run dev</span><br><span class="line">  </span><br><span class="line">Documentation can be found at https://vuejs-templates.github.io/webpack</span><br></pre></td></tr></table></figure><br>然后执行<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnpm run build</span><br><span class="line">cnpm run dev</span><br></pre></td></tr></table></figure><br>这里我之前换成淘宝源了，详见之前的教程<br>如果没有问题的话，访问 <a href="http://localhost:8080" target="_blank" rel="noopener">http://localhost:8080</a><br><img src="https://www.guanacossj.com/media/articlebodypics/1575129241168.jpg" alt=""></p><h4 id="修改编译生成的静态文件"><a href="#修改编译生成的静态文件" class="headerlink" title="修改编译生成的静态文件"></a>修改编译生成的静态文件</h4><p>找到jia-vue/config/index.js文件，修改如下：<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">build: &#123;</span><br><span class="line">    // Template for index.html</span><br><span class="line">    index: path.resolve(__dirname, '../../templates/index.html'), //这里是index.html生成的路径，在templates下</span><br><span class="line"></span><br><span class="line">    // Paths</span><br><span class="line">    assetsRoot: path.resolve(__dirname, '../../static'), //这里指定vue生成的js和css文件路径为/static/vue/</span><br><span class="line">    assetsSubDirectory: 'vue',</span><br><span class="line">    assetsPublicPath: '/static',</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * Source Maps</span><br><span class="line">     */</span><br><span class="line"></span><br><span class="line">    productionSourceMap: true,</span><br><span class="line">    // https://webpack.js.org/configuration/devtool/#production</span><br><span class="line">    devtool: '#source-map',</span><br><span class="line"></span><br><span class="line">    // Gzip off by default as many popular static hosts such as</span><br><span class="line">    // Surge or Netlify already gzip all static assets for you.</span><br><span class="line">    // Before setting to `true`, make sure to:</span><br><span class="line">    // npm install --save-dev compression-webpack-plugin</span><br><span class="line">    productionGzip: false,</span><br><span class="line">    productionGzipExtensions: ['js', 'css'],</span><br><span class="line"></span><br><span class="line">    // Run the build command with an extra argument to</span><br><span class="line">    // View the bundle analyzer report after build finishes:</span><br><span class="line">    // `npm run build --report`</span><br><span class="line">    // Set to `true` or `false` to always turn it on or off</span><br><span class="line">    bundleAnalyzerReport: process.env.npm_config_report</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;简单介绍下如何在Pycharm下集成Flask和Vue&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Flask" scheme="http://arithmeticjia.github.io/categories/Flask/"/>
+    
+    
+      <category term="flask" scheme="http://arithmeticjia.github.io/tags/flask/"/>
+    
+      <category term="vue" scheme="http://arithmeticjia.github.io/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>Ubuntu16.04.5LTS安装SVN</title>
@@ -206,9 +276,9 @@
       <category term="Django" scheme="http://arithmeticjia.github.io/categories/Django/"/>
     
     
-      <category term="django" scheme="http://arithmeticjia.github.io/tags/django/"/>
-    
       <category term="celery" scheme="http://arithmeticjia.github.io/tags/celery/"/>
+    
+      <category term="django" scheme="http://arithmeticjia.github.io/tags/django/"/>
     
   </entry>
   
