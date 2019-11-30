@@ -183,9 +183,9 @@
       <category term="Django" scheme="http://arithmeticjia.github.io/categories/Django/"/>
     
     
-      <category term="celery" scheme="http://arithmeticjia.github.io/tags/celery/"/>
-    
       <category term="django" scheme="http://arithmeticjia.github.io/tags/django/"/>
+    
+      <category term="celery" scheme="http://arithmeticjia.github.io/tags/celery/"/>
     
   </entry>
   
