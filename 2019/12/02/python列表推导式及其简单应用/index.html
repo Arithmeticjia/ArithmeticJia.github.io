@@ -59,8 +59,10 @@
 <meta property="og:site_name" content="请叫我算术嘉的博客">
 <meta property="og:description" content="列表推导式（又称列表解析式）提供了一种简明扼要的方法来创建列表">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-02T07:49:38.570Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;17_telephone_keypad.png">
+<meta property="og:updated_time" content="2019-12-02T08:05:46.195Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;17_telephone_keypad.png">
 
 <link rel="canonical" href="http://arithmeticjia.github.io/2019/12/02/python%E5%88%97%E8%A1%A8%E6%8E%A8%E5%AF%BC%E5%BC%8F%E5%8F%8A%E5%85%B6%E7%AE%80%E5%8D%95%E5%BA%94%E7%94%A8/">
 
@@ -239,7 +241,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-12-02 15:37:54 / 修改时间：15:49:38" itemprop="dateCreated datePublished" datetime="2019-12-02T15:37:54+08:00">2019-12-02</time>
+              <time title="创建时间：2019-12-02 15:37:54 / 修改时间：16:05:46" itemprop="dateCreated datePublished" datetime="2019-12-02T15:37:54+08:00">2019-12-02</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,7 +268,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>239</span>
+              <span>984</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -289,6 +291,7 @@
 <h4 id="一个简单平方"><a href="#一个简单平方" class="headerlink" title="一个简单平方"></a>一个简单平方</h4><p>普通for循环<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">5</span>):</span><br><span class="line">    print(i*i,end=<span class="string">''</span>)</span><br></pre></td></tr></table></figure><br>列表推导式<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res = [x*x <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">5</span>)]</span><br><span class="line">print(res)</span><br></pre></td></tr></table></figure></p>
 <h4 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[x*y <span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">5</span>) <span class="keyword">if</span> x &gt; <span class="number">2</span> <span class="keyword">for</span> y <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">4</span>) <span class="keyword">if</span> y &lt; <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
 <p>等价于<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">5</span>)</span><br><span class="line">    <span class="keyword">if</span> x &gt; <span class="number">2</span></span><br><span class="line">        <span class="keyword">for</span> y <span class="keyword">in</span> range(<span class="number">1</span>,<span class="number">4</span>)</span><br><span class="line">            <span class="keyword">if</span> y &lt; <span class="number">3</span></span><br><span class="line">                x*y</span><br></pre></td></tr></table></figure></p>
+<h4 id="leetcode17电话号码的字母组合"><a href="#leetcode17电话号码的字母组合" class="headerlink" title="leetcode17电话号码的字母组合"></a>leetcode17电话号码的字母组合</h4><p>给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。<br>给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。<br><img src="https://www.guanacossj.com/media/articlebodypics/17_telephone_keypad.png" alt=""><br>这题看起来递归比较合适，但是强行循环也不是不可以<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">letterCombinations</span><span class="params">(self, digits)</span>:</span></span><br><span class="line">        m = &#123;</span><br><span class="line">            <span class="string">'2'</span>: list(<span class="string">'abc'</span>),</span><br><span class="line">            <span class="string">'3'</span>: list(<span class="string">'def'</span>),</span><br><span class="line">            <span class="string">'4'</span>: list(<span class="string">'ghi'</span>),</span><br><span class="line">            <span class="string">'5'</span>: list(<span class="string">'jkl'</span>),</span><br><span class="line">            <span class="string">'6'</span>: list(<span class="string">'mno'</span>),</span><br><span class="line">            <span class="string">'7'</span>: list(<span class="string">'pqrs'</span>),</span><br><span class="line">            <span class="string">'8'</span>: list(<span class="string">'tuv'</span>),</span><br><span class="line">            <span class="string">'9'</span>: list(<span class="string">'wxyz'</span>),</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> digits:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        res = [<span class="string">''</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> digits:</span><br><span class="line">            res = [x + y <span class="keyword">for</span> x <span class="keyword">in</span> res <span class="keyword">for</span> y <span class="keyword">in</span> m[i]]</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure><br>这里的循环其实不止两层，取决于你输入的数字的位数。可以打印输出看一下，假设输入的数字是234<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">['a', 'b', 'c']</span><br><span class="line">['ad', 'ae', 'af', 'bd', 'be', 'bf', 'cd', 'ce', 'cf']</span><br><span class="line">['adg', 'adh', 'adi', 'aeg', 'aeh', 'aei', 'afg', 'afh', 'afi', 'bdg', 'bdh', 'bdi', 'beg', 'beh', 'bei', 'bfg', 'bfh', 'bfi', 'cdg', 'cdh', 'cdi', 'ceg', 'ceh', 'cei', 'cfg', 'cfh', 'cfi']</span><br></pre></td></tr></table></figure><br>第一个2对应的字母是[‘a’, ‘b’, ‘c’]<br>第二个3对于的字母是[‘d’, ‘e’, ‘f’]<br>第三个4对于的字母是[‘g’, ‘h’, ‘i’]</p>
 
     </div>
 
@@ -381,7 +384,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一个简单平方"><span class="nav-number">1.</span> <span class="nav-text">一个简单平方</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行顺序"><span class="nav-number">2.</span> <span class="nav-text">执行顺序</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一个简单平方"><span class="nav-number">1.</span> <span class="nav-text">一个简单平方</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行顺序"><span class="nav-number">2.</span> <span class="nav-text">执行顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#leetcode17电话号码的字母组合"><span class="nav-number">3.</span> <span class="nav-text">leetcode17电话号码的字母组合</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -482,7 +485,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">42 分钟</span>
+    <span title="站点阅读时长">43 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
