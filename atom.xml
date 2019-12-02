@@ -18,8 +18,8 @@
   
   <entry>
     <title>Leetcode[27]Remove Element</title>
-    <link href="http://arithmeticjia.github.io/2019/12/02/Leetcode[27]Remove-Element/"/>
-    <id>http://arithmeticjia.github.io/2019/12/02/Leetcode[27]Remove-Element/</id>
+    <link href="http://arithmeticjia.github.io/2019/12/02/Leetcode27Remove-Element/"/>
+    <id>http://arithmeticjia.github.io/2019/12/02/Leetcode27Remove-Element/</id>
     <published>2019-12-02T13:00:52.000Z</published>
     <updated>2019-12-02T13:34:15.466Z</updated>
     
@@ -308,11 +308,11 @@
       <category term="Hexo" scheme="http://arithmeticjia.github.io/categories/Hexo/"/>
     
     
+      <category term="github" scheme="http://arithmeticjia.github.io/tags/github/"/>
+    
       <category term="hexo" scheme="http://arithmeticjia.github.io/tags/hexo/"/>
     
       <category term="next" scheme="http://arithmeticjia.github.io/tags/next/"/>
-    
-      <category term="github" scheme="http://arithmeticjia.github.io/tags/github/"/>
     
       <category term="baidu" scheme="http://arithmeticjia.github.io/tags/baidu/"/>
     
@@ -339,9 +339,9 @@
       <category term="Git" scheme="http://arithmeticjia.github.io/categories/Git/"/>
     
     
-      <category term="github" scheme="http://arithmeticjia.github.io/tags/github/"/>
-    
       <category term="git" scheme="http://arithmeticjia.github.io/tags/git/"/>
+    
+      <category term="github" scheme="http://arithmeticjia.github.io/tags/github/"/>
     
   </entry>
   
