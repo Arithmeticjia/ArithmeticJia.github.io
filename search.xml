@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Pytorch中的LSTM的理解</title>
+    <url>/2019/12/03/Pytorch%E4%B8%AD%E7%9A%84LSTM%E7%9A%84%E7%90%86%E8%A7%A3/</url>
+    <content><![CDATA[<p>本文转载于<a href="https://zhuanlan.zhihu.com/p/41261640" target="_blank" rel="noopener" title="https://zhuanlan.zhihu.com/p/41261640">https://zhuanlan.zhihu.com/p/41261640</a><br><a id="more"></a></p>
+<h4 id="参数列表"><a href="#参数列表" class="headerlink" title="参数列表"></a>参数列表</h4><ul>
+<li>input_size：x的特征维度</li>
+<li>hidden_size：隐藏层的特征维度</li>
+<li>num_layers：lstm隐层的层数，默认为1</li>
+<li>bias：False则bih=0和bhh=0. 默认为True</li>
+<li>batch_first：True则输入输出的数据格式为 (batch, seq, feature)</li>
+<li>dropout：除最后一层，每一层的输出都进行dropout，默认为: 0</li>
+<li>bidirectional：True则为双向lstm默认为False</li>
+<li>输入：input, (h0, c0)</li>
+<li>输出：output, (hn,cn)</li>
+</ul>
+<h4 id="输入数据格式"><a href="#输入数据格式" class="headerlink" title="输入数据格式"></a>输入数据格式</h4><ul>
+<li>input(seq_len, batch, input_size)</li>
+<li>h0(num_layers * num_directions, batch, hidden_size)</li>
+<li>c0(num_layers * num_directions, batch, hidden_size)</li>
+</ul>
+<h4 id="输出数据格式："><a href="#输出数据格式：" class="headerlink" title="输出数据格式："></a>输出数据格式：</h4><ul>
+<li>output(seq_len, batch, hidden_size * num_directions)</li>
+<li>hn(num_layers * num_directions, batch, hidden_size)</li>
+<li>cn(num_layers * num_directions, batch, hidden_size)</li>
+</ul>
+<p>Pytorch里的LSTM单元接受的输入都必须是3维的张量(Tensors).每一维代表的意思不能弄错。</p>
+<p>第一维体现的是序列（sequence）结构,也就是序列的个数，用文章来说，就是每个句子的长度，因为是喂给网络模型，一般都设定为确定的长度，也就是我们喂给LSTM神经元的每个句子的长度，当然，如果是其他的带有带有序列形式的数据，则表示一个明确分割单位长度，</p>
+<p>例如是如果是股票数据内，这表示特定时间单位内，有多少条数据。这个参数也就是明确这个层中有多少个确定的单元来处理输入的数据。</p>
+<p>第二维度体现的是batch_size，也就是一次性喂给网络多少条句子，或者股票数据中的，一次性喂给模型多少是个时间单位的数据，具体到每个时刻，也就是一次性喂给特定时刻处理的单元的单词数或者该时刻应该喂给的股票数据的条数</p>
+<p>第三位体现的是输入的元素（elements of input），也就是，每个具体的单词用多少维向量来表示，或者股票数据中 每一个具体的时刻的采集多少具体的值，比如最低价，最高价，均价，5日均价，10均价，等等</p>
+<p>H0-Hn是什么意思呢？就是每个时刻中间神经元应该保存的这一时刻的根据输入和上一课的时候的中间状态值应该产生的本时刻的状态值，</p>
+<p>这个数据单元是起的作用就是记录这一时刻之前考虑到所有之前输入的状态值，形状应该是和特定时刻的输出一致</p>
+<p>c0-cn就是开关，决定每个神经元的隐藏状态值是否会影响的下一时刻的神经元的处理，形状应该和h0-hn一致。</p>
+<p>当然如果是双向，和多隐藏层还应该考虑方向和隐藏层的层数。</p>
+]]></content>
+      <categories>
+        <category>Pytorch</category>
+      </categories>
+      <tags>
+        <tag>pytorch</tag>
+        <tag>lstm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode[27]Remove Element</title>
     <url>/2019/12/02/Leetcode27Remove-Element/</url>
     <content><![CDATA[<p>leetcode上一道简单题27.移除元素，给定一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，返回移除后数组的新长度。<br><a id="more"></a><br>比较常规的想法<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeElement</span><span class="params">(self, nums, val)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type val: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        k = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> nums:</span><br><span class="line">            <span class="keyword">if</span> i != val:</span><br><span class="line">                nums[k] = i</span><br><span class="line">                k += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> k</span><br></pre></td></tr></table></figure><br>其实python自带的pop方法也很好用<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">removeElement</span><span class="params">(self, nums, val)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :type val: int</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        <span class="comment"># k = 0</span></span><br><span class="line">        <span class="comment"># for i in nums:</span></span><br><span class="line">        <span class="comment">#     if i != val:</span></span><br><span class="line">        <span class="comment">#         nums[k] = i</span></span><br><span class="line">        <span class="comment">#         k += 1</span></span><br><span class="line">        <span class="comment"># return k</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">-1</span>):</span><br><span class="line">            <span class="keyword">if</span> nums[i] == val:</span><br><span class="line">                nums.pop(i)</span><br><span class="line">        <span class="keyword">return</span> len(nums)</span><br></pre></td></tr></table></figure><br>那为啥一定要逆向呢？正向不可以么？还真不行，因为这个循环的i是固定的，假设列表为[3,2,3,1,4,6,3,1]，需要移除的元素是3，正向是从0,1,…,7,当移除至少一个元素后，就无法访问下标为7的元素，因为不存在了，而逆向是7,6,…0，这个时候，下标是递减的，即使被pop了，接下来访问的都是比它小的下标，一定存在。</p>
@@ -274,8 +317,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>django</tag>
         <tag>celery</tag>
+        <tag>django</tag>
       </tags>
   </entry>
   <entry>
@@ -291,9 +334,9 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>hexo</tag>
         <tag>next</tag>
+        <tag>github</tag>
         <tag>baidu</tag>
         <tag>google</tag>
       </tags>
@@ -315,8 +358,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Git</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>github</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>

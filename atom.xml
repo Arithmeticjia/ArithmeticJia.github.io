@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://arithmeticjia.github.io/"/>
-  <updated>2019-12-02T13:34:15.466Z</updated>
+  <updated>2019-12-03T08:47:16.718Z</updated>
   <id>http://arithmeticjia.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Pytorch中的LSTM的理解</title>
+    <link href="http://arithmeticjia.github.io/2019/12/03/Pytorch%E4%B8%AD%E7%9A%84LSTM%E7%9A%84%E7%90%86%E8%A7%A3/"/>
+    <id>http://arithmeticjia.github.io/2019/12/03/Pytorch%E4%B8%AD%E7%9A%84LSTM%E7%9A%84%E7%90%86%E8%A7%A3/</id>
+    <published>2019-12-03T08:35:41.000Z</published>
+    <updated>2019-12-03T08:47:16.718Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文转载于<a href="https://zhuanlan.zhihu.com/p/41261640" target="_blank" rel="noopener" title="https://zhuanlan.zhihu.com/p/41261640">https://zhuanlan.zhihu.com/p/41261640</a><br><a id="more"></a></p><h4 id="参数列表"><a href="#参数列表" class="headerlink" title="参数列表"></a>参数列表</h4><ul><li>input_size：x的特征维度</li><li>hidden_size：隐藏层的特征维度</li><li>num_layers：lstm隐层的层数，默认为1</li><li>bias：False则bih=0和bhh=0. 默认为True</li><li>batch_first：True则输入输出的数据格式为 (batch, seq, feature)</li><li>dropout：除最后一层，每一层的输出都进行dropout，默认为: 0</li><li>bidirectional：True则为双向lstm默认为False</li><li>输入：input, (h0, c0)</li><li>输出：output, (hn,cn)</li></ul><h4 id="输入数据格式"><a href="#输入数据格式" class="headerlink" title="输入数据格式"></a>输入数据格式</h4><ul><li>input(seq_len, batch, input_size)</li><li>h0(num_layers * num_directions, batch, hidden_size)</li><li>c0(num_layers * num_directions, batch, hidden_size)</li></ul><h4 id="输出数据格式："><a href="#输出数据格式：" class="headerlink" title="输出数据格式："></a>输出数据格式：</h4><ul><li>output(seq_len, batch, hidden_size * num_directions)</li><li>hn(num_layers * num_directions, batch, hidden_size)</li><li>cn(num_layers * num_directions, batch, hidden_size)</li></ul><p>Pytorch里的LSTM单元接受的输入都必须是3维的张量(Tensors).每一维代表的意思不能弄错。</p><p>第一维体现的是序列（sequence）结构,也就是序列的个数，用文章来说，就是每个句子的长度，因为是喂给网络模型，一般都设定为确定的长度，也就是我们喂给LSTM神经元的每个句子的长度，当然，如果是其他的带有带有序列形式的数据，则表示一个明确分割单位长度，</p><p>例如是如果是股票数据内，这表示特定时间单位内，有多少条数据。这个参数也就是明确这个层中有多少个确定的单元来处理输入的数据。</p><p>第二维度体现的是batch_size，也就是一次性喂给网络多少条句子，或者股票数据中的，一次性喂给模型多少是个时间单位的数据，具体到每个时刻，也就是一次性喂给特定时刻处理的单元的单词数或者该时刻应该喂给的股票数据的条数</p><p>第三位体现的是输入的元素（elements of input），也就是，每个具体的单词用多少维向量来表示，或者股票数据中 每一个具体的时刻的采集多少具体的值，比如最低价，最高价，均价，5日均价，10均价，等等</p><p>H0-Hn是什么意思呢？就是每个时刻中间神经元应该保存的这一时刻的根据输入和上一课的时候的中间状态值应该产生的本时刻的状态值，</p><p>这个数据单元是起的作用就是记录这一时刻之前考虑到所有之前输入的状态值，形状应该是和特定时刻的输出一致</p><p>c0-cn就是开关，决定每个神经元的隐藏状态值是否会影响的下一时刻的神经元的处理，形状应该和h0-hn一致。</p><p>当然如果是双向，和多隐藏层还应该考虑方向和隐藏层的层数。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;本文转载于&lt;a href=&quot;https://zhuanlan.zhihu.com/p/41261640&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; title=&quot;https://zhuanlan.zhihu.com/p/41261640&quot;&gt;https://zhuanlan.zhihu.com/p/41261640&lt;/a&gt;&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Pytorch" scheme="http://arithmeticjia.github.io/categories/Pytorch/"/>
+    
+    
+      <category term="pytorch" scheme="http://arithmeticjia.github.io/tags/pytorch/"/>
+    
+      <category term="lstm" scheme="http://arithmeticjia.github.io/tags/lstm/"/>
+    
+  </entry>
   
   <entry>
     <title>Leetcode[27]Remove Element</title>
@@ -283,9 +308,9 @@
       <category term="Django" scheme="http://arithmeticjia.github.io/categories/Django/"/>
     
     
-      <category term="django" scheme="http://arithmeticjia.github.io/tags/django/"/>
-    
       <category term="celery" scheme="http://arithmeticjia.github.io/tags/celery/"/>
+    
+      <category term="django" scheme="http://arithmeticjia.github.io/tags/django/"/>
     
   </entry>
   
@@ -308,11 +333,11 @@
       <category term="Hexo" scheme="http://arithmeticjia.github.io/categories/Hexo/"/>
     
     
-      <category term="github" scheme="http://arithmeticjia.github.io/tags/github/"/>
-    
       <category term="hexo" scheme="http://arithmeticjia.github.io/tags/hexo/"/>
     
       <category term="next" scheme="http://arithmeticjia.github.io/tags/next/"/>
+    
+      <category term="github" scheme="http://arithmeticjia.github.io/tags/github/"/>
     
       <category term="baidu" scheme="http://arithmeticjia.github.io/tags/baidu/"/>
     
@@ -339,9 +364,9 @@
       <category term="Git" scheme="http://arithmeticjia.github.io/categories/Git/"/>
     
     
-      <category term="git" scheme="http://arithmeticjia.github.io/tags/git/"/>
-    
       <category term="github" scheme="http://arithmeticjia.github.io/tags/github/"/>
+    
+      <category term="git" scheme="http://arithmeticjia.github.io/tags/git/"/>
     
   </entry>
   
