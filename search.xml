@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Learn-Pytorch-基本数据类型</title>
+    <url>/2019/12/03/Learn-Pytorch-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</url>
+    <content><![CDATA[<p>本文主要介绍pytoch和numpy的数据之间的转化和pytorch中张量tensor的使用<br><a id="more"></a></p>
+<h4 id="使用numpy新建一个一维数组"><a href="#使用numpy新建一个一维数组" class="headerlink" title="使用numpy新建一个一维数组"></a>使用numpy新建一个一维数组</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">np_data = np.arange(<span class="number">6</span>)</span><br><span class="line">print(np_data,type(np_data))</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[0 1 2 3 4 5] &lt;class 'numpy.ndarray'&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="把数组转化为二维"><a href="#把数组转化为二维" class="headerlink" title="把数组转化为二维"></a>把数组转化为二维</h4><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">np_data = np.arange(<span class="number">6</span>)</span><br><span class="line">print(np_data,type(np_data))</span><br><span class="line">np_data = np_data.reshape((<span class="number">2</span>,<span class="number">3</span>))</span><br><span class="line">print(np_data,type(np_data))</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[0 1 2 3 4 5] &lt;class 'numpy.ndarray'&gt;</span><br><span class="line">[[0 1 2]</span><br><span class="line"> [3 4 5]] &lt;class 'numpy.ndarray'&gt;</span><br></pre></td></tr></table></figure>
+<p>这个时候可以看到，数组变为二维的了，两行三列</p>
+<h4 id=""><a href="#" class="headerlink" title=" "></a> </h4>]]></content>
+      <categories>
+        <category>Pytorch</category>
+      </categories>
+      <tags>
+        <tag>pytorch</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Pytorch中的LSTM的理解</title>
     <url>/2019/12/03/Pytorch%E4%B8%AD%E7%9A%84LSTM%E7%9A%84%E7%90%86%E8%A7%A3/</url>
     <content><![CDATA[<p>本文转载于<a href="https://zhuanlan.zhihu.com/p/41261640" target="_blank" rel="noopener" title="https://zhuanlan.zhihu.com/p/41261640">https://zhuanlan.zhihu.com/p/41261640</a><br><a id="more"></a></p>
@@ -317,8 +335,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>celery</tag>
         <tag>django</tag>
+        <tag>celery</tag>
       </tags>
   </entry>
   <entry>
