@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="请叫我算术嘉的博客">
 <meta property="og:description" content="本文主要介绍pytoch和numpy的数据之间的转化和pytorch中张量tensor的使用">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-03T13:04:09.055Z">
+<meta property="og:updated_time" content="2019-12-03T13:12:07.248Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://arithmeticjia.github.io/2019/12/03/Learn-Pytorch-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">
@@ -239,7 +239,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2019-12-03 20:43:45 / 修改时间：21:04:09" itemprop="dateCreated datePublished" datetime="2019-12-03T20:43:45+08:00">2019-12-03</time>
+              <time title="创建时间：2019-12-03 20:43:45 / 修改时间：21:12:07" itemprop="dateCreated datePublished" datetime="2019-12-03T20:43:45+08:00">2019-12-03</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,7 +266,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -297,6 +297,8 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">numpy: [[0 1 2]</span><br><span class="line"> [3 4 5]] </span><br><span class="line">torch: tensor([[0, 1, 2],</span><br><span class="line">        [3, 4, 5]]) </span><br><span class="line">tensor2array [[0 1 2]</span><br><span class="line"> [3 4 5]]</span><br></pre></td></tr></table></figure>
 <h4 id="随机创建一个二维tensor"><a href="#随机创建一个二维tensor" class="headerlink" title="随机创建一个二维tensor"></a>随机创建一个二维tensor</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">torch_data = torch.randn(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">print(</span><br><span class="line">    <span class="string">'\ntorch_data:'</span>,torch_data</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">torch_data: tensor([[ 0.1533, -0.1010,  1.8385],</span><br><span class="line">        [-1.0455,  0.3707,  0.0191]])</span><br></pre></td></tr></table></figure>
+<h4 id="构造初始化为0，1的tensor"><a href="#构造初始化为0，1的tensor" class="headerlink" title="构造初始化为0，1的tensor"></a>构造初始化为0，1的tensor</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"></span><br><span class="line">torch_data_0 = torch.zeros(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">torch_data_1 = torch.ones(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">print(</span><br><span class="line">    <span class="string">'\ntorch_data_0:'</span>,torch_data_0,</span><br><span class="line">    <span class="string">'\ntorch_data_1:'</span>,torch_data_1,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">torch_data_0: tensor([[0., 0., 0.],</span><br><span class="line">        [0., 0., 0.]]) </span><br><span class="line">torch_data_1: tensor([[1., 1., 1.],</span><br><span class="line">        [1., 1., 1.]])</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -388,7 +390,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用numpy新建一个一维数组"><span class="nav-number">1.</span> <span class="nav-text">使用numpy新建一个一维数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#把数组转化为二维"><span class="nav-number">2.</span> <span class="nav-text">把数组转化为二维</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#把二维数组转化为tensor"><span class="nav-number">3.</span> <span class="nav-text">把二维数组转化为tensor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#把tensor转为数组"><span class="nav-number">4.</span> <span class="nav-text">把tensor转为数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机创建一个二维tensor"><span class="nav-number">5.</span> <span class="nav-text">随机创建一个二维tensor</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用numpy新建一个一维数组"><span class="nav-number">1.</span> <span class="nav-text">使用numpy新建一个一维数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#把数组转化为二维"><span class="nav-number">2.</span> <span class="nav-text">把数组转化为二维</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#把二维数组转化为tensor"><span class="nav-number">3.</span> <span class="nav-text">把二维数组转化为tensor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#把tensor转为数组"><span class="nav-number">4.</span> <span class="nav-text">把tensor转为数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#随机创建一个二维tensor"><span class="nav-number">5.</span> <span class="nav-text">随机创建一个二维tensor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#构造初始化为0，1的tensor"><span class="nav-number">6.</span> <span class="nav-text">构造初始化为0，1的tensor</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
