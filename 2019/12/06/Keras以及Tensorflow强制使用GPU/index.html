@@ -51,20 +51,20 @@
   };
 </script>
 
-  <meta name="description" content="Machine Learning Applications for Data Center Optimization">
-<meta name="keywords" content="datacenter,machinelearning">
+  <meta name="description" content="本文主要介绍在tensorflow2.0下如何强制使用GPU，方法一在tensorflow1.x版本中失效">
+<meta name="keywords" content="keras,tensorflow,gpu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Machine Learning Applications for Data Center Optimization">
-<meta property="og:url" content="http:&#x2F;&#x2F;arithmeticjia.github.io&#x2F;2019&#x2F;11&#x2F;28&#x2F;Machine-Learning-Applications-for-Data-Center-Optimization&#x2F;index.html">
+<meta property="og:title" content="Keras以及Tensorflow强制使用GPU">
+<meta property="og:url" content="http:&#x2F;&#x2F;arithmeticjia.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;Keras%E4%BB%A5%E5%8F%8ATensorflow%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8GPU&#x2F;index.html">
 <meta property="og:site_name" content="请叫我算术嘉的博客">
-<meta property="og:description" content="Machine Learning Applications for Data Center Optimization">
+<meta property="og:description" content="本文主要介绍在tensorflow2.0下如何强制使用GPU，方法一在tensorflow1.x版本中失效">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1574950962566.jpg">
-<meta property="og:updated_time" content="2019-11-30T08:01:49.971Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1575618190733.jpg">
+<meta property="og:updated_time" content="2019-12-06T07:44:53.704Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1574950962566.jpg">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1575618190733.jpg">
 
-<link rel="canonical" href="http://arithmeticjia.github.io/2019/11/28/Machine-Learning-Applications-for-Data-Center-Optimization/">
+<link rel="canonical" href="http://arithmeticjia.github.io/2019/12/06/Keras%E4%BB%A5%E5%8F%8ATensorflow%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8GPU/">
 
 
 <script id="page-configurations">
@@ -78,7 +78,7 @@
   };
 </script>
 
-  <title>Machine Learning Applications for Data Center Optimization | 请叫我算术嘉的博客</title>
+  <title>Keras以及Tensorflow强制使用GPU | 请叫我算术嘉的博客</title>
   
 
 
@@ -217,7 +217,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://arithmeticjia.github.io/2019/11/28/Machine-Learning-Applications-for-Data-Center-Optimization/">
+    <link itemprop="mainEntityOfPage" href="http://arithmeticjia.github.io/2019/12/06/Keras%E4%BB%A5%E5%8F%8ATensorflow%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8GPU/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://www.guanacossj.com/media/jiablogimages/IMG_0323.JPG">
@@ -230,7 +230,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Machine Learning Applications for Data Center Optimization
+          Keras以及Tensorflow强制使用GPU
         </h1>
 
         <div class="post-meta">
@@ -239,30 +239,13 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-11-28 21:59:22" itemprop="dateCreated datePublished" datetime="2019-11-28T21:59:22+08:00">2019-11-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-11-30 16:01:49" itemprop="dateModified" datetime="2019-11-30T16:01:49+08:00">2019-11-30</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Paper/" itemprop="url" rel="index">
-                    <span itemprop="name">Paper</span>
-                  </a>
-                </span>
+              <time title="创建时间：2019-12-06 15:39:41 / 修改时间：15:44:53" itemprop="dateCreated datePublished" datetime="2019-12-06T15:39:41+08:00">2019-12-06</time>
             </span>
 
           
-            <span id="/2019/11/28/Machine-Learning-Applications-for-Data-Center-Optimization/" class="post-meta-item leancloud_visitors" data-flag-title="Machine Learning Applications for Data Center Optimization" title="阅读次数">
+            <span id="/2019/12/06/Keras%E4%BB%A5%E5%8F%8ATensorflow%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8GPU/" class="post-meta-item leancloud_visitors" data-flag-title="Keras以及Tensorflow强制使用GPU" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -274,14 +257,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.2k</span>
+              <span>523</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -293,15 +276,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>Machine Learning Applications for Data Center Optimization<br><a id="more"></a></p>
-<h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>The modern data center (DC) is a complex interaction of multiple mechanical, electrical and controls systems. The sheer number of possible operating configurations and nonlinear interdependencies make it difficult to understand and optimize energy efficiency. We develop a neural network framework that learns from actual operations data to model plant performance and predict PUE within a range of 0.004 +/­ 0.005 (mean absolute error +/­ 1 standard deviation), or 0.4% error for a PUE of 1.1. The model has been extensively tested and validated at Google DCs. The results demonstrate that machine learning is an effective way of leveraging existing sensor data to model DC performance and improve energy efficiency.</p>
-<h4 id="Model-Implementation"><a href="#Model-Implementation" class="headerlink" title="Model Implementation"></a>Model Implementation</h4><p>A generic three­layered neural network is illustrated in Figure 2. In this study, the input matrix is an (m x n) array where is the number of training examples and is the number of features (DC input variables) including the IT load, weather conditions, number of chillers and cooling towers running, equipment setpoints, etc. The input matrix is then multiplied by the model parameters matrix θ 1 to produce the hidden state matrix [6]. In practice, acts as an intermediary state that interacts with the second parameters matrix θ 2 to calculate the output (x) [6]. The size and number of hidden layers can be varied to model systems of varying complexity.xmnxaahθ<br>Note that (x) is the output variable of interest and can represent a range of metrics that we wish to optimize. PUE is selected here to represent DC operational efficiency, with recognition that the metric is a ratio and not indicative of total facility­level energy consumption. Other examples include using server utilization data to maximize machine productivity, or equipment failure data to understand how the DC environment impacts reliability. The neural network will search for relationships between data features to generate a mathematical model that describes (x) as a function of the inputs. Understanding the underlying mathematical behavior of (x) allows us to control and optimize it.hθhθhθ<br><img src="https://www.guanacossj.com/media/articlebodypics/1574950962566.jpg" alt=""><br>The process of training a neural network model can be broken down into four steps, each of which are covered in greater detail below: </p>
-<ul>
-<li>Randomly initialize the model parameters θ </li>
-<li>Implement the forward propagation algorithm,</li>
-<li>Compute the cost function (θ)</li>
-<li>Implement the back propagation algorithm and (5) Repeat steps 2 ­ 4 until convergence or the desired number of iterations</li>
-</ul>
+        <p>本文主要介绍在tensorflow2.0下如何强制使用GPU，方法一在tensorflow1.x版本中失效<br><a id="more"></a></p>
+<h3 id="环境：python3-6-tensorflow-2-0-keras2-3-1"><a href="#环境：python3-6-tensorflow-2-0-keras2-3-1" class="headerlink" title="环境：python3.6+tensorflow==2.0+keras2.3.1"></a>环境：python3.6+tensorflow==2.0+keras2.3.1</h3><h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> keras.backend.tensorflow_backend <span class="keyword">as</span> KTF</span><br><span class="line"> </span><br><span class="line">KTF.set_session(tf.Session(config=tf.ConfigProto(device_count=&#123;<span class="string">'gpu'</span>:<span class="number">0</span>&#125;)))</span><br></pre></td></tr></table></figure>
+<p>这里在tensorflow2.0中肯定报错<br>修改如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> keras.backend.tensorflow_backend <span class="keyword">as</span> KTF</span><br><span class="line"> </span><br><span class="line">KTF.set_session(tf.compat.v1.Session(config=tf.compat.v1.ConfigProto(device_count=&#123;<span class="string">'gpu'</span>:<span class="number">0</span>&#125;)))</span><br></pre></td></tr></table></figure><br>然而这样还是不行，就是告诉你tensorflow2.0中不能这样用<br>遂放弃</p>
+<h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CUDA_VISIBLE_DEVICES=0 python3 xxx.py</span><br></pre></td></tr></table></figure>
+<p>貌似可行<br><img src="https://www.guanacossj.com/media/articlebodypics/1575618190733.jpg" alt=""></p>
 
     </div>
 
@@ -332,7 +311,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://arithmeticjia.github.io/2019/11/28/Machine-Learning-Applications-for-Data-Center-Optimization/" title="Machine Learning Applications for Data Center Optimization">http://arithmeticjia.github.io/2019/11/28/Machine-Learning-Applications-for-Data-Center-Optimization/</a>
+    <a href="http://arithmeticjia.github.io/2019/12/06/Keras%E4%BB%A5%E5%8F%8ATensorflow%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8GPU/" title="Keras以及Tensorflow强制使用GPU">http://arithmeticjia.github.io/2019/12/06/Keras%E4%BB%A5%E5%8F%8ATensorflow%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8GPU/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -343,8 +322,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/datacenter/" rel="tag"># datacenter</a>
-              <a href="/tags/machinelearning/" rel="tag"># machinelearning</a>
+              <a href="/tags/keras/" rel="tag"># keras</a>
+              <a href="/tags/tensorflow/" rel="tag"># tensorflow</a>
+              <a href="/tags/gpu/" rel="tag"># gpu</a>
           </div>
 
         
@@ -353,13 +333,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2019/11/28/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-%E7%99%BB%E5%BD%95%E7%99%BB%E5%87%BA%E6%A8%A1%E5%9D%97/" rel="prev" title="Django个人博客搭建教程-登录登出模块">
-      <i class="fa fa-chevron-left"></i> Django个人博客搭建教程-登录登出模块
+    <a href="/2019/12/04/Leetcode840Magic-Squares-In-Grid/" rel="prev" title="Leetcode[840]Magic-Squares-In-Grid">
+      <i class="fa fa-chevron-left"></i> Leetcode[840]Magic-Squares-In-Grid
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2019/11/28/Using-Machine-Learning-for-Data-Center-Cooling-Infrastructure-Efficiency-Prediction/" rel="next" title="Using Machine Learning for Data Center Cooling Infrastructure Efficiency Prediction">
-      Using Machine Learning for Data Center Cooling Infrastructure Efficiency Prediction <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -397,7 +374,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Model-Implementation"><span class="nav-number">2.</span> <span class="nav-text">Model Implementation</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#环境：python3-6-tensorflow-2-0-keras2-3-1"><span class="nav-number">1.</span> <span class="nav-text">环境：python3.6+tensorflow==2.0+keras2.3.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一："><span class="nav-number">2.</span> <span class="nav-text">方法一：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二"><span class="nav-number">3.</span> <span class="nav-text">方法二</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
