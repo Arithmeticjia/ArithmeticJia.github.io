@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://arithmeticjia.github.io/2019/12/06/2019-12-06%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</loc>
+    
+    <lastmod>2019-12-06T08:45:47.574Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://arithmeticjia.github.io/2019/12/06/Keras%E4%BB%A5%E5%8F%8ATensorflow%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8GPU/</loc>
     
     <lastmod>2019-12-06T07:44:53.704Z</lastmod>
