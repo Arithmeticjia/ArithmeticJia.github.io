@@ -3,7 +3,18 @@
   <entry>
     <title>Learn-Pytorch-使用LSTM预测航班客流量</title>
     <url>/2019/12/08/Learn-Pytorch-%E4%BD%BF%E7%94%A8LSTM%E9%A2%84%E6%B5%8B%E8%88%AA%E7%8F%AD%E5%AE%A2%E6%B5%81%E9%87%8F/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>本文会详细讲解如何使用Pytorch预测航班客流量，包括数据的处理、网络的结构<br><a id="more"></a></p>
+<h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">data_csv = pd.read_csv(<span class="string">'airline-passengers.csv'</span>,usecols=[<span class="number">1</span>])</span><br><span class="line">plt.plot(data_csv)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>效果如下<br><img src="https://www.guanacossj.com/media/articlebodypics/1575815313343.jpg" alt=""><br>这里是真实的数据，接下来我们对数据进行预处理<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 数据预处理</span></span><br><span class="line">data_csv = data_csv.dropna()    <span class="comment"># 滤除缺失数据</span></span><br><span class="line">dataset = data_csv.values       <span class="comment"># 获得csv的值</span></span><br><span class="line">print((dataset,type(dataset),dataset.shape))</span><br><span class="line">dataset = dataset.astype(<span class="string">'float32'</span>)</span><br><span class="line">max_value = np.max(dataset)     <span class="comment"># 获得最大值</span></span><br><span class="line">min_value = np.min(dataset)     <span class="comment"># 获得最小值</span></span><br><span class="line">scalar = max_value - min_value  <span class="comment"># 获得间隔数量</span></span><br><span class="line">dataset = list(map(<span class="keyword">lambda</span> x: x / scalar, dataset)) <span class="comment"># 归一化</span></span><br></pre></td></tr></table></figure><br>可以看一下最后处理完成的dataset，是一个list<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">[0.21621622] [0.22779922] [0.25482625]...</span><br></pre></td></tr></table></figure><br>创建输入输出，这里使用当前时间的前两个时刻<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_dataset</span><span class="params">(dataset, look_back=<span class="number">2</span>)</span>:</span></span><br><span class="line">    dataX, dataY = [], []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(dataset) - look_back):</span><br><span class="line">        a = dataset[i:(i + look_back)]</span><br><span class="line">        dataX.append(a)</span><br><span class="line">        dataY.append(dataset[i + look_back])</span><br><span class="line">    <span class="keyword">return</span> np.array(dataX), np.array(dataY)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data_X, data_Y = create_dataset(dataset)</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <categories>
+        <category>Pytorch</category>
+      </categories>
+      <tags>
+        <tag>pytorch</tag>
+        <tag>python</tag>
+        <tag>lstm</tag>
+      </tags>
   </entry>
   <entry>
     <title>Learn-Pytorch-用Pytorch写一个神经网络</title>
@@ -412,8 +423,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>celery</tag>
         <tag>django</tag>
+        <tag>celery</tag>
       </tags>
   </entry>
   <entry>

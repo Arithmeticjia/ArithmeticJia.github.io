@@ -51,15 +51,18 @@
   };
 </script>
 
-  <meta name="description" content="遇事不决，量子力学">
+  <meta name="description" content="本文会详细讲解如何使用Pytorch预测航班客流量，包括数据的处理、网络的结构">
+<meta name="keywords" content="pytorch,python,lstm">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Learn-Pytorch-使用LSTM预测航班客流量">
 <meta property="og:url" content="http:&#x2F;&#x2F;arithmeticjia.github.io&#x2F;2019&#x2F;12&#x2F;08&#x2F;Learn-Pytorch-%E4%BD%BF%E7%94%A8LSTM%E9%A2%84%E6%B5%8B%E8%88%AA%E7%8F%AD%E5%AE%A2%E6%B5%81%E9%87%8F&#x2F;index.html">
 <meta property="og:site_name" content="请叫我算术嘉的博客">
-<meta property="og:description" content="遇事不决，量子力学">
+<meta property="og:description" content="本文会详细讲解如何使用Pytorch预测航班客流量，包括数据的处理、网络的结构">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-08T14:22:52.040Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1575815313343.jpg">
+<meta property="og:updated_time" content="2019-12-08T14:37:58.046Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1575815313343.jpg">
 
 <link rel="canonical" href="http://arithmeticjia.github.io/2019/12/08/Learn-Pytorch-%E4%BD%BF%E7%94%A8LSTM%E9%A2%84%E6%B5%8B%E8%88%AA%E7%8F%AD%E5%AE%A2%E6%B5%81%E9%87%8F/">
 
@@ -236,8 +239,20 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2019-12-08 22:22:52" itemprop="dateCreated datePublished" datetime="2019-12-08T22:22:52+08:00">2019-12-08</time>
+              <time title="创建时间：2019-12-08 22:22:52 / 修改时间：22:37:58" itemprop="dateCreated datePublished" datetime="2019-12-08T22:22:52+08:00">2019-12-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Pytorch/" itemprop="url" rel="index">
+                    <span itemprop="name">Pytorch</span>
+                  </a>
+                </span>
             </span>
 
           
@@ -253,7 +268,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
+              <span>860</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -272,7 +287,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p>本文会详细讲解如何使用Pytorch预测航班客流量，包括数据的处理、网络的结构<br><a id="more"></a></p>
+<h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">data_csv = pd.read_csv(<span class="string">'airline-passengers.csv'</span>,usecols=[<span class="number">1</span>])</span><br><span class="line">plt.plot(data_csv)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>效果如下<br><img src="https://www.guanacossj.com/media/articlebodypics/1575815313343.jpg" alt=""><br>这里是真实的数据，接下来我们对数据进行预处理<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数据预处理</span></span><br><span class="line">data_csv = data_csv.dropna()    <span class="comment"># 滤除缺失数据</span></span><br><span class="line">dataset = data_csv.values       <span class="comment"># 获得csv的值</span></span><br><span class="line">print((dataset,type(dataset),dataset.shape))</span><br><span class="line">dataset = dataset.astype(<span class="string">'float32'</span>)</span><br><span class="line">max_value = np.max(dataset)     <span class="comment"># 获得最大值</span></span><br><span class="line">min_value = np.min(dataset)     <span class="comment"># 获得最小值</span></span><br><span class="line">scalar = max_value - min_value  <span class="comment"># 获得间隔数量</span></span><br><span class="line">dataset = list(map(<span class="keyword">lambda</span> x: x / scalar, dataset)) <span class="comment"># 归一化</span></span><br></pre></td></tr></table></figure><br>可以看一下最后处理完成的dataset，是一个list<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[0.21621622] [0.22779922] [0.25482625]...</span><br></pre></td></tr></table></figure><br>创建输入输出，这里使用当前时间的前两个时刻<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_dataset</span><span class="params">(dataset, look_back=<span class="number">2</span>)</span>:</span></span><br><span class="line">    dataX, dataY = [], []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(dataset) - look_back):</span><br><span class="line">        a = dataset[i:(i + look_back)]</span><br><span class="line">        dataX.append(a)</span><br><span class="line">        dataY.append(dataset[i + look_back])</span><br><span class="line">    <span class="keyword">return</span> np.array(dataX), np.array(dataY)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data_X, data_Y = create_dataset(dataset)</span><br></pre></td></tr></table></figure></p>
+
     </div>
 
     
@@ -312,6 +330,11 @@
 
 
       <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/pytorch/" rel="tag"># pytorch</a>
+              <a href="/tags/python/" rel="tag"># python</a>
+              <a href="/tags/lstm/" rel="tag"># lstm</a>
+          </div>
 
         
 
@@ -360,6 +383,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据预处理"><span class="nav-number">1.</span> <span class="nav-text">数据预处理</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -455,12 +479,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">56k</span>
+    <span title="站点总字数">57k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">51 分钟</span>
+    <span title="站点阅读时长">52 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
