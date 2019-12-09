@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://arithmeticjia.github.io/"/>
-  <updated>2019-12-08T14:37:58.046Z</updated>
+  <updated>2019-12-09T09:56:36.727Z</updated>
   <id>http://arithmeticjia.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Django个人博客搭建教程-Django-Rest-Framework外键与多对多序列化</title>
+    <link href="http://arithmeticjia.github.io/2019/12/09/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-Django-Rest-Framework%E5%A4%96%E9%94%AE%E4%B8%8E%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%BA%8F%E5%88%97%E5%8C%96/"/>
+    <id>http://arithmeticjia.github.io/2019/12/09/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-Django-Rest-Framework%E5%A4%96%E9%94%AE%E4%B8%8E%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%BA%8F%E5%88%97%E5%8C%96/</id>
+    <published>2019-12-09T09:45:05.000Z</published>
+    <updated>2019-12-09T09:56:36.727Z</updated>
+    
+    <content type="html"><![CDATA[<p>如果对一个含有多对多、外键的模型进行序列化，这时候这些关联的字段会只展示id，因此需要对外键或者多对多的字段进行序列化处理<br><a id="more"></a></p><h4 id="外键序列化（ForeignKey）-amp-多对多序列化（manytomany"><a href="#外键序列化（ForeignKey）-amp-多对多序列化（manytomany" class="headerlink" title="外键序列化（ForeignKey）&amp;多对多序列化（manytomany)"></a>外键序列化（ForeignKey）&amp;多对多序列化（manytomany)</h4><p>这里要序列化的模型是Articles,其中的authorname、tags、category用了外键或者多对多关联<br>关联的两个模型是Tag和Category<br>models.py<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Category</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">        Django 要求模型必须继承 models.Model 类。</span></span><br><span class="line"><span class="string">        Category 只需要一个简单的分类名 name 就可以了。</span></span><br><span class="line"><span class="string">        CharField 指定了分类名 name 的数据类型，CharField 是字符型，</span></span><br><span class="line"><span class="string">        CharField 的 max_length 参数指定其最大长度，超过这个长度的分类名就不能被存入数据库。</span></span><br><span class="line"><span class="string">        当然 Django 还为我们提供了多种其它的数据类型，如日期时间类型 DateTimeField、整数类型 IntegerField 等等。</span></span><br><span class="line"><span class="string">        Django 内置的全部类型可查看文档：</span></span><br><span class="line"><span class="string">        https://docs.djangoproject.com/en/1.10/ref/models/fields/#field-types</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">catcount</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> Articles.objects.filter(category__name__exact=self.name).filter(status=<span class="string">'有效'</span>).count()</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tag</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">        标签 Tag 也比较简单，和 Category 一样。</span></span><br><span class="line"><span class="string">        再次强调一定要继承 models.Model 类！</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Articles</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    id = models.AutoField(primary_key=<span class="literal">True</span>)  <span class="comment"># id</span></span><br><span class="line">    title = models.CharField(max_length=<span class="number">150</span>)  <span class="comment"># 博客标题</span></span><br><span class="line">    body = models.TextField()  <span class="comment"># 博客正文</span></span><br><span class="line">    timestamp = models.DateTimeField()  <span class="comment"># 创建时间</span></span><br><span class="line">    authorname = models.ForeignKey(<span class="string">'JiaBlog.BlogUser'</span>, on_delete=models.CASCADE)  <span class="comment"># 作者姓名</span></span><br><span class="line">    views = models.PositiveIntegerField(default=<span class="number">0</span>)</span><br><span class="line">    category = models.ForeignKey(Category, on_delete=models.CASCADE, primary_key=<span class="literal">False</span>)</span><br><span class="line">    tags = models.ManyToManyField(Tag, blank=<span class="literal">True</span>, null=<span class="literal">True</span>)</span><br><span class="line">    greats = models.PositiveIntegerField(default=<span class="number">0</span>)</span><br><span class="line">    comments = models.IntegerField(default=<span class="number">0</span>)</span><br><span class="line">    status = models.CharField(max_length=<span class="number">20</span>, default=<span class="string">"DEL"</span>)</span><br><span class="line">    brief = models.CharField(max_length=<span class="number">200</span>, blank=<span class="literal">True</span>, null=<span class="literal">True</span>)</span><br><span class="line">    pic = models.ImageField(upload_to=<span class="string">'jiablogimages'</span>)</span><br><span class="line">    <span class="comment"># bodypic = models.ImageField(upload_to='jiablogimages', blank=True, null=True)</span></span><br><span class="line">    istop = models.CharField(max_length=<span class="number">5</span>, default=<span class="string">''</span>, null=<span class="literal">True</span>, blank=<span class="literal">True</span>)</span><br><span class="line">    articlebodybrief = models.TextField(blank=<span class="literal">True</span>, null=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure><br>views.py<br>这里的source对应的是字段名<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArticlesSerializers</span><span class="params">(serializers.ModelSerializer)</span>:</span></span><br><span class="line">    authorname = serializers.CharField(source=<span class="string">'authorname.name'</span>)</span><br><span class="line">    category = serializers.CharField(source=<span class="string">'category.name'</span>)</span><br><span class="line">    tags = serializers.StringRelatedField(many=<span class="literal">True</span>)</span><br><span class="line"> </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        model = Articles  <span class="comment"># 指定的模型类</span></span><br><span class="line">        fields = (<span class="string">'id'</span>, <span class="string">'title'</span>, <span class="string">'body'</span>, <span class="string">'timestamp'</span>, <span class="string">'authorname'</span>, <span class="string">'views'</span>, <span class="string">'tags'</span>, <span class="string">'category'</span>)  <span class="comment"># 需要序列化的属性</span></span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果对一个含有多对多、外键的模型进行序列化，这时候这些关联的字段会只展示id，因此需要对外键或者多对多的字段进行序列化处理&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="Django" scheme="http://arithmeticjia.github.io/categories/Django/"/>
+    
+    
+      <category term="django" scheme="http://arithmeticjia.github.io/tags/django/"/>
+    
+      <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
+    
+      <category term="restframework" scheme="http://arithmeticjia.github.io/tags/restframework/"/>
+    
+  </entry>
   
   <entry>
     <title>Learn-Pytorch-使用LSTM预测航班客流量</title>
@@ -35,9 +62,9 @@
       <category term="Pytorch" scheme="http://arithmeticjia.github.io/categories/Pytorch/"/>
     
     
-      <category term="pytorch" scheme="http://arithmeticjia.github.io/tags/pytorch/"/>
-    
       <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
+    
+      <category term="pytorch" scheme="http://arithmeticjia.github.io/tags/pytorch/"/>
     
       <category term="lstm" scheme="http://arithmeticjia.github.io/tags/lstm/"/>
     
@@ -62,9 +89,9 @@
       <category term="Pytorch" scheme="http://arithmeticjia.github.io/categories/Pytorch/"/>
     
     
-      <category term="pytorch" scheme="http://arithmeticjia.github.io/tags/pytorch/"/>
-    
       <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
+    
+      <category term="pytorch" scheme="http://arithmeticjia.github.io/tags/pytorch/"/>
     
   </entry>
   
@@ -158,9 +185,9 @@
       <category term="Pytorch" scheme="http://arithmeticjia.github.io/categories/Pytorch/"/>
     
     
-      <category term="pytorch" scheme="http://arithmeticjia.github.io/tags/pytorch/"/>
-    
       <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
+    
+      <category term="pytorch" scheme="http://arithmeticjia.github.io/tags/pytorch/"/>
     
   </entry>
   
@@ -492,31 +519,6 @@
       <category term="baidu" scheme="http://arithmeticjia.github.io/tags/baidu/"/>
     
       <category term="google" scheme="http://arithmeticjia.github.io/tags/google/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>MacOS下Git与GitHub</title>
-    <link href="http://arithmeticjia.github.io/2019/11/24/MacOS%E4%B8%8BGit%E4%B8%8EGitHub/"/>
-    <id>http://arithmeticjia.github.io/2019/11/24/MacOS%E4%B8%8BGit%E4%B8%8EGitHub/</id>
-    <published>2019-11-24T12:34:30.000Z</published>
-    <updated>2019-11-26T10:35:18.103Z</updated>
-    
-    <content type="html"><![CDATA[<p>还是不知道写啥，本文是有关Mac OS上Git与GitHub相关配置的介绍说明<br><a id="more"></a></p><h4 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h4><p>该命令也可以升级最新的git<br><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git</span><br></pre></td></tr></table></figure></p><h4 id="查看git指向和版本信息"><a href="#查看git指向和版本信息" class="headerlink" title="查看git指向和版本信息"></a>查看git指向和版本信息</h4><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">which git</span><br><span class="line">/usr/bin/git</span><br><span class="line">git --version</span><br><span class="line">git version 2.21.0 (Apple Git-122.2)</span><br></pre></td></tr></table></figure><h4 id="配置github用户名和邮箱"><a href="#配置github用户名和邮箱" class="headerlink" title="配置github用户名和邮箱"></a>配置github用户名和邮箱</h4><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name "ArithmeticJia"</span><br><span class="line">git config --global user.email "1097197237@qq.com"</span><br></pre></td></tr></table></figure><h4 id="生成ssh密钥"><a href="#生成ssh密钥" class="headerlink" title="生成ssh密钥"></a>生成ssh密钥</h4><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C "1097197237@qq.com"</span><br></pre></td></tr></table></figure><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Generating public/private rsa key pair.</span><br><span class="line">Enter file in which to save the key (/Users/Arithmetic/.ssh/id_rsa): </span><br><span class="line">/Users/Arithmetic/.ssh/id_rsa already exists.</span><br><span class="line">Overwrite (y/n)? y</span><br><span class="line">Enter passphrase (empty for no passphrase): </span><br><span class="line">Enter same passphrase again: </span><br><span class="line">Your identification has been saved in /Users/Arithmetic/.ssh/id_rsa.</span><br></pre></td></tr></table></figure><h4 id="在GitHub上新增ssh密钥"><a href="#在GitHub上新增ssh密钥" class="headerlink" title="在GitHub上新增ssh密钥"></a>在GitHub上新增ssh密钥</h4><p>复制密钥<br><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat .ssh/id_rsa.pub</span><br></pre></td></tr></table></figure><br>路径一般是<br><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/User/ArithmeticJia/.ssh</span><br></pre></td></tr></table></figure><br>登录GitHub（默认你已经注册了GitHub账号），添加ssh key，点击Settings，如图<br><img src="https://www.guanacossj.com/media/articlebodypics/E901D42E-753A-4E46-BC71-05C54C555B0D.png" alt=""></p><h4 id="链接验证"><a href="#链接验证" class="headerlink" title="链接验证"></a>链接验证</h4><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure><figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi Arithmeticjia! You've successfully authenticated, but GitHub does not provide shell access.</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;还是不知道写啥，本文是有关Mac OS上Git与GitHub相关配置的介绍说明&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Git" scheme="http://arithmeticjia.github.io/categories/Git/"/>
-    
-    
-      <category term="github" scheme="http://arithmeticjia.github.io/tags/github/"/>
-    
-      <category term="git" scheme="http://arithmeticjia.github.io/tags/git/"/>
     
   </entry>
   

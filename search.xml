@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Django个人博客搭建教程-Django-Rest-Framework外键与多对多序列化</title>
+    <url>/2019/12/09/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-Django-Rest-Framework%E5%A4%96%E9%94%AE%E4%B8%8E%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%BA%8F%E5%88%97%E5%8C%96/</url>
+    <content><![CDATA[<p>如果对一个含有多对多、外键的模型进行序列化，这时候这些关联的字段会只展示id，因此需要对外键或者多对多的字段进行序列化处理<br><a id="more"></a></p>
+<h4 id="外键序列化（ForeignKey）-amp-多对多序列化（manytomany"><a href="#外键序列化（ForeignKey）-amp-多对多序列化（manytomany" class="headerlink" title="外键序列化（ForeignKey）&amp;多对多序列化（manytomany)"></a>外键序列化（ForeignKey）&amp;多对多序列化（manytomany)</h4><p>这里要序列化的模型是Articles,其中的authorname、tags、category用了外键或者多对多关联<br>关联的两个模型是Tag和Category<br>models.py<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Category</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">        Django 要求模型必须继承 models.Model 类。</span></span><br><span class="line"><span class="string">        Category 只需要一个简单的分类名 name 就可以了。</span></span><br><span class="line"><span class="string">        CharField 指定了分类名 name 的数据类型，CharField 是字符型，</span></span><br><span class="line"><span class="string">        CharField 的 max_length 参数指定其最大长度，超过这个长度的分类名就不能被存入数据库。</span></span><br><span class="line"><span class="string">        当然 Django 还为我们提供了多种其它的数据类型，如日期时间类型 DateTimeField、整数类型 IntegerField 等等。</span></span><br><span class="line"><span class="string">        Django 内置的全部类型可查看文档：</span></span><br><span class="line"><span class="string">        https://docs.djangoproject.com/en/1.10/ref/models/fields/#field-types</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">catcount</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> Articles.objects.filter(category__name__exact=self.name).filter(status=<span class="string">'有效'</span>).count()</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tag</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">        标签 Tag 也比较简单，和 Category 一样。</span></span><br><span class="line"><span class="string">        再次强调一定要继承 models.Model 类！</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">    name = models.CharField(max_length=<span class="number">100</span>)</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.name</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Articles</span><span class="params">(models.Model)</span>:</span></span><br><span class="line">    id = models.AutoField(primary_key=<span class="literal">True</span>)  <span class="comment"># id</span></span><br><span class="line">    title = models.CharField(max_length=<span class="number">150</span>)  <span class="comment"># 博客标题</span></span><br><span class="line">    body = models.TextField()  <span class="comment"># 博客正文</span></span><br><span class="line">    timestamp = models.DateTimeField()  <span class="comment"># 创建时间</span></span><br><span class="line">    authorname = models.ForeignKey(<span class="string">'JiaBlog.BlogUser'</span>, on_delete=models.CASCADE)  <span class="comment"># 作者姓名</span></span><br><span class="line">    views = models.PositiveIntegerField(default=<span class="number">0</span>)</span><br><span class="line">    category = models.ForeignKey(Category, on_delete=models.CASCADE, primary_key=<span class="literal">False</span>)</span><br><span class="line">    tags = models.ManyToManyField(Tag, blank=<span class="literal">True</span>, null=<span class="literal">True</span>)</span><br><span class="line">    greats = models.PositiveIntegerField(default=<span class="number">0</span>)</span><br><span class="line">    comments = models.IntegerField(default=<span class="number">0</span>)</span><br><span class="line">    status = models.CharField(max_length=<span class="number">20</span>, default=<span class="string">"DEL"</span>)</span><br><span class="line">    brief = models.CharField(max_length=<span class="number">200</span>, blank=<span class="literal">True</span>, null=<span class="literal">True</span>)</span><br><span class="line">    pic = models.ImageField(upload_to=<span class="string">'jiablogimages'</span>)</span><br><span class="line">    <span class="comment"># bodypic = models.ImageField(upload_to='jiablogimages', blank=True, null=True)</span></span><br><span class="line">    istop = models.CharField(max_length=<span class="number">5</span>, default=<span class="string">''</span>, null=<span class="literal">True</span>, blank=<span class="literal">True</span>)</span><br><span class="line">    articlebodybrief = models.TextField(blank=<span class="literal">True</span>, null=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure><br>views.py<br>这里的source对应的是字段名<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArticlesSerializers</span><span class="params">(serializers.ModelSerializer)</span>:</span></span><br><span class="line">    authorname = serializers.CharField(source=<span class="string">'authorname.name'</span>)</span><br><span class="line">    category = serializers.CharField(source=<span class="string">'category.name'</span>)</span><br><span class="line">    tags = serializers.StringRelatedField(many=<span class="literal">True</span>)</span><br><span class="line"> </span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Meta</span>:</span></span><br><span class="line">        model = Articles  <span class="comment"># 指定的模型类</span></span><br><span class="line">        fields = (<span class="string">'id'</span>, <span class="string">'title'</span>, <span class="string">'body'</span>, <span class="string">'timestamp'</span>, <span class="string">'authorname'</span>, <span class="string">'views'</span>, <span class="string">'tags'</span>, <span class="string">'category'</span>)  <span class="comment"># 需要序列化的属性</span></span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <categories>
+        <category>Django</category>
+      </categories>
+      <tags>
+        <tag>django</tag>
+        <tag>python</tag>
+        <tag>restframework</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Learn-Pytorch-使用LSTM预测航班客流量</title>
     <url>/2019/12/08/Learn-Pytorch-%E4%BD%BF%E7%94%A8LSTM%E9%A2%84%E6%B5%8B%E8%88%AA%E7%8F%AD%E5%AE%A2%E6%B5%81%E9%87%8F/</url>
     <content><![CDATA[<p>本文会详细讲解如何使用Pytorch预测航班客流量，包括数据的处理、网络的结构<br><a id="more"></a></p>
@@ -11,8 +26,8 @@
         <category>Pytorch</category>
       </categories>
       <tags>
-        <tag>pytorch</tag>
         <tag>python</tag>
+        <tag>pytorch</tag>
         <tag>lstm</tag>
       </tags>
   </entry>
@@ -30,8 +45,8 @@ y = wx + b</script><p>这是一个基本的网络Net，它只包含一个全连�
         <category>Pytorch</category>
       </categories>
       <tags>
-        <tag>pytorch</tag>
         <tag>python</tag>
+        <tag>pytorch</tag>
       </tags>
   </entry>
   <entry>
@@ -101,8 +116,8 @@ y = wx + b</script><p>这是一个基本的网络Net，它只包含一个全连�
         <category>Pytorch</category>
       </categories>
       <tags>
-        <tag>pytorch</tag>
         <tag>python</tag>
+        <tag>pytorch</tag>
       </tags>
   </entry>
   <entry>
