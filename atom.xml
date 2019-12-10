@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://arithmeticjia.github.io/"/>
-  <updated>2019-12-09T09:56:36.727Z</updated>
+  <updated>2019-12-10T09:46:58.549Z</updated>
   <id>http://arithmeticjia.github.io/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2019-12-14周报</title>
+    <link href="http://arithmeticjia.github.io/2019/12/10/2019-12-14%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/"/>
+    <id>http://arithmeticjia.github.io/2019/12/10/2019-12-14%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</id>
+    <published>2019-12-10T09:46:58.000Z</published>
+    <updated>2019-12-10T09:46:58.549Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Django个人博客搭建教程-Django-Rest-Framework外键与多对多序列化</title>
@@ -37,9 +52,9 @@
     
       <category term="django" scheme="http://arithmeticjia.github.io/tags/django/"/>
     
-      <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
-    
       <category term="restframework" scheme="http://arithmeticjia.github.io/tags/restframework/"/>
+    
+      <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
     
   </entry>
   
@@ -485,40 +500,9 @@
       <category term="Django" scheme="http://arithmeticjia.github.io/categories/Django/"/>
     
     
-      <category term="django" scheme="http://arithmeticjia.github.io/tags/django/"/>
-    
       <category term="celery" scheme="http://arithmeticjia.github.io/tags/celery/"/>
     
-  </entry>
-  
-  <entry>
-    <title>GitHub博客Hexo配合next主题增加搜索引擎验证</title>
-    <link href="http://arithmeticjia.github.io/2019/11/24/GitHub%E5%8D%9A%E5%AE%A2Hexo%E9%85%8D%E5%90%88next%E4%B8%BB%E9%A2%98%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E9%AA%8C%E8%AF%81/"/>
-    <id>http://arithmeticjia.github.io/2019/11/24/GitHub%E5%8D%9A%E5%AE%A2Hexo%E9%85%8D%E5%90%88next%E4%B8%BB%E9%A2%98%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E9%AA%8C%E8%AF%81/</id>
-    <published>2019-11-24T13:52:41.000Z</published>
-    <updated>2019-11-24T14:05:47.010Z</updated>
-    
-    <content type="html"><![CDATA[<p>GitHub博客Hexo配合next主题增加搜索引擎验证，Github 上利用 hexo 建立的博客是无法被搜索引擎搜索到的。<br><a id="more"></a><br>Github 本身也不会将信息提交给引擎。所以，为了让博客信息被检索到，我们需要手动将博客网站提交给搜索引擎并验证，实际上就是验证网站是我们自己的</p><h3 id="提交Google站点"><a href="#提交Google站点" class="headerlink" title="提交Google站点"></a>提交Google站点</h3><p><a href="https://www.google.com/webmasters/tools/home?hl=zh-CN" target="_blank" rel="noopener">Google</a></p><h3 id="选择HTML-meta-标签验证"><a href="#选择HTML-meta-标签验证" class="headerlink" title="选择HTML meta 标签验证"></a>选择HTML meta 标签验证</h3><p>Next 主题下，页面的 header 设置在<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/themes/</span>hexo-theme-<span class="keyword">next</span><span class="regexp">/layout/</span>_partials<span class="regexp">/head/</span>head.swig</span><br></pre></td></tr></table></figure><br><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;%- <span class="name"><span class="name">if</span></span> theme.google_site_verification %&#125;</span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"google-site-verification"</span> <span class="attr">content</span>=<span class="string">"RkRVaaOa4vX520pamxy6ip0HfuaQ-NCyM1SvGbzqUFA"</span>&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;%- <span class="name"><span class="name">endif</span></span> %&#125;</span></span><br></pre></td></tr></table></figure><br>这里的content从Google控制台获取</p><h3 id="提交Baidu站点"><a href="#提交Baidu站点" class="headerlink" title="提交Baidu站点"></a>提交Baidu站点</h3><p><a href="http://www.baidu.com/search/url_submit.htm" target="_blank" rel="noopener">Baidu</a></p><h3 id="选择HTML-meta-标签验证-1"><a href="#选择HTML-meta-标签验证-1" class="headerlink" title="选择HTML meta 标签验证"></a>选择HTML meta 标签验证</h3><p>Next 主题下，页面的 header 设置在<br><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="regexp">/themes/</span>hexo-theme-<span class="keyword">next</span><span class="regexp">/layout/</span>_partials<span class="regexp">/head/</span>head.swig</span><br></pre></td></tr></table></figure><br><figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="template-tag">&#123;%- <span class="name"><span class="name">if</span></span> theme.baidu_site_verification %&#125;</span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"baidu-site-verification"</span> <span class="attr">content</span>=<span class="string">"es0rExrlvZ"</span>&gt;</span></span></span><br><span class="line"><span class="template-tag">&#123;%- <span class="name"><span class="name">endif</span></span> %&#125;</span></span><br></pre></td></tr></table></figure><br>这里的content从Baidu控制台获取</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;GitHub博客Hexo配合next主题增加搜索引擎验证，Github 上利用 hexo 建立的博客是无法被搜索引擎搜索到的。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Hexo" scheme="http://arithmeticjia.github.io/categories/Hexo/"/>
-    
-    
-      <category term="hexo" scheme="http://arithmeticjia.github.io/tags/hexo/"/>
-    
-      <category term="next" scheme="http://arithmeticjia.github.io/tags/next/"/>
-    
-      <category term="github" scheme="http://arithmeticjia.github.io/tags/github/"/>
-    
-      <category term="baidu" scheme="http://arithmeticjia.github.io/tags/baidu/"/>
-    
-      <category term="google" scheme="http://arithmeticjia.github.io/tags/google/"/>
+      <category term="django" scheme="http://arithmeticjia.github.io/tags/django/"/>
     
   </entry>
   

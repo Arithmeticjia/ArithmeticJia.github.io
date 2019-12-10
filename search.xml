@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2019-12-14周报</title>
+    <url>/2019/12/10/2019-12-14%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>Django个人博客搭建教程-Django-Rest-Framework外键与多对多序列化</title>
     <url>/2019/12/09/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-Django-Rest-Framework%E5%A4%96%E9%94%AE%E4%B8%8E%E5%A4%9A%E5%AF%B9%E5%A4%9A%E5%BA%8F%E5%88%97%E5%8C%96/</url>
     <content><![CDATA[<p>如果对一个含有多对多、外键的模型进行序列化，这时候这些关联的字段会只展示id，因此需要对外键或者多对多的字段进行序列化处理<br><a id="more"></a></p>
@@ -11,8 +16,8 @@
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>python</tag>
         <tag>restframework</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -438,8 +443,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>django</tag>
         <tag>celery</tag>
+        <tag>django</tag>
       </tags>
   </entry>
   <entry>
