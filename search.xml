@@ -27,7 +27,7 @@
     <url>/2019/12/10/2019-12-14%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
     <content><![CDATA[<p>Works between 2019/12/07-2019/12/14<br><a id="more"></a></p>
 <h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4><p>(427539, 427)<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">    var1(t-60)  var2(t-60)  var3(t-60)  ...   var5(t)   var6(t)   var7(t)</span><br><span class="line">60    0.655771   -1.060919   -0.735941  ... -0.447461 -0.217168 -0.030555</span><br><span class="line">61    0.560612   -1.060919   -0.735941  ... -0.023654 -0.222058 -0.030555</span><br><span class="line">62    0.655771   -1.060919   -0.735941  ... -0.222916 -0.207537 -0.030555</span><br><span class="line">63    0.465453   -1.060919   -0.735941  ... -0.638782 -0.222058 -0.030555</span><br><span class="line">64   -0.010342   -1.047501   -0.735941  ...  1.133103 -0.222058 -0.030555</span><br></pre></td></tr></table></figure></p>
-<h4 id="Bi-LSTM-Attention"><a href="#Bi-LSTM-Attention" class="headerlink" title="Bi-LSTM-Attention"></a>Bi-LSTM-Attention</h4><p>Epochs: 500<br>Train-Data: 1111-1115<br>Test-Data: 1116-1120<br>Test RMSE: 3.880<br>Test nRMSE: 0.308<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-all-1620.jpg" alt=""><br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-01-1620.jpg" alt=""><br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-02-1620.jpg" alt=""><br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-03-1620.jpg" alt=""></p>
+<h4 id="Bi-LSTM-Attention"><a href="#Bi-LSTM-Attention" class="headerlink" title="Bi-LSTM-Attention"></a>Bi-LSTM-Attention</h4><p>Epochs: 500<br>Train-Data: 1111-1115<br>Test-Data: 1116-1120<br>Test RMSE: 3.880<br>Test nRMSE: 0.308<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-all-1620.jpg" alt=""><br>(400000)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-01-1620.jpg" alt=""><br>(50000-50500)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-02-1620.jpg" alt=""><br>(60000-60500)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-03-1620.jpg" alt=""></p>
 <h4 id="Test-1"><a href="#Test-1" class="headerlink" title="Test 1"></a>Test 1</h4><p>bi-lstm + attention +10(epochs)<br>Test RMSE: 3.386<br>Test nRMSE: 0.231<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-10.png" alt=""></p>
 <h4 id="Test-2"><a href="#Test-2" class="headerlink" title="Test 2"></a>Test 2</h4><p>bi-gru + attention + 10(epochs)<br>Test RMSE: 3.341<br>Test nRMSE: 0.228<br><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-10.png" alt=""></p>
 ]]></content>
@@ -43,8 +43,8 @@
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>python</tag>
         <tag>restframework</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
