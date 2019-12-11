@@ -46,13 +46,13 @@
     <link href="http://arithmeticjia.github.io/2019/12/10/2019-12-14%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/"/>
     <id>http://arithmeticjia.github.io/2019/12/10/2019-12-14%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</id>
     <published>2019-12-10T09:46:58.000Z</published>
-    <updated>2019-12-11T11:39:48.566Z</updated>
+    <updated>2019-12-11T11:42:08.426Z</updated>
     
-    <content type="html"><![CDATA[<h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4><p>(427539, 427)<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    var1(t-60)  var2(t-60)  var3(t-60)  ...   var5(t)   var6(t)   var7(t)</span><br><span class="line">60    0.655771   -1.060919   -0.735941  ... -0.447461 -0.217168 -0.030555</span><br><span class="line">61    0.560612   -1.060919   -0.735941  ... -0.023654 -0.222058 -0.030555</span><br><span class="line">62    0.655771   -1.060919   -0.735941  ... -0.222916 -0.207537 -0.030555</span><br><span class="line">63    0.465453   -1.060919   -0.735941  ... -0.638782 -0.222058 -0.030555</span><br><span class="line">64   -0.010342   -1.047501   -0.735941  ...  1.133103 -0.222058 -0.030555</span><br></pre></td></tr></table></figure></p><a id="more"></a><h4 id="Test-1"><a href="#Test-1" class="headerlink" title="Test 1"></a>Test 1</h4><p>bi-lstm + attention +10(epochs)<br>Test RMSE: 3.386<br>Test nRMSE: 0.231<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-10.png" alt></p><h4 id="Test-2"><a href="#Test-2" class="headerlink" title="Test 2"></a>Test 2</h4><p>bi-gru + attention + 10(epochs)<br>Test RMSE: 3.341<br>Test nRMSE: 0.228<br><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-10.png" alt></p>]]></content>
+    <content type="html"><![CDATA[<p>Works between 2019/12/07-2019/12/14<br><a id="more"></a></p><h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4><p>(427539, 427)<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    var1(t-60)  var2(t-60)  var3(t-60)  ...   var5(t)   var6(t)   var7(t)</span><br><span class="line">60    0.655771   -1.060919   -0.735941  ... -0.447461 -0.217168 -0.030555</span><br><span class="line">61    0.560612   -1.060919   -0.735941  ... -0.023654 -0.222058 -0.030555</span><br><span class="line">62    0.655771   -1.060919   -0.735941  ... -0.222916 -0.207537 -0.030555</span><br><span class="line">63    0.465453   -1.060919   -0.735941  ... -0.638782 -0.222058 -0.030555</span><br><span class="line">64   -0.010342   -1.047501   -0.735941  ...  1.133103 -0.222058 -0.030555</span><br></pre></td></tr></table></figure></p><h4 id="Test-1"><a href="#Test-1" class="headerlink" title="Test 1"></a>Test 1</h4><p>bi-lstm + attention +10(epochs)<br>Test RMSE: 3.386<br>Test nRMSE: 0.231<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-10.png" alt=""></p><h4 id="Test-2"><a href="#Test-2" class="headerlink" title="Test 2"></a>Test 2</h4><p>bi-gru + attention + 10(epochs)<br>Test RMSE: 3.341<br>Test nRMSE: 0.228<br><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-10.png" alt=""></p>]]></content>
     
     <summary type="html">
     
-      &lt;h4 id=&quot;Input&quot;&gt;&lt;a href=&quot;#Input&quot; class=&quot;headerlink&quot; title=&quot;Input&quot;&gt;&lt;/a&gt;Input&lt;/h4&gt;&lt;p&gt;(427539, 427)&lt;br&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;    var1(t-60)  var2(t-60)  var3(t-60)  ...   var5(t)   var6(t)   var7(t)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;60    0.655771   -1.060919   -0.735941  ... -0.447461 -0.217168 -0.030555&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;61    0.560612   -1.060919   -0.735941  ... -0.023654 -0.222058 -0.030555&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;62    0.655771   -1.060919   -0.735941  ... -0.222916 -0.207537 -0.030555&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;63    0.465453   -1.060919   -0.735941  ... -0.638782 -0.222058 -0.030555&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;64   -0.010342   -1.047501   -0.735941  ...  1.133103 -0.222058 -0.030555&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+      &lt;p&gt;Works between 2019/12/07-2019/12/14&lt;br&gt;
     
     </summary>
     
@@ -81,9 +81,9 @@
     
       <category term="django" scheme="http://arithmeticjia.github.io/tags/django/"/>
     
-      <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
-    
       <category term="restframework" scheme="http://arithmeticjia.github.io/tags/restframework/"/>
+    
+      <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
     
   </entry>
   
@@ -281,11 +281,11 @@
     
       <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
     
-      <category term="leetcode" scheme="http://arithmeticjia.github.io/tags/leetcode/"/>
-    
       <category term="list" scheme="http://arithmeticjia.github.io/tags/list/"/>
     
       <category term="pop" scheme="http://arithmeticjia.github.io/tags/pop/"/>
+    
+      <category term="leetcode" scheme="http://arithmeticjia.github.io/tags/leetcode/"/>
     
   </entry>
   
