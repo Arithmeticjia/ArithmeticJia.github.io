@@ -25,7 +25,7 @@
   <entry>
     <title>2019-12-14周报</title>
     <url>/2019/12/10/2019-12-14%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<p>bi-lstm + attention +10(epochs)<br>Test RMSE: 3.386<br>Test nRMSE: 0.231<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-10.png" alt></p><p>bi-gru + attention + 10(epochs)</p><p><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-10.png" alt></p>]]></content>
   </entry>
   <entry>
     <title>Django个人博客搭建教程-Django-Rest-Framework外键与多对多序列化</title>
@@ -465,8 +465,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>django</tag>
         <tag>celery</tag>
+        <tag>django</tag>
       </tags>
   </entry>
   <entry>
