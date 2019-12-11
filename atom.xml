@@ -46,9 +46,9 @@
     <link href="http://arithmeticjia.github.io/2019/12/10/2019-12-14%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/"/>
     <id>http://arithmeticjia.github.io/2019/12/10/2019-12-14%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</id>
     <published>2019-12-10T09:46:58.000Z</published>
-    <updated>2019-12-11T10:51:27.584Z</updated>
+    <updated>2019-12-11T10:55:04.289Z</updated>
     
-    <content type="html"><![CDATA[<p>bi-lstm + attention +10(epochs)<br>Test RMSE: 3.386<br>Test nRMSE: 0.231<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-10.png" alt></p><p>bi-gru + attention + 10(epochs)</p><p><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-10.png" alt></p>]]></content>
+    <content type="html"><![CDATA[<p>bi-lstm + attention +10(epochs)<br>Test RMSE: 3.386<br>Test nRMSE: 0.231<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-10.png" alt></p><p>bi-gru + attention + 10(epochs)<br>Test RMSE: 3.341<br>Test nRMSE: 0.228<br><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-10.png" alt></p>]]></content>
     
     <summary type="html">
     
@@ -284,11 +284,11 @@
     
       <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
     
+      <category term="leetcode" scheme="http://arithmeticjia.github.io/tags/leetcode/"/>
+    
       <category term="list" scheme="http://arithmeticjia.github.io/tags/list/"/>
     
       <category term="pop" scheme="http://arithmeticjia.github.io/tags/pop/"/>
-    
-      <category term="leetcode" scheme="http://arithmeticjia.github.io/tags/leetcode/"/>
     
   </entry>
   
