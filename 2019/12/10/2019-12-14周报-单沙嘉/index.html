@@ -70,7 +70,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;gru-bi-20-01-1620.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;lstm-bi-10.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;gru-bi-10.png">
-<meta property="og:updated_time" content="2019-12-13T07:12:48.636Z">
+<meta property="og:updated_time" content="2019-12-13T07:25:54.885Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;lstm-attention.jpg">
 
@@ -257,7 +257,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-13 15:12:48" itemprop="dateModified" datetime="2019-12-13T15:12:48+08:00">2019-12-13</time>
+                <time title="修改时间：2019-12-13 15:25:54" itemprop="dateModified" datetime="2019-12-13T15:25:54+08:00">2019-12-13</time>
               </span>
 
           
@@ -273,7 +273,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>1.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -294,11 +294,16 @@
       
         <p>Works between 2019/12/07-2019/12/14<br><a id="more"></a></p>
 <h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4><p>(427539, 427)<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    var1(t-60)  var2(t-60)  var3(t-60)  ...   var5(t)   var6(t)   var7(t)</span><br><span class="line">60    0.655771   -1.060919   -0.735941  ... -0.447461 -0.217168 -0.030555</span><br><span class="line">61    0.560612   -1.060919   -0.735941  ... -0.023654 -0.222058 -0.030555</span><br><span class="line">62    0.655771   -1.060919   -0.735941  ... -0.222916 -0.207537 -0.030555</span><br><span class="line">63    0.465453   -1.060919   -0.735941  ... -0.638782 -0.222058 -0.030555</span><br><span class="line">64   -0.010342   -1.047501   -0.735941  ...  1.133103 -0.222058 -0.030555</span><br></pre></td></tr></table></figure></p>
-<h4 id="Bi-LSTM-Attention"><a href="#Bi-LSTM-Attention" class="headerlink" title="Bi-LSTM-Attention"></a>Bi-LSTM-Attention</h4><p>Attention是先计算每个时序的权重，然后将所有时序 的向量进行加权和作为特征向量，然后进行sigmoid分类<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-attention.jpg" alt=""><br>Epochs: 500<br>Train-Data: 1111-1115<br>Test-Data: 1116-1120<br>Test RMSE: 3.880<br>Test nRMSE: 0.308<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-all-1620.jpg" alt=""><br>(lstm-bi-attention-500-all-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-01-1620.jpg" alt=""><br>(50000-50500-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-02-1620.jpg" alt=""><br>(60000-60500-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-03-1620.jpg" alt=""><br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-04-1620.jpg" alt=""></p>
-<h4 id="Compare-with-LSTM-amp-GRU"><a href="#Compare-with-LSTM-amp-GRU" class="headerlink" title="Compare with LSTM &amp; GRU"></a>Compare with LSTM &amp; GRU</h4><p>bi-lstm + attention 20(epochs)<br>Test RMSE: 3.216<br>Test nRMSE: 0.254<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-20-all-1620.jpg" alt=""><br>(lstm-bi-attention-20-all-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-20-01-1620.jpg" alt=""><br>(lstm-bi-attention-20-70000-70500-1116-1120)</p>
-<p>bi-gru + attention 20(epochs)<br>Test RMSE: 3.216<br>Test nRMSE: 0.254<br><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-20-all-1620.jpg" alt=""><br>(gru-bi-attention-20-all-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-20-01-1620.jpg" alt=""><br>(gru-bi-attention-20-70000-70500-1116-1120)</p>
-<p>bi-lstm + attention +10(epochs)<br>Test RMSE: 3.386<br>Test nRMSE: 0.231<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-10.png" alt=""><br>(lstm-bi-attention-10-70000-70500-1116-1120)</p>
-<h5 id="Test-2"><a href="#Test-2" class="headerlink" title="Test 2"></a>Test 2</h5><p>bi-gru + attention + 10(epochs)<br>Test RMSE: 3.341<br>Test nRMSE: 0.228<br><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-10.png" alt=""><br>(gru-bi-attention-10-70000-70500-1116-1120)</p>
+<h4 id="Bi-LSTM-Attention"><a href="#Bi-LSTM-Attention" class="headerlink" title="Bi-LSTM-Attention"></a>Bi-LSTM-Attention</h4><p>Attention是先计算每个时序的权重，然后将所有时序 的向量进行加权和作为特征向量，然后进行sigmoid分类</p>
+<ul>
+<li>sigmoid把一个real value映射到（0,1）的区间（当然也可以是（-1,1）），这样可以用来做二分类。</li>
+<li>softmax把一个k维的real value向量（a1,a2,a3,a4…）映射成一个（b1,b2,b3,b4…）其中bi是一个0-1的常数，然后可以根据bi的大小来进行多分类的任务，如取权重最大的一维<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-attention.jpg" alt=""><br>Epochs: 500<br>Train-Data: 1111-1115<br>Test-Data: 1116-1120<br>Test RMSE: 3.880<br>Test nRMSE: 0.308<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-all-1620.jpg" alt=""><br>(lstm-bi-attention-500-all-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-01-1620.jpg" alt=""><br>(50000-50500-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-02-1620.jpg" alt=""><br>(60000-60500-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-03-1620.jpg" alt=""><br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-04-1620.jpg" alt=""></li>
+</ul>
+<h4 id="Compare-with-LSTM-amp-GRU"><a href="#Compare-with-LSTM-amp-GRU" class="headerlink" title="Compare with LSTM &amp; GRU"></a>Compare with LSTM &amp; GRU</h4><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Train-Data:</span> <span class="number">1111</span><span class="number">-1115</span></span><br><span class="line"><span class="attr">Test-Data:</span> <span class="number">1116</span><span class="number">-1120</span></span><br></pre></td></tr></table></figure>
+<h5 id="bi-lstm-attention-20-epochs"><a href="#bi-lstm-attention-20-epochs" class="headerlink" title="bi-lstm + attention 20(epochs)"></a>bi-lstm + attention 20(epochs)</h5><p>Test RMSE: 3.216<br>Test nRMSE: 0.254<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-20-all-1620.jpg" alt=""><br>(lstm-bi-attention-20-all-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-20-01-1620.jpg" alt=""><br>(lstm-bi-attention-20-70000-70500-1116-1120)</p>
+<h5 id="bi-gru-attention-20-epochs"><a href="#bi-gru-attention-20-epochs" class="headerlink" title="bi-gru + attention 20(epochs)"></a>bi-gru + attention 20(epochs)</h5><p>Test RMSE: 3.216<br>Test nRMSE: 0.254<br><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-20-all-1620.jpg" alt=""><br>(gru-bi-attention-20-all-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-20-01-1620.jpg" alt=""><br>(gru-bi-attention-20-70000-70500-1116-1120)</p>
+<h5 id="bi-lstm-attention-10-epochs"><a href="#bi-lstm-attention-10-epochs" class="headerlink" title="bi-lstm + attention +10(epochs)"></a>bi-lstm + attention +10(epochs)</h5><p>Test RMSE: 3.386<br>Test nRMSE: 0.231<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-10.png" alt=""><br>(lstm-bi-attention-10-70000-70500-1116-1120)</p>
+<h5 id="bi-gru-attention-10-epochs"><a href="#bi-gru-attention-10-epochs" class="headerlink" title="bi-gru + attention + 10(epochs)"></a>bi-gru + attention + 10(epochs)</h5><p>Test RMSE: 3.341<br>Test nRMSE: 0.228<br><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-10.png" alt=""><br>(gru-bi-attention-10-70000-70500-1116-1120)</p>
 
     </div>
 
@@ -390,7 +395,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Input"><span class="nav-number">1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bi-LSTM-Attention"><span class="nav-number">2.</span> <span class="nav-text">Bi-LSTM-Attention</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Compare-with-LSTM-amp-GRU"><span class="nav-number">3.</span> <span class="nav-text">Compare with LSTM &amp; GRU</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Test-2"><span class="nav-number">3.1.</span> <span class="nav-text">Test 2</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Input"><span class="nav-number">1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bi-LSTM-Attention"><span class="nav-number">2.</span> <span class="nav-text">Bi-LSTM-Attention</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Compare-with-LSTM-amp-GRU"><span class="nav-number">3.</span> <span class="nav-text">Compare with LSTM &amp; GRU</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#bi-lstm-attention-20-epochs"><span class="nav-number">3.1.</span> <span class="nav-text">bi-lstm + attention 20(epochs)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bi-gru-attention-20-epochs"><span class="nav-number">3.2.</span> <span class="nav-text">bi-gru + attention 20(epochs)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bi-lstm-attention-10-epochs"><span class="nav-number">3.3.</span> <span class="nav-text">bi-lstm + attention +10(epochs)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bi-gru-attention-10-epochs"><span class="nav-number">3.4.</span> <span class="nav-text">bi-gru + attention + 10(epochs)</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -486,7 +491,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">63k</span>
+    <span title="站点总字数">64k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
