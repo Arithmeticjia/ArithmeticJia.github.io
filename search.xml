@@ -28,7 +28,7 @@
     <content><![CDATA[<p>Works between 2019/12/07-2019/12/13<br><a id="more"></a></p>
 <h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Training Data: 1111-1115</span><br><span class="line">Testing Data: 1116-1120</span><br></pre></td></tr></table></figure>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">    var1(t-60)  var2(t-60)  var3(t-60)  ...   var5(t)   var6(t)   var7(t)</span><br><span class="line">60    0.655771   -1.060919   -0.735941  ... -0.447461 -0.217168 -0.030555</span><br><span class="line">61    0.560612   -1.060919   -0.735941  ... -0.023654 -0.222058 -0.030555</span><br><span class="line">62    0.655771   -1.060919   -0.735941  ... -0.222916 -0.207537 -0.030555</span><br><span class="line">63    0.465453   -1.060919   -0.735941  ... -0.638782 -0.222058 -0.030555</span><br><span class="line">64   -0.010342   -1.047501   -0.735941  ...  1.133103 -0.222058 -0.030555</span><br></pre></td></tr></table></figure>
-<h4 id="Bi-LSTM-Attention"><a href="#Bi-LSTM-Attention" class="headerlink" title="Bi-LSTM-Attention"></a>Bi-LSTM-Attention</h4><p>Attention是先计算每个时序的权重，然后将所有时序 的向量进行加权和作为特征向量，然后进行sigmoid分类</p>
+<h4 id="Bi-LSTM-Attention"><a href="#Bi-LSTM-Attention" class="headerlink" title="Bi-LSTM-Attention"></a>Bi-LSTM-Attention</h4><p>Bi-LSTM + Attention 就是在Bi-LSTM的模型上加入Attention层，在Bi-LSTM中我们会用最后一个时序的输出向量 作为特征向量，然后进行softmax分类。Attention是先计算每个时序的权重，然后将所有时序 的向量进行加权和作为特征向量，然后进行softmax分类</p>
 <ul>
 <li>sigmoid把一个real value映射到（0,1）的区间（当然也可以是（-1,1）），这样可以用来做二分类。</li>
 <li>softmax把一个k维的real value向量（a1,a2,a3,a4…）映射成一个（b1,b2,b3,b4…）其中bi是一个0-1的常数，然后可以根据bi的大小来进行多分类的任务，如取权重最大的一维<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-attention.jpg" alt=""><br>Epochs: 500<br>Train-Data: 1111-1115<br>Test-Data: 1116-1120<br>Test RMSE: 3.880<br>Test nRMSE: 0.308<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-all-1620.jpg" alt=""><br>(lstm-bi-attention-500-all-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-01-1620.jpg" alt=""><br>(50000-50500-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-02-1620.jpg" alt=""><br>(60000-60500-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-03-1620.jpg" alt=""></li>
@@ -484,8 +484,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>celery</tag>
         <tag>django</tag>
+        <tag>celery</tag>
       </tags>
   </entry>
   <entry>
