@@ -32,7 +32,7 @@
 <li>sigmoid把一个real value映射到（0,1）的区间（当然也可以是（-1,1）），这样可以用来做二分类。</li>
 <li>softmax把一个k维的real value向量（a1,a2,a3,a4…）映射成一个（b1,b2,b3,b4…）其中bi是一个0-1的常数，然后可以根据bi的大小来进行多分类的任务，如取权重最大的一维<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-attention.jpg" alt=""><br>Epochs: 500<br>Train-Data: 1111-1115<br>Test-Data: 1116-1120<br>Test RMSE: 3.880<br>Test nRMSE: 0.308<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-all-1620.jpg" alt=""><br>(lstm-bi-attention-500-all-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-01-1620.jpg" alt=""><br>(50000-50500-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-02-1620.jpg" alt=""><br>(60000-60500-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-03-1620.jpg" alt=""><br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-500-04-1620.jpg" alt=""></li>
 </ul>
-<h4 id="Compare-with-LSTM-amp-GRU"><a href="#Compare-with-LSTM-amp-GRU" class="headerlink" title="Compare with LSTM &amp; GRU"></a>Compare with LSTM &amp; GRU</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">Train-Data:</span> <span class="number">1111</span><span class="number">-1115</span></span><br><span class="line"><span class="attr">Test-Data:</span> <span class="number">1116</span><span class="number">-1120</span></span><br></pre></td></tr></table></figure>
+<h4 id="Bi-LSTM-amp-GRU-In-Different-Dataset"><a href="#Bi-LSTM-amp-GRU-In-Different-Dataset" class="headerlink" title="Bi-LSTM &amp; GRU In Different Dataset"></a>Bi-LSTM &amp; GRU In Different Dataset</h4><figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">Train-Data:</span> <span class="number">1111</span><span class="number">-1115</span></span><br><span class="line"><span class="attr">Test-Data:</span> <span class="number">1116</span><span class="number">-1120</span></span><br></pre></td></tr></table></figure>
 <h5 id="bi-lstm-attention-20-epochs"><a href="#bi-lstm-attention-20-epochs" class="headerlink" title="bi-lstm + attention 20(epochs)"></a>bi-lstm + attention 20(epochs)</h5><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 3.216</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.254</span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-20-all-1620.jpg" alt=""><br>(lstm-bi-attention-20-all-1116-1120)<br><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 4.811</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.485</span><br></pre></td></tr></table></figure><br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-20-01-1620.jpg" alt=""><br>(lstm-bi-attention-20-70000-70500-1116-1120)<br><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 5.866</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.588</span><br></pre></td></tr></table></figure><br><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-20-softmax-01-1620.jpg" alt=""><br>(lstm-bi-attention-softmax-20-70000-70500-1116-1120)</p>
 <h5 id="bi-gru-attention-20-epochs"><a href="#bi-gru-attention-20-epochs" class="headerlink" title="bi-gru + attention 20(epochs)"></a>bi-gru + attention 20(epochs)</h5><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 3.216</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.254</span><br></pre></td></tr></table></figure>
@@ -41,7 +41,7 @@
 <p><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-10.png" alt=""><br>(lstm-bi-attention-10-70000-70500-1116-1120)</p>
 <h5 id="bi-gru-attention-10-epochs"><a href="#bi-gru-attention-10-epochs" class="headerlink" title="bi-gru + attention + 10(epochs)"></a>bi-gru + attention + 10(epochs)</h5><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 4.609</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.462</span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-10.png" alt=""><br>(gru-bi-attention-10-70000-70500-1116-1120)</p>
-<h4 id="Bi-GRU-Use-Same-Dataset"><a href="#Bi-GRU-Use-Same-Dataset" class="headerlink" title="Bi-GRU Use Same Dataset"></a>Bi-GRU Use Same Dataset</h4><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 10.360</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.752</span><br></pre></td></tr></table></figure>
+<h4 id="Bi-GRU-In-Same-Dataset"><a href="#Bi-GRU-In-Same-Dataset" class="headerlink" title="Bi-GRU In Same Dataset"></a>Bi-GRU In Same Dataset</h4><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 10.360</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.752</span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-1000-01-1115.jpg" alt=""><br>(gru-bi-attention-1000-250000-400000-1116-1120)<br><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 2.650</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.605</span><br></pre></td></tr></table></figure><br><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-1000-02-1115.jpg" alt=""><br>(gru-bi-attention-1000-250000-250700-1116-1120)</p>
 ]]></content>
   </entry>
@@ -56,8 +56,8 @@
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>restframework</tag>
         <tag>python</tag>
+        <tag>restframework</tag>
       </tags>
   </entry>
   <entry>
@@ -218,9 +218,9 @@ y = wx + b</script><p>这是一个基本的网络Net，它只包含一个全连�
       </categories>
       <tags>
         <tag>python</tag>
-        <tag>leetcode</tag>
         <tag>list</tag>
         <tag>pop</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -483,8 +483,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>django</tag>
         <tag>celery</tag>
+        <tag>django</tag>
       </tags>
   </entry>
   <entry>
