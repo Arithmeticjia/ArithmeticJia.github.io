@@ -31,7 +31,8 @@
 <p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted_reloaded.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted_standard.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted_reloaded_standard.png" alt=""></p>
-<h4 id="Vm1-Power-Matrix-From-Paper"><a href="#Vm1-Power-Matrix-From-Paper" class="headerlink" title="Vm1-Power-Matrix-From-Paper"></a>Vm1-Power-Matrix-From-Paper</h4><p>Test RMSE: 3.239<br>Test nRMSE: 0.382<br><img src="https://www.guanacossj.com/media/articlebodypics/server_final_predicted_reloaded.png" alt=""><br>(49000-50000-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/server_final_predicted_reloaded-larger.png" alt=""><br>(49000-50000-1116-1120)</p>
+<h4 id="Vm1-Power-Matrix-From-Paper"><a href="#Vm1-Power-Matrix-From-Paper" class="headerlink" title="Vm1-Power-Matrix-From-Paper"></a>Vm1-Power-Matrix-From-Paper</h4><p>Test RMSE: 3.239<br>Test nRMSE: 0.382<br>Test Data: 49000-50000-1116-1120<br><img src="https://www.guanacossj.com/media/articlebodypics/server_final_predicted_reloaded.png" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/server_final_predicted_reloaded-larger.png" alt=""></p>
 <p>Test RMSE: 2.962<br>Test nRMSE: 0.260<br>Test Data: 32000-33000-1116-1120<br><img src="https://www.guanacossj.com/media/articlebodypics/32000_33000_server_final_predicted_reloaded-larger.png" alt=""></p>
 <h4 id="Vm1-Power-Matrix-From-Jia"><a href="#Vm1-Power-Matrix-From-Jia" class="headerlink" title="Vm1-Power-Matrix-From-Jia"></a>Vm1-Power-Matrix-From-Jia</h4><p>Test RMSE: 3.458<br>Test nRMSE: 0.418<br>Test Data: 49000-50000-1116-1120<br><img src="https://www.guanacossj.com/media/articlebodypics/49000_50000_n_final_gru_pro_attention_bi_20.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/mark_49000_50000_n_final_gru_pro_attention_bi_20.png" alt=""></p>
@@ -500,8 +501,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>django</tag>
         <tag>celery</tag>
+        <tag>django</tag>
       </tags>
   </entry>
   <entry>
