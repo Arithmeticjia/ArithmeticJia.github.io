@@ -65,12 +65,6 @@
 <figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 20</span><br><span class="line"><span class="keyword">Test </span>RMSE: 4.573</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.458</span><br><span class="line"><span class="keyword">Test </span>Data: all<span class="string">-1116</span><span class="string">-1120</span></span><br><span class="line"><span class="keyword">Test </span>Data: 70000<span class="string">-70500</span><span class="string">-1116</span><span class="string">-1120</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/70000-70500-gru-bi-att-20-1620.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/mark_70000-70500-gru-bi-att-20-1620.jpg" alt=""></p>
-<h5 id="bi-lstm-attention-10-epochs"><a href="#bi-lstm-attention-10-epochs" class="headerlink" title="bi-lstm + attention +10(epochs)"></a>bi-lstm + attention +10(epochs)</h5><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 4.635</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.467</span><br></pre></td></tr></table></figure>
-<p><img src="https://www.guanacossj.com/media/articlebodypics/lstm-bi-10.png" alt=""><br>(lstm-bi-attention-10-70000-70500-1116-1120)</p>
-<h5 id="bi-gru-attention-10-epochs"><a href="#bi-gru-attention-10-epochs" class="headerlink" title="bi-gru + attention + 10(epochs)"></a>bi-gru + attention + 10(epochs)</h5><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 4.609</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.462</span><br></pre></td></tr></table></figure>
-<p><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-10.png" alt=""><br>(gru-bi-attention-10-70000-70500-1116-1120)</p>
-<h4 id="Bi-GRU-In-Same-Dataset"><a href="#Bi-GRU-In-Same-Dataset" class="headerlink" title="Bi-GRU In Same Dataset"></a>Bi-GRU In Same Dataset</h4><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 10.360</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.752</span><br></pre></td></tr></table></figure>
-<p><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-1000-01-1115.jpg" alt=""><br>(gru-bi-attention-1000-250000-400000-1116-1120)<br><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 2.650</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.605</span><br></pre></td></tr></table></figure><br><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-1000-02-1115.jpg" alt=""><br>(gru-bi-attention-1000-250000-250700-1116-1120)</p>
 ]]></content>
   </entry>
   <entry>
@@ -84,8 +78,8 @@
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>restframework</tag>
         <tag>python</tag>
+        <tag>restframework</tag>
       </tags>
   </entry>
   <entry>
