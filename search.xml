@@ -52,7 +52,8 @@
 x^{*} = \frac{x-\mu}{\sigma }</script><ul>
 <li>Min-Max Normalization</li>
 </ul>
-<h5 id="Bi-GRU-Attention"><a href="#Bi-GRU-Attention" class="headerlink" title="Bi-GRU + Attention"></a>Bi-GRU + Attention</h5><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 20</span><br><span class="line"><span class="keyword">Test </span>RMSE: 3.054</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.243</span><br><span class="line"><span class="keyword">Test </span>Data: all<span class="string">-1116</span><span class="string">-1120</span></span><br></pre></td></tr></table></figure>
+<script type="math/tex; mode=display">
+x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GRU-Attention" class="headerlink" title="Bi-GRU + Attention"></a>Bi-GRU + Attention</h5><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 20</span><br><span class="line"><span class="keyword">Test </span>RMSE: 3.054</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.243</span><br><span class="line"><span class="keyword">Test </span>Data: all<span class="string">-1116</span><span class="string">-1120</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-20-all-att-1620.jpg" alt=""></p>
 <figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 20</span><br><span class="line"><span class="keyword">Test </span>RMSE: 3.458</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.418</span><br><span class="line"><span class="keyword">Test </span>Data: 49000<span class="string">-50000</span><span class="string">-1116</span><span class="string">-1120</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/49000_50000_n_final_gru_pro_attention_bi_20.png" alt=""></p>
