@@ -26,12 +26,13 @@
     <title>2019-12-13周报</title>
     <url>/2019/12/10/2019-12-13%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
     <content><![CDATA[<p>Works between 2019/12/07-2019/12/13<br><a id="more"></a></p>
-<h4 id="A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction"><a href="#A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction" class="headerlink" title="A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction"></a>A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction</h4><p>Bi-LSTM + Attention 就是在Bi-LSTM的模型上加入Attention层，在Bi-LSTM中我们会用最后一个时序的输出向量 作为特征向量，然后进行softmax分类。Attention是先计算每个时序的权重，然后将所有时序 的向量进行加权和作为特征向量，然后进行softmax分类</p>
-<ul>
+<h4 id="A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction"><a href="#A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction" class="headerlink" title="A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction"></a>A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction</h4><ul>
+<li>Bi-LSTM + Attention 就是在Bi-LSTM的模型上加入Attention层，在Bi-LSTM中我们会用最后一个时序的输出向量 作为特征向量，然后进行softmax分类。Attention是先计算每个时序的权重，然后将所有时序 的向量进行加权和作为特征向量，然后进行softmax分类</li>
 <li>sigmoid把一个real value映射到（0,1）的区间（当然也可以是（-1,1）），这样可以用来做二分类。</li>
-<li>softmax把一个k维的real value向量（a1,a2,a3,a4…）映射成一个（b1,b2,b3,b4…）其中bi是一个0-1的常数，然后可以根据bi的大小来进行多分类的任务，如取权重最大的一维<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 0.259</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.056</span><br><span class="line"><span class="keyword">Test </span>Data: all</span><br></pre></td></tr></table></figure>
-<img src="https://www.guanacossj.com/media/articlebodypics/pred_0.png" alt=""></li>
+<li>softmax把一个k维的real value向量（a1,a2,a3,a4…）映射成一个（b1,b2,b3,b4…）其中bi是一个0-1的常数，然后可以根据bi的大小来进行多分类的任务，如取权重最大的一维</li>
 </ul>
+<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 0.259</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.056</span><br><span class="line"><span class="keyword">Test </span>Data: all</span><br></pre></td></tr></table></figure>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/pred_0.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted_reloaded.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted_standard.png" alt=""></p>
@@ -42,7 +43,7 @@
 <p><img src="https://www.guanacossj.com/media/articlebodypics/49000_50000_server_final_predicted_reloaded.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/49000_50000_server_final_predicted_reloaded-larger.png" alt=""><br><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 10</span><br><span class="line"><span class="keyword">Test </span>RMSE: 2.962</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.260</span><br><span class="line"><span class="keyword">Test </span>Data: 32000<span class="string">-33000</span><span class="string">-1116</span><span class="string">-1120</span></span><br></pre></td></tr></table></figure><br><img src="https://www.guanacossj.com/media/articlebodypics/32000_33000_server_final_predicted_reloaded-larger.png" alt=""></p>
 <h4 id="Vm1-Power-Matrix-From-Jia"><a href="#Vm1-Power-Matrix-From-Jia" class="headerlink" title="Vm1-Power-Matrix-From-Jia"></a>Vm1-Power-Matrix-From-Jia</h4><h5 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h5><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Training Data: 1111<span class="string">-1115</span></span><br><span class="line"><span class="keyword">Testing </span>Data: 1116<span class="string">-1120</span></span><br></pre></td></tr></table></figure>
-<p>(n,m) -&gt; (n,m * timestamp) -&gt; (n,timestamp,m)</p>
+<figure class="highlight livescript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="params">(n,m)</span> -&gt;</span> <span class="function"><span class="params">(n,m * timestamp)</span> -&gt;</span> (n,timestamp,m)</span><br></pre></td></tr></table></figure>
 <figure class="highlight angelscript"><table><tr><td class="code"><pre><span class="line">    var1(t<span class="number">-60</span>)  var2(t<span class="number">-60</span>)  var3(t<span class="number">-60</span>)  ...   var5(t)   var6(t)   var7(t)</span><br><span class="line"><span class="number">60</span>    <span class="number">0.655771</span>   <span class="number">-1.060919</span>   <span class="number">-0.735941</span>  ... <span class="number">-0.447461</span> <span class="number">-0.217168</span> <span class="number">-0.030555</span></span><br><span class="line"><span class="number">61</span>    <span class="number">0.560612</span>   <span class="number">-1.060919</span>   <span class="number">-0.735941</span>  ... <span class="number">-0.023654</span> <span class="number">-0.222058</span> <span class="number">-0.030555</span></span><br><span class="line"><span class="number">62</span>    <span class="number">0.655771</span>   <span class="number">-1.060919</span>   <span class="number">-0.735941</span>  ... <span class="number">-0.222916</span> <span class="number">-0.207537</span> <span class="number">-0.030555</span></span><br><span class="line"><span class="number">63</span>    <span class="number">0.465453</span>   <span class="number">-1.060919</span>   <span class="number">-0.735941</span>  ... <span class="number">-0.638782</span> <span class="number">-0.222058</span> <span class="number">-0.030555</span></span><br><span class="line"><span class="number">64</span>   <span class="number">-0.010342</span>   <span class="number">-1.047501</span>   <span class="number">-0.735941</span>  ...  <span class="number">1.133103</span> <span class="number">-0.222058</span> <span class="number">-0.030555</span></span><br></pre></td></tr></table></figure>
 <h5 id="Bi-GRU-Attention"><a href="#Bi-GRU-Attention" class="headerlink" title="Bi-GRU + Attention"></a>Bi-GRU + Attention</h5><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 20</span><br><span class="line"><span class="keyword">Test </span>RMSE: 3.054</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.243</span><br><span class="line"><span class="keyword">Test </span>Data: all<span class="string">-1116</span><span class="string">-1120</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-20-all-att-1620.jpg" alt=""></p>
@@ -514,8 +515,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>django</tag>
         <tag>celery</tag>
+        <tag>django</tag>
       </tags>
   </entry>
   <entry>
