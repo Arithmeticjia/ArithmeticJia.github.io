@@ -29,7 +29,7 @@
 <h4 id="A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction"><a href="#A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction" class="headerlink" title="A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction"></a>A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction</h4><p><img src="https://www.guanacossj.com/media/articlebodypics/lstm-attention.jpg" alt=""></p>
 <ul>
 <li>Bi-LSTM + Attention 就是在Bi-LSTM的模型上加入Attention层，在Bi-LSTM中我们会用最后一个时序的输出向量 作为特征向量，然后进行softmax分类。Attention是先计算每个时序的权重，然后将所有时序 的向量进行加权和作为特征向量，然后进行softmax分类</li>
-<li>sigmoid把一个real value映射到（0,1）的区间（当然也可以是（-1,1）），这样可以用来做二分类。</li>
+<li>sigmoid把一个real value映射到（0,1）的区间（当然也可以是（-1,1）），这样可以用来做二分类</li>
 <li>softmax把一个k维的real value向量（a1,a2,a3,a4…）映射成一个（b1,b2,b3,b4…）其中bi是一个0-1的常数，然后可以根据bi的大小来进行多分类的任务，如取权重最大的一维</li>
 <li>传统的注意力机制只用在解码器的输入阶段，即对不同时刻产生不同的context vector不同，该文还在编码器的输入阶段引入了注意力机制，从而同时实现了选取特征因子(feature selection)和把握长期时序依赖关系(long-term temporal dependencies)</li>
 <li>第一阶段，使用注意力机制自适应地提取每个时刻的相关feature</li>
