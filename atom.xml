@@ -81,9 +81,9 @@
     
       <category term="django" scheme="http://arithmeticjia.github.io/tags/django/"/>
     
-      <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
-    
       <category term="restframework" scheme="http://arithmeticjia.github.io/tags/restframework/"/>
+    
+      <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
     
   </entry>
   
