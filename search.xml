@@ -53,7 +53,7 @@
 <figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 20</span><br><span class="line"><span class="keyword">Test </span>RMSE: 3.196</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.287</span><br><span class="line"><span class="keyword">Test </span>Data: 32000<span class="string">-33000</span><span class="string">-1116</span><span class="string">-1120</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/32000_33000_n_final_gru_pro_attention_bi_20.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/mark_32000_33000_n_final_gru_pro_attention_bi_20.png" alt=""></p>
-<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 20</span><br><span class="line"><span class="keyword">Test </span>RMSE: 4.573</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.458</span><br><span class="line"><span class="keyword">Test </span>Data: all<span class="string">-1116</span><span class="string">-1120</span></span><br><span class="line"><span class="keyword">Test </span>Data: 70000<span class="string">-70500</span><span class="string">-1116</span><span class="string">-1120</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 20</span><br><span class="line"><span class="keyword">Test </span>RMSE: 4.573</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.45</span><br><span class="line"><span class="keyword">Test </span>Data: 70000<span class="string">-70500</span><span class="string">-1116</span><span class="string">-1120</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/70000-70500-gru-bi-att-20-1620.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/mark_70000-70500-gru-bi-att-20-1620.jpg" alt=""></p>
 <h5 id="Bi-LSTM-Attention"><a href="#Bi-LSTM-Attention" class="headerlink" title="Bi-LSTM + Attention"></a>Bi-LSTM + Attention</h5><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 20</span><br><span class="line"><span class="keyword">Test </span>RMSE: 2.776</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.221</span><br><span class="line"><span class="keyword">Test </span>Data: all<span class="string">-1116</span><span class="string">-1120</span></span><br></pre></td></tr></table></figure>
@@ -515,8 +515,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>celery</tag>
         <tag>django</tag>
+        <tag>celery</tag>
       </tags>
   </entry>
   <entry>
