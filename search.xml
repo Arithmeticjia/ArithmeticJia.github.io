@@ -26,15 +26,15 @@
     <title>2019-12-13周报</title>
     <url>/2019/12/10/2019-12-13%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
     <content><![CDATA[<p>Works between 2019/12/07-2019/12/13<br><a id="more"></a></p>
-<h4 id="A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction"><a href="#A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction" class="headerlink" title="A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction"></a>A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction</h4><p>Test RMSE: 0.259<br>Test nRMSE: 0.056<br><img src="https://www.guanacossj.com/media/articlebodypics/pred_0.png" alt=""></p>
+<h4 id="A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction"><a href="#A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction" class="headerlink" title="A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction"></a>A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction</h4><p>Test RMSE: 0.259<br>Test nRMSE: 0.056<br>Test Data: all<br><img src="https://www.guanacossj.com/media/articlebodypics/pred_0.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted_reloaded.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted_standard.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted_reloaded_standard.png" alt=""></p>
 <h4 id="Vm1-Power-Matrix-From-Paper"><a href="#Vm1-Power-Matrix-From-Paper" class="headerlink" title="Vm1-Power-Matrix-From-Paper"></a>Vm1-Power-Matrix-From-Paper</h4><p>Test RMSE: 3.239<br>Test nRMSE: 0.382<br><img src="https://www.guanacossj.com/media/articlebodypics/server_final_predicted_reloaded.png" alt=""><br>(49000-50000-1116-1120)<br><img src="https://www.guanacossj.com/media/articlebodypics/server_final_predicted_reloaded-larger.png" alt=""><br>(49000-50000-1116-1120)</p>
-<p>Test RMSE: 2.962<br>Test nRMSE: 0.260<br>Data: 32000-33000-1116-1120<br><img src="https://www.guanacossj.com/media/articlebodypics/32000_33000_server_final_predicted_reloaded-larger.png" alt=""></p>
-<h4 id="Vm1-Power-Matrix-From-Jia"><a href="#Vm1-Power-Matrix-From-Jia" class="headerlink" title="Vm1-Power-Matrix-From-Jia"></a>Vm1-Power-Matrix-From-Jia</h4><p>Test RMSE: 3.458<br>Test nRMSE: 0.418<br>Data: 49000-50000-1116-1120<br><img src="https://www.guanacossj.com/media/articlebodypics/49000_50000_n_final_gru_pro_attention_bi_20.png" alt=""></p>
-<p>Test RMSE: 3.196<br>Test nRMSE: 0.287<br>Data: 32000-33000-1116-1120<br><img src="https://www.guanacossj.com/media/articlebodypics/32000_33000_n_final_gru_pro_attention_bi_20.png" alt=""></p>
+<p>Test RMSE: 2.962<br>Test nRMSE: 0.260<br>Test Data: 32000-33000-1116-1120<br><img src="https://www.guanacossj.com/media/articlebodypics/32000_33000_server_final_predicted_reloaded-larger.png" alt=""></p>
+<h4 id="Vm1-Power-Matrix-From-Jia"><a href="#Vm1-Power-Matrix-From-Jia" class="headerlink" title="Vm1-Power-Matrix-From-Jia"></a>Vm1-Power-Matrix-From-Jia</h4><p>Test RMSE: 3.458<br>Test nRMSE: 0.418<br>Test Data: 49000-50000-1116-1120<br><img src="https://www.guanacossj.com/media/articlebodypics/49000_50000_n_final_gru_pro_attention_bi_20.png" alt=""></p>
+<p>Test RMSE: 3.196<br>Test nRMSE: 0.287<br>Test Data: 32000-33000-1116-1120<br><img src="https://www.guanacossj.com/media/articlebodypics/32000_33000_n_final_gru_pro_attention_bi_20.png" alt=""></p>
 <h4 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">Training Data: 1111-1115</span><br><span class="line">Testing Data: 1116-1120</span><br></pre></td></tr></table></figure>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">    var1(t-60)  var2(t-60)  var3(t-60)  ...   var5(t)   var6(t)   var7(t)</span><br><span class="line">60    0.655771   -1.060919   -0.735941  ... -0.447461 -0.217168 -0.030555</span><br><span class="line">61    0.560612   -1.060919   -0.735941  ... -0.023654 -0.222058 -0.030555</span><br><span class="line">62    0.655771   -1.060919   -0.735941  ... -0.222916 -0.207537 -0.030555</span><br><span class="line">63    0.465453   -1.060919   -0.735941  ... -0.638782 -0.222058 -0.030555</span><br><span class="line">64   -0.010342   -1.047501   -0.735941  ...  1.133103 -0.222058 -0.030555</span><br></pre></td></tr></table></figure>
 <h4 id="Bi-LSTM-Attenion-amp-GRU-LSTM-Attenion-In-Stock-With-Pytorch"><a href="#Bi-LSTM-Attenion-amp-GRU-LSTM-Attenion-In-Stock-With-Pytorch" class="headerlink" title="Bi-LSTM-Attenion &amp; GRU-LSTM-Attenion In Stock With Pytorch"></a>Bi-LSTM-Attenion &amp; GRU-LSTM-Attenion In Stock With Pytorch</h4><h5 id="Bi-GRU"><a href="#Bi-GRU" class="headerlink" title="Bi-GRU"></a>Bi-GRU</h5><p>Test RMSE: 66.403<br>Test nRMSE: 0.077<br><img src="https://www.guanacossj.com/media/articlebodypics/pytorch-bi-gru-stock.png" alt=""></p>
@@ -71,8 +71,8 @@
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>restframework</tag>
         <tag>python</tag>
+        <tag>restframework</tag>
       </tags>
   </entry>
   <entry>
