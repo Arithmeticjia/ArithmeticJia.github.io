@@ -86,7 +86,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;pytorch-bi-lstm-stock.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;pytorch-bi-gru-att-stock.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;pytorch-bi-lstm-att-stock.png">
-<meta property="og:updated_time" content="2019-12-19T16:05:57.932Z">
+<meta property="og:updated_time" content="2019-12-19T16:15:05.784Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;pred_0.png">
 
@@ -273,7 +273,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-20 00:05:57" itemprop="dateModified" datetime="2019-12-20T00:05:57+08:00">2019-12-20</time>
+                <time title="修改时间：2019-12-20 00:15:05" itemprop="dateModified" datetime="2019-12-20T00:15:05+08:00">2019-12-20</time>
               </span>
 
           
@@ -289,7 +289,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
+              <span>2.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -328,6 +328,13 @@
 <h4 id="Vm1-Power-Matrix-From-Jia"><a href="#Vm1-Power-Matrix-From-Jia" class="headerlink" title="Vm1-Power-Matrix-From-Jia"></a>Vm1-Power-Matrix-From-Jia</h4><h5 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h5><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Training Data: 1111<span class="string">-1115</span></span><br><span class="line"><span class="keyword">Testing </span>Data: 1116<span class="string">-1120</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="params">(n,m)</span> -&gt;</span> <span class="function"><span class="params">(n,m * timestamp)</span> -&gt;</span> (n,timestamp,m)</span><br></pre></td></tr></table></figure>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">    var1(t<span class="number">-60</span>)  var2(t<span class="number">-60</span>)  var3(t<span class="number">-60</span>)  ...   var5(t)   var6(t)   var7(t)</span><br><span class="line"><span class="number">60</span>    <span class="number">0.655771</span>   <span class="number">-1.060919</span>   <span class="number">-0.735941</span>  ... <span class="number">-0.447461</span> <span class="number">-0.217168</span> <span class="number">-0.030555</span></span><br><span class="line"><span class="number">61</span>    <span class="number">0.560612</span>   <span class="number">-1.060919</span>   <span class="number">-0.735941</span>  ... <span class="number">-0.023654</span> <span class="number">-0.222058</span> <span class="number">-0.030555</span></span><br><span class="line"><span class="number">62</span>    <span class="number">0.655771</span>   <span class="number">-1.060919</span>   <span class="number">-0.735941</span>  ... <span class="number">-0.222916</span> <span class="number">-0.207537</span> <span class="number">-0.030555</span></span><br><span class="line"><span class="number">63</span>    <span class="number">0.465453</span>   <span class="number">-1.060919</span>   <span class="number">-0.735941</span>  ... <span class="number">-0.638782</span> <span class="number">-0.222058</span> <span class="number">-0.030555</span></span><br><span class="line"><span class="number">64</span>   <span class="number">-0.010342</span>   <span class="number">-1.047501</span>   <span class="number">-0.735941</span>  ...  <span class="number">1.133103</span> <span class="number">-0.222058</span> <span class="number">-0.030555</span></span><br></pre></td></tr></table></figure>
+<h5 id="Normalization"><a href="#Normalization" class="headerlink" title="Normalization"></a>Normalization</h5><ul>
+<li>Mean Normaliztion(均值归一化)</li>
+</ul>
+<script type="math/tex; mode=display">
+x^{*} = \frac{x-\mu}{\sigma }</script><ul>
+<li>Min-Max Normalization</li>
+</ul>
 <h5 id="Bi-GRU-Attention"><a href="#Bi-GRU-Attention" class="headerlink" title="Bi-GRU + Attention"></a>Bi-GRU + Attention</h5><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Epochs: 20</span><br><span class="line"><span class="keyword">Test </span>RMSE: 3.054</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.243</span><br><span class="line"><span class="keyword">Test </span>Data: all<span class="string">-1116</span><span class="string">-1120</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/gru-bi-20-all-att-1620.jpg" alt=""></p>
 <figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Epochs: 20</span><br><span class="line"><span class="keyword">Test </span>RMSE: 3.458</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.418</span><br><span class="line"><span class="keyword">Test </span>Data: 49000<span class="string">-50000</span><span class="string">-1116</span><span class="string">-1120</span></span><br></pre></td></tr></table></figure>
@@ -449,7 +456,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction"><span class="nav-number">1.</span> <span class="nav-text">A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vm1-Power-Matrix-From-Paper"><span class="nav-number">2.</span> <span class="nav-text">Vm1-Power-Matrix-From-Paper</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vm1-Power-Matrix-From-Jia"><span class="nav-number">3.</span> <span class="nav-text">Vm1-Power-Matrix-From-Jia</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Input"><span class="nav-number">3.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-GRU-Attention"><span class="nav-number">3.2.</span> <span class="nav-text">Bi-GRU + Attention</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-LSTM-Attention"><span class="nav-number">3.3.</span> <span class="nav-text">Bi-LSTM + Attention</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-LSTM-Only"><span class="nav-number">3.4.</span> <span class="nav-text">Bi-LSTM Only</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bi-LSTM-Attenion-amp-GRU-LSTM-Attenion-In-Stock-With-Pytorch"><span class="nav-number">4.</span> <span class="nav-text">Bi-LSTM-Attenion &amp; GRU-LSTM-Attenion In Stock With Pytorch</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-GRU"><span class="nav-number">4.1.</span> <span class="nav-text">Bi-GRU</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-LSTM"><span class="nav-number">4.2.</span> <span class="nav-text">Bi-LSTM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-GRU-Attention-1"><span class="nav-number">4.3.</span> <span class="nav-text">Bi-GRU-Attention</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-LSTM-Attention-1"><span class="nav-number">4.4.</span> <span class="nav-text">Bi-LSTM-Attention</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction"><span class="nav-number">1.</span> <span class="nav-text">A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vm1-Power-Matrix-From-Paper"><span class="nav-number">2.</span> <span class="nav-text">Vm1-Power-Matrix-From-Paper</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vm1-Power-Matrix-From-Jia"><span class="nav-number">3.</span> <span class="nav-text">Vm1-Power-Matrix-From-Jia</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Input"><span class="nav-number">3.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Normalization"><span class="nav-number">3.2.</span> <span class="nav-text">Normalization</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-GRU-Attention"><span class="nav-number">3.3.</span> <span class="nav-text">Bi-GRU + Attention</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-LSTM-Attention"><span class="nav-number">3.4.</span> <span class="nav-text">Bi-LSTM + Attention</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-LSTM-Only"><span class="nav-number">3.5.</span> <span class="nav-text">Bi-LSTM Only</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bi-LSTM-Attenion-amp-GRU-LSTM-Attenion-In-Stock-With-Pytorch"><span class="nav-number">4.</span> <span class="nav-text">Bi-LSTM-Attenion &amp; GRU-LSTM-Attenion In Stock With Pytorch</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-GRU"><span class="nav-number">4.1.</span> <span class="nav-text">Bi-GRU</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-LSTM"><span class="nav-number">4.2.</span> <span class="nav-text">Bi-LSTM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-GRU-Attention-1"><span class="nav-number">4.3.</span> <span class="nav-text">Bi-GRU-Attention</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-LSTM-Attention-1"><span class="nav-number">4.4.</span> <span class="nav-text">Bi-LSTM-Attention</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -700,6 +707,56 @@
   
 
   
+      
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        extensions: ['[mhchem]/mhchem.js'],
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 
