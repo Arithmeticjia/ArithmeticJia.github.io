@@ -35,6 +35,7 @@
 <li>第一阶段，使用注意力机制自适应地提取每个时刻的相关feature</li>
 <li>第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states<script type="math/tex; mode=display">e_{t}^{k}=v_{e}^{T}tanh(W_{e}[h_{t-1};s_{t-1}]+U_{e}x^{k})</script></li>
 <li>用softmax函数将其归一化<script type="math/tex; mode=display">\alpha _{t}^{k}=\frac{exp(e_{t}^{k})}{\sum_{i-1}^{n}exp(e_{t}^{i})}</script></li>
+<li>得到更新后的x<script type="math/tex; mode=display">\tilde{x} = (\alpha _{t}^{1}x_{t}^{1}, \alpha _{t}^{2}x_{t}^{2},...,\alpha _{t}^{n}x_{t}^{n})</script></li>
 </ul>
 <figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 10</span><br><span class="line"><span class="keyword">Test </span>RMSE: 0.259</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.056</span><br><span class="line"><span class="keyword">Test </span>Data: all</span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/pred_0.png" alt=""></p>
