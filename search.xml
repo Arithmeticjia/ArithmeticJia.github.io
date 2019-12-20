@@ -33,13 +33,15 @@
 <li>softmax把一个k维的real value向量(a1,a2,a3,a4…)映射成一个(b1,b2,b3,b4…)其中bi是一个0-1的常数，然后可以根据bi的大小来进行多分类的任务，如取权重最大的一维</li>
 <li>传统的注意力机制只用在解码器的输入阶段，即对不同时刻产生不同的context vector不同，该文还在编码器的输入阶段引入了注意力机制，从而同时实现了选取特征因子(feature selection)和把握长期时序依赖关系(long-term temporal dependencies)</li>
 <li>第一阶段，使用注意力机制自适应地提取每个时刻的相关feature</li>
-<li>第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 0.259</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.056</span><br><span class="line"><span class="keyword">Test </span>Data: all</span><br></pre></td></tr></table></figure>
-<img src="https://www.guanacossj.com/media/articlebodypics/pred_0.png" alt=""></li>
+<li>第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states</li>
 </ul>
-<p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted.png" alt=""></p>
+<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 10</span><br><span class="line"><span class="keyword">Test </span>RMSE: 0.259</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.056</span><br><span class="line"><span class="keyword">Test </span>Data: all</span><br></pre></td></tr></table></figure>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/pred_0.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted_reloaded.png" alt=""></p>
-<p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted_standard.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted_reloaded_standard.png" alt=""></p>
+<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 10</span><br><span class="line"><span class="keyword">Test </span>RMSE: 0.327</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.275</span><br><span class="line"><span class="keyword">Test </span>Data: all * 0.3</span><br></pre></td></tr></table></figure>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted.png" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted_standard.png" alt=""></p>
 <h4 id="Vm1-Power-Matrix-From-Paper"><a href="#Vm1-Power-Matrix-From-Paper" class="headerlink" title="Vm1-Power-Matrix-From-Paper"></a>Vm1-Power-Matrix-From-Paper</h4><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 10</span><br><span class="line"><span class="keyword">Test </span>RMSE: 2.602</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.207</span><br><span class="line"><span class="keyword">Test </span>Data: all<span class="string">-1116</span><span class="string">-1120</span></span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/all_server_final_predicted_reloaded-larger.png" alt=""></p>
 <figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 10</span><br><span class="line"><span class="keyword">Test </span>RMSE: 3.057</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.361</span><br><span class="line"><span class="keyword">Test </span>Data: 49000<span class="string">-50000</span><span class="string">-1116</span><span class="string">-1120</span></span><br></pre></td></tr></table></figure>
@@ -260,9 +262,9 @@ y = wx + b</script><p>这是一个基本的网络Net，它只包含一个全连�
       </categories>
       <tags>
         <tag>python</tag>
+        <tag>leetcode</tag>
         <tag>list</tag>
         <tag>pop</tag>
-        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -525,8 +527,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>django</tag>
         <tag>celery</tag>
+        <tag>django</tag>
       </tags>
   </entry>
   <entry>
