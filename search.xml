@@ -32,12 +32,14 @@
 <li>sigmoid把一个real value映射到(0,1)的区间(当然也可以是(-1,1)),这样可以用来做二分类</li>
 <li>softmax把一个k维的real value向量(a1,a2,a3,a4…)映射成一个(b1,b2,b3,b4…)其中bi是一个0-1的常数，然后可以根据bi的大小来进行多分类的任务，如取权重最大的一维</li>
 <li>传统的注意力机制只用在解码器的输入阶段，即对不同时刻产生不同的context vector不同，该文还在编码器的输入阶段引入了注意力机制，从而同时实现了选取特征因子(feature selection)和把握长期时序依赖关系(long-term temporal dependencies)</li>
-<li>第一阶段，使用注意力机制自适应地提取每个时刻的相关feature</li>
-<li>第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states<script type="math/tex; mode=display">e_{t}^{k}=v_{e}^{T}tanh(W_{e}[h_{t-1};s_{t-1}]+U_{e}x^{k})</script></li>
+<li>第一阶段，使用注意力机制自适应地提取每个时刻的相关feature<script type="math/tex; mode=display">e_{t}^{k}=v_{e}^{T}tanh(W_{e}[h_{t-1};s_{t-1}]+U_{e}x^{k})</script></li>
 <li>用softmax函数将其归一化<script type="math/tex; mode=display">\alpha _{t}^{k}=\frac{exp(e_{t}^{k})}{\sum_{i-1}^{n}exp(e_{t}^{i})}</script></li>
 <li>得到更新后的x<script type="math/tex; mode=display">\tilde{x} = (\alpha _{t}^{1}x_{t}^{1}, \alpha _{t}^{2}x_{t}^{2},...,\alpha _{t}^{n}x_{t}^{n})</script></li>
+<li>第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states<script type="math/tex; mode=display">c_{t}^{'} = \sum_{t-1}^{T}\beta _{t^{'}}^{t}h_{t}</script></li>
+<li>选取LSTM作为编码器<script type="math/tex; mode=display">h_{t} = f_{1}(h_{t-1},  \tilde{x})</script></li>
+<li><script type="math/tex">\beta _{t^{'}}^{t}</script>的设计类似于Bahanau的工作，基于前一个时刻解码器的hidden state[公式]和cell state[公式]计算得到：<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 10</span><br><span class="line"><span class="keyword">Test </span>RMSE: 0.259</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.056</span><br><span class="line"><span class="keyword">Test </span>Data: all</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
-<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 10</span><br><span class="line"><span class="keyword">Test </span>RMSE: 0.259</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.056</span><br><span class="line"><span class="keyword">Test </span>Data: all</span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/pred_0.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted_reloaded.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted_reloaded_standard.png" alt=""></p>
@@ -264,9 +266,9 @@ y = wx + b</script><p>这是一个基本的网络Net，它只包含一个全连�
       </categories>
       <tags>
         <tag>python</tag>
+        <tag>leetcode</tag>
         <tag>list</tag>
         <tag>pop</tag>
-        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
