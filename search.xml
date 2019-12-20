@@ -34,6 +34,7 @@
 <li>传统的注意力机制只用在解码器的输入阶段，即对不同时刻产生不同的context vector不同，该文还在编码器的输入阶段引入了注意力机制，从而同时实现了选取特征因子(feature selection)和把握长期时序依赖关系(long-term temporal dependencies)</li>
 <li>第一阶段，使用注意力机制自适应地提取每个时刻的相关feature</li>
 <li>第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states</li>
+<li><script type="math/tex; mode=display">e_{t}^{k}=v_{e}^{T}tanh(W_{e}[h_{t-1};s_{t-1}]+U_{e}x^{k})</script></li>
 </ul>
 <figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 10</span><br><span class="line"><span class="keyword">Test </span>RMSE: 0.259</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.056</span><br><span class="line"><span class="keyword">Test </span>Data: all</span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/pred_0.png" alt=""></p>
@@ -100,8 +101,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>python</tag>
         <tag>restframework</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -262,9 +263,9 @@ y = wx + b</script><p>这是一个基本的网络Net，它只包含一个全连�
       </categories>
       <tags>
         <tag>python</tag>
-        <tag>leetcode</tag>
         <tag>list</tag>
         <tag>pop</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
