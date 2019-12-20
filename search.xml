@@ -35,9 +35,11 @@
 <li>第一阶段，使用注意力机制自适应地提取每个时刻的相关feature<script type="math/tex; mode=display">e_{t}^{k}=v_{e}^{T}tanh(W_{e}[h_{t-1};s_{t-1}]+U_{e}x^{k})</script></li>
 <li>用softmax函数将其归一化<script type="math/tex; mode=display">\alpha _{t}^{k}=\frac{exp(e_{t}^{k})}{\sum_{i-1}^{n}exp(e_{t}^{i})}</script></li>
 <li>得到更新后的x<script type="math/tex; mode=display">\tilde{x} = (\alpha _{t}^{1}x_{t}^{1}, \alpha _{t}^{2}x_{t}^{2},...,\alpha _{t}^{n}x_{t}^{n})</script></li>
-<li>第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states<script type="math/tex; mode=display">c_{t}^{'} = \sum_{t-1}^{T}\beta _{t^{'}}^{t}h_{t}</script></li>
-<li>选取LSTM作为编码器<script type="math/tex; mode=display">h_{t} = f_{1}(h_{t-1},  \tilde{x})</script></li>
-<li><script type="math/tex">\beta _{t^{'}}^{t}</script>的设计类似于Bahanau的工作，基于前一个时刻解码器的hidden state[公式]和cell state[公式]计算得到：<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 10</span><br><span class="line"><span class="keyword">Test </span>RMSE: 0.259</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.056</span><br><span class="line"><span class="keyword">Test </span>Data: all</span><br></pre></td></tr></table></figure>
+<li>选取LSTM作为编码器<script type="math/tex">f_{1}</script><script type="math/tex; mode=display">h_{t} = f_{1}(h_{t-1},  \tilde{x})</script></li>
+<li><p>第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states</p>
+<script type="math/tex; mode=display">c_{t}^{'} = \sum_{t-1}^{T}\beta _{t^{'}}^{t}h_{t}</script></li>
+<li><p><script type="math/tex">\beta _{t^{'}}^{t}</script>的设计类似于Bahanau的工作，基于前一个时刻解码器的hidden state[公式]和cell state[公式]计算得到：</p>
+<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">Epochs: 10</span><br><span class="line"><span class="keyword">Test </span>RMSE: 0.259</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.056</span><br><span class="line"><span class="keyword">Test </span>Data: all</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/pred_0.png" alt=""></p>
@@ -266,9 +268,9 @@ y = wx + b</script><p>这是一个基本的网络Net，它只包含一个全连�
       </categories>
       <tags>
         <tag>python</tag>
-        <tag>leetcode</tag>
         <tag>list</tag>
         <tag>pop</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -531,8 +533,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>celery</tag>
         <tag>django</tag>
+        <tag>celery</tag>
       </tags>
   </entry>
   <entry>
