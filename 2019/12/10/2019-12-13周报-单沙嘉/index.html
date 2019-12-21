@@ -86,7 +86,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;pytorch-bi-lstm-stock.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;pytorch-bi-gru-att-stock.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;pytorch-bi-lstm-att-stock.png">
-<meta property="og:updated_time" content="2019-12-20T10:40:40.687Z">
+<meta property="og:updated_time" content="2019-12-20T10:42:09.188Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;lstm-attention.jpg">
 
@@ -273,7 +273,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-20 18:40:40" itemprop="dateModified" datetime="2019-12-20T18:40:40+08:00">2019-12-20</time>
+                <time title="修改时间：2019-12-20 18:42:09" itemprop="dateModified" datetime="2019-12-20T18:42:09+08:00">2019-12-20</time>
               </span>
 
           
@@ -289,7 +289,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.8k</span>
+              <span>2.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -309,7 +309,7 @@
 
       
         <p>Works between 2019/12/07-2019/12/13<br><a id="more"></a></p>
-<h4 id="A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction"><a href="#A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction" class="headerlink" title="A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction"></a>A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction</h4><p><img src="https://www.guanacossj.com/media/articlebodypics/lstm-attention.jpg" alt=""></p>
+<h4 id="A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction"><a href="#A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction" class="headerlink" title="A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction"></a>A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction</h4><h5 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a>Theory</h5><p><img src="https://www.guanacossj.com/media/articlebodypics/lstm-attention.jpg" alt=""></p>
 <ul>
 <li>Bi-LSTM + Attention 就是在Bi-LSTM的模型上加入Attention层，在Bi-LSTM中我们会用最后一个时序的输出向量 作为特征向量，然后进行softmax分类。Attention是先计算每个时序的权重，然后将所有时序 的向量进行加权和作为特征向量，然后进行softmax分类</li>
 <li>sigmoid把一个real value映射到(0,1)的区间(当然也可以是(-1,1)),这样可以用来做二分类</li>
@@ -322,9 +322,9 @@
 <li><p>第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states</p>
 <script type="math/tex; mode=display">c_{t}^{'} = \sum_{t-1}^{T}\beta _{t^{'}}^{t}h_{t}</script></li>
 <li><p><script type="math/tex">\beta _{t^{'}}^{t}</script>的设计类似于Bahanau的工作，基于前一个时刻解码器的hidden state[公式]和cell state[公式]计算得到：</p>
-<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Epochs: 10</span><br><span class="line"><span class="keyword">Test </span>RMSE: 0.259</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.056</span><br><span class="line"><span class="keyword">Test </span>Data: all</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
+<h5 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h5><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Epochs: 10</span><br><span class="line"><span class="keyword">Test </span>RMSE: 0.259</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.056</span><br><span class="line"><span class="keyword">Test </span>Data: all</span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/pred_0.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted_reloaded.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/final_predicted_reloaded_standard.png" alt=""></p>
@@ -467,7 +467,7 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction"><span class="nav-number">1.</span> <span class="nav-text">A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vm1-Power-Matrix-From-Paper"><span class="nav-number">2.</span> <span class="nav-text">Vm1-Power-Matrix-From-Paper</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vm1-Power-Matrix-From-Jia"><span class="nav-number">3.</span> <span class="nav-text">Vm1-Power-Matrix-From-Jia</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Input"><span class="nav-number">3.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Normalization"><span class="nav-number">3.2.</span> <span class="nav-text">Normalization</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-GRU-Attention"><span class="nav-number">3.3.</span> <span class="nav-text">Bi-GRU + Attention</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-LSTM-Attention"><span class="nav-number">3.4.</span> <span class="nav-text">Bi-LSTM + Attention</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-LSTM-Only"><span class="nav-number">3.5.</span> <span class="nav-text">Bi-LSTM Only</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bi-LSTM-Attenion-amp-GRU-LSTM-Attenion-In-Stock-With-Pytorch"><span class="nav-number">4.</span> <span class="nav-text">Bi-LSTM-Attenion &amp; GRU-LSTM-Attenion In Stock With Pytorch</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-GRU"><span class="nav-number">4.1.</span> <span class="nav-text">Bi-GRU</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-LSTM"><span class="nav-number">4.2.</span> <span class="nav-text">Bi-LSTM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-GRU-Attention-1"><span class="nav-number">4.3.</span> <span class="nav-text">Bi-GRU-Attention</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-LSTM-Attention-1"><span class="nav-number">4.4.</span> <span class="nav-text">Bi-LSTM-Attention</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction"><span class="nav-number">1.</span> <span class="nav-text">A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Theory"><span class="nav-number">1.1.</span> <span class="nav-text">Theory</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Experiment"><span class="nav-number">1.2.</span> <span class="nav-text">Experiment</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vm1-Power-Matrix-From-Paper"><span class="nav-number">2.</span> <span class="nav-text">Vm1-Power-Matrix-From-Paper</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Vm1-Power-Matrix-From-Jia"><span class="nav-number">3.</span> <span class="nav-text">Vm1-Power-Matrix-From-Jia</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Input"><span class="nav-number">3.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Normalization"><span class="nav-number">3.2.</span> <span class="nav-text">Normalization</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-GRU-Attention"><span class="nav-number">3.3.</span> <span class="nav-text">Bi-GRU + Attention</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-LSTM-Attention"><span class="nav-number">3.4.</span> <span class="nav-text">Bi-LSTM + Attention</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-LSTM-Only"><span class="nav-number">3.5.</span> <span class="nav-text">Bi-LSTM Only</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Bi-LSTM-Attenion-amp-GRU-LSTM-Attenion-In-Stock-With-Pytorch"><span class="nav-number">4.</span> <span class="nav-text">Bi-LSTM-Attenion &amp; GRU-LSTM-Attenion In Stock With Pytorch</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-GRU"><span class="nav-number">4.1.</span> <span class="nav-text">Bi-GRU</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-LSTM"><span class="nav-number">4.2.</span> <span class="nav-text">Bi-LSTM</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-GRU-Attention-1"><span class="nav-number">4.3.</span> <span class="nav-text">Bi-GRU-Attention</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Bi-LSTM-Attention-1"><span class="nav-number">4.4.</span> <span class="nav-text">Bi-LSTM-Attention</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -483,7 +483,7 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">29</span>
+          <span class="site-state-item-count">30</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -563,12 +563,12 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">65k</span>
+    <span title="站点总字数">78k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">59 分钟</span>
+    <span title="站点阅读时长">1:11</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
