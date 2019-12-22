@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://arithmeticjia.github.io/"/>
-  <updated>2019-12-22T07:25:28.421Z</updated>
+  <updated>2019-12-22T07:29:21.788Z</updated>
   <id>http://arithmeticjia.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://arithmeticjia.github.io/2019/12/22/Seq2seq%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E6%A8%A1%E5%9E%8B/"/>
     <id>http://arithmeticjia.github.io/2019/12/22/Seq2seq%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E6%A8%A1%E5%9E%8B/</id>
     <published>2019-12-22T07:21:43.000Z</published>
-    <updated>2019-12-22T07:25:28.421Z</updated>
+    <updated>2019-12-22T07:29:21.788Z</updated>
     
-    <content type="html"><![CDATA[<p>对弈处理输出序列为不定长情况的问题呢，例如机器翻译，例如英文到法语的句子翻译，输入和输出均为不定长。前人提出了seq2seq模型，basic idea是设计一个encoder与decoder，其中encoder将输入序列编码为一个包含输入序列所有信息的context vector $ c $，decoder通过对$ c $的解码获得输入序列的信息，从而得到输出序列。encoder及decoder都通常为RNN循环神经网络<br><a id="more"></a></p>]]></content>
+    <content type="html"><![CDATA[<p>对弈处理输出序列为不定长情况的问题呢，例如机器翻译，例如英文到法语的句子翻译，输入和输出均为不定长。前人提出了seq2seq模型，basic idea是设计一个encoder与decoder，其中encoder将输入序列编码为一个包含输入序列所有信息的context vector $ c $，decoder通过对$ c $的解码获得输入序列的信息，从而得到输出序列。encoder及decoder都通常为RNN循环神经网络<br><a id="more"></a></p><h4 id="seq2seq模型"><a href="#seq2seq模型" class="headerlink" title="seq2seq模型"></a>seq2seq模型</h4><h4 id="Encoder"><a href="#Encoder" class="headerlink" title="Encoder"></a>Encoder</h4><p>编码器的作用是把一个不定长的输入序列$ x_{1},x_{2},…,x_{T} $转化成一个定长的context vector $c$. 该context vector编码了输入序列$ x_{1},x_{2},…,x_{T} $的序列。回忆一下循环神经网络，假设该循环神经网络单元为$f$（可以为vanilla RNN, LSTM, GRU)，那么hidden state为</p><p>$ h_{t} = f(x_{t},h_{t-1}) $</p><p>编码器的context vector是所有时刻hidden state的函数，即：</p><p>[公式]</p><p>简单地，我们可以把最终时刻的hidden state[公式]作为context vecter。当然我们也可以取各个时刻hidden states的平均，以及其他方法。</p><h4 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a>Decoder</h4>]]></content>
     
     <summary type="html">
     
@@ -123,9 +123,9 @@
     
       <category term="django" scheme="http://arithmeticjia.github.io/tags/django/"/>
     
-      <category term="restframework" scheme="http://arithmeticjia.github.io/tags/restframework/"/>
-    
       <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
+    
+      <category term="restframework" scheme="http://arithmeticjia.github.io/tags/restframework/"/>
     
   </entry>
   
