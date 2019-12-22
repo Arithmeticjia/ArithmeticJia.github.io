@@ -20,10 +20,11 @@
 <p>[公式]</p>
 <p>其中函数g为解码器的循环神经网络单元。</p>
 <h4 id="Origin-LSTM"><a href="#Origin-LSTM" class="headerlink" title="Origin LSTM"></a>Origin LSTM</h4><ul>
-<li><p>forget gate:</p>
-<script type="math/tex; mode=display">f_{t} = \sigma (W_{f}[h_{t-1};x_{t}]+b_{f})</script></li>
+<li>forget gate:<script type="math/tex; mode=display">f_{t} = \sigma (W_{f}[h_{t-1};x_{t}]+b_{f})</script>$W_{f}$是遗忘门的权重矩阵，$[h_{t-1};x_{t}]$表示把两个向量连接成一个更长的向量，$b_{f}$是遗忘门的偏置项，$\sigma$是sigmoid函数<br>如果输入的维度是$d_{x}$，隐藏层的维度是$d_{h}$，单元状态的维度是$d_{c}$（通常$d_{c} = d_{h}$），则遗忘门的权重矩阵$W_{f}$的维度是$d_{c}×(d_{h}+d_{x})$</li>
 <li><p>input gate</p>
 <script type="math/tex; mode=display">i_{t} = \sigma (W_{i}[h_{t-1};x_{t}]+b_{i})</script></li>
+<li><p>output gate</p>
+<script type="math/tex; mode=display">\tilde{c}_{t}= tanh(W_{c}[h_{t-1};x_{t}]+b_{c})</script><script type="math/tex; mode=display">c_{t} = f_{t} * c_{t-1} + i_{t} * \tilde{c}_{t}</script><script type="math/tex; mode=display">o_{t} = \sigma (W_{o}[h_{t-1};x_{t}]+b_{o})</script></li>
 </ul>
 ]]></content>
       <tags>
