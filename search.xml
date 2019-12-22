@@ -18,11 +18,10 @@
 <li>根据相应的误差项，计算每个权重的梯度</li>
 <li>sigmoid</li>
 </ul>
-<script type="math/tex; mode=display">\delta (x) = \frac{1}{1+e^{-x}}</script><p>导数</p>
-<script type="math/tex; mode=display">\delta^{'} (x) = \frac{e^{-x}}{(1+e^{-x})^{2}}=\delta(x)(1-\delta(x))</script><ul>
+<script type="math/tex; mode=display">\delta (x) = \frac{1}{1+e^{-x}}</script><script type="math/tex; mode=display">\delta^{'} (x) = \frac{e^{-x}}{(1+e^{-x})^{2}}=\delta(x)(1-\delta(x))</script><ul>
 <li>tanh</li>
 </ul>
-<script type="math/tex; mode=display">\delta (x) = \frac{1}{1+e^{-x}}</script><h4 id="seq2seq模型"><a href="#seq2seq模型" class="headerlink" title="seq2seq模型"></a>seq2seq模型</h4><h5 id="Encoder"><a href="#Encoder" class="headerlink" title="Encoder"></a>Encoder</h5><p>编码器的作用是把一个不定长的输入序列$ x_{1},x_{2},…,x_{T} $转化成一个定长的context vector $c$. 该context vector编码了输入序列$ x_{1},x_{2},…,x_{T} $的序列。回忆一下循环神经网络，假设该循环神经网络单元为$f$（可以为vanilla RNN, LSTM, GRU)，那么hidden state为</p>
+<script type="math/tex; mode=display">tanh(x) = \frac{e^{x}-e^{-x}}{e^{x}+e^{-x}}</script><script type="math/tex; mode=display">tanh^{'}(x) = 1 - tanh^{2}</script><h4 id="seq2seq模型"><a href="#seq2seq模型" class="headerlink" title="seq2seq模型"></a>seq2seq模型</h4><h5 id="Encoder"><a href="#Encoder" class="headerlink" title="Encoder"></a>Encoder</h5><p>编码器的作用是把一个不定长的输入序列$ x_{1},x_{2},…,x_{T} $转化成一个定长的context vector $c$. 该context vector编码了输入序列$ x_{1},x_{2},…,x_{T} $的序列。回忆一下循环神经网络，假设该循环神经网络单元为$f$（可以为vanilla RNN, LSTM, GRU)，那么hidden state为</p>
 <script type="math/tex; mode=display">h_{t} = f(x_{t},h_{t-1})</script><p>编码器的context vector是所有时刻hidden state的函数，即：</p>
 <script type="math/tex; mode=display">c=q(h_{1},...,h_{T})</script><p>简单地，我们可以把最终时刻的hidden state[公式]作为context vecter。当然我们也可以取各个时刻hidden states的平均，以及其他方法。</p>
 <h5 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a>Decoder</h5><p>编码器最终输出一个context vector $c$，该context vector编码了输入序列$ x_{1},x_{2},…,x_{T} $的信息。</p>
