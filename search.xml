@@ -41,7 +41,7 @@
 </ul>
 <script type="math/tex; mode=display">l_{t'}^{t}=v_{d}^{T}tanh(W_{d}[d_{t'-1};s_{t'-1}^{'}]+U_{d}h_{t})</script><script type="math/tex; mode=display">\beta _{t'}^{t}=\frac{exp(l_{t'}^{t})}{\sum_{j=1}^{T}exp(l_{t'}^{j})}</script><ul>
 <li>解码器的输入是上一个时刻的目标序列$y_{t’-1}$和hidden state$d_{t’-1}$以及context vector $c_{t’-1}$，即<script type="math/tex; mode=display">d_{t'}=f_{2}(y_{t'-1},c_{t'-1},d_{t'-1}</script></li>
-<li>这里设计了[公式]来combie[公式]与[公式]的信息，即<script type="math/tex; mode=display">\tilde{y}_{t'-1} = \tilde{\omega }^{T}[y_{t'-1};c_{t'-1}]+\tilde{b}</script></li>
+<li>这里设计了$\tilde{y}_{t’-1}$来combie$y_{t’-1}$与$c_{t’-1}$的信息，即<script type="math/tex; mode=display">\tilde{y}_{t'-1} = \tilde{\omega }^{T}[y_{t'-1};c_{t'-1}]+\tilde{b}</script></li>
 </ul>
 ]]></content>
       <tags>
