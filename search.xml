@@ -24,7 +24,9 @@
 <li><p>input gate</p>
 <script type="math/tex; mode=display">i_{t} = \sigma (W_{i}[h_{t-1};x_{t}]+b_{i})</script></li>
 <li><p>output gate</p>
-<script type="math/tex; mode=display">\tilde{c}_{t}= tanh(W_{c}[h_{t-1};x_{t}]+b_{c})</script><script type="math/tex; mode=display">c_{t} = f_{t} * c_{t-1} + i_{t} * \tilde{c}_{t}</script><script type="math/tex; mode=display">o_{t} = \sigma (W_{o}[h_{t-1};x_{t}]+b_{o})</script></li>
+<script type="math/tex; mode=display">o_{t} = \sigma (W_{o}[h_{t-1};x_{t}]+b_{o})</script></li>
+<li><p>final out</p>
+<script type="math/tex; mode=display">\tilde{c}_{t}= tanh(W_{c}[h_{t-1};x_{t}]+b_{c})</script><script type="math/tex; mode=display">c_{t} = f_{t} * c_{t-1} + i_{t} * \tilde{c}_{t}</script><script type="math/tex; mode=display">h_{t} = o_{t} * tanh(c_{t})</script></li>
 </ul>
 ]]></content>
       <tags>
@@ -145,8 +147,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>python</tag>
         <tag>restframework</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -307,9 +309,9 @@ y = wx + b</script><p>这是一个基本的网络Net，它只包含一个全连�
       </categories>
       <tags>
         <tag>python</tag>
+        <tag>leetcode</tag>
         <tag>list</tag>
         <tag>pop</tag>
-        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
