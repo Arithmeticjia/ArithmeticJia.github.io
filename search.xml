@@ -34,12 +34,12 @@
 <li>选取LSTM作为编码器<script type="math/tex">f_{1}</script><script type="math/tex; mode=display">h_{t} = f_{1}(h_{t-1},  \tilde{x})</script></li>
 </ul>
 <h5 id="第二阶段，使用另一个注意力机制选取与之相关的encoder-hidden-states"><a href="#第二阶段，使用另一个注意力机制选取与之相关的encoder-hidden-states" class="headerlink" title="第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states"></a>第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states</h5><ul>
-<li>对所有时刻的[公式]取加权平均，即：</li>
+<li>对所有时刻的$h_{t’}$取加权平均，即：</li>
 </ul>
 <script type="math/tex; mode=display">c_{t}^{'} = \sum_{t-1}^{T}\beta _{t^{'}}^{t}h_{t}</script><ul>
-<li><script type="math/tex">\beta _{t^{'}}^{t}</script>的设计类似于Bahanau的工作，基于前一个时刻解码器的hidden state $ d_{t^{‘}-1} $和cell state$s_{t^{‘}-1}^{‘}$计算得到：</li>
+<li><script type="math/tex">\beta _{t^{'}}^{t}</script>的设计类似于Bahanau的工作，基于前一个时刻解码器的hidden state $ d_{t’-1} $和cell state$s_{t’-1}^{‘}$计算得到：</li>
 </ul>
-<script type="math/tex; mode=display">l_{t'}^{t}=v_{d}^{T}tanh(W_{d}[d_{t'-1};s_{t'-1}^{'}]+U_{d}h_{t})</script>]]></content>
+<script type="math/tex; mode=display">l_{t'}^{t}=v_{d}^{T}tanh(W_{d}[d_{t'-1};s_{t'-1}^{'}]+U_{d}h_{t})</script><script type="math/tex; mode=display">\beta _{t'}^{t}=\frac{exp(l_{t'}^{t})}{\sum_{j=1}^{T}exp(l_{t'}^{j})}</script>]]></content>
       <tags>
         <tag>seq2seq</tag>
         <tag>attention</tag>
