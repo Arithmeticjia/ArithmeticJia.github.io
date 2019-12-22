@@ -39,7 +39,10 @@
 <script type="math/tex; mode=display">c_{t}^{'} = \sum_{t-1}^{T}\beta _{t^{'}}^{t}h_{t}</script><ul>
 <li><script type="math/tex">\beta _{t^{'}}^{t}</script>的设计类似于Bahanau的工作，基于前一个时刻解码器的hidden state $ d_{t’-1} $和cell state$s_{t’-1}^{‘}$计算得到：</li>
 </ul>
-<script type="math/tex; mode=display">l_{t'}^{t}=v_{d}^{T}tanh(W_{d}[d_{t'-1};s_{t'-1}^{'}]+U_{d}h_{t})</script><script type="math/tex; mode=display">\beta _{t'}^{t}=\frac{exp(l_{t'}^{t})}{\sum_{j=1}^{T}exp(l_{t'}^{j})}</script>]]></content>
+<script type="math/tex; mode=display">l_{t'}^{t}=v_{d}^{T}tanh(W_{d}[d_{t'-1};s_{t'-1}^{'}]+U_{d}h_{t})</script><script type="math/tex; mode=display">\beta _{t'}^{t}=\frac{exp(l_{t'}^{t})}{\sum_{j=1}^{T}exp(l_{t'}^{j})}</script><ul>
+<li>解码器的输入是上一个时刻的目标序列$y_{t’-1}$和hidden state$d_{t’-1}$以及context vector $c_{t’-1}$，即</li>
+</ul>
+]]></content>
       <tags>
         <tag>seq2seq</tag>
         <tag>attention</tag>
@@ -320,9 +323,9 @@ y = wx + b</script><p>这是一个基本的网络Net，它只包含一个全连�
       </categories>
       <tags>
         <tag>python</tag>
+        <tag>leetcode</tag>
         <tag>list</tag>
         <tag>pop</tag>
-        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
