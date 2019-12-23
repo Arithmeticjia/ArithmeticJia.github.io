@@ -323,11 +323,11 @@
     
       <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
     
-      <category term="leetcode" scheme="http://arithmeticjia.github.io/tags/leetcode/"/>
-    
       <category term="list" scheme="http://arithmeticjia.github.io/tags/list/"/>
     
       <category term="pop" scheme="http://arithmeticjia.github.io/tags/pop/"/>
+    
+      <category term="leetcode" scheme="http://arithmeticjia.github.io/tags/leetcode/"/>
     
   </entry>
   
