@@ -59,6 +59,9 @@
 <h4 id="DA-RNN"><a href="#DA-RNN" class="headerlink" title="DA-RNN"></a>DA-RNN</h4><h5 id="第一阶段，使用注意力机制自适应地提取每个时刻的相关feature"><a href="#第一阶段，使用注意力机制自适应地提取每个时刻的相关feature" class="headerlink" title="第一阶段，使用注意力机制自适应地提取每个时刻的相关feature"></a>第一阶段，使用注意力机制自适应地提取每个时刻的相关feature</h5><script type="math/tex; mode=display">e_{t}^{k}=v_{e}^{T}tanh(W_{e}[h_{t-1};c_{t-1}]+U_{e}x^{k})</script><ul>
 <li>用softmax函数将其归一化<script type="math/tex; mode=display">\alpha _{t}^{k}=\frac{exp(e_{t}^{k})}{\sum_{i-1}^{n}exp(e_{t}^{i})}</script></li>
 <li>得到更新后的x<script type="math/tex; mode=display">\tilde{x} = (\alpha _{t}^{1}x_{t}^{1}, \alpha _{t}^{2}x_{t}^{2},...,\alpha _{t}^{n}x_{t}^{n})</script></li>
+</ul>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/lstm.jpg" alt=""></p>
+<ul>
 <li>选取LSTM作为编码器<script type="math/tex">f_{1}</script><script type="math/tex; mode=display">h_{t} = f_{1}(h_{t-1},  \tilde{x})</script></li>
 </ul>
 <h5 id="第二阶段，使用另一个注意力机制选取与之相关的encoder-hidden-states"><a href="#第二阶段，使用另一个注意力机制选取与之相关的encoder-hidden-states" class="headerlink" title="第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states"></a>第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states</h5><ul>

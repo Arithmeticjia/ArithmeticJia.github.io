@@ -59,8 +59,10 @@
 <meta property="og:site_name" content="请叫我算术嘉的博客">
 <meta property="og:description" content="对于处理输出序列为不定长情况的问题，例如机器翻译，例如英文到法语的句子翻译，输入和输出均为不定长。前人提出了seq2seq模型，basic idea是设计一个encoder与decoder，其中encoder将输入序列编码为一个包含输入序列所有信息的context vector $ c $，decoder通过对$ c $的解码获得输入序列的信息，从而得到输出序列。encoder及decoder都通">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-23T08:35:42.522Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;lstm.jpg">
+<meta property="og:updated_time" content="2019-12-24T08:46:36.319Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;lstm.jpg">
 
 <link rel="canonical" href="http://arithmeticjia.github.io/2019/12/22/Seq2seq%E6%A8%A1%E5%9E%8B%E5%8F%8A%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6%E6%A8%A1%E5%9E%8B/">
 
@@ -245,7 +247,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-23 16:35:42" itemprop="dateModified" datetime="2019-12-23T16:35:42+08:00">2019-12-23</time>
+                <time title="修改时间：2019-12-24 16:46:36" itemprop="dateModified" datetime="2019-12-24T16:46:36+08:00">2019-12-24</time>
               </span>
 
           
@@ -323,6 +325,9 @@
 <h4 id="DA-RNN"><a href="#DA-RNN" class="headerlink" title="DA-RNN"></a>DA-RNN</h4><h5 id="第一阶段，使用注意力机制自适应地提取每个时刻的相关feature"><a href="#第一阶段，使用注意力机制自适应地提取每个时刻的相关feature" class="headerlink" title="第一阶段，使用注意力机制自适应地提取每个时刻的相关feature"></a>第一阶段，使用注意力机制自适应地提取每个时刻的相关feature</h5><script type="math/tex; mode=display">e_{t}^{k}=v_{e}^{T}tanh(W_{e}[h_{t-1};c_{t-1}]+U_{e}x^{k})</script><ul>
 <li>用softmax函数将其归一化<script type="math/tex; mode=display">\alpha _{t}^{k}=\frac{exp(e_{t}^{k})}{\sum_{i-1}^{n}exp(e_{t}^{i})}</script></li>
 <li>得到更新后的x<script type="math/tex; mode=display">\tilde{x} = (\alpha _{t}^{1}x_{t}^{1}, \alpha _{t}^{2}x_{t}^{2},...,\alpha _{t}^{n}x_{t}^{n})</script></li>
+</ul>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/lstm.jpg" alt=""></p>
+<ul>
 <li>选取LSTM作为编码器<script type="math/tex">f_{1}</script><script type="math/tex; mode=display">h_{t} = f_{1}(h_{t-1},  \tilde{x})</script></li>
 </ul>
 <h5 id="第二阶段，使用另一个注意力机制选取与之相关的encoder-hidden-states"><a href="#第二阶段，使用另一个注意力机制选取与之相关的encoder-hidden-states" class="headerlink" title="第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states"></a>第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states</h5><ul>
