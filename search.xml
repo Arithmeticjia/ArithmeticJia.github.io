@@ -25,7 +25,7 @@
 <script type="math/tex; mode=display">o_{t} = \sigma (W_{o}[h_{t-1};x_{t}]+b_{o})</script></li>
 <li><p>final out</p>
 <script type="math/tex; mode=display">\tilde{c}_{t}= tanh(W_{c}[h_{t-1};x_{t}]+b_{c})</script><script type="math/tex; mode=display">c_{t} = f_{t} * c_{t-1} + i_{t} * \tilde{c}_{t}</script><script type="math/tex; mode=display">h_{t} = o_{t} * tanh(c_{t})</script></li>
-<li><p>前向计算每个神经元的输出值，对于LSTM来说就是$f_{t},i_{t},c_{t},o_{t},h_{t}$5个向量的值</p>
+<li><p>前向计算每个神经元的输出值，对于LSTM来说就是$f_{t}$,$i_{t}$,$c_{t}$,$o_{t}$,$h_{t}$ 5个向量的值</p>
 </li>
 <li>反向计算每个神经元的误差项$\delta$，包括两个方向，一是沿时间的反向传播，即从当前t时刻开始，计算每个时刻的误差项；另一个是将误差项向上一层传播</li>
 <li>根据相应的误差项，计算每个权重的梯度</li>
