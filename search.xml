@@ -45,11 +45,10 @@
 <script type="math/tex; mode=display">h_{t} = f(x_{t},h_{t-1})</script><p>编码器的context vector是所有时刻hidden state的函数，即：</p>
 <script type="math/tex; mode=display">c=q(h_{1},...,h_{T})</script><p>简单地，我们可以把最终时刻的hidden state[公式]作为context vecter。当然我们也可以取各个时刻hidden states的平均，以及其他方法。</p>
 <h5 id="Decoder"><a href="#Decoder" class="headerlink" title="Decoder"></a>Decoder</h5><p>编码器最终输出一个context vector $c$，该context vector编码了输入序列$ x_{1},x_{2},…,x_{T} $的信息。</p>
-<p>假设训练数据中的输出序列为$y_{1}y_{2},…,y_{T}^{‘}$,我们希望每个[公式]时刻的输出即取决于之前的输出也取决于context vector，即估计[公式]，从而得到输出序列的联合概率分布：</p>
+<p>假设训练数据中的输出序列为$y_{1}y_{2},…,y_{T}^{‘}$,我们希望每个$t$时刻的输出即取决于之前的输出也取决于context vector，即估计$P(y_{t’}|y_{1},…,y_{t’-1},c)$，从而得到输出序列的联合概率分布：</p>
 <script type="math/tex; mode=display">P(y_{1},...,y_{T'})=\prod_{t'-1}^{T'}P(y_{t'}|y_{1},...,y_{t'-1},c)</script><p>并定义该序列的损失函数loss function</p>
-<p>[公式]</p>
-<p>通过最小化损失函数来训练seq2seq模型。</p>
-<p>那么如何估计[公式]？</p>
+<script type="math/tex; mode=display">-\log P(y_{1},...,y_{T'})</script><p>通过最小化损失函数来训练seq2seq模型。</p>
+<p>那么如何估计$ P(y_{t’}|y_{1},…,y_{t’-1},c) $？</p>
 <p>我们使用另一个循环神经网络作为解码器。解码器使用函数[公式]来表示[公式]时刻输出[公式]的概率</p>
 <p>[公式]</p>
 <p>为了区分编码器中的hidden state[公式]，其中[公式]为[公式]时刻解码器的hidden state。区别于编码器，解码器中的循环神经网络的输入除了前一个时刻的输出序列[公式]，和前一个时刻的hidden state[公式]以外，还包含了context vector[公式]。即：</p>
