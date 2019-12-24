@@ -49,11 +49,9 @@
 <script type="math/tex; mode=display">P(y_{1},...,y_{T'})=\prod_{t'-1}^{T'}P(y_{t'}|y_{1},...,y_{t'-1},c)</script><p>并定义该序列的损失函数loss function</p>
 <script type="math/tex; mode=display">-\log P(y_{1},...,y_{T'})</script><p>通过最小化损失函数来训练seq2seq模型。</p>
 <p>那么如何估计$ P(y_{t’}|y_{1},…,y_{t’-1},c) $？</p>
-<p>我们使用另一个循环神经网络作为解码器。解码器使用函数[公式]来表示[公式]时刻输出[公式]的概率</p>
-<p>[公式]</p>
-<p>为了区分编码器中的hidden state[公式]，其中[公式]为[公式]时刻解码器的hidden state。区别于编码器，解码器中的循环神经网络的输入除了前一个时刻的输出序列[公式]，和前一个时刻的hidden state[公式]以外，还包含了context vector[公式]。即：</p>
-<p>[公式]</p>
-<p>其中函数g为解码器的循环神经网络单元。</p>
+<p>我们使用另一个循环神经网络作为解码器。解码器使用函数$p$来表示$t’$时刻输出$y_{t’}$的概率</p>
+<script type="math/tex; mode=display">P(y_{t'}|y_{1},...,y_{t'-1},c) = p(y_{t'-1},s_{t'},c)</script><p>为了区分编码器中的hidden state[公式]，其中[公式]为[公式]时刻解码器的hidden state。区别于编码器，解码器中的循环神经网络的输入除了前一个时刻的输出序列[公式]，和前一个时刻的hidden state[公式]以外，还包含了context vector[公式]。即：</p>
+<script type="math/tex; mode=display">s_{t'} = g(y_{t'-1},s_{t'-1},c)</script><p>其中函数g为解码器的循环神经网络单元。</p>
 <h4 id="DA-RNN"><a href="#DA-RNN" class="headerlink" title="DA-RNN"></a>DA-RNN</h4><h5 id="第一阶段，使用注意力机制自适应地提取每个时刻的相关feature"><a href="#第一阶段，使用注意力机制自适应地提取每个时刻的相关feature" class="headerlink" title="第一阶段，使用注意力机制自适应地提取每个时刻的相关feature"></a>第一阶段，使用注意力机制自适应地提取每个时刻的相关feature</h5><script type="math/tex; mode=display">e_{t}^{k}=v_{e}^{T}tanh(W_{e}[h_{t-1};c_{t-1}]+U_{e}x^{k})</script><ul>
 <li>用softmax函数将其归一化<script type="math/tex; mode=display">\alpha _{t}^{k}=\frac{exp(e_{t}^{k})}{\sum_{i-1}^{n}exp(e_{t}^{i})}</script></li>
 <li>得到更新后的x<script type="math/tex; mode=display">\tilde{x} = (\alpha _{t}^{1}x_{t}^{1}, \alpha _{t}^{2}x_{t}^{2},...,\alpha _{t}^{n}x_{t}^{n})</script></li>
