@@ -28,6 +28,7 @@
 <li>(注，最开始的论文在encoder-decoder里面的当前decoder的attention得分用的是st-1和hi来算，但斯坦福教材上图上确实是画的st和hi来算，而且后续论文大多是用的这种方式，即当前步的attention score用的当前步的隐藏状态st和前面的hi去算的)</li>
 <li>$s_{i}$与$h_{j}$点积<script type="math/tex; mode=display">e_{ij} = a(s_{i},h_{j})</script></li>
 <li>softmax权重归一化<script type="math/tex; mode=display">\alpha_{ij} = \frac{exp(e_{ij})}{\sum_{k=1}^{T_{x}}exp(e_{ik})}</script></li>
+<li>计算c<script type="math/tex; mode=display">c_{i} = \sum_{j=1}^{T_{x}}\alpha_{ij}h_{j}</script></li>
 </ul>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-all.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test-m.jpg" alt=""></p>
