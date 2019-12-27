@@ -6,6 +6,7 @@
     <content><![CDATA[<p>Works between 2019/12/20-2019/12/27<br><a id="more"></a><br><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-all.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test-m.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test.jpg" alt=""></p>
+<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 3.955</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.289</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>周报</category>
