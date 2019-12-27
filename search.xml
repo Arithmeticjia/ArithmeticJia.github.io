@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2019-12-27周报-单沙嘉</title>
+    <url>/2019/12/27/2019-12-27%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
+    <content><![CDATA[<p>Works between 2019/12/20-2019/12/27<br><a id="more"></a><br><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-all.jpg" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test-m.jpg" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test.jpg" alt=""></p>
+]]></content>
+      <categories>
+        <category>周报</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Leetcode38Count-and-Say</title>
     <url>/2019/12/24/Leetcode38Count-and-Say/</url>
     <content><![CDATA[<p>Nothing<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">countAndSay</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"1"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        String str = countAndSay(n-<span class="number">1</span>) + <span class="string">"*"</span>;<span class="comment">// 这样末尾的数才能被循环处理到</span></span><br><span class="line">        <span class="keyword">char</span>[] str_c = str.toCharArray();</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">        StringBuilder temp = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; str_c.length-<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(str_c[i] == str_c[i+<span class="number">1</span>])&#123;</span><br><span class="line">                count++;  <span class="comment">//遇到相同的计数器加</span></span><br><span class="line">                i++;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                temp.append(Integer.toString(count)+ str_c[i]);</span><br><span class="line">                <span class="comment">// 遇到不同的，先append计数器的值，再append最后一个相同的值</span></span><br><span class="line">                <span class="comment">// temp.append("" + count + str_c[i]);</span></span><br><span class="line">                count = <span class="number">1</span>;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> temp.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -63,10 +74,16 @@
 </ul>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/lstm.jpg" alt=""></p>
 <ul>
-<li>选取LSTM作为编码器<script type="math/tex">f_{1}</script><script type="math/tex; mode=display">h_{t} = f_{1}(h_{t-1},  \tilde{x})</script></li>
+<li><p>选取LSTM作为编码器<script type="math/tex">f_{1}</script></p>
+<script type="math/tex; mode=display">h_{t} = f_{1}(h_{t-1},  \tilde{x})</script></li>
+<li><p>Encoder方面接受的是每一个输入，和上一个时间点的隐藏态。输出的是当前时间点的隐藏态</p>
+</li>
 </ul>
 <h5 id="第二阶段，使用另一个注意力机制选取与之相关的encoder-hidden-states"><a href="#第二阶段，使用另一个注意力机制选取与之相关的encoder-hidden-states" class="headerlink" title="第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states"></a>第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states</h5><ul>
-<li>对所有时刻的$h_{t’}$取加权平均，即：</li>
+<li><p>Decoder方面接受的是目标输入，和上一个时间点的隐藏态</p>
+</li>
+<li><p>对所有时刻的$h_{t’}$取加权平均，即：</p>
+</li>
 </ul>
 <script type="math/tex; mode=display">c_{t}^{'} = \sum_{t-1}^{T}\beta _{t^{'}}^{t}h_{t}</script><ul>
 <li><script type="math/tex">\beta _{t^{'}}^{t}</script>的设计类似于Bahanau的工作，基于前一个时刻解码器的hidden state $ d_{t’-1} $和cell state$s_{t’-1}^{‘}$计算得到：</li>
@@ -183,6 +200,9 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
 <h5 id="Bi-LSTM-Attention-1"><a href="#Bi-LSTM-Attention-1" class="headerlink" title="Bi-LSTM-Attention"></a>Bi-LSTM-Attention</h5><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 86.588</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.101</span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/pytorch-bi-lstm-att-stock.png" alt=""></p>
 ]]></content>
+      <categories>
+        <category>周报</category>
+      </categories>
   </entry>
   <entry>
     <title>Django个人博客搭建教程-Django-Rest-Framework外键与多对多序列化</title>
@@ -195,8 +215,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>restframework</tag>
         <tag>python</tag>
+        <tag>restframework</tag>
       </tags>
   </entry>
   <entry>
@@ -357,9 +377,9 @@ y = wx + b</script><p>这是一个基本的网络Net，它只包含一个全连�
       </categories>
       <tags>
         <tag>python</tag>
-        <tag>leetcode</tag>
         <tag>list</tag>
         <tag>pop</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -622,8 +642,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>celery</tag>
         <tag>django</tag>
+        <tag>celery</tag>
       </tags>
   </entry>
   <entry>

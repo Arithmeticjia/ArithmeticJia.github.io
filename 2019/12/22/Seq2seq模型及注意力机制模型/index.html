@@ -60,7 +60,7 @@
 <meta property="og:description" content="对于处理输出序列为不定长情况的问题，例如机器翻译，例如英文到法语的句子翻译，输入和输出均为不定长。前人提出了seq2seq模型，basic idea是设计一个encoder与decoder，其中encoder将输入序列编码为一个包含输入序列所有信息的context vector $ c $，decoder通过对$ c $的解码获得输入序列的信息，从而得到输出序列。encoder及decoder都通">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;lstm.jpg">
-<meta property="og:updated_time" content="2019-12-24T10:25:05.419Z">
+<meta property="og:updated_time" content="2019-12-24T10:48:12.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;lstm.jpg">
 
@@ -247,7 +247,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2019-12-24 18:25:05" itemprop="dateModified" datetime="2019-12-24T18:25:05+08:00">2019-12-24</time>
+                <time title="修改时间：2019-12-24 18:48:12" itemprop="dateModified" datetime="2019-12-24T18:48:12+08:00">2019-12-24</time>
               </span>
 
           
@@ -263,7 +263,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -329,10 +329,16 @@
 </ul>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/lstm.jpg" alt=""></p>
 <ul>
-<li>选取LSTM作为编码器<script type="math/tex">f_{1}</script><script type="math/tex; mode=display">h_{t} = f_{1}(h_{t-1},  \tilde{x})</script></li>
+<li><p>选取LSTM作为编码器<script type="math/tex">f_{1}</script></p>
+<script type="math/tex; mode=display">h_{t} = f_{1}(h_{t-1},  \tilde{x})</script></li>
+<li><p>Encoder方面接受的是每一个输入，和上一个时间点的隐藏态。输出的是当前时间点的隐藏态</p>
+</li>
 </ul>
 <h5 id="第二阶段，使用另一个注意力机制选取与之相关的encoder-hidden-states"><a href="#第二阶段，使用另一个注意力机制选取与之相关的encoder-hidden-states" class="headerlink" title="第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states"></a>第二阶段，使用另一个注意力机制选取与之相关的encoder hidden states</h5><ul>
-<li>对所有时刻的$h_{t’}$取加权平均，即：</li>
+<li><p>Decoder方面接受的是目标输入，和上一个时间点的隐藏态</p>
+</li>
+<li><p>对所有时刻的$h_{t’}$取加权平均，即：</p>
+</li>
 </ul>
 <script type="math/tex; mode=display">c_{t}^{'} = \sum_{t-1}^{T}\beta _{t^{'}}^{t}h_{t}</script><ul>
 <li><script type="math/tex">\beta _{t^{'}}^{t}</script>的设计类似于Bahanau的工作，基于前一个时刻解码器的hidden state $ d_{t’-1} $和cell state$s_{t’-1}^{‘}$计算得到：</li>
@@ -453,7 +459,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
