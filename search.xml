@@ -3,7 +3,7 @@
   <entry>
     <title>2019-12-27周报-单沙嘉</title>
     <url>/2019/12/27/2019-12-27%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
-    <content><![CDATA[<p>Works between 2019/12/20-2019/12/27<br><a id="more"></a></p>
+    <content><![CDATA[<p>Work between 2019/12/20-2019/12/27<br><a id="more"></a></p>
 <h3 id="Encoder-Decoder-Seq2Seq"><a href="#Encoder-Decoder-Seq2Seq" class="headerlink" title="Encoder-Decoder(Seq2Seq)"></a>Encoder-Decoder(Seq2Seq)</h3><p><img src="https://pic4.zhimg.com/80/v2-77e8a977fc3d43bec8b05633dc52ff9f_hd.jpg" alt=""></p>
 <ul>
 <li>Encoder-Decoder结构先将输入数据编码成一个上下文向量c</li>
@@ -156,7 +156,7 @@
   <entry>
     <title>2019-12-13周报</title>
     <url>/2019/12/10/2019-12-13%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
-    <content><![CDATA[<p>Works between 2019/12/07-2019/12/13<br><a id="more"></a></p>
+    <content><![CDATA[<p>Work between 2019/12/07-2019/12/13<br><a id="more"></a></p>
 <h4 id="A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction"><a href="#A-Dual-Stage-Attention-Based-Recurrent-Neural-Network-for-Time-Series-Prediction" class="headerlink" title="A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction"></a>A Dual-Stage Attention-Based Recurrent Neural Network for Time Series Prediction</h4><h5 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a>Theory</h5><p><img src="https://www.guanacossj.com/media/articlebodypics/lstm-attention.jpg" alt=""></p>
 <ul>
 <li>Bi-LSTM + Attention 就是在Bi-LSTM的模型上加入Attention层，在Bi-LSTM中我们会用最后一个时序的输出向量 作为特征向量，然后进行softmax分类。Attention是先计算每个时序的权重，然后将所有时序 的向量进行加权和作为特征向量，然后进行softmax分类</li>
