@@ -27,6 +27,7 @@
 <li>softmax权重归一化<script type="math/tex; mode=display">\alpha_{ij} = \frac{exp(e_{ij})}{\sum_{k=1}^{T_{x}}exp(e_{ik})}</script></li>
 <li>计算c<script type="math/tex; mode=display">c_{i} = \sum_{j=1}^{T_{x}}\alpha_{ij}h_{j}</script></li>
 </ul>
+<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">1115<span class="string">-1120</span> after data smoothing</span><br><span class="line">T = 10</span><br><span class="line">features = 70</span><br><span class="line">train = all * 0.7</span><br><span class="line"><span class="keyword">test </span>= all * 0.3</span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-all.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test-m.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test.jpg" alt=""></p>
