@@ -51,16 +51,18 @@
   };
 </script>
 
-  <meta name="description" content="遇事不决，量子力学">
-<meta property="og:type" content="website">
-<meta property="og:title" content="请叫我算术嘉的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;arithmeticjia.github.io&#x2F;tags&#x2F;gpu&#x2F;index.html">
+  <meta name="description" content="python3 最优雅解法">
+<meta name="keywords" content="python,leetcode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Leetcode[78]Pascal&#39;s Triangle II">
+<meta property="og:url" content="http:&#x2F;&#x2F;arithmeticjia.github.io&#x2F;2019&#x2F;12&#x2F;28&#x2F;Leetcode78Pascal-Triangle-2&#x2F;index.html">
 <meta property="og:site_name" content="请叫我算术嘉的博客">
-<meta property="og:description" content="遇事不决，量子力学">
+<meta property="og:description" content="python3 最优雅解法">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-28T14:07:35.863Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://arithmeticjia.github.io/tags/gpu/">
+<link rel="canonical" href="http://arithmeticjia.github.io/2019/12/28/Leetcode78Pascal-Triangle-2/">
 
 
 <script id="page-configurations">
@@ -68,13 +70,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>标签: gpu | 请叫我算术嘉的博客</title>
+  <title>Leetcode[78]Pascal's Triangle II | 请叫我算术嘉的博客</title>
   
 
 
@@ -208,50 +210,146 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">gpu
-          <small>标签</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://arithmeticjia.github.io/2019/12/28/Leetcode78Pascal-Triangle-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://www.guanacossj.com/media/jiablogimages/IMG_0323.JPG">
+      <meta itemprop="name" content="请叫我算术嘉">
+      <meta itemprop="description" content="遇事不决，量子力学">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="请叫我算术嘉的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Leetcode[78]Pascal's Triangle II
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-28 22:05:49 / 修改时间：22:07:35" itemprop="dateCreated datePublished" datetime="2019-12-28T22:05:49+08:00">2019-12-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Leetcode/" itemprop="url" rel="index">
+                    <span itemprop="name">Leetcode</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/12/28/Leetcode78Pascal-Triangle-2/" class="post-meta-item leancloud_visitors" data-flag-title="Leetcode[78]Pascal's Triangle II" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>260</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+        <p>python3 最优雅解法<br><a id="more"></a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getRow</span><span class="params">(self, rowIndex)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type rowIndex: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        res = [<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, rowIndex + <span class="number">1</span>):</span><br><span class="line">            res.insert(<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">            <span class="comment"># j循环每次算出r[0]...r[j-1]，再加上最后一个永远存在的1，正好是rowIndex+1个数</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i):</span><br><span class="line">                res[j] = res[j] + res[j + <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-12-06T15:39:41+08:00"
-              content="2019-12-06">
-          12-06
-        </time>
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="请叫我算术嘉 微信支付">
+        <p>微信支付</p>
       </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/12/06/Keras%E4%BB%A5%E5%8F%8ATensorflow%E5%BC%BA%E5%88%B6%E4%BD%BF%E7%94%A8GPU/" itemprop="url">
-            <span itemprop="name">Keras以及Tensorflow强制使用GPU</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-    </div>
   </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>请叫我算术嘉
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://arithmeticjia.github.io/2019/12/28/Leetcode78Pascal-Triangle-2/" title="Leetcode[78]Pascal&#39;s Triangle II">http://arithmeticjia.github.io/2019/12/28/Leetcode78Pascal-Triangle-2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+              <a href="/tags/leetcode/" rel="tag"># leetcode</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/27/2019-12-27%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/" rel="prev" title="2019-12-27周报-单沙嘉">
+      <i class="fa fa-chevron-left"></i> 2019-12-27周报-单沙嘉
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-
+  </div>
 
 
           </div>

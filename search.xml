@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Leetcode[78]Pascal&#39;s Triangle II</title>
+    <url>/2019/12/28/Leetcode78Pascal-Triangle-2/</url>
+    <content><![CDATA[<p>python3 最优雅解法<br><a id="more"></a><br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getRow</span><span class="params">(self, rowIndex)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type rowIndex: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        res = [<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, rowIndex + <span class="number">1</span>):</span><br><span class="line">            res.insert(<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">            <span class="comment"># j循环每次算出r[0]...r[j-1]，再加上最后一个永远存在的1，正好是rowIndex+1个数</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i):</span><br><span class="line">                res[j] = res[j] + res[j + <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2019-12-27周报-单沙嘉</title>
     <url>/2019/12/27/2019-12-27%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
     <content><![CDATA[<p>Work between 2019/12/20-2019/12/27<br><a id="more"></a></p>
