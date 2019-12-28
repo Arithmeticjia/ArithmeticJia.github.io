@@ -13,7 +13,7 @@
 </ul>
 <p><img src="https://pic4.zhimg.com/80/v2-e0fbb46d897400a384873fc100c442db_hd.jpg" alt=""></p>
 <h3 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h3><ul>
-<li>在Encoder-Decoder结构中，Encoder把所有的输入序列都编码成一个统一的语义特征c再解码，因此， c中必须包含原始序列中的所有信息，它的长度就成了限制模型性能的瓶颈。</li>
+<li>在Encoder-Decoder结构中，Encoder把所有的输入序列都编码成一个统一的语义特征$c$再解码，因此，$c$中必须包含原始序列中的所有信息，它的长度就成了限制模型性能的瓶颈</li>
 <li>Attention机制通过在每个时间输入不同的c来解决这个问题</li>
 </ul>
 <p><img src="https://pic2.zhimg.com/80/v2-8da16d429d33b0f2705e47af98e66579_hd.jpg" alt=""></p>
