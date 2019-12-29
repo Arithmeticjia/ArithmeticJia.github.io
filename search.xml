@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Leetcode78Pascal-Triangle-2-Java</title>
+    <url>/2019/12/29/Leetcode78Pascal-Triangle-2-Java/</url>
+    <content><![CDATA[<p>Java 找规律法<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">long</span> k = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(rowIndex &gt;= <span class="number">0</span>)</span><br><span class="line">            res.add(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= rowIndex + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            k = k * (rowIndex + <span class="number">2</span> - i) / (i-<span class="number">1</span>);</span><br><span class="line">            res.add((<span class="keyword">int</span>)k);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>这里用到了杨辉三角的规律，第n行m个数等于</p>
+<p>譬如第三行第二个数</p>
+<script type="math/tex; mode=display">C_{3-1}^{2-1} = C_{2}^{1} = 2</script><p>譬如第四行第三个数</p>
+<script type="math/tex; mode=display">C_{4-1}^{3-1} = C_{3}^{2} = 3</script><p>那这个对我们的算法有啥帮助呢？</p>
+<p>举个栗子，看第四行</p>
+<p>应该是1 3 3 1</p>
+<p>在本题中是1 4 6 4 1</p>
+<p>$C_{5-1}^{1-1} = C_{4}^{0} = 1$，$C_{5-1}^{2-1} = C_{4}^{1} = 4$，$C_{5-1}^{3-1} = C_{4}^{2} = 6$，$C_{5-1}^{4-1} = C_{4}^{3} = 4$，$C_{5-1}^{5-1} = C_{4}^{4} = 1$</p>
+<p>找规律如下：</p>
+<p>第一个数：<script type="math/tex">C_{5-1}^{1-1} = C_{4}^{0} = 1</script></p>
+<p>第二个数：<script type="math/tex">C_{5-1}^{2-1} = C_{4}^{1} = C_{5-1}^{1-1} * \frac{(rowIndex-2+2)}{2-1}</script></p>
+<p>第n行m个数：第m-1个数 × $ \frac{(rowIndex-m+2)}{m-1} $，第n行第一个数永远是1</p>
+<p>晚安~~~</p>
+]]></content>
+      <categories>
+        <category>Leetcode</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>java</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode[78]Pascal&#39;s Triangle II</title>
     <url>/2019/12/28/Leetcode78Pascal-Triangle-2/</url>
     <content><![CDATA[<p>python3 最优雅解法<br><a id="more"></a><br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">getRow</span><span class="params">(self, rowIndex)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type rowIndex: int</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">        res = [<span class="number">1</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, rowIndex + <span class="number">1</span>):</span><br><span class="line">            res.insert(<span class="number">0</span>, <span class="number">0</span>)</span><br><span class="line">            <span class="comment"># j循环每次算出r[0]...r[j-1]，再加上最后一个永远存在的1，正好是rowIndex+1个数</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(i):</span><br><span class="line">                res[j] = res[j] + res[j + <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></p>
@@ -254,8 +279,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>python</tag>
         <tag>restframework</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
