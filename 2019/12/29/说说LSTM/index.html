@@ -51,16 +51,18 @@
   };
 </script>
 
-  <meta name="description" content="遇事不决，量子力学">
-<meta property="og:type" content="website">
-<meta property="og:title" content="请叫我算术嘉的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;arithmeticjia.github.io&#x2F;tags&#x2F;markdown&#x2F;index.html">
+  <meta name="description" content="Long Short Term Memory">
+<meta name="keywords" content="lstm,deeplearning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="说说LSTM">
+<meta property="og:url" content="http:&#x2F;&#x2F;arithmeticjia.github.io&#x2F;2019&#x2F;12&#x2F;29&#x2F;%E8%AF%B4%E8%AF%B4LSTM&#x2F;index.html">
 <meta property="og:site_name" content="请叫我算术嘉的博客">
-<meta property="og:description" content="遇事不决，量子力学">
+<meta property="og:description" content="Long Short Term Memory">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-12-29T15:34:02.931Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://arithmeticjia.github.io/tags/markdown/">
+<link rel="canonical" href="http://arithmeticjia.github.io/2019/12/29/%E8%AF%B4%E8%AF%B4LSTM/">
 
 
 <script id="page-configurations">
@@ -68,13 +70,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
     isArchive: false
   };
 </script>
 
-  <title>标签: markdown | 请叫我算术嘉的博客</title>
+  <title>说说LSTM | 请叫我算术嘉的博客</title>
   
 
 
@@ -208,50 +210,148 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">markdown
-          <small>标签</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://arithmeticjia.github.io/2019/12/29/%E8%AF%B4%E8%AF%B4LSTM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://www.guanacossj.com/media/jiablogimages/IMG_0323.JPG">
+      <meta itemprop="name" content="请叫我算术嘉">
+      <meta itemprop="description" content="遇事不决，量子力学">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="请叫我算术嘉的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          说说LSTM
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2019-12-29 23:22:35 / 修改时间：23:34:02" itemprop="dateCreated datePublished" datetime="2019-12-29T23:22:35+08:00">2019-12-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LSTM/" itemprop="url" rel="index">
+                    <span itemprop="name">LSTM</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2019/12/29/%E8%AF%B4%E8%AF%B4LSTM/" class="post-meta-item leancloud_visitors" data-flag-title="说说LSTM" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>333</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
+        <p>Long Short Term Memory<br><a id="more"></a></p>
+<h4 id="从RNN开始"><a href="#从RNN开始" class="headerlink" title="从RNN开始"></a>从RNN开始</h4><p>RNN(Recurrent Neural Network)是一类用于处理序列数据的神经网络，擅长对序列数据进行建模处理。LSTM(Long Short-Term Memory) 在传统的 RNN 的基础上增加了状态$c$，称为记忆单元态 (cell state)，用以取代传统的隐含神经元节点。它负责把记忆信息从序列的初始位置，传递到序列的末端。</p>
+<h4 id="LSTM的组成"><a href="#LSTM的组成" class="headerlink" title="LSTM的组成"></a>LSTM的组成</h4><p>在$t$时刻，当前神经元的输入有三个：当前时刻输入值$x_{t}$、前一时刻输出值$s_{t-1}$,和前一时刻的记忆单元状态$c_{t-1}$, 输出有两个，当前时刻LSTM的输出值$s_{t}$和当前时刻的记忆单元状态$c_{t}$。<br>LSTM通过三个门控开关传递记忆状态。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-28T23:31:03+08:00"
-              content="2019-11-28">
-          11-28
-        </time>
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="请叫我算术嘉 微信支付">
+        <p>微信支付</p>
       </div>
 
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/28/Hexo-next%E4%B8%BB%E9%A2%98%E6%94%AF%E6%8C%81%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F/" itemprop="url">
-            <span itemprop="name">Hexo-next主题支持数学公式</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-    </div>
   </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>请叫我算术嘉
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://arithmeticjia.github.io/2019/12/29/%E8%AF%B4%E8%AF%B4LSTM/" title="说说LSTM">http://arithmeticjia.github.io/2019/12/29/%E8%AF%B4%E8%AF%B4LSTM/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/lstm/" rel="tag"># lstm</a>
+              <a href="/tags/deeplearning/" rel="tag"># deeplearning</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/12/29/Leetcode78Pascal-Triangle-2-Java/" rel="prev" title="Leetcode78Pascal-Triangle-2-Java">
+      <i class="fa fa-chevron-left"></i> Leetcode78Pascal-Triangle-2-Java
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-
+  </div>
 
 
           </div>
@@ -280,6 +380,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#从RNN开始"><span class="nav-number">1.</span> <span class="nav-text">从RNN开始</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#LSTM的组成"><span class="nav-number">2.</span> <span class="nav-text">LSTM的组成</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -530,6 +631,56 @@
   
 
   
+      
+<script type="text/x-mathjax-config">
+    MathJax.Ajax.config.path['mhchem'] = '//cdn.jsdelivr.net/npm/mathjax-mhchem@3';
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        extensions: ['[mhchem]/mhchem.js'],
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') {
+          next = next.nextSibling;
+        }
+        if (next && next.nodeName.toLowerCase() === 'br') {
+          next.parentNode.removeChild(next);
+        }
+      }
+    });
+  });
+
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      element = document.getElementById(all[i].inputID + '-Frame').parentNode;
+      if (element.nodeName.toLowerCase() == 'li') {
+        element = element.parentNode;
+      }
+      element.classList.add('has-jax');
+    }
+  });
+</script>
+<script>
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML', () => {
+    MathJax.Hub.Typeset();
+  }, window.MathJax);
+</script>
+
+    
 
   
 

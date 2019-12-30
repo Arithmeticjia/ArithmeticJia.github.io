@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>说说LSTM</title>
+    <url>/2019/12/29/%E8%AF%B4%E8%AF%B4LSTM/</url>
+    <content><![CDATA[<p>Long Short Term Memory<br><a id="more"></a></p>
+<h4 id="从RNN开始"><a href="#从RNN开始" class="headerlink" title="从RNN开始"></a>从RNN开始</h4><p>RNN(Recurrent Neural Network)是一类用于处理序列数据的神经网络，擅长对序列数据进行建模处理。LSTM(Long Short-Term Memory) 在传统的 RNN 的基础上增加了状态$c$，称为记忆单元态 (cell state)，用以取代传统的隐含神经元节点。它负责把记忆信息从序列的初始位置，传递到序列的末端。</p>
+<h4 id="LSTM的组成"><a href="#LSTM的组成" class="headerlink" title="LSTM的组成"></a>LSTM的组成</h4><p>在$t$时刻，当前神经元的输入有三个：当前时刻输入值$x_{t}$、前一时刻输出值$s_{t-1}$,和前一时刻的记忆单元状态$c_{t-1}$, 输出有两个，当前时刻LSTM的输出值$s_{t}$和当前时刻的记忆单元状态$c_{t}$。<br>LSTM通过三个门控开关传递记忆状态。</p>
+]]></content>
+      <categories>
+        <category>LSTM</category>
+      </categories>
+      <tags>
+        <tag>lstm</tag>
+        <tag>deeplearning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Leetcode78Pascal-Triangle-2-Java</title>
     <url>/2019/12/29/Leetcode78Pascal-Triangle-2-Java/</url>
     <content><![CDATA[<p>Java 找规律法<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">getRow</span><span class="params">(<span class="keyword">int</span> rowIndex)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; res = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">long</span> k = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(rowIndex &gt;= <span class="number">0</span>)</span><br><span class="line">            res.add(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= rowIndex + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            k = k * (rowIndex + <span class="number">2</span> - i) / (i-<span class="number">1</span>);</span><br><span class="line">            res.add((<span class="keyword">int</span>)k);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>这里用到了杨辉三角的规律，第n行m个数等于</p>
@@ -70,6 +85,13 @@
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test-m.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test.jpg" alt=""></p>
 <figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 3.955</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.289</span><br></pre></td></tr></table></figure>
+<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">nasdaq100_padding</span><br><span class="line">T = 10</span><br><span class="line">features = 81</span><br><span class="line">train = all * 0.7</span><br><span class="line"><span class="keyword">test </span>= all * 0.3</span><br></pre></td></tr></table></figure>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">Encoder:</span> LSTM</span><br><span class="line"><span class="symbol">Decoder:</span> LSTM</span><br></pre></td></tr></table></figure>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/nasdaq-lstm.jpg" alt=""><br><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 0.579</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.105</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">Encoder:</span> BiLSTM</span><br><span class="line"><span class="symbol">Decoder:</span> LSTM</span><br></pre></td></tr></table></figure>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/nasdaq-bi-lstm.jpg" alt=""><br><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 0.384</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.069</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line"><span class="symbol">Encoder:</span> GRU</span><br><span class="line"><span class="symbol">Decoder:</span> LSTM</span><br></pre></td></tr></table></figure>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/nasdaq-gru.jpg" alt=""><br><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 0.252</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.046</span><br></pre></td></tr></table></figure></p>
 ]]></content>
       <categories>
         <category>周报</category>
@@ -279,8 +301,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>restframework</tag>
         <tag>python</tag>
+        <tag>restframework</tag>
       </tags>
   </entry>
   <entry>
