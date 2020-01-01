@@ -74,9 +74,9 @@
 <li>每一个$c$会自动去选取与当前所要输出的$y$最合适的上下文信息。具体来说，我们用$\alpha_{ij}$衡量Encoder中第$j$阶段的$h_{j}$和解码时第$i$阶段的相关性，最终Decoder中第$i$阶段的输入的上下文信息$c_{i}$就来自于所有$h_{j}$对$\alpha_{ij}$的加权和。</li>
 <li>$\alpha_{ij}$和Decoder的第$i-1$阶段的隐藏状态、Encoder第$j$个阶段的隐藏状态有关</li>
 <li>在Encoder的过程中保留每个RNN单元的隐藏状态(hidden state)得到($h_{1}$…$h_{N}$)，取$h_{j}$，表示Encoder层的隐层第$j$时刻的输出</li>
-<li>在Decoder的过程中根据$x_{i}$和$h’_{i-1}$(这里和Encoder的$h_{i-1}$区分一下)得到$h’_{i}$，设为$s_{i}$</li>
+<li>在Decoder的过程中根据$x_{i}$和$h’_{i}$(这里和Encoder的$h_{i}$区分一下)得到$h’_{i}$，设为$s_{i}$</li>
 <li>注：最开始的论文在Encoder-Decoder里面的当前Decoder的attention得分用的是$s_{i-1}$和$h_{j}$来算，但斯坦福教材上图上确实是画的$s_{i}$和$h_{j}$来算，而且后续论文大多是用的这种方式，即当前步的attention score用的当前步的隐藏状态$s_{i}$和前面的$h_{j}$去算的</li>
-<li>$s_{i-1}$与$h_{j}$点积<script type="math/tex; mode=display">e_{ij} = a(s_{i-1},h_{j})</script></li>
+<li>$s_{i1}$与$h_{j}$点积<script type="math/tex; mode=display">e_{ij} = a(s_{i},h_{j})</script></li>
 <li>softmax权重归一化<script type="math/tex; mode=display">\alpha_{ij} = \frac{exp(e_{ij})}{\sum_{k=1}^{T_{x}}exp(e_{ik})}</script></li>
 <li>计算c<script type="math/tex; mode=display">c_{i} = \sum_{j=1}^{T_{x}}\alpha_{ij}h_{j}</script></li>
 </ul>
@@ -301,8 +301,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>restframework</tag>
         <tag>python</tag>
+        <tag>restframework</tag>
       </tags>
   </entry>
   <entry>
