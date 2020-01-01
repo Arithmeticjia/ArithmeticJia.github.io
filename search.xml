@@ -69,7 +69,7 @@
 <li>在Encoder-Decoder结构中，Encoder把所有的输入序列都编码成一个统一的语义特征$c$再解码，因此，$c$中必须包含原始序列中的所有信息，它的长度就成了限制模型性能的瓶颈</li>
 <li>Attention机制通过在每个时间输入不同的$c$来解决这个问题</li>
 </ul>
-<p><img src="https://pic2.zhimg.com/80/v2-8da16d429d33b0f2705e47af98e66579_hd.jpg" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/v2-8da16d429d33b0f2705e47af98e66579_hd_gaitubao_525x551.jpg" alt=""></p>
 <ul>
 <li>每一个$c$会自动去选取与当前所要输出的$y$最合适的上下文信息。具体来说，我们用$\alpha_{ij}$衡量Encoder中第$j$阶段的$h_{j}$和解码时第$i$阶段的相关性，最终Decoder中第$i$阶段的输入的上下文信息$c_{i}$就来自于所有$h_{j}$对$\alpha_{ij}$的加权和。</li>
 <li>$\alpha_{ij}$和Decoder的第$i-1$阶段的隐藏状态、Encoder第$j$个阶段的隐藏状态有关</li>
@@ -729,8 +729,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>django</tag>
         <tag>celery</tag>
+        <tag>django</tag>
       </tags>
   </entry>
   <entry>
