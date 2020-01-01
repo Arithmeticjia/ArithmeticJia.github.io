@@ -68,7 +68,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;nasdaq-lstm.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;nasdaq-bi-lstm.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;nasdaq-gru.jpg">
-<meta property="og:updated_time" content="2020-01-01T14:59:29.079Z">
+<meta property="og:updated_time" content="2020-01-01T15:03:28.484Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;pic4.zhimg.com&#x2F;80&#x2F;v2-77e8a977fc3d43bec8b05633dc52ff9f_hd.jpg">
 
@@ -255,7 +255,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-01 22:59:29" itemprop="dateModified" datetime="2020-01-01T22:59:29+08:00">2020-01-01</time>
+                <time title="修改时间：2020-01-01 23:03:28" itemprop="dateModified" datetime="2020-01-01T23:03:28+08:00">2020-01-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -321,7 +321,7 @@
 <li>在Encoder的过程中保留每个RNN单元的隐藏状态(hidden state)得到($h_{1}$…$h_{N}$)，取$h_{j}$，表示Encoder层的隐层第$j$时刻的输出</li>
 <li>在Decoder的过程中根据$x_{i}$和$h’_{i}$(这里和Encoder的$h_{i}$区分一下)得到$h’_{i}$，设为$s_{i}$</li>
 <li>注：最开始的论文在Encoder-Decoder里面的当前Decoder的attention得分用的是$s_{i-1}$和$h_{j}$来算，但斯坦福教材上图上确实是画的$s_{i}$和$h_{j}$来算，而且后续论文大多是用的这种方式，即当前步的attention score用的当前步的隐藏状态$s_{i}$和前面的$h_{j}$去算的</li>
-<li>$s_{i}$与$h_{j}$点积<script type="math/tex; mode=display">e_{ij} = a(s_{i},h_{j})</script></li>
+<li>$s_{i}$与$h_{j}$点积<script type="math/tex; mode=display">e_{ij} = score(s_{i},h_{j})</script></li>
 <li>softmax权重归一化<script type="math/tex; mode=display">\alpha_{ij} = \frac{exp(e_{ij})}{\sum_{k=1}^{T_{x}}exp(e_{ik})}</script></li>
 <li>计算c<script type="math/tex; mode=display">c_{i} = \sum_{j=1}^{T_{x}}\alpha_{ij}h_{j}</script></li>
 </ul>
