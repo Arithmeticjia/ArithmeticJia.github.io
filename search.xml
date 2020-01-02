@@ -56,7 +56,7 @@
   <entry>
     <title>2019-12-27周报-单沙嘉</title>
     <url>/2019/12/27/2019-12-27%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
-    <content><![CDATA[<p>Work between 2019/12/20-2019/12/27<br><a id="more"></a></p>
+    <content><![CDATA[<p>RNN -&gt; LSTM -&gt; GRU -&gt; Seq2Seq -&gt; Attention -&gt; Transformer<br><a id="more"></a></p>
 <h3 id="Encoder-Decoder-Seq2Seq"><a href="#Encoder-Decoder-Seq2Seq" class="headerlink" title="Encoder-Decoder(Seq2Seq)"></a>Encoder-Decoder(Seq2Seq)</h3><p><img src="https://pic4.zhimg.com/80/v2-77e8a977fc3d43bec8b05633dc52ff9f_hd.jpg" alt=""></p>
 <ul>
 <li>Encoder-Decoder结构先将输入数据编码成一个上下文向量$c$</li>
@@ -314,8 +314,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>python</tag>
         <tag>restframework</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -741,8 +741,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>celery</tag>
         <tag>django</tag>
+        <tag>celery</tag>
       </tags>
   </entry>
   <entry>
