@@ -94,7 +94,7 @@ v^{T}_{a}tanh(W_{a}[s^{T}_{i};h_{j}])
 <p>(6)$\hat{s}_{t}=tanh(W_{c}[c_{t};s_{t}])$, 将context vector 和 decoder的hidden states 串起来。</p>
 <p>(7)$p(y_{t}|y_{&lt;t},x) = softmax(W_{s}\hat{s}_{t})$, 计算最后的输出概率。</p>
 <h3 id="Transformer—-Attention-Is-All-You-Need"><a href="#Transformer—-Attention-Is-All-You-Need" class="headerlink" title="Transformer—-Attention Is All You Need"></a>Transformer—-Attention Is All You Need</h3><p><img src="https://pic1.zhimg.com/80/v2-4b53b731a961ee467928619d14a5fd44_hd.jpg" alt=""></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/4155986-208004e73fb93c97.png?imageMogr2/auto-orient/strip|imageView2/2/w/548/format/webp.jpg" alt=""></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/4155986-208004e73fb93c97.png" alt=""></p>
 <p>Transformer 的 encoder 由 6 个编码器叠加组成，decoder 也由 6 个解码器组成，在结构上都是相同的，但它们不共享权重。</p>
 <h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">1115<span class="string">-1120</span> after data smoothing</span><br><span class="line">T = 10</span><br><span class="line">features = 70</span><br><span class="line">train = all * 0.7</span><br><span class="line"><span class="keyword">test </span>= all * 0.3</span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-all.jpg" alt=""></p>
