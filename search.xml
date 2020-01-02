@@ -97,7 +97,7 @@ v^{T}_{a}tanh(W_{a}[s^{T}_{i};h_{j}])
 <p><img src="https://www.guanacossj.com/media/articlebodypics/4155986-208004e73fb93c97.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/4155986-e7fd5fcf3acc00a3.png" alt=""></p>
 <ul>
-<li>Transformer 的 encoder 由 6 个编码器叠加组成，decoder 也由 6 个解码器组成，在结构上都是相同的，但它们不共享权重。</li>
+<li>Transformer 的 Encoder 由 6 个编码器叠加组成，Decoder 也由 6 个解码器组成，在结构上都是相同的，但它们不共享权重。</li>
 <li>Encoder的每一层有两个操作，分别是Self-Attention和Feed Forward；</li>
 <li>Decoder的每一层有三个操作，分别是Self-Attention、Encoder-Decoder Attention以及Feed Forward操作。</li>
 <li>这里的Self-Attention和Encoder-Decoder Attention都是用的是Multi-Head Attention机制</li>
