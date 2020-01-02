@@ -68,7 +68,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;nasdaq-lstm.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;nasdaq-bi-lstm.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;nasdaq-gru.jpg">
-<meta property="og:updated_time" content="2020-01-02T07:20:34.624Z">
+<meta property="og:updated_time" content="2020-01-02T07:26:22.645Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;pic4.zhimg.com&#x2F;80&#x2F;v2-77e8a977fc3d43bec8b05633dc52ff9f_hd.jpg">
 
@@ -255,7 +255,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-02 15:20:34" itemprop="dateModified" datetime="2020-01-02T15:20:34+08:00">2020-01-02</time>
+                <time title="修改时间：2020-01-02 15:26:22" itemprop="dateModified" datetime="2020-01-02T15:26:22+08:00">2020-01-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -282,7 +282,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
+              <span>2.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -331,7 +331,7 @@ v^{T}_{a}tanh(W_{a}[s^{T}_{i};h_{j}])
 <li>计算$c$<script type="math/tex; mode=display">c_{i} = \sum_{j=1}^{T_{x}}\alpha_{ij}h_{j}</script></li>
 </ul>
 <p><img src="https://pic4.zhimg.com/80/v2-8ddf993a95ee6e525fe2cd5ccd49bba7_hd.jpg" alt=""></p>
-<p>(1)$h_{t} = RNN_{enc}(x_{t},h_{t-1})$, Encoder方面接受的是每一个单词word embedding，和上一个时间点的hidden state。输出的是这个时间点的hidden state。<br>(2)$s_{t} = RNN_{dnc}(y_{t},s_{t-1})$, Decoder方面接受的是目标句子里单词的word embedding，和上一个时间点的hidden state。<br>(3)$c_{i} = \sum_{j=1}^{T_{x}}\alpha _{ij}h_{j}$, context vector是一个对于encoder输出的hidden states的一个加权平均。<br>(4)$\alpha_{ij} = \frac{exp(e_{ij})}{\sum_{k=1}^{T_{x}}exp(e_{ik})}$, 每一个encoder的hidden states对应的权重。<br>(5)$e_{ij} = score(s_{i},h_{j})$, 通过decoder的hidden states加上encoder的hidden states来计算一个分数，用于计算权重(4)</p>
+<p>(1)$h_{t} = RNN_{enc}(x_{t},h_{t-1})$, Encoder方面接受的是每一个单词word embedding，和上一个时间点的hidden state。输出的是这个时间点的hidden state。<br>(2)$s_{t} = RNN_{dnc}(y_{t},s_{t-1})$, Decoder方面接受的是目标句子里单词的word embedding，和上一个时间点的hidden state。<br>(3)$c_{i} = \sum_{j=1}^{T_{x}}\alpha _{ij}h_{j}$, context vector是一个对于encoder输出的hidden states的一个加权平均。<br>(4)$\alpha_{ij} = \frac{exp(e_{ij})}{\sum_{k=1}^{T_{x}}exp(e_{ik})}$, 每一个encoder的hidden states对应的权重。<br>(5)$e_{ij} = score(s_{i},h_{j})$, 通过decoder的hidden states加上encoder的hidden states来计算一个分数，用于计算权重(4)<br>(6)$\hat{s}_{t}=tanh(W_{c}[c_{t};s_{t}])$, 将context vector 和 decoder的hidden states 串起来。<br>(7)$p(y_{t}|y_{&lt;t},x) = softmax(W_{s}\hat{s}_{t})$, 计算最后的输出概率。</p>
 <h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1115<span class="string">-1120</span> after data smoothing</span><br><span class="line">T = 10</span><br><span class="line">features = 70</span><br><span class="line">train = all * 0.7</span><br><span class="line"><span class="keyword">test </span>= all * 0.3</span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-all.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test-m.jpg" alt=""></p>
@@ -536,7 +536,7 @@ v^{T}_{a}tanh(W_{a}[s^{T}_{i};h_{j}])
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:17</span>
+    <span title="站点阅读时长">1:18</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
