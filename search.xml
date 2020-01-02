@@ -104,7 +104,11 @@ v^{T}_{a}tanh(W_{a}[s^{T}_{i};h_{j}])
 <li>这里的Self-Attention和Encoder-Decoder Attention都是用的是Multi-Head Attention机制</li>
 </ul>
 <h3 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h3><p><img src="https://pic3.zhimg.com/v2-df2ca1b7a60d829245b7b7c37f80a3aa_r.jpg" alt=""></p>
-<h4 id="Scaled-Dot-Product-Attention-缩放了的点乘注意力"><a href="#Scaled-Dot-Product-Attention-缩放了的点乘注意力" class="headerlink" title="Scaled Dot-Product Attention(缩放了的点乘注意力)"></a>Scaled Dot-Product Attention(缩放了的点乘注意力)</h4><h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">1115<span class="string">-1120</span> after data smoothing</span><br><span class="line">T = 10</span><br><span class="line">features = 70</span><br><span class="line">train = all * 0.7</span><br><span class="line"><span class="keyword">test </span>= all * 0.3</span><br></pre></td></tr></table></figure>
+<h4 id="Scaled-Dot-Product-Attention-缩放了的点乘注意力"><a href="#Scaled-Dot-Product-Attention-缩放了的点乘注意力" class="headerlink" title="Scaled Dot-Product Attention(缩放了的点乘注意力)"></a>Scaled Dot-Product Attention(缩放了的点乘注意力)</h4><ul>
+<li>在传统的seq2seq中，我们通过RNN获取hidden state去做attention，那么当我们完全抛弃RNN的时候，怎么去做attention呢？</li>
+<li></li>
+</ul>
+<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">1115<span class="string">-1120</span> after data smoothing</span><br><span class="line">T = 10</span><br><span class="line">features = 70</span><br><span class="line">train = all * 0.7</span><br><span class="line"><span class="keyword">test </span>= all * 0.3</span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-all.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test-m.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test.jpg" alt=""></p>
