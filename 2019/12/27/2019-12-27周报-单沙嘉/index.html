@@ -72,7 +72,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;nasdaq-lstm.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;nasdaq-bi-lstm.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;nasdaq-gru.jpg">
-<meta property="og:updated_time" content="2020-01-02T12:30:58.855Z">
+<meta property="og:updated_time" content="2020-01-02T14:56:42.364Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;pic4.zhimg.com&#x2F;80&#x2F;v2-77e8a977fc3d43bec8b05633dc52ff9f_hd.jpg">
 
@@ -259,7 +259,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-02 20:30:58" itemprop="dateModified" datetime="2020-01-02T20:30:58+08:00">2020-01-02</time>
+                <time title="修改时间：2020-01-02 22:56:42" itemprop="dateModified" datetime="2020-01-02T22:56:42+08:00">2020-01-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -352,7 +352,7 @@ v^{T}_{a}tanh(W_{a}[s^{T}_{i};h_{j}])
 <li>Decoder的每一层有三个操作，分别是Self-Attention、Encoder-Decoder Attention以及Feed Forward操作。</li>
 <li>这里的Self-Attention和Encoder-Decoder Attention都是用的是Multi-Head Attention机制</li>
 </ul>
-<h3 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h3><h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1115<span class="string">-1120</span> after data smoothing</span><br><span class="line">T = 10</span><br><span class="line">features = 70</span><br><span class="line">train = all * 0.7</span><br><span class="line"><span class="keyword">test </span>= all * 0.3</span><br></pre></td></tr></table></figure>
+<h3 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h3><h3 id="Scaled-Dot-Product-Attention-缩放了的点乘注意力"><a href="#Scaled-Dot-Product-Attention-缩放了的点乘注意力" class="headerlink" title="Scaled Dot-Product Attention(缩放了的点乘注意力)"></a>Scaled Dot-Product Attention(缩放了的点乘注意力)</h3><h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1115<span class="string">-1120</span> after data smoothing</span><br><span class="line">T = 10</span><br><span class="line">features = 70</span><br><span class="line">train = all * 0.7</span><br><span class="line"><span class="keyword">test </span>= all * 0.3</span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-all.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test-m.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test.jpg" alt=""></p>
@@ -455,7 +455,7 @@ v^{T}_{a}tanh(W_{a}[s^{T}_{i};h_{j}])
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Encoder-Decoder-Seq2Seq"><span class="nav-number">1.</span> <span class="nav-text">Encoder-Decoder(Seq2Seq)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Attention"><span class="nav-number">2.</span> <span class="nav-text">Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transformer—-Attention-Is-All-You-Need"><span class="nav-number">3.</span> <span class="nav-text">Transformer—-Attention Is All You Need</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-Head-Attention"><span class="nav-number">4.</span> <span class="nav-text">Multi-Head Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Experiment"><span class="nav-number">5.</span> <span class="nav-text">Experiment</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Encoder-Decoder-Seq2Seq"><span class="nav-number">1.</span> <span class="nav-text">Encoder-Decoder(Seq2Seq)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Attention"><span class="nav-number">2.</span> <span class="nav-text">Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transformer—-Attention-Is-All-You-Need"><span class="nav-number">3.</span> <span class="nav-text">Transformer—-Attention Is All You Need</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-Head-Attention"><span class="nav-number">4.</span> <span class="nav-text">Multi-Head Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Scaled-Dot-Product-Attention-缩放了的点乘注意力"><span class="nav-number">5.</span> <span class="nav-text">Scaled Dot-Product Attention(缩放了的点乘注意力)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Experiment"><span class="nav-number">6.</span> <span class="nav-text">Experiment</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
