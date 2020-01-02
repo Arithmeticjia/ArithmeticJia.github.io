@@ -63,6 +63,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;v2-8da16d429d33b0f2705e47af98e66579_hd_gaitubao_525x551_gaitubao_345x362.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;pic4.zhimg.com&#x2F;80&#x2F;v2-8ddf993a95ee6e525fe2cd5ccd49bba7_hd.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;pic1.zhimg.com&#x2F;80&#x2F;v2-4b53b731a961ee467928619d14a5fd44_hd.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;v2-4b53b731a961ee467928619d14a5fd44_r.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;4155986-208004e73fb93c97.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;4155986-e7fd5fcf3acc00a3.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;da-rnn-1115-1120-all.jpg">
@@ -71,7 +72,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;nasdaq-lstm.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;nasdaq-bi-lstm.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;nasdaq-gru.jpg">
-<meta property="og:updated_time" content="2020-01-02T12:17:05.131Z">
+<meta property="og:updated_time" content="2020-01-02T12:30:58.855Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;pic4.zhimg.com&#x2F;80&#x2F;v2-77e8a977fc3d43bec8b05633dc52ff9f_hd.jpg">
 
@@ -258,7 +259,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-02 20:17:05" itemprop="dateModified" datetime="2020-01-02T20:17:05+08:00">2020-01-02</time>
+                <time title="修改时间：2020-01-02 20:30:58" itemprop="dateModified" datetime="2020-01-02T20:30:58+08:00">2020-01-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,7 +286,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
+              <span>2.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -342,6 +343,7 @@ v^{T}_{a}tanh(W_{a}[s^{T}_{i};h_{j}])
 <p>(6)$\hat{s}_{t}=tanh(W_{c}[c_{t};s_{t}])$, 将context vector 和 decoder的hidden states 串起来。</p>
 <p>(7)$p(y_{t}|y_{&lt;t},x) = softmax(W_{s}\hat{s}_{t})$, 计算最后的输出概率。</p>
 <h3 id="Transformer—-Attention-Is-All-You-Need"><a href="#Transformer—-Attention-Is-All-You-Need" class="headerlink" title="Transformer—-Attention Is All You Need"></a>Transformer—-Attention Is All You Need</h3><p><img src="https://pic1.zhimg.com/80/v2-4b53b731a961ee467928619d14a5fd44_hd.jpg" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/v2-4b53b731a961ee467928619d14a5fd44_r.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/4155986-208004e73fb93c97.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/4155986-e7fd5fcf3acc00a3.png" alt=""></p>
 <ul>
@@ -350,7 +352,7 @@ v^{T}_{a}tanh(W_{a}[s^{T}_{i};h_{j}])
 <li>Decoder的每一层有三个操作，分别是Self-Attention、Encoder-Decoder Attention以及Feed Forward操作。</li>
 <li>这里的Self-Attention和Encoder-Decoder Attention都是用的是Multi-Head Attention机制</li>
 </ul>
-<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1115<span class="string">-1120</span> after data smoothing</span><br><span class="line">T = 10</span><br><span class="line">features = 70</span><br><span class="line">train = all * 0.7</span><br><span class="line"><span class="keyword">test </span>= all * 0.3</span><br></pre></td></tr></table></figure>
+<h3 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h3><h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1115<span class="string">-1120</span> after data smoothing</span><br><span class="line">T = 10</span><br><span class="line">features = 70</span><br><span class="line">train = all * 0.7</span><br><span class="line"><span class="keyword">test </span>= all * 0.3</span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-all.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test-m.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test.jpg" alt=""></p>
@@ -453,7 +455,7 @@ v^{T}_{a}tanh(W_{a}[s^{T}_{i};h_{j}])
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Encoder-Decoder-Seq2Seq"><span class="nav-number">1.</span> <span class="nav-text">Encoder-Decoder(Seq2Seq)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Attention"><span class="nav-number">2.</span> <span class="nav-text">Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transformer—-Attention-Is-All-You-Need"><span class="nav-number">3.</span> <span class="nav-text">Transformer—-Attention Is All You Need</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Experiment"><span class="nav-number">4.</span> <span class="nav-text">Experiment</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Encoder-Decoder-Seq2Seq"><span class="nav-number">1.</span> <span class="nav-text">Encoder-Decoder(Seq2Seq)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Attention"><span class="nav-number">2.</span> <span class="nav-text">Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Transformer—-Attention-Is-All-You-Need"><span class="nav-number">3.</span> <span class="nav-text">Transformer—-Attention Is All You Need</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-Head-Attention"><span class="nav-number">4.</span> <span class="nav-text">Multi-Head Attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Experiment"><span class="nav-number">5.</span> <span class="nav-text">Experiment</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
