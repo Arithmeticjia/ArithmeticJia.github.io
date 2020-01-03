@@ -107,7 +107,7 @@ v^{T}_{a}tanh(W_{a}[s^{T}_{i};h_{j}])
 <h4 id="Self-Attention"><a href="#Self-Attention" class="headerlink" title="Self Attention"></a>Self Attention</h4><ul>
 <li>RNN的循环特性导致其不利于并行计算，模型训练时间较长</li>
 <li>在传统的seq2seq中，我们通过RNN获取hidden state去做attention，那么当我们完全抛弃RNN的时候，怎么去做attention呢？</li>
-<li>对每个输入做embedding，embedding 代替 hidden state，Q矩阵就代表word embedding，K、V 也是一样。</li>
+<li>对每个input做embedding，代替hidden state，embedding通过三个不同的线性层生成$Q$，$K$，$V$。</li>
 <li>Q: querry;K: key; V: value</li>
 <li>K = V = Q</li>
 </ul>

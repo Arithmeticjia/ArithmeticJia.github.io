@@ -74,7 +74,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;nasdaq-lstm.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;nasdaq-bi-lstm.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;nasdaq-gru.jpg">
-<meta property="og:updated_time" content="2020-01-03T10:03:19.856Z">
+<meta property="og:updated_time" content="2020-01-03T10:10:09.149Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;pic4.zhimg.com&#x2F;80&#x2F;v2-77e8a977fc3d43bec8b05633dc52ff9f_hd.jpg">
 
@@ -261,7 +261,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-03 18:03:19" itemprop="dateModified" datetime="2020-01-03T18:03:19+08:00">2020-01-03</time>
+                <time title="修改时间：2020-01-03 18:10:09" itemprop="dateModified" datetime="2020-01-03T18:10:09+08:00">2020-01-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -358,7 +358,7 @@ v^{T}_{a}tanh(W_{a}[s^{T}_{i};h_{j}])
 <h4 id="Self-Attention"><a href="#Self-Attention" class="headerlink" title="Self Attention"></a>Self Attention</h4><ul>
 <li>RNN的循环特性导致其不利于并行计算，模型训练时间较长</li>
 <li>在传统的seq2seq中，我们通过RNN获取hidden state去做attention，那么当我们完全抛弃RNN的时候，怎么去做attention呢？</li>
-<li>对每个输入做embedding，embedding 代替 hidden state，Q矩阵就代表word embedding，K、V 也是一样。</li>
+<li>对每个input做embedding，代替hidden state，embedding通过三个不同的线性层生成$Q$，$K$，$V$。</li>
 <li>Q: querry;K: key; V: value</li>
 <li>K = V = Q</li>
 </ul>
