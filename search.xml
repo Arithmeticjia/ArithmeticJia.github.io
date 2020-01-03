@@ -126,14 +126,14 @@ v_{n}
 <ul>
 <li>假如我们要翻译一个词组Thinking Machines，其中Thinking的输入的embedding vector用$x_{1}$表示，Machines的embedding vector用$x_{2}$表示</li>
 <li>$W^{Q}$，$W^{K}$，$W^{V}$是我们模型训练过程学习到的合适的参数</li>
-<li>x与$W^{Q}$，$W^{K}$，$W^{V}$相乘获得q,k,v</li>
+<li>x与$W^{Q}$，$W^{K}$，$W^{V}$相乘获得$q$,$k$,$v$</li>
 <li>如上图中所示我们分别得到了$q_{1}$与$k_{1}$,$k_{2}$的点乘积，然后我们进行尺度缩放与softmax归一化</li>
 </ul>
 <h4 id="Scaled-Dot-Product-Attention-缩放了的点乘注意力"><a href="#Scaled-Dot-Product-Attention-缩放了的点乘注意力" class="headerlink" title="Scaled Dot-Product Attention(缩放了的点乘注意力)"></a>Scaled Dot-Product Attention(缩放了的点乘注意力)</h4><script type="math/tex; mode=display">Attention(Q,K,V) = sofrmax(\frac{QK^{T}}{\sqrt{d_{k}}})V</script><ul>
 <li>输入包含$d_{k}$维的query和key，以及$d_{v}$维的value。通过计算query和各个key的点积，除以$\sqrt{d_{k}}$归一化，然后经过softmax激活变成权重，最后再乘value。点积注意力机制的优点是速度快、占用空间小。</li>
 </ul>
 <h4 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h4><ul>
-<li>multi-head attention则是通过h个不同的线性变换对Q，K，V进行投影，最后将不同的attention结果拼接起来：<script type="math/tex; mode=display">Multihead(Q,K,V) = Concat(head_{1},...,head_{h})W^{O}</script><script type="math/tex; mode=display">head_{i} = Attention(QW^{Q}_{i},KW^{K}_{i},VW^{V}_{i})</script></li>
+<li>multi-head attention则是通过$h$个不同的线性变换对$Q$，$K$，$V$进行投影，最后将不同的attention结果拼接起来：<script type="math/tex; mode=display">Multihead(Q,K,V) = Concat(head_{1},...,head_{h})W^{O}</script><script type="math/tex; mode=display">head_{i} = Attention(QW^{Q}_{i},KW^{K}_{i},VW^{V}_{i})</script></li>
 </ul>
 <h4 id="Position-Embedding"><a href="#Position-Embedding" class="headerlink" title="Position Embedding"></a>Position Embedding</h4><h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">1115<span class="string">-1120</span> after data smoothing</span><br><span class="line">T = 10</span><br><span class="line">features = 70</span><br><span class="line">train = all * 0.7</span><br><span class="line"><span class="keyword">test </span>= all * 0.3</span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-all.jpg" alt=""></p>
