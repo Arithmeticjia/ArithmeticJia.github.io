@@ -109,6 +109,7 @@ v^{T}_{a}tanh(W_{a}[s^{T}_{i};h_{j}])
 <li>在传统的seq2seq中，我们通过RNN获取hidden state去做attention，那么当我们完全抛弃RNN的时候，怎么去做attention呢？</li>
 <li>对每个输入做embedding，embedding 代替 hidden state，Q矩阵就代表word embedding，K、V 也是一样。</li>
 <li>Q:querry;K: key; V: value</li>
+<li>K = V = Q</li>
 </ul>
 <script type="math/tex; mode=display">Attention(Q,K,V) = softmax(\begin{bmatrix}
 v_{1}\\ 
