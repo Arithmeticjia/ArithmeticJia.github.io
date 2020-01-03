@@ -103,7 +103,7 @@ v^{T}_{a}tanh(W_{a}[s^{T}_{i};h_{j}])
 <li>Decoder的每一层有三个操作，分别是Self-Attention、Encoder-Decoder Attention以及Feed Forward操作。</li>
 <li>这里的Self-Attention和Encoder-Decoder Attention都是用的是Multi-Head Attention机制</li>
 </ul>
-<p><img src="https://pic3.zhimg.com/v2-df2ca1b7a60d829245b7b7c37f80a3aa_r.jpg" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/v2-df2ca1b7a60d829245b7b7c37f80a3aa_r.jpg" alt=""></p>
 <h4 id="Self-Attention"><a href="#Self-Attention" class="headerlink" title="Self Attention"></a>Self Attention</h4><ul>
 <li>RNN的循环特性导致其不利于并行计算，模型训练时间较长</li>
 <li>在传统的seq2seq中，我们通过RNN获取hidden state去做attention，那么当我们完全抛弃RNN的时候，怎么去做attention呢？</li>
@@ -120,7 +120,7 @@ v_{1}\\
 v_{2}\\ 
 ...\\ 
 v_{n}
-\end{bmatrix} = softmax(QK^{T})V</script><p>这个公式啥意思？<br>如果忽略激活函数softmax的话，那么事实上它就是三个$n×d_{k}$,$d_{k}×m$,$m×d_{v}$的矩阵相乘，最后的结果就是一个$n×d_{v}$的矩阵。</p>
+\end{bmatrix} = softmax(QK^{T})V</script><p>这个公式啥意思？<br>如果忽略激活函数softmax的话，那么事实上它就是三个$n×d_{k}$,$d_{k}×m$,$m×d_{v}$的矩阵相乘，最后的结果就是一个$n×d_{v}$的矩阵。<br>将$n×d_{k}$的序列$Q$编码成了一个新的$n×d_{v}$的序列</p>
 <p>举个栗子</p>
 <p><img src="https://pic1.zhimg.com/80/v2-087b831f622f83e4529c1bbf646530f0_hd.jpg" alt=""></p>
 <ul>
@@ -132,7 +132,7 @@ v_{n}
 <h4 id="Scaled-Dot-Product-Attention-缩放了的点乘注意力"><a href="#Scaled-Dot-Product-Attention-缩放了的点乘注意力" class="headerlink" title="Scaled Dot-Product Attention(缩放了的点乘注意力)"></a>Scaled Dot-Product Attention(缩放了的点乘注意力)</h4><script type="math/tex; mode=display">Attention(Q,K,V) = sofrmax(\frac{QK^{T}}{\sqrt{d_{k}}})V</script><h4 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h4><ul>
 <li>multi-head attention则是通过h个不同的线性变换对Q，K，V进行投影，最后将不同的attention结果拼接起来：<script type="math/tex; mode=display">Multihead(Q,K,V) = Concat(head_{1},...,head_{h})W^{O}</script><script type="math/tex; mode=display">head_{i} = Attention(QW^{Q}_{i},KW^{K}_{i},VW^{V}_{i})</script></li>
 </ul>
-<h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">1115<span class="string">-1120</span> after data smoothing</span><br><span class="line">T = 10</span><br><span class="line">features = 70</span><br><span class="line">train = all * 0.7</span><br><span class="line"><span class="keyword">test </span>= all * 0.3</span><br></pre></td></tr></table></figure>
+<h4 id="Position-Embedding"><a href="#Position-Embedding" class="headerlink" title="Position Embedding"></a>Position Embedding</h4><h3 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h3><figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line">1115<span class="string">-1120</span> after data smoothing</span><br><span class="line">T = 10</span><br><span class="line">features = 70</span><br><span class="line">train = all * 0.7</span><br><span class="line"><span class="keyword">test </span>= all * 0.3</span><br></pre></td></tr></table></figure>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-all.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test-m.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-1115-1120-test.jpg" alt=""></p>
