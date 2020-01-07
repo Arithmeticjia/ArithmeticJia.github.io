@@ -59,7 +59,7 @@
 <meta property="og:description" content="“All you need is attention”">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20190131091219549.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ0NjMzMA==,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2020-01-07T06:20:09.240Z">
+<meta property="og:updated_time" content="2020-01-07T07:54:10.236Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20190131091219549.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ0NjMzMA==,size_16,color_FFFFFF,t_70">
 
@@ -240,7 +240,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-01-07 14:07:24 / 修改时间：14:20:09" itemprop="dateCreated datePublished" datetime="2020-01-07T14:07:24+08:00">2020-01-07</time>
+              <time title="创建时间：2020-01-07 14:07:24 / 修改时间：15:54:10" itemprop="dateCreated datePublished" datetime="2020-01-07T14:07:24+08:00">2020-01-07</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,7 +267,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>429</span>
+              <span>584</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -287,7 +287,8 @@
 
       
         <p>“All you need is attention”<br><a id="more"></a></p>
-<h3 id="LSTM-Attention"><a href="#LSTM-Attention" class="headerlink" title="LSTM + Attention"></a>LSTM + Attention</h3><p>LSTM内部有Gate机制，其中input gate选择哪些当前信息进行输入，forget gate选择遗忘哪些过去信息，我觉得这算是一定程度的Attention了，而且号称可以解决长期依赖问题，实际上LSTM需要一步一步去捕捉序列信息，在长文本上的表现是会随着step增加而慢慢衰减，难以保留全部的有用信息。</p>
+<h3 id="Soft-attention"><a href="#Soft-attention" class="headerlink" title="Soft attention"></a>Soft attention</h3><script type="math/tex; mode=display">c_{t} = \sum_{i}^{N}\alpha _{i}h_{i}</script><script type="math/tex; mode=display">\alpha _{i} = softmax(h_{i}s_{t})</script><p>Paper:Neural machine translation by jointly learning to align and translate</p>
+<h3 id="Hard-attention"><a href="#Hard-attention" class="headerlink" title="Hard attention"></a>Hard attention</h3><h3 id="LSTM-Attention"><a href="#LSTM-Attention" class="headerlink" title="LSTM + Attention"></a>LSTM + Attention</h3><p>LSTM内部有Gate机制，其中input gate选择哪些当前信息进行输入，forget gate选择遗忘哪些过去信息，我觉得这算是一定程度的Attention了，而且号称可以解决长期依赖问题，实际上LSTM需要一步一步去捕捉序列信息，在长文本上的表现是会随着step增加而慢慢衰减，难以保留全部的有用信息。</p>
 <p>LSTM通常需要得到一个向量，再去做任务，常用方式有：</p>
 <ul>
 <li><p>直接使用最后的hidden state（可能会损失一定的前文信息，难以表达全文）</p>
@@ -389,7 +390,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM-Attention"><span class="nav-number">1.</span> <span class="nav-text">LSTM + Attention</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Soft-attention"><span class="nav-number">1.</span> <span class="nav-text">Soft attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hard-attention"><span class="nav-number">2.</span> <span class="nav-text">Hard attention</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM-Attention"><span class="nav-number">3.</span> <span class="nav-text">LSTM + Attention</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -485,12 +486,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">87k</span>
+    <span title="站点总字数">88k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:19</span>
+    <span title="站点阅读时长">1:20</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
