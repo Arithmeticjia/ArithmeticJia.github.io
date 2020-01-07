@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://arithmeticjia.github.io/"/>
-  <updated>2020-01-07T06:17:50.878Z</updated>
+  <updated>2020-01-07T06:20:09.240Z</updated>
   <id>http://arithmeticjia.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://arithmeticjia.github.io/2020/01/07/2020-1-10%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/"/>
     <id>http://arithmeticjia.github.io/2020/01/07/2020-1-10%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</id>
     <published>2020-01-07T06:07:24.000Z</published>
-    <updated>2020-01-07T06:17:50.878Z</updated>
+    <updated>2020-01-07T06:20:09.240Z</updated>
     
-    <content type="html"><![CDATA[<p>“All you need is attention”<br><a id="more"></a></p><h3 id="LSTM-Attention"><a href="#LSTM-Attention" class="headerlink" title="LSTM + Attention"></a>LSTM + Attention</h3><p><img src="http://img-blog.csdnimg.cn/20190131091219549.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ0NjMzMA==,size_16,color_FFFFFF,t_70" alt=""></p><p>第一步：query 和 key 进行相似度计算，得到权值</p><p>第二步：将权值进行归一化，得到直接可用的权重</p><p>第三步：将权重和 value 进行加权求和</p>]]></content>
+    <content type="html"><![CDATA[<p>“All you need is attention”<br><a id="more"></a></p><h3 id="LSTM-Attention"><a href="#LSTM-Attention" class="headerlink" title="LSTM + Attention"></a>LSTM + Attention</h3><p>LSTM内部有Gate机制，其中input gate选择哪些当前信息进行输入，forget gate选择遗忘哪些过去信息，我觉得这算是一定程度的Attention了，而且号称可以解决长期依赖问题，实际上LSTM需要一步一步去捕捉序列信息，在长文本上的表现是会随着step增加而慢慢衰减，难以保留全部的有用信息。</p><p>LSTM通常需要得到一个向量，再去做任务，常用方式有：</p><ul><li><p>直接使用最后的hidden state（可能会损失一定的前文信息，难以表达全文）</p></li><li><p>对所有step下的hidden state进行等权平均（对所有step一视同仁）。</p></li><li><p>Attention机制，对所有step的hidden state进行加权，把注意力集中到整段文本中比较重要的hidden state信息。</p></li></ul><p><img src="http://img-blog.csdnimg.cn/20190131091219549.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ0NjMzMA==,size_16,color_FFFFFF,t_70" alt=""></p><p>第一步：query 和 key 进行相似度计算，得到权值</p><p>第二步：将权值进行归一化，得到直接可用的权重</p><p>第三步：将权重和 value 进行加权求和</p>]]></content>
     
     <summary type="html">
     
