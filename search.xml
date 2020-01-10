@@ -16,7 +16,18 @@
 <p><img src="https://www.guanacossj.com/media/articlebodypics/test-seq2seqattention.png" alt=""></p>
 <h3 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/all-transformer.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/test-transformer.png" alt=""></p>
-<h3 id="Self-Attention"><a href="#Self-Attention" class="headerlink" title="Self-Attention"></a>Self-Attention</h3>]]></content>
+<h3 id="Self-Attention"><a href="#Self-Attention" class="headerlink" title="Self-Attention"></a>Self-Attention</h3><p>顾名思义，指的不是Target和Source之间的Attention机制，而是Source内部元素之间或者Target内部元素之间发生的Attention机制，也可以理解为Target=Source这种特殊情况下的注意力计算机制</p>
+<script type="math/tex; mode=display">Q = W_{Q}X</script><script type="math/tex; mode=display">K = W_{K}X</script><script type="math/tex; mode=display">V = W_{V}X</script><script type="math/tex; mode=display">Attention(Q,K,V) = softmax(\begin{bmatrix}
+v_{1}\\ 
+v_{2}\\ 
+...\\ 
+v_{n}
+\end{bmatrix}*[v^{T}_{1},v^{T}_{2},...,v^{T}_{n}])*\begin{bmatrix}
+v_{1}\\ 
+v_{2}\\ 
+...\\ 
+v_{n}
+\end{bmatrix} = softmax(QK^{T})V</script>]]></content>
       <categories>
         <category>周报</category>
       </categories>
