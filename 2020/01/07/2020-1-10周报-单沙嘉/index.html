@@ -66,7 +66,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;pic2.zhimg.com&#x2F;v2-07c4c02a9bdecb23d9664992f142eaa5_r.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;all-transformer.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;test-transformer.png">
-<meta property="og:updated_time" content="2020-01-10T10:18:00.500Z">
+<meta property="og:updated_time" content="2020-01-10T10:18:42.696Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;FEED-FORWARD-ATTENTION.jpg">
 
@@ -253,7 +253,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-01-10 18:18:00" itemprop="dateModified" datetime="2020-01-10T18:18:00+08:00">2020-01-10</time>
+                <time title="修改时间：2020-01-10 18:18:42" itemprop="dateModified" datetime="2020-01-10T18:18:42+08:00">2020-01-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -280,7 +280,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>967</span>
+              <span>1.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -326,7 +326,12 @@ v_{n}
 <li>3、根据权重系数对Value进行加权求和得到attention</li>
 </ul>
 <h4 id="Scaled-Dot-Product-Attention"><a href="#Scaled-Dot-Product-Attention" class="headerlink" title="Scaled Dot-Product Attention"></a>Scaled Dot-Product Attention</h4><p>防止Q和K点乘积结果过大，会除以一个尺度标度 </p>
-<script type="math/tex; mode=display">Attention(Q,K,V) = sofrmax(\frac{QK^{T}}{\sqrt{d_{k}}})V</script><h4 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h4><h4 id="Experiment-1"><a href="#Experiment-1" class="headerlink" title="Experiment"></a>Experiment</h4><p><img src="https://www.guanacossj.com/media/articlebodypics/all-transformer.png" alt=""></p>
+<script type="math/tex; mode=display">Attention(Q,K,V) = sofrmax(\frac{QK^{T}}{\sqrt{d_{k}}})V</script><h4 id="Multi-Head-Attention"><a href="#Multi-Head-Attention" class="headerlink" title="Multi-Head Attention"></a>Multi-Head Attention</h4><ul>
+<li>$Q$，$K$，$V$首先进过一个线性变换，然后输入到放缩点积attention</li>
+<li>每次$Q$，$K$，$V$进行线性变换的参数$W$是不一样的</li>
+<li>通过$h$个不同的线性变换对$Q$，$K$，$V$进行投影，最后将不同的attention结果拼接起来</li>
+</ul>
+<script type="math/tex; mode=display">Multihead(Q,K,V) = Concat(head_{1},...,head_{h})W^{O}</script><script type="math/tex; mode=display">head_{i} = Attention(QW^{Q}_{i},KW^{K}_{i},VW^{V}_{i})</script><h4 id="Experiment-1"><a href="#Experiment-1" class="headerlink" title="Experiment"></a>Experiment</h4><p><img src="https://www.guanacossj.com/media/articlebodypics/all-transformer.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/test-transformer.png" alt=""></p>
 
     </div>
