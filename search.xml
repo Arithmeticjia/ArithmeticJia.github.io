@@ -24,7 +24,7 @@ v_{2}\\
 ...\\ 
 v_{n}
 \end{bmatrix} = softmax(QK^{T})V</script><p><img src="https://pic2.zhimg.com/v2-07c4c02a9bdecb23d9664992f142eaa5_r.jpg" alt=""></p>
-<p>Source中的构成元素想象成是由一系列的<Key,Value>数据对构成<br>Target中的某个元素Query</p>
+<p>Source中的构成元素想象成是由一系列的<Key,Value>数据对构成<br>Target中的某个元素Query<br>(在Seq2Se2中，Q是Decoder的隐藏态，K和V都是Encoder的隐藏态)</p>
 <ul>
 <li>1、根据Query和Key计算权重系数，常用的相似度函数有点积，拼接，感知机等</li>
 <li>2、使用softmax函数对这些权重进行归一化</li>
