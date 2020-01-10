@@ -10,6 +10,7 @@
 <p><img src="https://www.guanacossj.com/media/articlebodypics/test-lstmattention.png" alt=""></p>
 <h3 id="Seq2Seq-Attention"><a href="#Seq2Seq-Attention" class="headerlink" title="Seq2Seq + Attention"></a>Seq2Seq + Attention</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/all-seq2seqattention.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/test-seq2seqattention.png" alt=""></p>
+<h3 id="DA-RNN"><a href="#DA-RNN" class="headerlink" title="DA-RNN"></a>DA-RNN</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/nasdaq-gru.jpg" alt=""></p>
 <h3 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h3><h4 id="Self-Attention"><a href="#Self-Attention" class="headerlink" title="Self-Attention"></a>Self-Attention</h4><p>顾名思义，指的不是Target和Source之间的Attention机制，而是Source内部元素之间或者Target内部元素之间发生的Attention机制，也可以理解为Target=Source这种特殊情况下的注意力计算机制</p>
 <p>给出信息输入：用X = [x1, · · · , xN ]表示N 个输入信息；通过线性变换得到为查询向量序列，键向量序列和值向量序列，其中$W^{Q}$,$W^{K}$,$W^{V}$是我们模型训练过程学习到的合适的参数</p>
 <script type="math/tex; mode=display">Q = W^{Q}X</script><script type="math/tex; mode=display">K = W^{K}X</script><script type="math/tex; mode=display">V = W^{V}X</script><script type="math/tex; mode=display">Attention(Q,K,V) = softmax(\begin{bmatrix}
@@ -403,8 +404,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>restframework</tag>
         <tag>python</tag>
+        <tag>restframework</tag>
       </tags>
   </entry>
   <entry>
@@ -871,8 +872,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Git</category>
       </categories>
       <tags>
-        <tag>git</tag>
         <tag>github</tag>
+        <tag>git</tag>
       </tags>
   </entry>
   <entry>
