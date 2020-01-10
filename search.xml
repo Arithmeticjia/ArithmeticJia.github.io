@@ -22,6 +22,12 @@
 <p>第一步：query 和 key 进行相似度计算，得到权值</p>
 <p>第二步：将权值进行归一化，得到直接可用的权重</p>
 <p>第三步：将权重和 value 进行加权求和</p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/all-lstmattention.png" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/test-lstmattention.png" alt=""></p>
+<h3 id="Seq2Seq-Attention"><a href="#Seq2Seq-Attention" class="headerlink" title="Seq2Seq + Attention"></a>Seq2Seq + Attention</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/all-seq2seqattention.png" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/test-seq2seqattention.png" alt=""></p>
+<h3 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/all-transformer.png" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/test-transformer.png" alt=""></p>
 ]]></content>
       <categories>
         <category>周报</category>
@@ -387,8 +393,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>python</tag>
         <tag>restframework</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -855,8 +861,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Git</category>
       </categories>
       <tags>
-        <tag>github</tag>
         <tag>git</tag>
+        <tag>github</tag>
       </tags>
   </entry>
   <entry>
