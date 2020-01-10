@@ -4,11 +4,7 @@
     <title>2020-1-10周报-单沙嘉</title>
     <url>/2020/01/07/2020-1-10%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
     <content><![CDATA[<p>“All you need is attention”<br><a id="more"></a></p>
-<h3 id="Soft-attention"><a href="#Soft-attention" class="headerlink" title="Soft attention"></a>Soft attention</h3><script type="math/tex; mode=display">c_{t} = \sum_{i}^{N}\alpha _{i}h_{i}</script><script type="math/tex; mode=display">\alpha _{i} = softmax(h_{i}s_{t})</script><p>Paper:Neural machine translation by jointly learning to align and translate</p>
-<h3 id="Hard-attention"><a href="#Hard-attention" class="headerlink" title="Hard attention"></a>Hard attention</h3><script type="math/tex; mode=display">c_{t} = \sum_{i}^{N}\alpha _{i}h_{i}</script><script type="math/tex; mode=display">\alpha _{i} = \left\{\begin{matrix}
-0,i=p_{t}\\ 
-1,else
-\end{matrix}\right.</script><h3 id="LSTM-Attention"><a href="#LSTM-Attention" class="headerlink" title="LSTM + Attention"></a>LSTM + Attention</h3><p>FEED-FORWARD NETWORKS WITH ATTENTION CAN SOLVE SOME LONG-TERM MEMORY PROBLEMS</p>
+<h3 id="LSTM-Attention"><a href="#LSTM-Attention" class="headerlink" title="LSTM + Attention"></a>LSTM + Attention</h3><p>FEED-FORWARD NETWORKS WITH ATTENTION CAN SOLVE SOME LONG-TERM MEMORY PROBLEMS</p>
 <h4 id="FEED-FORWARD-ATTENTION"><a href="#FEED-FORWARD-ATTENTION" class="headerlink" title="FEED-FORWARD ATTENTION"></a>FEED-FORWARD ATTENTION</h4><p><img src="https://www.guanacossj.com/media/articlebodypics/FEED-FORWARD-ATTENTION.jpg" alt=""></p>
 <script type="math/tex; mode=display">e_{t} = a(h_{t})</script><script type="math/tex; mode=display">\alpha_{t} = \frac{exp(e_{t})}{\sum_{k=1}^{T}exp(e_{k})}</script><script type="math/tex; mode=display">c = \sum_{t=1}^{T}\alpha_{t}h_{t}</script><h4 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h4><p><img src="https://www.guanacossj.com/media/articlebodypics/all-lstmattention.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/test-lstmattention.png" alt=""></p>
