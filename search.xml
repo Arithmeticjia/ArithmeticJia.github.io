@@ -9,7 +9,8 @@
 0,i=p_{t}\\ 
 1,else
 \end{matrix}\right.</script><h3 id="LSTM-Attention"><a href="#LSTM-Attention" class="headerlink" title="LSTM + Attention"></a>LSTM + Attention</h3><p>FEED-FORWARD NETWORKS WITH ATTENTION CAN SOLVE SOME LONG-TERM MEMORY PROBLEMS</p>
-<h4 id="FEED-FORWARD-ATTENTION"><a href="#FEED-FORWARD-ATTENTION" class="headerlink" title="FEED-FORWARD ATTENTION"></a>FEED-FORWARD ATTENTION</h4><script type="math/tex; mode=display">e_{t} = a(h_{t})</script><script type="math/tex; mode=display">\alpha_{t} = \frac{exp(e_{t})}{\sum_{k=1}^{T}exp(e_{k})}</script><script type="math/tex; mode=display">c = \sum_{t=1}^{T}\alpha_{t}h_{t}</script><p><img src="http://img-blog.csdnimg.cn/20190131091219549.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ0NjMzMA==,size_16,color_FFFFFF,t_70" alt=""></p>
+<h4 id="FEED-FORWARD-ATTENTION"><a href="#FEED-FORWARD-ATTENTION" class="headerlink" title="FEED-FORWARD ATTENTION"></a>FEED-FORWARD ATTENTION</h4><p><img src="https://www.guanacossj.com/media/articlebodypics/FEED-FORWARD-ATTENTION.jpg" alt=""></p>
+<script type="math/tex; mode=display">e_{t} = a(h_{t})</script><script type="math/tex; mode=display">\alpha_{t} = \frac{exp(e_{t})}{\sum_{k=1}^{T}exp(e_{k})}</script><script type="math/tex; mode=display">c = \sum_{t=1}^{T}\alpha_{t}h_{t}</script><p><img src="http://img-blog.csdnimg.cn/20190131091219549.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQ0NjMzMA==,size_16,color_FFFFFF,t_70" alt=""></p>
 <p>第一步：query 和 key 进行相似度计算，得到权值</p>
 <p>第二步：将权值进行归一化，得到直接可用的权重</p>
 <p>第三步：将权重和 value 进行加权求和</p>
