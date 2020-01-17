@@ -9,13 +9,14 @@
 <p>WSGI是一种通信协议，WSGI 不是框架，也不是一个模块，而是介于 Web应用程序（Web框架）与 Web Server 之间交互的一种规范。</p>
 <h3 id="uwsgi"><a href="#uwsgi" class="headerlink" title="uwsgi"></a>uwsgi</h3><ul>
 <li>二进制协议，可以携带任何类型的数据。一个uwsgi分组的头4个字节描述了这个分组包含的数据类型。</li>
-<li>uwsgi是一种线路协议而不是通信协议，在此常用于在uWSGI服务器与其他网络服务器的数据通信</li>
+<li>uwsgi是一种线路协议而不是通信协议，在此常用于在uWSGI服务器与其他网络服务器的数据通信。</li>
 </ul>
-<h3 id="uWSGI"><a href="#uWSGI" class="headerlink" title="uWSGI"></a>uWSGI</h3><ul>
+<h3 id="uWSGI"><a href="#uWSGI" class="headerlink" title="uWSGI"></a>uWSGI</h3><p>uWSGI是实现了uwsgi和WSGI两种协议的Web服务器，使用c语言开发。</p>
+<ul>
 <li>两级结构 在这种结构里，uWSGI作为服务器，它用到了HTTP协议以及wsgi协议，flask应用作为application，实现了wsgi协议。当有客户端发来请求，uWSGI接受请求，调用flask app得到相应，之后相应给客户端。 这里说一点，通常来说，Flask等web框架会自己附带一个wsgi服务器(这就是flask应用可以直接启动的原因)，但是这只是在开发阶段用到的，在生产环境是不够用的，所以用到了uwsgi这个性能高的wsgi服务器。</li>
 <li>三级结构 在这种结构里，uWSGI作为中间件，它用到了uwsgi协议(与nginx通信)，wsgi协议(调用Flask app)。</li>
-<li>提高web server性能(uWSGI处理静态资源不如nginx；nginx会在收到一个完整的http请求后再转发给wWSGI)</li>
-<li>nginx可以做负载均衡(前提是有多个服务器)，保护了实际的web服务器(客户端是和nginx交互而不是uWSGI)</li>
+<li>提高web server性能(uWSGI处理静态资源不如nginx；nginx会在收到一个完整的http请求后再转发给wWSGI)。</li>
+<li>nginx可以做负载均衡(前提是有多个服务器)，保护了实际的web服务器(客户端是和nginx交互而不是uWSGI)。</li>
 </ul>
 <h3 id="Nginx"><a href="#Nginx" class="headerlink" title="Nginx"></a>Nginx</h3><p>Nginx是一款轻量级的Web服务器、反向代理服务器，由于它的内存占用少，启动极快，高并发能力强，在互联网项目中广泛应用。</p>
 <p><img src="https://pic2.zhimg.com/80/v2-4787a512240b238ebf928cd0651e1d99_hd.jpg" alt=""></p>
