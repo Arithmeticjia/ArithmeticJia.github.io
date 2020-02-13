@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://arithmeticjia.github.io/"/>
-  <updated>2020-02-13T14:24:36.376Z</updated>
+  <updated>2020-02-13T15:02:55.360Z</updated>
   <id>http://arithmeticjia.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://arithmeticjia.github.io/2020/02/13/2020-2-14%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/"/>
     <id>http://arithmeticjia.github.io/2020/02/13/2020-2-14%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</id>
     <published>2020-02-13T13:27:22.000Z</published>
-    <updated>2020-02-13T14:24:36.376Z</updated>
+    <updated>2020-02-13T15:02:55.360Z</updated>
     
-    <content type="html"><![CDATA[<p>DA-RNN + Transformer<br><a id="more"></a></p><h3 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/multi_head_net.jpg" alt=""></p><p><img src="https://www.guanacossj.com/media/articlebodypics/transf-67-1.jpg" alt=""></p><p><img src="https://www.guanacossj.com/media/articlebodypics/transf-67-2.jpg" alt=""></p><h3 id="DA-RNN"><a href="#DA-RNN" class="headerlink" title="DA-RNN"></a>DA-RNN</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-67-1.jpg" alt=""></p><p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-67-2.jpg" alt=""></p>]]></content>
+    <content type="html"><![CDATA[<p>DA-RNN + Transformer<br><a id="more"></a></p><h3 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/multi_head_net.jpg" alt=""></p><p><img src="https://www.guanacossj.com/media/articlebodypics/transf-67-1.jpg" alt=""></p><p><img src="https://www.guanacossj.com/media/articlebodypics/transf-67-2.jpg" alt=""></p><h3 id="DA-RNN"><a href="#DA-RNN" class="headerlink" title="DA-RNN"></a>DA-RNN</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-67-1.jpg" alt=""></p><p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-67-2.jpg" alt=""></p><figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 0.256</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.348</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
