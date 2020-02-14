@@ -24,8 +24,25 @@
 <ul>
 <li>把隐含层节点分成了若干个模块（在图中分成了3个模块，是为了方便说明，实际中的模块个数可以自定义），而且每个模块都分配了一个时钟周期（Ti），便于独立管理</li>
 <li>隐含层之间的连接，在一个模块内部是全连接，但是模块之间是有方向的。模块之间的连接是从高时钟频率的模块指向低时钟频率的模块</li>
+<li>标准RNN<script type="math/tex; mode=display">
+y_{H}^{(t)} = f_{H}(W_{H}*y^{(t-1)}+W_{I}*x^{(t)})</script><script type="math/tex; mode=display">
+y_{O}^{(t)} = f_{O}(W_{O}*y_{H}^{(t)})</script></li>
+<li>只有当$t$ MOD $T_{i}$ = 0时才会被执行</li>
+<li>{$T_{1}$,…,$T_{g}$}的设置是任意的，在论文中使用$T_{i}=2^{i-1}$<script type="math/tex; mode=display">
+W_{H} = \begin{pmatrix}
+\\ W_{H_{1}}
+\\ .
+\\ .
+\\ W_{H_{g}}
+\end{pmatrix}</script></li>
 </ul>
-]]></content>
+<script type="math/tex; mode=display">
+W_{I} = \begin{pmatrix}
+\\ W_{I_{1}}
+\\ .
+\\ .
+\\ W_{I_{g}}
+\end{pmatrix}</script>]]></content>
       <categories>
         <category>周报</category>
       </categories>
@@ -894,8 +911,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>celery</tag>
         <tag>django</tag>
+        <tag>celery</tag>
       </tags>
   </entry>
   <entry>

@@ -67,7 +67,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;da-rnn-67-1.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;da-rnn-67-2.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;cwrnn.jpg">
-<meta property="og:updated_time" content="2020-02-14T03:28:34.408Z">
+<meta property="og:updated_time" content="2020-02-14T05:10:02.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;QQ20200214-0.png">
 
@@ -254,7 +254,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-14 11:28:34" itemprop="dateModified" datetime="2020-02-14T11:28:34+08:00">2020-02-14</time>
+                <time title="修改时间：2020-02-14 13:10:02" itemprop="dateModified" datetime="2020-02-14T13:10:02+08:00">2020-02-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,7 +281,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>370</span>
+              <span>655</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -321,8 +321,25 @@
 <ul>
 <li>把隐含层节点分成了若干个模块（在图中分成了3个模块，是为了方便说明，实际中的模块个数可以自定义），而且每个模块都分配了一个时钟周期（Ti），便于独立管理</li>
 <li>隐含层之间的连接，在一个模块内部是全连接，但是模块之间是有方向的。模块之间的连接是从高时钟频率的模块指向低时钟频率的模块</li>
+<li>标准RNN<script type="math/tex; mode=display">
+y_{H}^{(t)} = f_{H}(W_{H}*y^{(t-1)}+W_{I}*x^{(t)})</script><script type="math/tex; mode=display">
+y_{O}^{(t)} = f_{O}(W_{O}*y_{H}^{(t)})</script></li>
+<li>只有当$t$ MOD $T_{i}$ = 0时才会被执行</li>
+<li>{$T_{1}$,…,$T_{g}$}的设置是任意的，在论文中使用$T_{i}=2^{i-1}$<script type="math/tex; mode=display">
+W_{H} = \begin{pmatrix}
+\\ W_{H_{1}}
+\\ .
+\\ .
+\\ W_{H_{g}}
+\end{pmatrix}</script></li>
 </ul>
-
+<script type="math/tex; mode=display">
+W_{I} = \begin{pmatrix}
+\\ W_{I_{1}}
+\\ .
+\\ .
+\\ W_{I_{g}}
+\end{pmatrix}</script>
     </div>
 
     
@@ -511,7 +528,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:23</span>
+    <span title="站点阅读时长">1:24</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
