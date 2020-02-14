@@ -13,6 +13,7 @@
 <h3 id="CW-RNN-Clock-Work-RNN"><a href="#CW-RNN-Clock-Work-RNN" class="headerlink" title="CW-RNN(Clock Work RNN)"></a>CW-RNN(Clock Work RNN)</h3><p>ICML2014</p>
 <p>Input = ($x_{1}$,$x_{2}$,…,$x_{t}$,…)</p>
 <p>Output = ($y_{1}$,$y_{2}$,…,$y_{t}$,…)</p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/cwrnn.jpg" alt=""></p>
 ]]></content>
       <categories>
         <category>周报</category>
@@ -455,8 +456,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>python</tag>
         <tag>restframework</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -882,8 +883,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>celery</tag>
         <tag>django</tag>
+        <tag>celery</tag>
       </tags>
   </entry>
   <entry>
