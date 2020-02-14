@@ -12,9 +12,6 @@
 <p><img src="https://www.guanacossj.com/media/articlebodypics/QQ20200214-0.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/QQ20200214-1.png" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/echarts.png" alt=""></p>
-<h3 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/multi_head_net.jpg" alt=""></p>
-<p><img src="https://www.guanacossj.com/media/articlebodypics/transf-67-1.jpg" alt=""></p>
-<p><img src="https://www.guanacossj.com/media/articlebodypics/transf-67-2.jpg" alt=""></p>
 <h3 id="DA-RNN"><a href="#DA-RNN" class="headerlink" title="DA-RNN"></a>DA-RNN</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-67-1.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/da-rnn-67-2.jpg" alt=""></p>
 <figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">Test </span>RMSE: 0.256</span><br><span class="line"><span class="keyword">Test </span>nRMSE: 0.348</span><br></pre></td></tr></table></figure>
@@ -44,6 +41,9 @@ W_{I} = \begin{pmatrix}
 \\ .
 \\ W_{I_{g}}
 \end{pmatrix}</script><p>作者对比了传统RNN、LSTM、CW-RNN，在取局部图的时候可以观察到，LSTM的回归效果相对平滑，而CW-RNN并没有这种缺陷<br><img src="https://www.guanacossj.com/media/articlebodypics/comparecwrnn.jpg" alt=""></p>
+<h3 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/multi_head_net.jpg" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/transf-67-1.jpg" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/transf-67-2.jpg" alt=""></p>
 ]]></content>
       <categories>
         <category>周报</category>
