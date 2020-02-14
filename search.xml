@@ -4,6 +4,13 @@
     <title>2020-2.14周报-单沙嘉</title>
     <url>/2020/02/13/2020-2-14%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
     <content><![CDATA[<p>DA-RNN + Transformer + CW-RNN<br><a id="more"></a></p>
+<h3 id="彩蛋"><a href="#彩蛋" class="headerlink" title="彩蛋"></a>彩蛋</h3><ul>
+<li>写了一篇关于使用百度Echarts绘制新型冠状病毒全国分布图的博客</li>
+<li>收到来自皖南医学院弋矶山医院教育处金来润的邮件希望合作</li>
+</ul>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/QQ20200214-0.png" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/QQ20200214-1.png" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/echarts.png" alt=""></p>
 <h3 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/multi_head_net.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/transf-67-1.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/transf-67-2.jpg" alt=""></p>
@@ -14,6 +21,10 @@
 <p>Input = ($x_{1}$,$x_{2}$,…,$x_{t}$,…)</p>
 <p>Output = ($y_{1}$,$y_{2}$,…,$y_{t}$,…)</p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/cwrnn.jpg" alt=""></p>
+<ul>
+<li>把隐含层节点分成了若干个模块（在图中分成了3个模块，是为了方便说明，实际中的模块个数可以自定义），而且每个模块都分配了一个时钟周期（Ti），便于独立管理</li>
+<li>隐含层之间的连接，在一个模块内部是全连接，但是模块之间是有方向的。模块之间的连接是从高时钟频率的模块指向低时钟频率的模块</li>
+</ul>
 ]]></content>
       <categories>
         <category>周报</category>
@@ -456,8 +467,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>restframework</tag>
         <tag>python</tag>
+        <tag>restframework</tag>
       </tags>
   </entry>
   <entry>
@@ -883,8 +894,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>django</tag>
         <tag>celery</tag>
+        <tag>django</tag>
       </tags>
   </entry>
   <entry>
