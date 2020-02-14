@@ -64,11 +64,12 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;da-rnn-67-1.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;da-rnn-67-2.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;cwrnn.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;cwrnn-2.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;comparecwrnn.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;multi_head_net.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;transf-67-1.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;transf-67-2.jpg">
-<meta property="og:updated_time" content="2020-02-14T05:21:41.765Z">
+<meta property="og:updated_time" content="2020-02-14T05:42:35.993Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;QQ20200214-0.png">
 
@@ -255,7 +256,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-14 13:21:41" itemprop="dateModified" datetime="2020-02-14T13:21:41+08:00">2020-02-14</time>
+                <time title="修改时间：2020-02-14 13:42:35" itemprop="dateModified" datetime="2020-02-14T13:42:35+08:00">2020-02-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -282,7 +283,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>763</span>
+              <span>1.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -324,7 +325,8 @@
 y_{H}^{(t)} = f_{H}(W_{H}*y^{(t-1)}+W_{I}*x^{(t)})</script><script type="math/tex; mode=display">
 y_{O}^{(t)} = f_{O}(W_{O}*y_{H}^{(t)})</script></li>
 <li>只有当$t$ MOD $T_{i}$ = 0时才会被执行</li>
-<li>{$T_{1}$,…,$T_{g}$}的设置是任意的，在论文中使用$T_{i}=2^{i-1}$<script type="math/tex; mode=display">
+<li>{$T_{1}$,…,$T_{g}$}的设置是任意的，在论文中使用$T_{i}=2^{i-1}$</li>
+<li>分块<script type="math/tex; mode=display">
 W_{H} = \begin{pmatrix}
 \\ W_{H_{1}}
 \\ .
@@ -338,7 +340,17 @@ W_{I} = \begin{pmatrix}
 \\ .
 \\ .
 \\ W_{I_{g}}
-\end{pmatrix}</script><p>作者对比了传统RNN、LSTM、CW-RNN，在取局部图的时候可以观察到，LSTM的回归效果相对平滑，而CW-RNN并没有这种缺陷<br><img src="https://www.guanacossj.com/media/articlebodypics/comparecwrnn.jpg" alt=""></p>
+\end{pmatrix}</script><ul>
+<li>不参与运算的部分置零<script type="math/tex; mode=display">
+\left\{\begin{matrix}
+\\ W_{H_{i}},t mod T_{i} = 0
+\\ 0,otherwise
+\end{matrix}\right.</script></li>
+<li>将$W_{h}$强制转成上三角<script type="math/tex; mode=display">W_{H_{i}}={0_{1},...,0_{i-1},W_{H_{i,i}},...,W_{H_{i,g}}}</script></li>
+</ul>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/cwrnn-2.jpg" alt=""></p>
+<p>我们要处理序列中第6（t=6）个元素的时候，通过t与每个模块的时钟周期进行MOD（求余数）计算后可以得到只有前两个模块会参与运算。所以$W_{h}$和$W_{x}$矩阵除了上面两行之外，其他元素的值都是0。经过计算之后，得到的$h_{t}$也只有前两个模块有值。因此，我们也可以把CW-RNN过程看成是通过一些人工的干预，选择不同的隐含层节点进行工作</p>
+<p>作者对比了传统RNN、LSTM、CW-RNN，在取局部图的时候可以观察到，LSTM的回归效果相对平滑，而CW-RNN并没有这种缺陷<br><img src="https://www.guanacossj.com/media/articlebodypics/comparecwrnn.jpg" alt=""></p>
 <h3 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/multi_head_net.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/transf-67-1.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/transf-67-2.jpg" alt=""></p>
@@ -526,7 +538,7 @@ W_{I} = \begin{pmatrix}
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">92k</span>
+    <span title="站点总字数">93k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
