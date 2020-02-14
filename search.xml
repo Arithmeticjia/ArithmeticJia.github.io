@@ -51,6 +51,10 @@ W_{I} = \begin{pmatrix}
 </ul>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/cwrnn-2.jpg" alt=""></p>
 <p>我们要处理序列中第6（t=6）个元素的时候，通过t与每个模块的时钟周期进行MOD（求余数）计算后可以得到只有前两个模块会参与运算。所以$W_{h}$和$W_{x}$矩阵除了上面两行之外，其他元素的值都是0。经过计算之后，得到的$h_{t}$也只有前两个模块有值。因此，我们也可以把CW-RNN过程看成是通过一些人工的干预，选择不同的隐含层节点进行工作</p>
+<ul>
+<li>低时钟速率模块处理、保留和输出从输入中获得的长期信息序列，</li>
+<li>高时钟速率模块则侧重于本地的高频信息</li>
+</ul>
 <p>作者对比了传统RNN、LSTM、CW-RNN，在取局部图的时候可以观察到，LSTM的回归效果相对平滑，而CW-RNN并没有这种缺陷<br><img src="https://www.guanacossj.com/media/articlebodypics/comparecwrnn.jpg" alt=""></p>
 <p>我复现了下股票数据集上的效果，实验还没完全完成<br><img src="https://www.guanacossj.com/media/articlebodypics/cwrnn-stock.jpg" alt=""></p>
 <h3 id="Transformer"><a href="#Transformer" class="headerlink" title="Transformer"></a>Transformer</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/multi_head_net.jpg" alt=""></p>
