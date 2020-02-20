@@ -19,6 +19,37 @@
 <p><img src="http://www.xiongfuli.com/assets/img/201606/tucker.png" alt></p>
 <p><img src="https://img-blog.csdn.net/20180827102035488?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZseWluZ19zZmVuZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
 <p>这里A$\in$R$^{I\times P}$,B$\in$R$^{J\times Q}$,C$\in$R$^{K\times R}$是因子矩阵（通常是正交的），可以当做是每一维上的主要成分。核张量表示每一维成分之间的联系<br>因此，对于一个三阶张量，可以通过tucker分解为三个二阶因子矩阵和一个三阶核向量</p>
+<h4 id="Step1-Block-Hankel-Tensor-via-MDT"><a href="#Step1-Block-Hankel-Tensor-via-MDT" class="headerlink" title="Step1: Block Hankel Tensor via MDT"></a>Step1: Block Hankel Tensor via MDT</h4><p>MDT:multi-way delay embedding transform(多路延迟变换)<br>目的是利用MDT将多个TS转换成一个高阶的块Hankel张量<br>假设有1000条时间序列，每条序列的长度为40，即 I = 1000，T=40，设置参数t = 5<br>经MDT沿着时间维度变换后，得到一个1000✖️5*✖️（40-5+1）=1000✖️5✖️36的三维张量</p>
+<h3 id="PredRNN-Towards-A-Resolution-of-the-Deep-in-Time-Dilemma-in-Spatiotemporal-Predictive-Learning"><a href="#PredRNN-Towards-A-Resolution-of-the-Deep-in-Time-Dilemma-in-Spatiotemporal-Predictive-Learning" class="headerlink" title="PredRNN++: Towards A Resolution of the Deep-in-Time Dilemma in Spatiotemporal Predictive Learning"></a>PredRNN++: Towards A Resolution of the Deep-in-Time Dilemma in Spatiotemporal Predictive Learning</h3><p>ICML2018 Tsinghua</p>
+<h4 id="PredRNN"><a href="#PredRNN" class="headerlink" title="PredRNN"></a>PredRNN</h4><ul>
+<li>堆叠循环LSTM</li>
+<li>深度跃迁LSTM</li>
+<li>Pred RNN 红线表示空间记忆的深度过渡路径，水平的黑色箭头表示时间记忆的更新方向<br><img src="https://img-blog.csdnimg.cn/20191222210421460.png?#pic_center" alt><br>PredRNN利用了一种双重记忆机制，通过简单的门控级联，将水平更新的时间记忆C与垂直转换的空间记忆M结合起来</li>
+</ul>
+<h4 id="PredRnn"><a href="#PredRnn" class="headerlink" title="PredRnn+"></a>PredRnn+</h4><p>先来回忆一下LSTM</p>
+<p><img src="https://pic2.zhimg.com/v2-810f2d553fa6e6f43854efdc881be8a1_r.jpg" alt></p>
+<ol>
+<li>$h_{t-1}$与$X_{t}$做concat操作，之后经过sigmoid形成[0, 1]的忘记门，输入门，输出门</li>
+<li>Ct-1通过忘记门 </li>
+<li>ht-1与Xt做concat操作通过tanh激活函数，通过输入门（这里在通过输入门之前相当于生成了此时的输入生成状态） </li>
+<li>以上通过遗忘门和输入门的两个向量相加就是最后的Ct，也就是此时的cell state</li>
+<li>最后，这个cell state通过再一次的非线性变化tanh 最终通过输出门输出得到最后的ht</li>
+</ol>
+<p>Causal LSTM(因果长短期记忆)<br>通过这种方式，将获得更强大的建模能力，以实现更强的空间相关性和短期动态</p>
+<p>NIPS2017 Tsinghua<br>PredRNN: Recurrent Neural Networks for Predictive Learning using Spatiotemporal LSTMs<br>Spatiotemporal LSTM (spatial + temporal)<br><img src="https://pic4.zhimg.com/v2-f3cd76086384ede22b29e6c8a5f7f45b_r.jpg" alt></p>
+<p>震惊！！！</p>
+<ul>
+<li>上半部分就是LSTM(Standard Temporal Memory)</li>
+<li>下半部分相当于把c和h一起更改为M，M即时空记忆状态(Spatiotemporal Memory)</li>
+</ul>
+<p><img src="https://pic2.zhimg.com/80/v2-fdb1465c439cd9f3eea4ee52bf2b4125_hd.jpg" alt></p>
+<p><img src="https://img-blog.csdnimg.cn/20191222205916540.png?#pic_center" alt></p>
+<ul>
+<li>每个门不是由X和H决定，而是由X和H以及C决定，通过输入门之前的状态也是由三者决定的</li>
+<li>两个memory结构，即C和M，C为temporal state，M为spatial state，因为输入C为上一个时刻的C，M是上一层的M，所以这里C与时间维度有关，M与空间维度有关</li>
+<li>M作为第二部分的state输入，并且通过忘记门之前做了一个非线性操作tanh</li>
+</ul>
+<p>Gradient Highway()</p>
 ]]></content>
       <categories>
         <category>周报</category>
