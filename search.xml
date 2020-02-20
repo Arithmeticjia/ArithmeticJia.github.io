@@ -58,6 +58,7 @@
 <p><img src="https://pic1.zhimg.com/80/v2-cf06c70d336a89700435195a0574b39c_hd.jpg" alt></p>
 <p>总体架构</p>
 <p><img src="https://pic3.zhimg.com/80/v2-61d4c59ff38010cb9613574bf0290c9a_hd.jpg" alt></p>
+<p>GHU连接了当前时刻以及前一个时刻的输入，引导的结果就是梯度不再是一股线传播了，而是可以直接在第一层与第二层之间有个高速的传播，换句话讲就是传播的距离缩短了，也就变得没有之前的那么’深‘了，可以有效的解决梯度消失的问题</p>
 ]]></content>
       <categories>
         <category>周报</category>
