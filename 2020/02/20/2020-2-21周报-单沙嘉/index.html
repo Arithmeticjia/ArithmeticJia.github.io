@@ -68,8 +68,12 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;pic2.zhimg.com&#x2F;v2-810f2d553fa6e6f43854efdc881be8a1_r.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;pic4.zhimg.com&#x2F;v2-f3cd76086384ede22b29e6c8a5f7f45b_r.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;pic2.zhimg.com&#x2F;80&#x2F;v2-fdb1465c439cd9f3eea4ee52bf2b4125_hd.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;pic2.zhimg.com&#x2F;80&#x2F;v2-bbe7560a50ff9d511746fb94562ebd39_hd.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20191222205916540.png?#pic_center">
-<meta property="og:updated_time" content="2020-02-20T16:40:32.864Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;pic3.zhimg.com&#x2F;80&#x2F;v2-3b541bda171d5f4c9299c77326e13702_hd.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;pic1.zhimg.com&#x2F;80&#x2F;v2-cf06c70d336a89700435195a0574b39c_hd.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;pic3.zhimg.com&#x2F;80&#x2F;v2-61d4c59ff38010cb9613574bf0290c9a_hd.jpg">
+<meta property="og:updated_time" content="2020-02-20T16:49:32.403Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdn.net&#x2F;20180609111508150?watermark&#x2F;2&#x2F;text&#x2F;aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZseWluZ19zZmVuZw==&#x2F;font&#x2F;5a6L5L2T&#x2F;fontsize&#x2F;400&#x2F;fill&#x2F;I0JBQkFCMA==&#x2F;dissolve&#x2F;70">
 
@@ -256,7 +260,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-02-21 00:40:32" itemprop="dateModified" datetime="2020-02-21T00:40:32+08:00">2020-02-21</time>
+                <time title="修改时间：2020-02-21 00:49:32" itemprop="dateModified" datetime="2020-02-21T00:49:32+08:00">2020-02-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -283,14 +287,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
+              <span>1.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -335,20 +339,28 @@
 <li>最后，这个cell state通过再一次的非线性变化tanh 最终通过输出门输出得到最后的ht</li>
 </ol>
 <p>Causal LSTM(因果长短期记忆)<br>通过这种方式，将获得更强大的建模能力，以实现更强的空间相关性和短期动态</p>
-<p>NIPS2017 Tsinghua<br>PredRNN: Recurrent Neural Networks for Predictive Learning using Spatiotemporal LSTMs<br>Spatiotemporal LSTM (spatial + temporal)<br><img src="https://pic4.zhimg.com/v2-f3cd76086384ede22b29e6c8a5f7f45b_r.jpg" alt></p>
+<p>NIPS2017 Tsinghua<br>PredRNN: Recurrent Neural Networks for Predictive Learning using Spatiotemporal LSTMs<br>Spatiotemporal LSTM (spatial + temporal)</p>
+<p><img src="https://pic4.zhimg.com/v2-f3cd76086384ede22b29e6c8a5f7f45b_r.jpg" alt></p>
+<p><img src="https://pic2.zhimg.com/80/v2-fdb1465c439cd9f3eea4ee52bf2b4125_hd.jpg" alt></p>
 <p>震惊！！！</p>
 <ul>
 <li>上半部分就是LSTM(Standard Temporal Memory)</li>
 <li>下半部分相当于把c和h一起更改为M，M即时空记忆状态(Spatiotemporal Memory)</li>
 </ul>
-<p><img src="https://pic2.zhimg.com/80/v2-fdb1465c439cd9f3eea4ee52bf2b4125_hd.jpg" alt></p>
+<p><img src="https://pic2.zhimg.com/80/v2-bbe7560a50ff9d511746fb94562ebd39_hd.jpg" alt></p>
 <p><img src="https://img-blog.csdnimg.cn/20191222205916540.png?#pic_center" alt></p>
 <ul>
 <li>每个门不是由X和H决定，而是由X和H以及C决定，通过输入门之前的状态也是由三者决定的</li>
 <li>两个memory结构，即C和M，C为temporal state，M为spatial state，因为输入C为上一个时刻的C，M是上一层的M，所以这里C与时间维度有关，M与空间维度有关</li>
 <li>M作为第二部分的state输入，并且通过忘记门之前做了一个非线性操作tanh</li>
 </ul>
+<p>对比ST-LSTM来说，Causal LSTM对于M和H定义更加清晰，并且不是简单的concat，而是采用了一个递归深度更深的一个级联结构最终输出H</p>
 <p>Gradient Highway()</p>
+<p>通过Recurrent Highway Networks的思想能够证明高速网络能够有效的在非常深的网络中传递梯度，继而防止长时导致的梯度消失</p>
+<p><img src="https://pic3.zhimg.com/80/v2-3b541bda171d5f4c9299c77326e13702_hd.jpg" alt></p>
+<p><img src="https://pic1.zhimg.com/80/v2-cf06c70d336a89700435195a0574b39c_hd.jpg" alt></p>
+<p>总体架构</p>
+<p><img src="https://pic3.zhimg.com/80/v2-61d4c59ff38010cb9613574bf0290c9a_hd.jpg" alt></p>
 
     </div>
 
@@ -533,7 +545,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">94k</span>
+    <span title="站点总字数">95k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
