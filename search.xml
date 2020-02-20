@@ -3,14 +3,23 @@
   <entry>
     <title>2020-2-21周报-单沙嘉</title>
     <url>/2020/02/20/2020-2-21%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
-    <content><![CDATA[<p>&lt;! — more —&gt;</p><h3 id="Block-Hankel-Tensor-ARIMA-for-Multiple-Short-Time-Series-Forecasting"><a href="#Block-Hankel-Tensor-ARIMA-for-Multiple-Short-Time-Series-Forecasting" class="headerlink" title="Block Hankel Tensor ARIMA for Multiple Short Time Series Forecasting"></a>Block Hankel Tensor ARIMA for Multiple Short Time Series Forecasting</h3><p>Hankel:汉克尔矩阵（每一条逆对角线上的元素都相等的矩阵）</p><a id="more"></a>
-
+    <content><![CDATA[<p>&lt;! — more —&gt;</p><h3 id="Block-Hankel-Tensor-ARIMA-for-Multiple-Short-Time-Series-Forecasting"><a href="#Block-Hankel-Tensor-ARIMA-for-Multiple-Short-Time-Series-Forecasting" class="headerlink" title="Block Hankel Tensor ARIMA for Multiple Short Time Series Forecasting"></a>Block Hankel Tensor ARIMA for Multiple Short Time Series Forecasting</h3><h4 id="Hankel-汉克尔矩阵（每一条逆对角线上的元素都相等的矩阵）"><a href="#Hankel-汉克尔矩阵（每一条逆对角线上的元素都相等的矩阵）" class="headerlink" title="Hankel:汉克尔矩阵（每一条逆对角线上的元素都相等的矩阵）"></a>Hankel:汉克尔矩阵（每一条逆对角线上的元素都相等的矩阵）</h4><a id="more"></a>
 <script type="math/tex; mode=display">
 \begin{bmatrix}
  1&  2&  3&  4&  5&  6& 7\\ 
  2&  3&  4&  5&  6&  7& 8\\ 
  3&  4&  5&  6&  7&  8& 9
-\end{bmatrix}</script>]]></content>
+\end{bmatrix}</script><h4 id="Tucker分解"><a href="#Tucker分解" class="headerlink" title="Tucker分解"></a>Tucker分解</h4><p>这是一个三阶张量</p>
+<p><img src="https://img-blog.csdn.net/20180609111508150?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZseWluZ19zZmVuZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
+<p>秩一张量：如果一个K阶张量能够表示成K个向量的外积，那么该张量称为秩一张量<br>[[3 4],[6 8]]这个二阶张量可以表示为[1 2]○[3 4]的外积，那么这就是一个二阶秩一张量<br><img src="https://www.guanacossj.com/media/articlebodypics/1582207111495.jpg" alt></p>
+<p>CP分解<br>CP分解其实就是多个rank-one tensors的和</p>
+<p><img src="https://img-blog.csdn.net/20180825185631219?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZseWluZ19zZmVuZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
+<p>公式表示如下：</p>
+<p><img src="https://img-blog.csdn.net/2018082518593729?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZseWluZ19zZmVuZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
+<p><img src="http://www.xiongfuli.com/assets/img/201606/tucker.png" alt></p>
+<p><img src="https://img-blog.csdn.net/20180827102035488?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZseWluZ19zZmVuZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
+<p>这里A$\in$R$^{I\times P}$,B$\in$R$^{J\times Q}$,C$\in$R$^{K\times R}$是因子矩阵（通常是正交的），可以当做是每一维上的主要成分。核张量表示每一维成分之间的联系<br>因此，对于一个三阶张量，可以通过tucker分解为三个二阶因子矩阵和一个三阶核向量</p>
+]]></content>
       <categories>
         <category>周报</category>
       </categories>
@@ -520,8 +529,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>python</tag>
         <tag>restframework</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
