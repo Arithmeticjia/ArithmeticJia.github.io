@@ -66,7 +66,7 @@
 <li>M作为第二部分的state输入，并且通过忘记门之前做了一个非线性操作tanh</li>
 </ul>
 <p>对比ST-LSTM来说，Causal LSTM对于M和H定义更加清晰，并且不是简单的concat，而是采用了一个递归深度更深的一个级联结构最终输出H</p>
-<p>Gradient Highway()</p>
+<p>Gradient Highway(高速梯度)</p>
 <p>通过Recurrent Highway Networks的思想能够证明高速网络能够有效的在非常深的网络中传递梯度，继而防止长时导致的梯度消失</p>
 <p><img src="https://pic3.zhimg.com/80/v2-3b541bda171d5f4c9299c77326e13702_hd.jpg" alt=""></p>
 <p><img src="https://pic1.zhimg.com/80/v2-cf06c70d336a89700435195a0574b39c_hd.jpg" alt=""></p>
