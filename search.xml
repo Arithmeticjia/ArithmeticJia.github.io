@@ -10,14 +10,15 @@
  2&  3&  4&  5&  6&  7& 8\\ 
  3&  4&  5&  6&  7&  8& 9
 \end{bmatrix}</script><h4 id="Tucker分解"><a href="#Tucker分解" class="headerlink" title="Tucker分解"></a>Tucker分解</h4><p>这是一个三阶张量</p>
-<p><img src="https://img-blog.csdn.net/20180609111508150?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZseWluZ19zZmVuZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
+<p><img src="/Users/Arithmetic/Pictures/tensor.png" alt=""></p>
 <p>秩一张量：如果一个K阶张量能够表示成K个向量的外积，那么该张量称为秩一张量<br>[[3 4],[6 8]]这个二阶张量可以表示为[1 2]○[3 4]的外积，那么这就是一个二阶秩一张量<br><img src="https://www.guanacossj.com/media/articlebodypics/1582207111495.jpg" alt=""></p>
 <p>CP分解<br>CP分解其实就是多个rank-one tensors的和</p>
-<p><img src="https://img-blog.csdn.net/20180825185631219?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZseWluZ19zZmVuZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
+<p><img src="/Users/Arithmetic/Pictures/cp.png" alt=""></p>
 <p>公式表示如下：</p>
-<p><img src="https://img-blog.csdn.net/2018082518593729?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZseWluZ19zZmVuZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
+<p><img src="/Users/Arithmetic/Pictures/cp_f.png" alt=""></p>
+<p>tucker分解</p>
 <p><img src="http://www.xiongfuli.com/assets/img/201606/tucker.png" alt=""></p>
-<p><img src="https://img-blog.csdn.net/20180827102035488?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L0ZseWluZ19zZmVuZw==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
+<p><img src="/Users/Arithmetic/Pictures/tucker_f.png" alt=""></p>
 <p>这里A$\in$R$^{I\times P}$,B$\in$R$^{J\times Q}$,C$\in$R$^{K\times R}$是因子矩阵（通常是正交的），可以当做是每一维上的主要成分。核张量表示每一维成分之间的联系<br>因此，对于一个三阶张量，可以通过tucker分解为三个二阶因子矩阵和一个三阶核向量</p>
 <h4 id="Step1-Block-Hankel-Tensor-via-MDT"><a href="#Step1-Block-Hankel-Tensor-via-MDT" class="headerlink" title="Step1: Block Hankel Tensor via MDT"></a>Step1: Block Hankel Tensor via MDT</h4><p>MDT:multi-way delay embedding transform(多路延迟变换)<br>目的是利用MDT将多个TS转换成一个高阶的块Hankel张量<br>假设有1000条时间序列，每条序列的长度为40，即 I = 1000，T=40，设置参数t = 5<br>经MDT沿着时间维度变换后，得到一个1000✖️5*✖️（40-5+1）=1000✖️5✖️36的三维张量</p>
 <h3 id="PredRNN"><a href="#PredRNN" class="headerlink" title="PredRNN++:"></a>PredRNN++:</h3><p>Towards A Resolution of the Deep-in-Time Dilemma in Spatiotemporal Predictive Learning</p>
