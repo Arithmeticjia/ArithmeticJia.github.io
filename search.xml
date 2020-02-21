@@ -43,6 +43,7 @@
 <li>上半部分就是LSTM(Standard Temporal Memory)</li>
 <li>下半部分相当于把c和h一起更改为M，M即时空记忆状态(Spatiotemporal Memory)</li>
 </ul>
+<p><img src="https://pic2.zhimg.com/80/v2-bbe7560a50ff9d511746fb94562ebd39_hd.jpg" alt=""></p>
 <h4 id="PredRnn"><a href="#PredRnn" class="headerlink" title="PredRnn++"></a>PredRnn++</h4><p>先来回忆一下LSTM</p>
 <p><img src="https://pic2.zhimg.com/v2-810f2d553fa6e6f43854efdc881be8a1_r.jpg" alt=""></p>
 <ol>
@@ -58,7 +59,6 @@
 <li>Pred RNN 红线表示空间记忆的深度过渡路径，水平的黑色箭头表示时间记忆的更新方向<br><img src="https://img-blog.csdnimg.cn/20191222210421460.png?#pic_center" alt=""></li>
 </ul>
 <p>Causal LSTM(因果长短期记忆)<br>通过这种方式，将获得更强大的建模能力，以实现更强的空间相关性和短期动态</p>
-<p><img src="https://pic2.zhimg.com/80/v2-bbe7560a50ff9d511746fb94562ebd39_hd.jpg" alt=""></p>
 <p><img src="https://img-blog.csdnimg.cn/20191222205916540.png?#pic_center" alt=""></p>
 <ul>
 <li>每个门不是由X和H决定，而是由X和H以及C决定，通过输入门之前的状态也是由三者决定的</li>
