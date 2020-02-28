@@ -27,7 +27,8 @@
 <p>红色箭头：用于微分建模的H的对角状态转移路径</p>
 <p>蓝色箭头：存储单元C，N和S的水平转换路径</p>
 <p>黑色箭头：之字形状态</p>
-<h3 id="experience"><a href="#experience" class="headerlink" title="experience"></a>experience</h3><p><img src="https://pic3.zhimg.com/v2-fec039cb2962195deb890b6680c5395a_r.jpg" alt=""></p>
+<h3 id="experience"><a href="#experience" class="headerlink" title="experience"></a>experience</h3><p>模型参数：一共四层，第一层是ST-LSTM，其余三层为MIM，MIM的feature channel为64，利用l2损失，ADAM optimizer，lr为0.001，利用了两个trick，为layer nomalization和scheduled sampling</p>
+<p><img src="https://pic3.zhimg.com/v2-fec039cb2962195deb890b6680c5395a_r.jpg" alt=""></p>
 <h3 id="GluonTS-AWS"><a href="#GluonTS-AWS" class="headerlink" title="GluonTS(AWS)"></a>GluonTS(AWS)</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/gluonts_all.jpg" alt=""></p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/gluonts67.jpg" alt=""></p>
 ]]></content>
