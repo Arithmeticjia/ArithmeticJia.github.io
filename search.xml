@@ -24,6 +24,9 @@
 <p><img src="https://pic3.zhimg.com/v2-f1eac55dddaa00ab46da1b4ea116072e_r.jpg" alt=""></p>
 <p><img src="https://pic3.zhimg.com/80/v2-6ec88fa03dd40e82a037c13ff6b64bd2_1440w.jpg" alt=""></p>
 <h3 id="Memory-In-Memory-Networks"><a href="#Memory-In-Memory-Networks" class="headerlink" title="Memory In Memory Networks"></a>Memory In Memory Networks</h3><p><img src="https://pic3.zhimg.com/v2-06741d37a4c01fce37ef43901f5b311e_r.jpg" alt=""></p>
+<p>红色箭头：用于微分建模的H的对角状态转移路径</p>
+<p>蓝色箭头：存储单元C，N和S的水平转换路径</p>
+<p>黑色箭头：之字形状态</p>
 ]]></content>
       <categories>
         <category>周报</category>
