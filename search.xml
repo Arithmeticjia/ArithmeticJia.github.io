@@ -19,6 +19,10 @@
 <p><img src="https://www.guanacossj.com/media/articlebodypics/f.jpg" alt=""></p>
 <script type="math/tex; mode=display">|S(f)|^2</script><script type="math/tex; mode=display">\lim_{T->\propto }\frac{1}{T}|S(f)|^2</script><h4 id="Deterministic-Spatiotemporal-Prediction"><a href="#Deterministic-Spatiotemporal-Prediction" class="headerlink" title="Deterministic Spatiotemporal Prediction"></a>Deterministic Spatiotemporal Prediction</h4><h4 id="Stochastic-Spatiotemporal-Prediction"><a href="#Stochastic-Spatiotemporal-Prediction" class="headerlink" title="Stochastic Spatiotemporal Prediction"></a>Stochastic Spatiotemporal Prediction</h4><h3 id="Memory-In-Memory"><a href="#Memory-In-Memory" class="headerlink" title="Memory In Memory"></a>Memory In Memory</h3><p><img src="https://pic1.zhimg.com/v2-dc4a2024ce0201315661daf3b43c6ab8_r.jpg" alt=""></p>
 <p>左边是ST-LSTM结构，右边是更改的</p>
+<p>ST-LSTM中的忘记门基本是饱和的，所以它基本上只获取了平稳的信息，而整个直接联系就是C状态值，再加上下面的输入为差分，而差分的转换其实就是非平稳的信息</p>
+<p><img src="https://pic1.zhimg.com/v2-69b9793882f1a8739d6b1d37336cc808_r.jpg" alt=""></p>
+<p><img src="https://pic3.zhimg.com/v2-f1eac55dddaa00ab46da1b4ea116072e_r.jpg" alt=""></p>
+<p><img src="https://pic3.zhimg.com/80/v2-6ec88fa03dd40e82a037c13ff6b64bd2_1440w.jpg" alt=""></p>
 ]]></content>
       <categories>
         <category>周报</category>
