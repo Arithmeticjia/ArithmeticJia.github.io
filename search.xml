@@ -4,6 +4,7 @@
     <title>2020-2-28周报-单沙嘉</title>
     <url>/2020/02/28/2020-2-28%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
     <content><![CDATA[<p>Memory In Memory（学习高阶非平稳特征信息）<br><a id="more"></a><br>Memory In Memory: A Predictive Neural Network for Learning Higher-Order Non-Stationarity from Spatiotemporal Dynamics<br>一种用于高阶学习的预测神经网络时空动力学中的非平稳性</p>
+<p>cvpr2019</p>
 <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>any non-stationary process can be decomposed into deterministic, time-variant polynomials[ˌpɒlɪˈnəʊmiəlz] , plus a zero-mean stochastic term. </p>
 <p>任何一个非平稳过程都可以分解为：确定项+时间变量多项式+零均值随机项</p>
 <p>By applying differencing operations appropriately, we may turn time-variant polynomials into a constant, making the deterministic[dɪˌtɜːmɪˈnɪstɪk] component predictable.</p>
