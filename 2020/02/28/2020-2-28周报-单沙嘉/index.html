@@ -58,8 +58,11 @@
 <meta property="og:site_name" content="请叫我算术嘉的博客">
 <meta property="og:description" content="Memory In Memory（学习高阶非平稳特征信息）">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-02-28T04:42:11.644Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;w.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;w.jpg">
+<meta property="og:updated_time" content="2020-02-28T05:05:08.003Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;w.jpg">
 
 <link rel="canonical" href="http://arithmeticjia.github.io/2020/02/28/2020-2-28%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/">
 
@@ -238,7 +241,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-02-28 12:22:34 / 修改时间：12:42:11" itemprop="dateCreated datePublished" datetime="2020-02-28T12:22:34+08:00">2020-02-28</time>
+              <time title="创建时间：2020-02-28 12:22:34 / 修改时间：13:05:08" itemprop="dateCreated datePublished" datetime="2020-02-28T12:22:34+08:00">2020-02-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -265,7 +268,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>517</span>
+              <span>1.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -289,7 +292,12 @@
 <p>任何一个非平稳过程都可以分解为：确定项+时间变量多项式+零均值随机项</p>
 <p>By applying differencing operations appropriately, we may turn time-variant polynomials into a constant, making the deterministic[dɪˌtɜːmɪˈnɪstɪk] component predictable.</p>
 <p>通过差分的操作，我们可以把时间变量多项式转换成一个常量，使确定性的组成部分可预测</p>
-
+<p>We propose the Memory In Memory (MIM) networks and corresponding recurrent blocks for this purpose. The MIM blocks exploit the differential signals between adjacent recurrent states to model the non-stationary and approximately stationary properties in spatiotemporal dynamics with two cascaded, self-renewed memory modules.</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><h3 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h3><h4 id="ARIMA-Autoregressive-Integrated-Moving-Average-Model"><a href="#ARIMA-Autoregressive-Integrated-Moving-Average-Model" class="headerlink" title="ARIMA(Autoregressive Integrated Moving Average Model)"></a>ARIMA(Autoregressive Integrated Moving Average Model)</h4><p>A time-series random variable whose power spectrum remains constant over time can be viewed as a combination of signal and noise. </p>
+<p>功率谱是功率谱密度函数（PSD）的简称，它定义为单位频带内的信号功率</p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/w.jpg" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/w.jpg" alt=""></p>
+<h4 id="Deterministic-Spatiotemporal-Prediction"><a href="#Deterministic-Spatiotemporal-Prediction" class="headerlink" title="Deterministic Spatiotemporal Prediction"></a>Deterministic Spatiotemporal Prediction</h4><h4 id="Stochastic-Spatiotemporal-Prediction"><a href="#Stochastic-Spatiotemporal-Prediction" class="headerlink" title="Stochastic Spatiotemporal Prediction"></a>Stochastic Spatiotemporal Prediction</h4>
     </div>
 
     
@@ -377,7 +385,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Related-Work"><span class="nav-number">3.</span> <span class="nav-text">Related Work</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ARIMA-Autoregressive-Integrated-Moving-Average-Model"><span class="nav-number">3.1.</span> <span class="nav-text">ARIMA(Autoregressive Integrated Moving Average Model)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Deterministic-Spatiotemporal-Prediction"><span class="nav-number">3.2.</span> <span class="nav-text">Deterministic Spatiotemporal Prediction</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Stochastic-Spatiotemporal-Prediction"><span class="nav-number">3.3.</span> <span class="nav-text">Stochastic Spatiotemporal Prediction</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -473,7 +481,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">95k</span>
+    <span title="站点总字数">96k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

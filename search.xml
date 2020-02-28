@@ -8,7 +8,12 @@
 <p>任何一个非平稳过程都可以分解为：确定项+时间变量多项式+零均值随机项</p>
 <p>By applying differencing operations appropriately, we may turn time-variant polynomials into a constant, making the deterministic[dɪˌtɜːmɪˈnɪstɪk] component predictable.</p>
 <p>通过差分的操作，我们可以把时间变量多项式转换成一个常量，使确定性的组成部分可预测</p>
-]]></content>
+<p>We propose the Memory In Memory (MIM) networks and corresponding recurrent blocks for this purpose. The MIM blocks exploit the differential signals between adjacent recurrent states to model the non-stationary and approximately stationary properties in spatiotemporal dynamics with two cascaded, self-renewed memory modules.</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><h3 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h3><h4 id="ARIMA-Autoregressive-Integrated-Moving-Average-Model"><a href="#ARIMA-Autoregressive-Integrated-Moving-Average-Model" class="headerlink" title="ARIMA(Autoregressive Integrated Moving Average Model)"></a>ARIMA(Autoregressive Integrated Moving Average Model)</h4><p>A time-series random variable whose power spectrum remains constant over time can be viewed as a combination of signal and noise. </p>
+<p>功率谱是功率谱密度函数（PSD）的简称，它定义为单位频带内的信号功率</p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/w.jpg" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/w.jpg" alt=""></p>
+<h4 id="Deterministic-Spatiotemporal-Prediction"><a href="#Deterministic-Spatiotemporal-Prediction" class="headerlink" title="Deterministic Spatiotemporal Prediction"></a>Deterministic Spatiotemporal Prediction</h4><h4 id="Stochastic-Spatiotemporal-Prediction"><a href="#Stochastic-Spatiotemporal-Prediction" class="headerlink" title="Stochastic Spatiotemporal Prediction"></a>Stochastic Spatiotemporal Prediction</h4>]]></content>
       <categories>
         <category>周报</category>
       </categories>
