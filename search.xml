@@ -9,6 +9,9 @@
 <h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>This paper addresses the problem of time series forecasting for non-stationary signals and multiple future steps prediction. </p>
 <p>DILATE (DIstortion Loss including shApe and TimE) 形状和时间失真损失</p>
 <p>DILATE aims at accurately predicting sudden changes, and explicitly incorporates two terms supporting precise shape and temporal change detection.</p>
+<p><img src="https://img-blog.csdn.net/20180824212209631?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMxODIxNjc1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
+<p><img src="https://img-blog.csdn.net/20180824212233242?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMxODIxNjc1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
+<p><img src="https://img-blog.csdn.net/2018082421225311?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMxODIxNjc1/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
 <h4 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h4><p>Time series forecasting [6] consists in analyzing the dynamics and correlations between historical data for predicting future behavior</p>
 <p>In one-step prediction problems [39, 30], future prediction reduces to a single scalar value. This is in sharp contrast with multi-step time series prediction [49, 2, 48], which consists in predicting a complete trajectory[trəˈdʒektəri] of future data at a rather long temporal extent. Multi-step forecasting thus requires to accurately describe time series evolution.</p>
 <p><img src="https://pic1.zhimg.com/v2-b872cd50b4a341901005bf4246493fa0_r.jpg" alt=""></p>
