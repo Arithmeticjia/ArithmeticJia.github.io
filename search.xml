@@ -30,6 +30,7 @@ x_{i} = (x_{i}^{1},...,x_{i}^{n})</script><p>predicts the future k-step ahead tr
 <h4 id="Shape-and-temporal-terms"><a href="#Shape-and-temporal-terms" class="headerlink" title="Shape and temporal terms"></a>Shape and temporal terms</h4><p>Shape term Our shape loss function is based on the Dynamic Time Warping (DTW)</p>
 <p>Temporal term Our second term Ltemporal in Eq (1) aims at penalizing temporal distortions between $\hat{y}_{i}$ $\dot{y}_{i}$</p>
 <h4 id="DILATE-Efficient-Forward-and-Backward-Implementation"><a href="#DILATE-Efficient-Forward-and-Backward-Implementation" class="headerlink" title="DILATE Efficient Forward and Backward Implementation"></a>DILATE Efficient Forward and Backward Implementation</h4><h4 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h4><p>To illustrate the relevance of DILATE, we carry out experiments on 3 non-stationary time series datasets from different domains </p>
+<p><img src="https://pic3.zhimg.com/v2-b22b26e263592f889b52486b8c1f85ce_b.jpg" alt=""></p>
 ]]></content>
       <categories>
         <category>周报</category>
