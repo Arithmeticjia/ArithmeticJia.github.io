@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://arithmeticjia.github.io/"/>
-  <updated>2020-02-28T06:32:20.573Z</updated>
+  <updated>2020-03-06T05:03:26.555Z</updated>
   <id>http://arithmeticjia.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2020-3.6周报-单沙嘉</title>
+    <link href="http://arithmeticjia.github.io/2020/03/06/2020-3-6%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/"/>
+    <id>http://arithmeticjia.github.io/2020/03/06/2020-3-6%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</id>
+    <published>2020-03-06T04:34:50.000Z</published>
+    <updated>2020-03-06T05:03:26.555Z</updated>
+    
+    <content type="html"><![CDATA[<p>Shape and Time Distortion Loss for Training DeepTime Series Forecasting Models<br><a id="more"></a></p><h3 id="Shape-and-Time-Distortion-Loss-for-Training-DeepTime-Series-Forecasting-Models"><a href="#Shape-and-Time-Distortion-Loss-for-Training-DeepTime-Series-Forecasting-Models" class="headerlink" title="Shape and Time Distortion Loss for Training DeepTime Series Forecasting Models"></a>Shape and Time Distortion Loss for Training DeepTime Series Forecasting Models</h3><p>NeurIPS 2019</p><p>训练深度时间序列预测模型的形状和时间失真损失</p><h4 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h4><p>This paper addresses the problem of time series forecasting for non-stationary signals and multiple future steps prediction. </p><p>DILATE (DIstortion Loss including shApe and TimE) 形状和时间失真损失</p><p>DILATE aims at accurately predicting sudden changes, and explicitly incorporates two terms supporting precise shape and temporal change detection.</p><h4 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h4><p>Time series forecasting [6] consists in analyzing the dynamics and correlations between historical data for predicting future behavior</p><p>In one-step prediction problems [39, 30], future prediction reduces to a single scalar value. This is in sharp contrast with multi-step time series prediction [49, 2, 48], which consists in predicting a complete trajectory[trəˈdʒektəri] of future data at a rather long temporal extent. Multi-step forecasting thus requires to accurately describe time series evolution.</p><p><img src="https://pic1.zhimg.com/v2-b872cd50b4a341901005bf4246493fa0_r.jpg" alt=""></p><p>(a) Non informative prediction 非信息性预测<br>(b) Correct shape, time delay<br>(c) Correct time, inaccurate shape</p><p>In contrast, the DILATE loss proposed in this work, which disentangles shape and temporal decay terms,<br>supports predictions (b) and (c) over prediction (a) that does not capture the sharp change of regime.</p><h4 id="Related-work"><a href="#Related-work" class="headerlink" title="Related work"></a>Related work</h4><p>Time series forecasting Traditional methods for time series forecasting include linear autoregressive models, such as the ARIMA model [6], and Exponential[ˌekspəˈnenʃl] Smoothing [27], which both fall into the broad category of linear State Space Models (SSMs) [17].</p><h4 id="Training-Deep-Neural-Networks-with-DILATE"><a href="#Training-Deep-Neural-Networks-with-DILATE" class="headerlink" title="Training Deep Neural Networks with DILATE"></a>Training Deep Neural Networks with DILATE</h4><p><img src="https://pic3.zhimg.com/v2-fc51e16266d817369cbd3bcbd6624552_b.jpg" alt=""></p><script type="math/tex; mode=display">A=\{ X_{i} \}_{i\in \{1:N\}}</script>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Shape and Time Distortion Loss for Training DeepTime Series Forecasting Models&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="周报" scheme="http://arithmeticjia.github.io/categories/%E5%91%A8%E6%8A%A5/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>2020-2-28周报-单沙嘉</title>
@@ -351,9 +372,9 @@
     
       <category term="django" scheme="http://arithmeticjia.github.io/tags/django/"/>
     
-      <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
-    
       <category term="restframework" scheme="http://arithmeticjia.github.io/tags/restframework/"/>
+    
+      <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
     
   </entry>
   
@@ -452,31 +473,6 @@
       <category term="tensorflow" scheme="http://arithmeticjia.github.io/tags/tensorflow/"/>
     
       <category term="gpu" scheme="http://arithmeticjia.github.io/tags/gpu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Leetcode[840]Magic-Squares-In-Grid</title>
-    <link href="http://arithmeticjia.github.io/2019/12/04/Leetcode840Magic-Squares-In-Grid/"/>
-    <id>http://arithmeticjia.github.io/2019/12/04/Leetcode840Magic-Squares-In-Grid/</id>
-    <published>2019-12-03T16:31:32.000Z</published>
-    <updated>2019-12-04T12:30:01.712Z</updated>
-    
-    <content type="html"><![CDATA[<p>python3暴力解，不难看懂<br><a id="more"></a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">numMagicSquaresInside</span><span class="params">(self, grid)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type grid: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line"></span><br><span class="line">        grids = self.generate_matrix(grid)</span><br><span class="line"></span><br><span class="line">        count  = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> grids:</span><br><span class="line">            <span class="keyword">if</span> self.checkmagic(i) == <span class="literal">True</span> <span class="keyword">and</span> self.checksame(i) == <span class="literal">True</span>:</span><br><span class="line">                count = count + <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> count</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">generate_matrix</span><span class="params">(self, grid)</span>:</span></span><br><span class="line">        all = []</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 生成所有矩阵组合</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> range(len(grid[<span class="number">0</span>])<span class="number">-2</span>):</span><br><span class="line">            temmatrix = []</span><br><span class="line">            <span class="keyword">for</span> m <span class="keyword">in</span> range(len(grid)<span class="number">-2</span>):</span><br><span class="line">                tem = []</span><br><span class="line">                tem.append(grid[m][n:n + <span class="number">3</span>])</span><br><span class="line">                tem.append(grid[m + <span class="number">1</span>][n:n + <span class="number">3</span>])</span><br><span class="line">                tem.append(grid[m + <span class="number">2</span>][n:n + <span class="number">3</span>])</span><br><span class="line">                temmatrix.append(tem)</span><br><span class="line">            <span class="keyword">for</span> o <span class="keyword">in</span> range(len(temmatrix)):</span><br><span class="line">                all.append(temmatrix[o])</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> all</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">checksame</span><span class="params">(self,matrix)</span>:</span></span><br><span class="line">        l = len(matrix)</span><br><span class="line">        flag = <span class="literal">True</span></span><br><span class="line">        tem = []</span><br><span class="line">        <span class="keyword">for</span> g <span class="keyword">in</span> range(l):</span><br><span class="line">            <span class="keyword">for</span> h <span class="keyword">in</span> range(l):</span><br><span class="line">                tem.append(matrix[g][h])</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> tem:</span><br><span class="line">            <span class="keyword">if</span> i &gt;= <span class="number">10</span>:</span><br><span class="line">                flag = <span class="literal">False</span>        </span><br><span class="line">        <span class="keyword">if</span> len(set(tem)) == <span class="number">1</span>:</span><br><span class="line">            flag = <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> flag</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">checkmagic</span><span class="params">(self, matrix)</span>:</span></span><br><span class="line">        l = len(matrix)</span><br><span class="line"></span><br><span class="line">        flag = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 斜</span></span><br><span class="line">        tmp = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(l):</span><br><span class="line">            tmp += matrix[i][i]</span><br><span class="line">        <span class="keyword">if</span> tmp != <span class="number">15</span>:</span><br><span class="line">            flag = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 行</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(l):</span><br><span class="line">            tmp = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(l):</span><br><span class="line">                tmp += matrix[i][j]</span><br><span class="line">            <span class="keyword">if</span> tmp != <span class="number">15</span>:</span><br><span class="line">                flag = <span class="literal">False</span></span><br><span class="line">        <span class="comment"># 列</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(l):</span><br><span class="line">            tmp = <span class="number">0</span></span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> range(l):</span><br><span class="line">                tmp += matrix[j][i]</span><br><span class="line">            <span class="keyword">if</span> tmp != <span class="number">15</span>:</span><br><span class="line">                flag = <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> flag</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    Solution().numMagicSquaresInside(</span><br><span class="line">        [[<span class="number">4</span>, <span class="number">3</span>, <span class="number">8</span>, <span class="number">4</span>],</span><br><span class="line">         [<span class="number">9</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">9</span>],</span><br><span class="line">         [<span class="number">2</span>, <span class="number">7</span>, <span class="number">6</span>, <span class="number">2</span>]]</span><br><span class="line">    )</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;python3暴力解，不难看懂&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Leetcode" scheme="http://arithmeticjia.github.io/categories/Leetcode/"/>
-    
-    
-      <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
-    
-      <category term="leetcode" scheme="http://arithmeticjia.github.io/tags/leetcode/"/>
     
   </entry>
   
