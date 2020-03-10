@@ -15,7 +15,8 @@
 DTW(Q,C) = \min (\frac{\sum_{k=1}^{K}W_{k}}{K})</script><p>分母中的K主要是用来对不同的长度的规整路径做补偿</p>
 <p>采用动态规划算法。假设我们要求到位置(𝑖,𝑗)的最小累计距离𝐷(𝑖,𝑗)，那么它只能由𝐷(𝑖−1,𝑗)，𝐷(𝑖,𝑗−1)和𝐷(𝑖−1,𝑗−1)这三个位置的最小累计距离中寻找，也就是</p>
 <script type="math/tex; mode=display">
-𝐷(i,j)=d_{i,j}+𝑚𝑖𝑛[𝐷(i−1,j),𝐷(i,j−1),𝐷(i−1,j−1)]</script><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>DTW方法是欧氏距离方法的改进，只改进了其不能处理local time shifting的问题。没有引入任何阈值参数，因此对时间上的偏移（噪声和离群点）的抑制并不好，且对时间上的偏移的适应性也不好。</p>
+𝐷(i,j)=d_{i,j}+𝑚𝑖𝑛[𝐷(i−1,j),𝐷(i,j−1),𝐷(i−1,j−1)]</script><p><img src="https://www.guanacossj.com/media/articlebodypics/dtw.jpg" alt=""></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>DTW方法是欧氏距离方法的改进，只改进了其不能处理local time shifting的问题。没有引入任何阈值参数，因此对时间上的偏移（噪声和离群点）的抑制并不好，且对时间上的偏移的适应性也不好。</p>
 <p>优点：使用动态规划的思想，实现了对某些点的重复使用，确保重复使用的点达成的路径最优的，从而较为高效地解决了数据不对齐的问题。</p>
 <p>缺点：还是无法处理离群点、异常点，对于噪声的抑制没有进行处理。虽然能够处理local time shifting，但是对时间上的偏移做的也不好。算法也不是metric类型的。</p>
 ]]></content>
