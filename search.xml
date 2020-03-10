@@ -4,8 +4,8 @@
     <title>2020-3-13周报-单沙嘉</title>
     <url>/2020/03/10/2020-3-13%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
     <content><![CDATA[<p>DTW(Dynamic Time Warping)<br>动态时间规整<br><a id="more"></a></p>
-<h3 id="DTW-Dynamic-Time-Warping"><a href="#DTW-Dynamic-Time-Warping" class="headerlink" title="DTW(Dynamic Time Warping)"></a>DTW(Dynamic Time Warping)</h3><p><img src="https://img-blog.csdn.net/20160314103320338" alt=""></p>
-<p><img src="https://img-blog.csdn.net/20160314103821767" alt=""></p>
+<h3 id="DTW-Dynamic-Time-Warping"><a href="#DTW-Dynamic-Time-Warping" class="headerlink" title="DTW(Dynamic Time Warping)"></a>DTW(Dynamic Time Warping)</h3><p><img src="https://www.guanacossj.com/media/articlebodypics/dtw01.jpg" alt=""></p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/dtw02.jpg" alt=""></p>
 <p>假设有两个序列：</p>
 <p>a = [2, 0, 1, 1, 2, 4, 2, 1, 2, 0]</p>
 <p>b = [1, 1, 2, 4, 2, 1, 2, 0]</p>
