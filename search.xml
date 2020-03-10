@@ -11,8 +11,12 @@
 <p>b = [1, 1, 2, 4, 2, 1, 2, 0]</p>
 <p>用欧式距离计算出每序列的每两点之间的距离</p>
 <figure class="highlight shell"><figcaption><span>script</span></figcaption><table><tr><td class="code"><pre><span class="line">[[1. 1. 0. 2. 0. 1. 0. 2.]</span><br><span class="line"> [1. 1. 2. 4. 2. 1. 2. 0.]</span><br><span class="line"> [0. 0. 1. 3. 1. 0. 1. 1.]</span><br><span class="line"> [0. 0. 1. 3. 1. 0. 1. 1.]</span><br><span class="line"> [1. 1. 0. 2. 0. 1. 0. 2.]</span><br><span class="line"> [3. 3. 2. 0. 2. 3. 2. 4.]</span><br><span class="line"> [1. 1. 0. 2. 0. 1. 0. 2.]</span><br><span class="line"> [0. 0. 1. 3. 1. 0. 1. 1.]</span><br><span class="line"> [1. 1. 0. 2. 0. 1. 0. 2.]</span><br><span class="line"> [1. 1. 2. 4. 2. 1. 2. 0.]]</span><br></pre></td></tr></table></figure>
+<p>waring path W</p>
+<p>$W = w_{1},w_{2},w_{3},…,w_{k}$ </p>
+<p>$max(m,n) &lt;= k &lt; m+n-1$</p>
+<p>$w_{k} = (i,j)_{k}$</p>
 <script type="math/tex; mode=display">
-DTW(Q,C) = \min (\frac{\sum_{k=1}^{K}W_{k}}{K})</script><p>分母中的K主要是用来对不同的长度的规整路径做补偿</p>
+DTW(Q,C) = \min (\frac{\sum_{k=1}^{K}w_{k}}{K})</script><p>分母中的K主要是用来对不同的长度的规整路径做补偿</p>
 <p>采用动态规划算法。假设我们要求到位置(𝑖,𝑗)的最小累计距离𝐷(𝑖,𝑗)，那么它只能由𝐷(𝑖−1,𝑗)，𝐷(𝑖,𝑗−1)和𝐷(𝑖−1,𝑗−1)这三个位置的最小累计距离中寻找，也就是</p>
 <script type="math/tex; mode=display">
 𝐷(i,j)=d_{i,j}+𝑚𝑖𝑛[𝐷(i−1,j),𝐷(i,j−1),𝐷(i−1,j−1)]</script><p><img src="https://www.guanacossj.com/media/articlebodypics/dtw.jpg" alt=""></p>
