@@ -18,7 +18,7 @@
 <p>(a) Non informative prediction 非信息性预测<br>(b) Correct shape, time delay<br>(c) Correct time, inaccurate shape</p>
 <p>In contrast, the DILATE loss proposed in this work, which disentangles shape and temporal decay terms,<br>supports predictions (b) and (c) over prediction (a) that does not capture the sharp change of regime.</p>
 <h4 id="Related-work"><a href="#Related-work" class="headerlink" title="Related work"></a>Related work</h4><p>Time series forecasting Traditional methods for time series forecasting include linear autoregressive models, such as the ARIMA model [6], and Exponential[ˌekspəˈnenʃl] Smoothing [27], which both fall into the broad category of linear State Space Models (SSMs) [17].</p>
-<h4 id="Training-Deep-Neural-Networks-with-DILATE"><a href="#Training-Deep-Neural-Networks-with-DILATE" class="headerlink" title="Training Deep Neural Networks with DILATE"></a>Training Deep Neural Networks with DILATE</h4><p><img src="https://pic3.zhimg.com/v2-fc51e16266d817369cbd3bcbd6624552_b.jpg" alt=""></p>
+<h4 id="Training-Deep-Neural-Networks-with-DILATE-DIstortion-Loss-including-shApe-and-TimE"><a href="#Training-Deep-Neural-Networks-with-DILATE-DIstortion-Loss-including-shApe-and-TimE" class="headerlink" title="Training Deep Neural Networks with DILATE((DIstortion Loss including shApe and TimE))"></a>Training Deep Neural Networks with DILATE((DIstortion Loss including shApe and TimE))</h4><p><img src="https://pic3.zhimg.com/v2-fc51e16266d817369cbd3bcbd6624552_b.jpg" alt=""></p>
 <p>Input:</p>
 <script type="math/tex; mode=display">
 A=\{ X_{i} \}_{i\in \{1:N\}}</script><p>对于</p>
@@ -660,8 +660,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>restframework</tag>
         <tag>python</tag>
+        <tag>restframework</tag>
       </tags>
   </entry>
   <entry>
