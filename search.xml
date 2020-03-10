@@ -29,6 +29,7 @@ x_{i} = (x_{i}^{1},...,x_{i}^{n})</script><p>predicts the future k-step ahead tr
 <script type="math/tex; mode=display">
 \dot{y}_{i} = (\dot{y}_{i}^{1},...,\dot{y}_{i}^{k})</script><p><img src="https://www.guanacossj.com/media/articlebodypics/1583471554346.jpg" alt=""></p>
 <p><script type="math/tex">\alpha \in [0,1]</script>  hyper parameter [ˈhaɪpə(r) pəˈræmɪtə(r)] </p>
+<p>Notations and definitions(符号和定义):</p>
 <p>A: a warping path as a binary matrix</p>
 <h4 id="Shape-and-temporal-terms"><a href="#Shape-and-temporal-terms" class="headerlink" title="Shape and temporal terms"></a>Shape and temporal terms</h4><p>Shape term Our shape loss function is based on the Dynamic Time Warping (DTW)</p>
 <p>Temporal term Our second term Ltemporal in Eq (1) aims at penalizing temporal distortions between $\hat{y}_{i}$ $\dot{y}_{i}$</p>
