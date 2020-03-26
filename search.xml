@@ -57,7 +57,7 @@ P(A|B) = P(A) \frac {P(B|A)}{P(A)}</script><h4 id="Huffman树-编码"><a href="#
 <p>“我”，”喜欢”，”观看”，”巴西”，”足球”，”世界杯”<br> 15     8      6      5      3       1</p>
 <p>选根节点最小的树合并</p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/1585241496316.jpg" alt=""></p>
-<p>词频越大的词离根节点越近</p>
+<p>词频越大的词离根节点越近<br>显然词频越小，权重越小</p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/1585241408762.jpg" alt=""></p>
 <h4 id="CBOW-Continues-Bag-of-Words-Model"><a href="#CBOW-Continues-Bag-of-Words-Model" class="headerlink" title="CBOW-Continues Bag-of-Words Model"></a>CBOW-Continues Bag-of-Words Model</h4>]]></content>
       <categories>
