@@ -61,7 +61,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;dtw01.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;dtw02.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;dtw.jpg">
-<meta property="og:updated_time" content="2020-03-10T15:18:27.828Z">
+<meta property="og:updated_time" content="2020-03-13T05:36:21.778Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;dtw01.jpg">
 
@@ -240,10 +240,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-03-10 21:13:01 / 修改时间：23:18:27" itemprop="dateCreated datePublished" datetime="2020-03-10T21:13:01+08:00">2020-03-10</time>
+              <time title="创建时间：2020-03-10 21:13:01" itemprop="dateCreated datePublished" datetime="2020-03-10T21:13:01+08:00">2020-03-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-03-13 13:36:21" itemprop="dateModified" datetime="2020-03-13T13:36:21+08:00">2020-03-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -269,7 +275,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>876</span>
+              <span>878</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -308,7 +314,7 @@ DTW(Q,C) = \min (\frac{\sum_{k=1}^{K}w_{k}}{K})</script><p>分母中的K主要�
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>DTW方法是欧氏距离方法的改进，只改进了其不能处理local time shifting的问题。没有引入任何阈值参数，因此对时间上的偏移（噪声和离群点）的抑制并不好，且对时间上的偏移的适应性也不好。</p>
 <p>优点：使用动态规划的思想，实现了对某些点的重复使用，确保重复使用的点达成的路径最优的，从而较为高效地解决了数据不对齐的问题。</p>
 <p>缺点：还是无法处理离群点、异常点，对于噪声的抑制没有进行处理。虽然能够处理local time shifting，但是对时间上的偏移做的也不好。算法也不是metric类型的。</p>
-
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3>
     </div>
 
     
@@ -358,7 +364,10 @@ DTW(Q,C) = \min (\frac{\sum_{k=1}^{K}w_{k}}{K})</script><p>分母中的K主要�
     <a href="/2020/03/06/2020-3-6%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/" rel="prev" title="2020-3.6周报-单沙嘉">
       <i class="fa fa-chevron-left"></i> 2020-3.6周报-单沙嘉
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/20/2020-3-20%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/" rel="next" title="2020-3-20周报-单沙嘉">
+      2020-3-20周报-单沙嘉 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -396,7 +405,7 @@ DTW(Q,C) = \min (\frac{\sum_{k=1}^{K}w_{k}}{K})</script><p>分母中的K主要�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#DTW-Dynamic-Time-Warping"><span class="nav-number">1.</span> <span class="nav-text">DTW(Dynamic Time Warping)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#DTW-Dynamic-Time-Warping"><span class="nav-number">1.</span> <span class="nav-text">DTW(Dynamic Time Warping)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#应用"><span class="nav-number">3.</span> <span class="nav-text">应用</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -412,7 +421,7 @@ DTW(Q,C) = \min (\frac{\sum_{k=1}^{K}w_{k}}{K})</script><p>分母中的K主要�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">43</span>
+          <span class="site-state-item-count">45</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -492,12 +501,12 @@ DTW(Q,C) = \min (\frac{\sum_{k=1}^{K}w_{k}}{K})</script><p>分母中的K主要�
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">100k</span>
+    <span title="站点总字数">101k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:31</span>
+    <span title="站点阅读时长">1:32</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>

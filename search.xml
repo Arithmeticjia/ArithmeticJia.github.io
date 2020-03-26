@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2020-3-27周报-单沙嘉</title>
+    <url>/2020/03/26/2020-3-27%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
+    <content><![CDATA[<p>PTMs-Pre-trained Models,PTMs(预训练模型)<br><a id="more"></a></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在图像领域，预训练过程是一个比较常规的做法，对于图像来说一般是CNN的多层叠加网络结构。一般步骤如下：</p>
+<ul>
+<li>先现在一个大数据集A上预训练模型，模型参数保存下来，设为Model_A</li>
+<li>对于target任务B，在Model_A的基础上进行再训练Model_B，这时候一般策略是使用Model_A的底层网络参数初始化Model_B，上层参数随机初始化并训练</li>
+</ul>
+<p>对于底层参数，一般有两种策略：</p>
+<ul>
+<li>一种是Frozen，即训练Model_B过程中底层网络参数设为不可训练的，直接使用Model_A训练好的参数</li>
+<li>另一种是Fine-tuning，即训练Model_B过程中底层网络参数设为可训练的，在Model_A训练好的参数基础上微调</li>
+</ul>
+<p>在NLP领域，使用word embedding</p>
+<h3 id="word-embedding"><a href="#word-embedding" class="headerlink" title="word embedding"></a>word embedding</h3><p>Embedding是数学领域的有名词，是指某个对象 X 被嵌入到另外一个对象 Y 中，映射 f : X → Y </p>
+<p>Word Embedding 是NLP中一组语言模型和特征学习技术的总称，把词汇表中的单词或者短语映射成由实数构成的向量上(映射)</p>
+<h4 id="One-Hot-Representation"><a href="#One-Hot-Representation" class="headerlink" title="One-Hot-Representation"></a>One-Hot-Representation</h4><p><img src="https://pic2.zhimg.com/80/v2-09e1bda72c4b903e25db203ab4aa6dc6_1440w.jpg" alt=""></p>
+<p>在one hot representation编码的每个单词都是一个维度，彼此independent</p>
+<p>语料库<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">John likes to watch movies.Marry likes too.</span><br><span class="line">John also likes to watch football games.</span><br></pre></td></tr></table></figure><br>词典<br><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "John": 1，</span><br><span class="line">    "likes": 2,</span><br><span class="line">    "to": 3,</span><br><span class="line">    "watch": 4,</span><br><span class="line">    "movies": 5,</span><br><span class="line">    "also": 6,</span><br><span class="line">    "football": 7, </span><br><span class="line">    "games": 8,</span><br><span class="line">    "too": 10</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="word2vec"><a href="#word2vec" class="headerlink" title="word2vec"></a>word2vec</h3>]]></content>
+      <categories>
+        <category>周报</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>2020-3-20周报-单沙嘉</title>
+    <url>/2020/03/20/2020-3-20%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
+    <content><![CDATA[<p>searching and mining trillions of time series subsquences under dynamic time warping<br><a id="more"></a></p>
+<h3 id="Assumptions"><a href="#Assumptions" class="headerlink" title="Assumptions"></a>Assumptions</h3><ul>
+<li>Time Series Subsequences must be Normalized （时间序列子序列必须经过归一化处理）</li>
+<li>Dynamic Time Warping is the Best Measure</li>
+<li>Arbitrary Query Lengths cannot be Indexed</li>
+<li>There Exists Data Mining Problems that we are Willing to Wait Some Hours to Answer</li>
+</ul>
+]]></content>
+      <categories>
+        <category>周报</category>
+      </categories>
+  </entry>
+  <entry>
     <title>2020-3-13周报-单沙嘉</title>
     <url>/2020/03/10/2020-3-13%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</url>
     <content><![CDATA[<p>DTW(Dynamic Time Warping)<br>动态时间规整<br><a id="more"></a></p>
@@ -23,7 +63,7 @@ DTW(Q,C) = \min (\frac{\sum_{k=1}^{K}w_{k}}{K})</script><p>分母中的K主要�
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>DTW方法是欧氏距离方法的改进，只改进了其不能处理local time shifting的问题。没有引入任何阈值参数，因此对时间上的偏移（噪声和离群点）的抑制并不好，且对时间上的偏移的适应性也不好。</p>
 <p>优点：使用动态规划的思想，实现了对某些点的重复使用，确保重复使用的点达成的路径最优的，从而较为高效地解决了数据不对齐的问题。</p>
 <p>缺点：还是无法处理离群点、异常点，对于噪声的抑制没有进行处理。虽然能够处理local time shifting，但是对时间上的偏移做的也不好。算法也不是metric类型的。</p>
-]]></content>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3>]]></content>
       <categories>
         <category>周报</category>
       </categories>
@@ -61,7 +101,8 @@ x_{i} = (x_{i}^{1},...,x_{i}^{n})</script><p>predicts the future <strong>k-step<
 <ul>
 <li>A: a warping path as a binary matrix(二值矩阵)</li>
 </ul>
-<h4 id="Shape-and-temporal-terms"><a href="#Shape-and-temporal-terms" class="headerlink" title="Shape and temporal terms"></a>Shape and temporal terms</h4><p>Shape term Our shape loss function is based on the Dynamic Time Warping (DTW)</p>
+<h4 id="Shape-and-temporal-terms"><a href="#Shape-and-temporal-terms" class="headerlink" title="Shape and temporal terms"></a>Shape and temporal terms</h4><h5 id="Shape-term"><a href="#Shape-term" class="headerlink" title="Shape term"></a>Shape term</h5><p>Shape term Our shape loss function is based on the Dynamic Time Warping (DTW)</p>
+<p>The DTW loss focuses on the structural shape dissimilarity between signals</p>
 <p>Temporal term Our second term Ltemporal in Eq (1) aims at penalizing temporal distortions between $\hat{y}_{i}$ $\dot{y}_{i}$</p>
 <h4 id="DILATE-Efficient-Forward-and-Backward-Implementation"><a href="#DILATE-Efficient-Forward-and-Backward-Implementation" class="headerlink" title="DILATE Efficient Forward and Backward Implementation"></a>DILATE Efficient Forward and Backward Implementation</h4><h4 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h4><p>To illustrate the relevance of DILATE, we carry out experiments on 3 non-stationary time series datasets from different domains </p>
 <p><img src="https://pic3.zhimg.com/v2-b22b26e263592f889b52486b8c1f85ce_b.jpg" alt=""></p>
@@ -853,9 +894,9 @@ y = wx + b</script><p>这是一个基本的网络Net，它只包含一个全连�
       </categories>
       <tags>
         <tag>python</tag>
+        <tag>leetcode</tag>
         <tag>list</tag>
         <tag>pop</tag>
-        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -1118,8 +1159,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>django</tag>
         <tag>celery</tag>
+        <tag>django</tag>
       </tags>
   </entry>
   <entry>
