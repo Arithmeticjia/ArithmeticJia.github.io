@@ -45,8 +45,21 @@ t = "ABC"</script>当N=2时，第一个字符串可以拆成<figure class="highl
 </ul>
 <h3 id="word2vec"><a href="#word2vec" class="headerlink" title="word2vec"></a>word2vec</h3><p>预备知识回顾</p>
 <h4 id="sigmoid函数"><a href="#sigmoid函数" class="headerlink" title="sigmoid函数"></a>sigmoid函数</h4><script type="math/tex; mode=display">
-\sigma (x) = \frac{1}{1+e^{-x}}</script><p><img src="https://www.guanacossj.com/media/articlebodypics/sigmoid.jpg" alt=""></p>
-]]></content>
+\sigma (x) = \frac{1}{1+e^{-x}}</script><p><img src="https://www.guanacossj.com/media/articlebodypics/sigmoid.jpg" alt=""><br>求导</p>
+<script type="math/tex; mode=display">
+\sigma^{'} (x) = \sigma (x)[1-\sigma (x)]</script><p>易得</p>
+<script type="math/tex; mode=display">
+[log\sigma (x)]^{'} = 1 - \sigma (x)</script><script type="math/tex; mode=display">
+[log(1-\sigma (x))]^{'} = - \sigma (x)</script><h4 id="贝叶斯公式"><a href="#贝叶斯公式" class="headerlink" title="贝叶斯公式"></a>贝叶斯公式</h4><script type="math/tex; mode=display">
+P(A|B) = \frac {P(A,B)}{P(B)}</script><script type="math/tex; mode=display">
+P(B|A) = \frac {P(A,B)}{P(A)}</script><script type="math/tex; mode=display">
+P(A|B) = P(A) \frac {P(B|A)}{P(A)}</script><h4 id="Huffman树-编码"><a href="#Huffman树-编码" class="headerlink" title="Huffman树-编码"></a>Huffman树-编码</h4><p>最优二叉树—-带权路径长度最短的二叉树</p>
+<p>“我”，”喜欢”，”观看”，”巴西”，”足球”，”世界杯”<br> 15     8      6      5      3       1</p>
+<p>选根节点最小的树合并</p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/1585241496316.jpg" alt=""></p>
+<p>词频越大的词离根节点越近</p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/1585241408762.jpg" alt=""></p>
+<h4 id="CBOW-Continues-Bag-of-Words-Model"><a href="#CBOW-Continues-Bag-of-Words-Model" class="headerlink" title="CBOW-Continues Bag-of-Words Model"></a>CBOW-Continues Bag-of-Words Model</h4>]]></content>
       <categories>
         <category>周报</category>
       </categories>
