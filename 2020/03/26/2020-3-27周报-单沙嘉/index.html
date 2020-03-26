@@ -59,7 +59,8 @@
 <meta property="og:description" content="PTMs-Pre-trained Models,PTMs(预训练模型)">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;pic2.zhimg.com&#x2F;80&#x2F;v2-09e1bda72c4b903e25db203ab4aa6dc6_1440w.jpg">
-<meta property="og:updated_time" content="2020-03-26T09:31:35.868Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20190807181106401.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI2ODExMzc3,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2020-03-26T10:16:29.214Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;pic2.zhimg.com&#x2F;80&#x2F;v2-09e1bda72c4b903e25db203ab4aa6dc6_1440w.jpg">
 
@@ -240,7 +241,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-03-26 17:05:17 / 修改时间：17:31:35" itemprop="dateCreated datePublished" datetime="2020-03-26T17:05:17+08:00">2020-03-26</time>
+              <time title="创建时间：2020-03-26 17:05:17 / 修改时间：18:16:29" itemprop="dateCreated datePublished" datetime="2020-03-26T17:05:17+08:00">2020-03-26</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,7 +268,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>748</span>
+              <span>947</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -302,7 +303,8 @@
 <p>Word Embedding 是NLP中一组语言模型和特征学习技术的总称，把词汇表中的单词或者短语映射成由实数构成的向量上(映射)</p>
 <h4 id="One-Hot-Representation"><a href="#One-Hot-Representation" class="headerlink" title="One-Hot-Representation"></a>One-Hot-Representation</h4><p><img src="https://pic2.zhimg.com/80/v2-09e1bda72c4b903e25db203ab4aa6dc6_1440w.jpg" alt=""></p>
 <p>在one hot representation编码的每个单词都是一个维度，彼此independent</p>
-<p>语料库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">John likes to watch movies.Marry likes too.</span><br><span class="line">John also likes to watch football games.</span><br></pre></td></tr></table></figure><br>词典<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "John": 1，</span><br><span class="line">    "likes": 2,</span><br><span class="line">    "to": 3,</span><br><span class="line">    "watch": 4,</span><br><span class="line">    "movies": 5,</span><br><span class="line">    "also": 6,</span><br><span class="line">    "football": 7, </span><br><span class="line">    "games": 8,</span><br><span class="line">    "too": 10</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>语料库<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">John likes to watch movies.Marry likes too.</span><br><span class="line">John also likes to watch football games.</span><br></pre></td></tr></table></figure><br>词典<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    "John": 1，</span><br><span class="line">    "likes": 2,</span><br><span class="line">    "to": 3,</span><br><span class="line">    "watch": 4,</span><br><span class="line">    "movies": 5,</span><br><span class="line">    "also": 6,</span><br><span class="line">    "football": 7, </span><br><span class="line">    "games": 8,</span><br><span class="line">    "Marry": 9,</span><br><span class="line">    "too": 10</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>one-hot表示<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">John:[1,0,0,0,0,0,0,0,0,0]</span><br><span class="line">likes:[0,1,0,0,0,0,0,0,0,0]</span><br><span class="line">...</span><br><span class="line">too:[0,0,0,0,0,0,0,0,0,1]</span><br></pre></td></tr></table></figure><br>再举个例子</p>
+<p><img src="https://img-blog.csdnimg.cn/20190807181106401.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3NpbmF0XzI2ODExMzc3,size_16,color_FFFFFF,t_70" alt=""><br>一共有四种状态，1，2，3，4<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 -&gt; 0001</span><br><span class="line">2 -&gt; 0010</span><br><span class="line">3 -&gt; 0100</span><br><span class="line">4 -&gt; 1000</span><br></pre></td></tr></table></figure><br>无法捕捉两个word之间的关系，也就是没有办法捕捉语义信息</p>
 <h3 id="word2vec"><a href="#word2vec" class="headerlink" title="word2vec"></a>word2vec</h3>
     </div>
 
