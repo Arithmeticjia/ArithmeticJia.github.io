@@ -69,6 +69,7 @@ h_{\theta }(x) = \sigma (\theta ^{T}x)=\frac{1}{1+e^{-\theta ^{T}x}}</script><p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/1585241496316.jpg" alt=""></p>
 <p>词频越大的词离根节点越近<br>显然词频越小，权重越小</p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/1585241408762.jpg" alt=""></p>
+<h4 id="Skip-gram"><a href="#Skip-gram" class="headerlink" title="Skip-gram"></a>Skip-gram</h4><p>使用一个词预测上下文</p>
 <h4 id="CBOW-Continues-Bag-of-Words-Model"><a href="#CBOW-Continues-Bag-of-Words-Model" class="headerlink" title="CBOW-Continues Bag-of-Words Model"></a>CBOW-Continues Bag-of-Words Model</h4><p>使用一个词语的上下文作为输入，来预测这个词语本身</p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/1585297454343.jpg" alt=""></p>
 <p><strong>输入层到隐藏层</strong></p>
