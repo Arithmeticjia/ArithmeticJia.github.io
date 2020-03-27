@@ -64,7 +64,9 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;sigmoid.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1585241496316.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1585241408762.jpg">
-<meta property="og:updated_time" content="2020-03-26T17:01:13.963Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1585297454343.jpg">
+<meta property="og:image" content="https:&#x2F;&#x2F;pic4.zhimg.com&#x2F;80&#x2F;v2-918b97c077fe15b4a67e0afddb62bfa3_1440w.jpg">
+<meta property="og:updated_time" content="2020-03-27T09:05:29.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;pic2.zhimg.com&#x2F;80&#x2F;v2-09e1bda72c4b903e25db203ab4aa6dc6_1440w.jpg">
 
@@ -251,7 +253,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-27 01:01:13" itemprop="dateModified" datetime="2020-03-27T01:01:13+08:00">2020-03-27</time>
+                <time title="修改时间：2020-03-27 17:05:29" itemprop="dateModified" datetime="2020-03-27T17:05:29+08:00">2020-03-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -278,7 +280,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.9k</span>
+              <span>2.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -319,7 +321,7 @@
 <li>无法捕捉两个word之间的关系，也就是没有办法捕捉语义信息</li>
 <li>词向量可能非常长</li>
 </ul>
-<h4 id="N-Gram"><a href="#N-Gram" class="headerlink" title="N-Gram"></a>N-Gram</h4><p>N-Gram是基于一个假设：第n个词出现与前n-1个词相关，而与其他任何词不相关</p>
+<h4 id="Distributed-Representation"><a href="#Distributed-Representation" class="headerlink" title="Distributed-Representation"></a>Distributed-Representation</h4><h4 id="N-Gram"><a href="#N-Gram" class="headerlink" title="N-Gram"></a>N-Gram</h4><p>N-Gram是基于一个假设：第n个词出现与前n-1个词相关，而与其他任何词不相关</p>
 <script type="math/tex; mode=display">
 S = (w_{1},w_{2},w_{3},...,w_{n})</script><p>假设每一个单词$w_{i}$都要依赖于第一个单词到$w_{1}$到他之前的一个单词$w_{i-1}$的影响</p>
 <script type="math/tex; mode=display">
@@ -353,7 +355,21 @@ P(A|B) = P(A) \frac {P(B|A)}{P(A)}</script><h4 id="Huffman树-编码"><a href="#
 <p><img src="https://www.guanacossj.com/media/articlebodypics/1585241496316.jpg" alt=""></p>
 <p>词频越大的词离根节点越近<br>显然词频越小，权重越小</p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/1585241408762.jpg" alt=""></p>
-<h4 id="CBOW-Continues-Bag-of-Words-Model"><a href="#CBOW-Continues-Bag-of-Words-Model" class="headerlink" title="CBOW-Continues Bag-of-Words Model"></a>CBOW-Continues Bag-of-Words Model</h4>
+<h4 id="CBOW-Continues-Bag-of-Words-Model"><a href="#CBOW-Continues-Bag-of-Words-Model" class="headerlink" title="CBOW-Continues Bag-of-Words Model"></a>CBOW-Continues Bag-of-Words Model</h4><p>使用一个词语的上下文作为输入，来预测这个词语本身</p>
+<p><img src="https://www.guanacossj.com/media/articlebodypics/1585297454343.jpg" alt=""></p>
+<p><strong>输入层到隐藏层</strong></p>
+<p>输入层是四个词的one-hot向量表示，分别是$x_{t-2}$,$x_{t-1}$,$x_{t+1}$,$x_{t+2}$，维度都是V×1，V是模型的训练本文中所有词的个数</p>
+<p>输入层到隐藏层的权重矩阵为W，维度为V×d，d是认为给定的词向量维度，隐藏层的向量为h，维度是d×1</p>
+<script type="math/tex; mode=display">
+h = \frac{W*x_{t-2}+W*x_{t-1}+W*x_{t+1}+W*x_{t+2}}{4}</script><p><strong>隐藏层到输出层</strong></p>
+<p>记隐藏层到输出层的权重矩阵为U，维度为d×V，输出向量为y，维度为V×1，那么</p>
+<script type="math/tex; mode=display">
+y = softmax(U^{T}*h)</script><p>此时输出层的向量y和输入层的向量x，虽然维度一样，但是y并不是one-hot向量，假设训练样本是</p>
+<p>“I like to eat apple”，此时用”I”,”like”,”eat”,”apple”预测”to”，输出的y向量大概是这样</p>
+<p><img src="https://pic4.zhimg.com/80/v2-918b97c077fe15b4a67e0afddb62bfa3_1440w.jpg" alt=""></p>
+<p>目的是构造最大化函数L</p>
+<script type="math/tex; mode=display">
+L =  \prod_{t=1}^{V}p(w_{t}|w_{t-k},w_{t-k+1,...,w_{t-1},w_{t+1},...,w_{t+k-1},w_{t+k})</script>
     </div>
 
     
@@ -441,7 +457,7 @@ P(A|B) = P(A) \frac {P(B|A)}{P(A)}</script><h4 id="Huffman树-编码"><a href="#
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#word-embedding"><span class="nav-number">2.</span> <span class="nav-text">word embedding</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#One-Hot-Representation"><span class="nav-number">2.1.</span> <span class="nav-text">One-Hot-Representation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#N-Gram"><span class="nav-number">2.2.</span> <span class="nav-text">N-Gram</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#word2vec"><span class="nav-number">3.</span> <span class="nav-text">word2vec</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sigmoid函数"><span class="nav-number">3.1.</span> <span class="nav-text">sigmoid函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#贝叶斯公式"><span class="nav-number">3.2.</span> <span class="nav-text">贝叶斯公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Huffman树-编码"><span class="nav-number">3.3.</span> <span class="nav-text">Huffman树-编码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CBOW-Continues-Bag-of-Words-Model"><span class="nav-number">3.4.</span> <span class="nav-text">CBOW-Continues Bag-of-Words Model</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#word-embedding"><span class="nav-number">2.</span> <span class="nav-text">word embedding</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#One-Hot-Representation"><span class="nav-number">2.1.</span> <span class="nav-text">One-Hot-Representation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Distributed-Representation"><span class="nav-number">2.2.</span> <span class="nav-text">Distributed-Representation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#N-Gram"><span class="nav-number">2.3.</span> <span class="nav-text">N-Gram</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#word2vec"><span class="nav-number">3.</span> <span class="nav-text">word2vec</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sigmoid函数"><span class="nav-number">3.1.</span> <span class="nav-text">sigmoid函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#贝叶斯公式"><span class="nav-number">3.2.</span> <span class="nav-text">贝叶斯公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Huffman树-编码"><span class="nav-number">3.3.</span> <span class="nav-text">Huffman树-编码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CBOW-Continues-Bag-of-Words-Model"><span class="nav-number">3.4.</span> <span class="nav-text">CBOW-Continues Bag-of-Words Model</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -537,7 +553,7 @@ P(A|B) = P(A) \frac {P(B|A)}{P(A)}</script><h4 id="Huffman树-编码"><a href="#
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">102k</span>
+    <span title="站点总字数">103k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
