@@ -67,7 +67,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1585297454343.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;pic4.zhimg.com&#x2F;80&#x2F;v2-918b97c077fe15b4a67e0afddb62bfa3_1440w.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1585301521653.jpg">
-<meta property="og:updated_time" content="2020-03-27T09:57:23.328Z">
+<meta property="og:updated_time" content="2020-03-27T10:43:22.758Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;pic2.zhimg.com&#x2F;80&#x2F;v2-09e1bda72c4b903e25db203ab4aa6dc6_1440w.jpg">
 
@@ -254,7 +254,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-27 17:57:23" itemprop="dateModified" datetime="2020-03-27T17:57:23+08:00">2020-03-27</time>
+                <time title="修改时间：2020-03-27 18:43:22" itemprop="dateModified" datetime="2020-03-27T18:43:22+08:00">2020-03-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -383,6 +383,7 @@ y = softmax(U^{T}*h)</script><p>此时输出层的向量y和输入层的向量x�
 L = \prod_{t=1}^{V}p(w_{t}|w_{t-k},w_{t-k+1},...,w_{t-1},w_{t+1},...,w_{t+k-1},w_{t+k})</script><h4 id="层次softmax和负采样"><a href="#层次softmax和负采样" class="headerlink" title="层次softmax和负采样"></a>层次softmax和负采样</h4><p>层次softmax是一棵huffman树，树的叶子节点是训练文本中所有的词，非叶子节点都是一个逻辑回归二分类器，每个逻辑回归分类器的参数都不同，分别用$θ_{*}$表示。</p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/1585301521653.jpg" alt=""></p>
 <p>分类器的输入是向量h(隐藏层向量)</p>
+<p>采集到 I 的概率$p(I|context) = (1-\sigma(\theta_{1}h)) * (1-\sigma(\theta_{3}h))$<br>采样到 eat 的概率</p>
 
     </div>
 

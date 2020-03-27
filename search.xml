@@ -86,6 +86,7 @@ y = softmax(U^{T}*h)</script><p>此时输出层的向量y和输入层的向量x�
 L = \prod_{t=1}^{V}p(w_{t}|w_{t-k},w_{t-k+1},...,w_{t-1},w_{t+1},...,w_{t+k-1},w_{t+k})</script><h4 id="层次softmax和负采样"><a href="#层次softmax和负采样" class="headerlink" title="层次softmax和负采样"></a>层次softmax和负采样</h4><p>层次softmax是一棵huffman树，树的叶子节点是训练文本中所有的词，非叶子节点都是一个逻辑回归二分类器，每个逻辑回归分类器的参数都不同，分别用$θ_{*}$表示。</p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/1585301521653.jpg" alt=""></p>
 <p>分类器的输入是向量h(隐藏层向量)</p>
+<p>采集到 I 的概率$p(I|context) = (1-\sigma(\theta_{1}h)) * (1-\sigma(\theta_{3}h))$<br>采样到 eat 的概率</p>
 ]]></content>
       <categories>
         <category>周报</category>
