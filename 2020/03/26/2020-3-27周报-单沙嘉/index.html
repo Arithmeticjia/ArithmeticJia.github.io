@@ -67,7 +67,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1585297454343.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;pic4.zhimg.com&#x2F;80&#x2F;v2-918b97c077fe15b4a67e0afddb62bfa3_1440w.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1585301521653.jpg">
-<meta property="og:updated_time" content="2020-03-27T09:50:33.644Z">
+<meta property="og:updated_time" content="2020-03-27T09:57:23.328Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;pic2.zhimg.com&#x2F;80&#x2F;v2-09e1bda72c4b903e25db203ab4aa6dc6_1440w.jpg">
 
@@ -254,7 +254,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-27 17:50:33" itemprop="dateModified" datetime="2020-03-27T17:50:33+08:00">2020-03-27</time>
+                <time title="修改时间：2020-03-27 17:57:23" itemprop="dateModified" datetime="2020-03-27T17:57:23+08:00">2020-03-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,7 +281,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.8k</span>
+              <span>2.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -359,7 +359,8 @@ h_{\theta }(x) = \sigma (\theta _{0}+\theta _{1}x_{1}+\theta _{1}x_{1}+...+\thet
 \theta =(\theta_{0},\theta_{1},\theta_{2},...,\theta_{n})^{T}</script><p>其中θ为待定参数</p>
 <p>简化二分类函数</p>
 <script type="math/tex; mode=display">
-h_{\theta }(x) = \sigma (\theta ^{T}x)=\frac{1}{1+e^{-\theta ^{T}x}}</script><h4 id="Huffman树-编码"><a href="#Huffman树-编码" class="headerlink" title="Huffman树-编码"></a>Huffman树-编码</h4><p>最优二叉树—-带权路径长度最短的二叉树</p>
+h_{\theta }(x) = \sigma (\theta ^{T}x)=\frac{1}{1+e^{-\theta ^{T}x}}</script><p>取阈值T=0.5</p>
+<h4 id="Huffman树-编码"><a href="#Huffman树-编码" class="headerlink" title="Huffman树-编码"></a>Huffman树-编码</h4><p>最优二叉树—-带权路径长度最短的二叉树</p>
 <p>“我”，”喜欢”，”观看”，”巴西”，”足球”，”世界杯”<br> 15     8      6      5      3       1</p>
 <p>选根节点最小的树合并</p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/1585241496316.jpg" alt=""></p>
@@ -379,8 +380,9 @@ y = softmax(U^{T}*h)</script><p>此时输出层的向量y和输入层的向量x�
 <p><img src="https://pic4.zhimg.com/80/v2-918b97c077fe15b4a67e0afddb62bfa3_1440w.jpg" alt=""></p>
 <p>目的是构造最大化函数L</p>
 <script type="math/tex; mode=display">
-L =  \prod_{t=1}^{V}p(w_{t}|w_{t-k},w_{t-k+1,...,w_{t-1},w_{t+1},...,w_{t+k-1},w_{t+k})</script><h4 id="层次softmax和负采样"><a href="#层次softmax和负采样" class="headerlink" title="层次softmax和负采样"></a>层次softmax和负采样</h4><p>层次softmax是一棵huffman树，树的叶子节点是训练文本中所有的词，非叶子节点都是一个逻辑回归二分类器，每个逻辑回归分类器的参数都不同，分别用$θ_{*}$表示。</p>
+L = \prod_{t=1}^{V}p(w_{t}|w_{t-k},w_{t-k+1},...,w_{t-1},w_{t+1},...,w_{t+k-1},w_{t+k})</script><h4 id="层次softmax和负采样"><a href="#层次softmax和负采样" class="headerlink" title="层次softmax和负采样"></a>层次softmax和负采样</h4><p>层次softmax是一棵huffman树，树的叶子节点是训练文本中所有的词，非叶子节点都是一个逻辑回归二分类器，每个逻辑回归分类器的参数都不同，分别用$θ_{*}$表示。</p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/1585301521653.jpg" alt=""></p>
+<p>分类器的输入是向量h(隐藏层向量)</p>
 
     </div>
 
