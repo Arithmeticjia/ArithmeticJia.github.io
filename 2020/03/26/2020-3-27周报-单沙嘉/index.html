@@ -66,7 +66,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1585241408762.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1585297454343.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;pic4.zhimg.com&#x2F;80&#x2F;v2-918b97c077fe15b4a67e0afddb62bfa3_1440w.jpg">
-<meta property="og:updated_time" content="2020-03-27T09:05:29.862Z">
+<meta property="og:updated_time" content="2020-03-27T09:30:23.663Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;pic2.zhimg.com&#x2F;80&#x2F;v2-09e1bda72c4b903e25db203ab4aa6dc6_1440w.jpg">
 
@@ -253,7 +253,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-27 17:05:29" itemprop="dateModified" datetime="2020-03-27T17:05:29+08:00">2020-03-27</time>
+                <time title="修改时间：2020-03-27 17:30:23" itemprop="dateModified" datetime="2020-03-27T17:30:23+08:00">2020-03-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -369,7 +369,7 @@ y = softmax(U^{T}*h)</script><p>此时输出层的向量y和输入层的向量x�
 <p><img src="https://pic4.zhimg.com/80/v2-918b97c077fe15b4a67e0afddb62bfa3_1440w.jpg" alt=""></p>
 <p>目的是构造最大化函数L</p>
 <script type="math/tex; mode=display">
-L =  \prod_{t=1}^{V}p(w_{t}|w_{t-k},w_{t-k+1,...,w_{t-1},w_{t+1},...,w_{t+k-1},w_{t+k})</script>
+L =  \prod_{t=1}^{V}p(w_{t}|w_{t-k},w_{t-k+1,...,w_{t-1},w_{t+1},...,w_{t+k-1},w_{t+k})</script><h4 id="层次softmax和负采样"><a href="#层次softmax和负采样" class="headerlink" title="层次softmax和负采样"></a>层次softmax和负采样</h4>
     </div>
 
     
@@ -457,7 +457,7 @@ L =  \prod_{t=1}^{V}p(w_{t}|w_{t-k},w_{t-k+1,...,w_{t-1},w_{t+1},...,w_{t+k-1},w
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#word-embedding"><span class="nav-number">2.</span> <span class="nav-text">word embedding</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#One-Hot-Representation"><span class="nav-number">2.1.</span> <span class="nav-text">One-Hot-Representation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Distributed-Representation"><span class="nav-number">2.2.</span> <span class="nav-text">Distributed-Representation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#N-Gram"><span class="nav-number">2.3.</span> <span class="nav-text">N-Gram</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#word2vec"><span class="nav-number">3.</span> <span class="nav-text">word2vec</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sigmoid函数"><span class="nav-number">3.1.</span> <span class="nav-text">sigmoid函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#贝叶斯公式"><span class="nav-number">3.2.</span> <span class="nav-text">贝叶斯公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Huffman树-编码"><span class="nav-number">3.3.</span> <span class="nav-text">Huffman树-编码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CBOW-Continues-Bag-of-Words-Model"><span class="nav-number">3.4.</span> <span class="nav-text">CBOW-Continues Bag-of-Words Model</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#word-embedding"><span class="nav-number">2.</span> <span class="nav-text">word embedding</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#One-Hot-Representation"><span class="nav-number">2.1.</span> <span class="nav-text">One-Hot-Representation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Distributed-Representation"><span class="nav-number">2.2.</span> <span class="nav-text">Distributed-Representation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#N-Gram"><span class="nav-number">2.3.</span> <span class="nav-text">N-Gram</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#word2vec"><span class="nav-number">3.</span> <span class="nav-text">word2vec</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sigmoid函数"><span class="nav-number">3.1.</span> <span class="nav-text">sigmoid函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#贝叶斯公式"><span class="nav-number">3.2.</span> <span class="nav-text">贝叶斯公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Huffman树-编码"><span class="nav-number">3.3.</span> <span class="nav-text">Huffman树-编码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CBOW-Continues-Bag-of-Words-Model"><span class="nav-number">3.4.</span> <span class="nav-text">CBOW-Continues Bag-of-Words Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#层次softmax和负采样"><span class="nav-number">3.5.</span> <span class="nav-text">层次softmax和负采样</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

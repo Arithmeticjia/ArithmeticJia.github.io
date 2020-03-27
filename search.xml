@@ -73,7 +73,7 @@ y = softmax(U^{T}*h)</script><p>此时输出层的向量y和输入层的向量x�
 <p><img src="https://pic4.zhimg.com/80/v2-918b97c077fe15b4a67e0afddb62bfa3_1440w.jpg" alt=""></p>
 <p>目的是构造最大化函数L</p>
 <script type="math/tex; mode=display">
-L =  \prod_{t=1}^{V}p(w_{t}|w_{t-k},w_{t-k+1,...,w_{t-1},w_{t+1},...,w_{t+k-1},w_{t+k})</script>]]></content>
+L =  \prod_{t=1}^{V}p(w_{t}|w_{t-k},w_{t-k+1,...,w_{t-1},w_{t+1},...,w_{t+k-1},w_{t+k})</script><h4 id="层次softmax和负采样"><a href="#层次softmax和负采样" class="headerlink" title="层次softmax和负采样"></a>层次softmax和负采样</h4>]]></content>
       <categories>
         <category>周报</category>
       </categories>
