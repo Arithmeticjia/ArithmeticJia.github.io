@@ -60,7 +60,9 @@ P(A|B) = P(A) \frac {P(B|A)}{P(A)}</script><h4 id="逻辑回归二分类器"><a 
 h_{\theta }(x) = \sigma (\theta _{0}+\theta _{1}x_{1}+\theta _{1}x_{1}+...+\theta _{n}x_{n})</script><p>令</p>
 <script type="math/tex; mode=display">
 \theta =(\theta_{0},\theta_{1},\theta_{2},...,\theta_{n})^{T}</script><p>其中θ为待定参数</p>
-<h4 id="Huffman树-编码"><a href="#Huffman树-编码" class="headerlink" title="Huffman树-编码"></a>Huffman树-编码</h4><p>最优二叉树—-带权路径长度最短的二叉树</p>
+<p>简化二分类函数</p>
+<script type="math/tex; mode=display">
+h_{\theta }(x) = \sigma (\theta ^{T}x)=\frac{1}{1+e^{-\theta ^{T}x}}</script><h4 id="Huffman树-编码"><a href="#Huffman树-编码" class="headerlink" title="Huffman树-编码"></a>Huffman树-编码</h4><p>最优二叉树—-带权路径长度最短的二叉树</p>
 <p>“我”，”喜欢”，”观看”，”巴西”，”足球”，”世界杯”<br> 15     8      6      5      3       1</p>
 <p>选根节点最小的树合并</p>
 <p><img src="https://www.guanacossj.com/media/articlebodypics/1585241496316.jpg" alt=""></p>
