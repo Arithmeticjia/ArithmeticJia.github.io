@@ -15,7 +15,9 @@
 <li>另一种是Fine-tuning，即训练Model_B过程中底层网络参数设为可训练的，在Model_A训练好的参数基础上微调</li>
 </ul>
 <p>在NLP领域，使用word embedding</p>
-<h3 id="word-embedding"><a href="#word-embedding" class="headerlink" title="word embedding"></a>word embedding</h3><p>Embedding是数学领域的有名词，是指某个对象 X 被嵌入到另外一个对象 Y 中，映射 f : X → Y </p>
+<p>Word2vec—-&gt;ELMO(Embedding from Language Models)—-&gt;GPT(Generative Pre-Training)—-&gt;BERT(Bidirectional Encoder Representations from Transformers)</p>
+<h3 id="word-embedding（词嵌入）"><a href="#word-embedding（词嵌入）" class="headerlink" title="word embedding（词嵌入）"></a>word embedding（词嵌入）</h3><p>高维词向量嵌入到一个低维空间</p>
+<p>Embedding是数学领域的有名词，是指某个对象 X 被嵌入到另外一个对象 Y 中，映射 f : X → Y </p>
 <p>Word Embedding 是NLP中一组语言模型和特征学习技术的总称，把词汇表中的单词或者短语映射成由实数构成的向量上(映射)</p>
 <h4 id="One-Hot-Representation"><a href="#One-Hot-Representation" class="headerlink" title="One-Hot-Representation"></a>One-Hot-Representation</h4><p><img src="https://pic2.zhimg.com/80/v2-09e1bda72c4b903e25db203ab4aa6dc6_1440w.jpg" alt=""></p>
 <p>在one hot representation编码的每个单词都是一个维度，彼此independent</p>
@@ -94,7 +96,9 @@ L = \prod_{t=1}^{V}p(w_{t}|w_{t-k},w_{t-k+1},...,w_{t-1},w_{t+1},...,w_{t+k-1},w
 <script type="math/tex; mode=display">
 p(w|context(w)) = \sigma(\theta^{w}h^{context(w})</script><p>负样本</p>
 <script type="math/tex; mode=display">
-p(w|NEG(w)) = \sigma(\theta^{w}h^{NEG(w})</script>]]></content>
+p(w|NEG(w)) = \sigma(\theta^{w}h^{NEG(w})</script><script type="math/tex; mode=display">
+L_{CBOW} = \prod_{t=1}^{V} p(w^{t}|context(w^{t}))p(w^{t}|NEG(w^{t}))</script><p>最大化—-&gt;梯度上升法</p>
+]]></content>
       <categories>
         <category>周报</category>
       </categories>

@@ -67,7 +67,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1585297454343.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;pic4.zhimg.com&#x2F;80&#x2F;v2-918b97c077fe15b4a67e0afddb62bfa3_1440w.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;articlebodypics&#x2F;1585301521653.jpg">
-<meta property="og:updated_time" content="2020-03-27T11:09:04.435Z">
+<meta property="og:updated_time" content="2020-03-27T12:17:38.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;pic2.zhimg.com&#x2F;80&#x2F;v2-09e1bda72c4b903e25db203ab4aa6dc6_1440w.jpg">
 
@@ -254,7 +254,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-27 19:09:04" itemprop="dateModified" datetime="2020-03-27T19:09:04+08:00">2020-03-27</time>
+                <time title="修改时间：2020-03-27 20:17:38" itemprop="dateModified" datetime="2020-03-27T20:17:38+08:00">2020-03-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,7 +281,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.2k</span>
+              <span>3.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -312,7 +312,9 @@
 <li>另一种是Fine-tuning，即训练Model_B过程中底层网络参数设为可训练的，在Model_A训练好的参数基础上微调</li>
 </ul>
 <p>在NLP领域，使用word embedding</p>
-<h3 id="word-embedding"><a href="#word-embedding" class="headerlink" title="word embedding"></a>word embedding</h3><p>Embedding是数学领域的有名词，是指某个对象 X 被嵌入到另外一个对象 Y 中，映射 f : X → Y </p>
+<p>Word2vec—-&gt;ELMO(Embedding from Language Models)—-&gt;GPT(Generative Pre-Training)—-&gt;BERT(Bidirectional Encoder Representations from Transformers)</p>
+<h3 id="word-embedding（词嵌入）"><a href="#word-embedding（词嵌入）" class="headerlink" title="word embedding（词嵌入）"></a>word embedding（词嵌入）</h3><p>高维词向量嵌入到一个低维空间</p>
+<p>Embedding是数学领域的有名词，是指某个对象 X 被嵌入到另外一个对象 Y 中，映射 f : X → Y </p>
 <p>Word Embedding 是NLP中一组语言模型和特征学习技术的总称，把词汇表中的单词或者短语映射成由实数构成的向量上(映射)</p>
 <h4 id="One-Hot-Representation"><a href="#One-Hot-Representation" class="headerlink" title="One-Hot-Representation"></a>One-Hot-Representation</h4><p><img src="https://pic2.zhimg.com/80/v2-09e1bda72c4b903e25db203ab4aa6dc6_1440w.jpg" alt=""></p>
 <p>在one hot representation编码的每个单词都是一个维度，彼此independent</p>
@@ -391,7 +393,9 @@ L = \prod_{t=1}^{V}p(w_{t}|w_{t-k},w_{t-k+1},...,w_{t-1},w_{t+1},...,w_{t+k-1},w
 <script type="math/tex; mode=display">
 p(w|context(w)) = \sigma(\theta^{w}h^{context(w})</script><p>负样本</p>
 <script type="math/tex; mode=display">
-p(w|NEG(w)) = \sigma(\theta^{w}h^{NEG(w})</script>
+p(w|NEG(w)) = \sigma(\theta^{w}h^{NEG(w})</script><script type="math/tex; mode=display">
+L_{CBOW} = \prod_{t=1}^{V} p(w^{t}|context(w^{t}))p(w^{t}|NEG(w^{t}))</script><p>最大化—-&gt;梯度上升法</p>
+
     </div>
 
     
@@ -479,7 +483,7 @@ p(w|NEG(w)) = \sigma(\theta^{w}h^{NEG(w})</script>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#word-embedding"><span class="nav-number">2.</span> <span class="nav-text">word embedding</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#One-Hot-Representation"><span class="nav-number">2.1.</span> <span class="nav-text">One-Hot-Representation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Distributed-Representation"><span class="nav-number">2.2.</span> <span class="nav-text">Distributed-Representation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#N-Gram"><span class="nav-number">2.3.</span> <span class="nav-text">N-Gram</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#word2vec"><span class="nav-number">3.</span> <span class="nav-text">word2vec</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sigmoid函数"><span class="nav-number">3.1.</span> <span class="nav-text">sigmoid函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#贝叶斯公式"><span class="nav-number">3.2.</span> <span class="nav-text">贝叶斯公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑回归二分类器"><span class="nav-number">3.3.</span> <span class="nav-text">逻辑回归二分类器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Huffman树-编码"><span class="nav-number">3.4.</span> <span class="nav-text">Huffman树-编码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Skip-gram"><span class="nav-number">3.5.</span> <span class="nav-text">Skip-gram</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CBOW-Continues-Bag-of-Words-Model"><span class="nav-number">3.6.</span> <span class="nav-text">CBOW-Continues Bag-of-Words Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#层次softmax和负采样"><span class="nav-number">3.7.</span> <span class="nav-text">层次softmax和负采样</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#word-embedding（词嵌入）"><span class="nav-number">2.</span> <span class="nav-text">word embedding（词嵌入）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#One-Hot-Representation"><span class="nav-number">2.1.</span> <span class="nav-text">One-Hot-Representation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Distributed-Representation"><span class="nav-number">2.2.</span> <span class="nav-text">Distributed-Representation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#N-Gram"><span class="nav-number">2.3.</span> <span class="nav-text">N-Gram</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#word2vec"><span class="nav-number">3.</span> <span class="nav-text">word2vec</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#sigmoid函数"><span class="nav-number">3.1.</span> <span class="nav-text">sigmoid函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#贝叶斯公式"><span class="nav-number">3.2.</span> <span class="nav-text">贝叶斯公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑回归二分类器"><span class="nav-number">3.3.</span> <span class="nav-text">逻辑回归二分类器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Huffman树-编码"><span class="nav-number">3.4.</span> <span class="nav-text">Huffman树-编码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Skip-gram"><span class="nav-number">3.5.</span> <span class="nav-text">Skip-gram</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CBOW-Continues-Bag-of-Words-Model"><span class="nav-number">3.6.</span> <span class="nav-text">CBOW-Continues Bag-of-Words Model</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#层次softmax和负采样"><span class="nav-number">3.7.</span> <span class="nav-text">层次softmax和负采样</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -575,7 +579,7 @@ p(w|NEG(w)) = \sigma(\theta^{w}h^{NEG(w})</script>
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">103k</span>
+    <span title="站点总字数">104k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
