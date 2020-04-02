@@ -26,7 +26,8 @@ Y = {y_{1},y_{2},...,y_{T}},y_{t} \in R^{D}</script><p>D表示变量的维度</p
 </script><p>首先，一条时序数据被分为长期的历史数据{$X_{i}$}和最近的历史数据$Q$ ，{$X_{i}$}和$Q$没有重合部分。<br>每一个X_{i}通过$Encoder_{m}$网络得到表示$m_{i}$ ；$Q$通过$Encoder_{in}$网络得到表示$u$。<br>其中$Encoder_{m}$和$Encoder_{in}$的结构都为上节所述的 Encoder 网络。</p>
 <p>将$u$和每一个$m_{i}$做内积，在通过Softmax函数归一化，得到一系列的权重$p_{i}$。</p>
 <script type="math/tex; mode=display">
-p_{i} = Softmax(u^{T}m_{i})</script><p>每一个$X_{i}$再通过$Encoder_{c}$网络得到表示$c_{i}$。每一个$c_{i}$再和$p_{i}$相乘得到$o_{i}$。</p>
+p_{i} = Softmax(u^{T}m_{i})</script><p><strong>本文的亮点是attention的设计，即权重$p_{i}$的得到。权重$p_{i}$越大表示Q和X_{i}位置之前的一段序列的相似程度大，则该段序列对于当前的预测更重要</strong></p>
+<p>每一个$X_{i}$再通过$Encoder_{c}$网络得到表示$c_{i}$。每一个$c_{i}$再和$p_{i}$相乘得到$o_{i}$。</p>
 <script type="math/tex; mode=display">
 o_{i} = p_{i} * c_{i}</script><p>将所有的$o_{i}$和$u$拼接后通过W矩阵转换，得到最终的预测输出：</p>
 <script type="math/tex; mode=display">
@@ -37,7 +38,9 @@ y_{t,i}^{L} = \sum_{k=0}^{s^{ar}-1}w_{k}^{ar}q_{t-k,i}+b^{ar}</script><p>The fin
 y_{t} = y_{t}^{D} + y_{t}^{L}</script><p>将非线性（MTNet 中的神经网络部分）和线性（MTNet 中的自回归部分）模型进行ensemble。得到最终的预测输出。</p>
 <h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><h4 id="Datasets"><a href="#Datasets" class="headerlink" title="Datasets"></a>Datasets</h4><p>2 univariate datasets:  Beijing PM2.51, GEFCom(2014) Electricity Price (Hong et al. 2016),</p>
 <p>4 multivariate datasets: Traffic, Solar-Energy, Electricity,Exchange-Rate. </p>
-<h4 id="Methods-for-comparison"><a href="#Methods-for-comparison" class="headerlink" title="Methods for comparison"></a>Methods for comparison</h4><h4 id="Metrics"><a href="#Metrics" class="headerlink" title="Metrics"></a>Metrics</h4><h4 id="Interpretability-of-MTNet"><a href="#Interpretability-of-MTNet" class="headerlink" title="Interpretability of MTNet"></a>Interpretability of MTNet</h4><p><img src="https://www.guanacossj.com/media/articlebodypics/1585836468820.jpg" alt=""></p>
+<h4 id="Methods-for-comparison"><a href="#Methods-for-comparison" class="headerlink" title="Methods for comparison"></a>Methods for comparison</h4><h4 id="Metrics"><a href="#Metrics" class="headerlink" title="Metrics"></a>Metrics</h4><p>univariate: Root Mean Squared Error (RMSE)/Mean Absolute Error (MAE)</p>
+<p>multivariate: Root Relative Squared Error (RRSE)/Empirical Correlation Coefficient (CORR)</p>
+<h4 id="Interpretability-of-MTNet"><a href="#Interpretability-of-MTNet" class="headerlink" title="Interpretability of MTNet"></a>Interpretability of MTNet</h4><p><img src="https://www.guanacossj.com/media/articlebodypics/1585836468820.jpg" alt=""></p>
 ]]></content>
       <categories>
         <category>周报</category>
