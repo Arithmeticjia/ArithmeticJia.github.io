@@ -30,7 +30,10 @@ p_{i} = Softmax(u^{T}m_{i})</script><p>每一个$X_{i}$再通过$Encoder_{c}$网
 <script type="math/tex; mode=display">
 o_{i} = p_{i} * c_{i}</script><p>将所有的$o_{i}$和$u$拼接后通过W矩阵转换，得到最终的预测输出：</p>
 <script type="math/tex; mode=display">
-y_{t}^{D} = W^{D}[u;o_{1};o_{2};...;o_{T}] + b</script><p>Autoregressive Component</p>
+y_{t}^{D} = W^{D}[u;o_{1};o_{2};...;o_{T}] + b</script><p>Autoregressive Component（自回归模型）</p>
+<script type="math/tex; mode=display">
+y_{t,i}^{L} = \sum_{k=0}^{s^{ar}-1}w_{k}^{ar}q_{t-k,i}+b^{ar}</script><script type="math/tex; mode=display">
+y = y_{t}^{D} + y_{t}^{L}</script><p>将非线性（MTNet 中的神经网络部分）和线性（MTNet 中的自回归部分）模型进行ensemble。得到最终的预测输出。</p>
 ]]></content>
       <categories>
         <category>周报</category>
