@@ -35,7 +35,8 @@ y_{t}^{D} = W^{D}[u;o_{1};o_{2};...;o_{T}] + b</script><p>Autoregressive Compone
 y_{t,i}^{L} = \sum_{k=0}^{s^{ar}-1}w_{k}^{ar}q_{t-k,i}+b^{ar}</script><p>The final prediction of MTNet</p>
 <script type="math/tex; mode=display">
 y_{t} = y_{t}^{D} + y_{t}^{L}</script><p>将非线性（MTNet 中的神经网络部分）和线性（MTNet 中的自回归部分）模型进行ensemble。得到最终的预测输出。</p>
-<h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><h4 id="Interpretability-of-MTNet"><a href="#Interpretability-of-MTNet" class="headerlink" title="Interpretability of MTNet"></a>Interpretability of MTNet</h4>]]></content>
+<h3 id="Experiments"><a href="#Experiments" class="headerlink" title="Experiments"></a>Experiments</h3><h4 id="Interpretability-of-MTNet"><a href="#Interpretability-of-MTNet" class="headerlink" title="Interpretability of MTNet"></a>Interpretability of MTNet</h4><p><img src="https://www.guanacossj.com/media/articlebodypics/1585836468820.jpg" alt=""></p>
+]]></content>
       <categories>
         <category>周报</category>
       </categories>
