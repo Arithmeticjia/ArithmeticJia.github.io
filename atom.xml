@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://arithmeticjia.github.io/"/>
-  <updated>2020-03-27T12:17:38.751Z</updated>
+  <updated>2020-04-02T09:49:23.297Z</updated>
   <id>http://arithmeticjia.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2020-04-03周报-单沙嘉</title>
+    <link href="http://arithmeticjia.github.io/2020/04/02/2020-04-03%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/"/>
+    <id>http://arithmeticjia.github.io/2020/04/02/2020-04-03%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</id>
+    <published>2020-04-02T09:08:46.000Z</published>
+    <updated>2020-04-02T09:49:23.297Z</updated>
+    
+    <content type="html"><![CDATA[<p>A Memory-Network Based Solution for Multivariate Time-Series Forecasting<br><a id="more"></a></p><h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ul><li>一种基于深度学习的时间序列预测模型MTNet</li><li>MTNet由一个大的内存组件、三个独立的编码器和一个联合训练的自回归组件组成</li><li>可解释性</li></ul><h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><h3 id="Framework"><a href="#Framework" class="headerlink" title="Framework"></a>Framework</h3><h4 id="Problem-Formulation"><a href="#Problem-Formulation" class="headerlink" title="Problem Formulation"></a>Problem Formulation</h4><script type="math/tex; mode=display">Y = {y_{1},y_{2},...,y_{T}} y_{t} \in R^{D}</script>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;A Memory-Network Based Solution for Multivariate Time-Series Forecasting&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="周报" scheme="http://arithmeticjia.github.io/categories/%E5%91%A8%E6%8A%A5/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>2020-3-27周报-单沙嘉</title>
@@ -435,36 +456,9 @@
     
       <category term="django" scheme="http://arithmeticjia.github.io/tags/django/"/>
     
-      <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
-    
       <category term="restframework" scheme="http://arithmeticjia.github.io/tags/restframework/"/>
     
-  </entry>
-  
-  <entry>
-    <title>Learn-Pytorch-使用LSTM预测航班客流量</title>
-    <link href="http://arithmeticjia.github.io/2019/12/08/Learn-Pytorch-%E4%BD%BF%E7%94%A8LSTM%E9%A2%84%E6%B5%8B%E8%88%AA%E7%8F%AD%E5%AE%A2%E6%B5%81%E9%87%8F/"/>
-    <id>http://arithmeticjia.github.io/2019/12/08/Learn-Pytorch-%E4%BD%BF%E7%94%A8LSTM%E9%A2%84%E6%B5%8B%E8%88%AA%E7%8F%AD%E5%AE%A2%E6%B5%81%E9%87%8F/</id>
-    <published>2019-12-08T14:22:52.000Z</published>
-    <updated>2019-12-08T14:37:58.046Z</updated>
-    
-    <content type="html"><![CDATA[<p>本文会详细讲解如何使用Pytorch预测航班客流量，包括数据的处理、网络的结构<br><a id="more"></a></p><h3 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">data_csv = pd.read_csv(<span class="string">'airline-passengers.csv'</span>,usecols=[<span class="number">1</span>])</span><br><span class="line">plt.plot(data_csv)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure><p>效果如下<br><img src="https://www.guanacossj.com/media/articlebodypics/1575815313343.jpg" alt=""><br>这里是真实的数据，接下来我们对数据进行预处理<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 数据预处理</span></span><br><span class="line">data_csv = data_csv.dropna()    <span class="comment"># 滤除缺失数据</span></span><br><span class="line">dataset = data_csv.values       <span class="comment"># 获得csv的值</span></span><br><span class="line">print((dataset,type(dataset),dataset.shape))</span><br><span class="line">dataset = dataset.astype(<span class="string">'float32'</span>)</span><br><span class="line">max_value = np.max(dataset)     <span class="comment"># 获得最大值</span></span><br><span class="line">min_value = np.min(dataset)     <span class="comment"># 获得最小值</span></span><br><span class="line">scalar = max_value - min_value  <span class="comment"># 获得间隔数量</span></span><br><span class="line">dataset = list(map(<span class="keyword">lambda</span> x: x / scalar, dataset)) <span class="comment"># 归一化</span></span><br></pre></td></tr></table></figure><br>可以看一下最后处理完成的dataset，是一个list<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[0.21621622] [0.22779922] [0.25482625]...</span><br></pre></td></tr></table></figure><br>创建输入输出，这里使用当前时间的前两个时刻<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_dataset</span><span class="params">(dataset, look_back=<span class="number">2</span>)</span>:</span></span><br><span class="line">    dataX, dataY = [], []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(dataset) - look_back):</span><br><span class="line">        a = dataset[i:(i + look_back)]</span><br><span class="line">        dataX.append(a)</span><br><span class="line">        dataY.append(dataset[i + look_back])</span><br><span class="line">    <span class="keyword">return</span> np.array(dataX), np.array(dataY)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">data_X, data_Y = create_dataset(dataset)</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;本文会详细讲解如何使用Pytorch预测航班客流量，包括数据的处理、网络的结构&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Pytorch" scheme="http://arithmeticjia.github.io/categories/Pytorch/"/>
-    
-    
       <category term="python" scheme="http://arithmeticjia.github.io/tags/python/"/>
-    
-      <category term="pytorch" scheme="http://arithmeticjia.github.io/tags/pytorch/"/>
-    
-      <category term="lstm" scheme="http://arithmeticjia.github.io/tags/lstm/"/>
     
   </entry>
   
