@@ -31,11 +31,13 @@ Y = {y_{1},y_{2},...,y_{T}},y_{t} \in R^{D}</script><p>D表示变量的维度</p
 <p><strong>这里的{$X_{i}$}和Q不重叠</strong></p>
 <p>Encoder Architecture</p>
 <p>使用非池化的卷积层来提取时间维度上的短期模式和变量之间的局部依赖关系</p>
-<p>$<br>X \in T × D<br>$</p>
-<p>卷积层由多个内核组成，尺寸都是w × D，所以最后的卷积结果就是(T-w+1) × 1</p>
+<script type="math/tex; mode=display">
+X \in T × D</script><p>卷积层由多个内核组成，尺寸都是w × D，所以最后的卷积结果就是(T-w+1) × 1</p>
 <p>一共有$d_{c}$个过滤器（卷积核），得到了</p>
 <script type="math/tex; mode=display">
-</script><p>首先，一条时序数据被分为长期的历史数据{$X_{i}$}和最近的历史数据$Q$ ，{$X_{i}$}和$Q$没有重合部分。<br>每一个X_{i}通过$Encoder_{m}$网络得到表示$m_{i}$ ；$Q$通过$Encoder_{in}$网络得到表示$u$。<br>其中$Encoder_{m}$和$Encoder_{in}$的结构都为上节所述的 Encoder 网络。</p>
+d_{c} × T_{c}</script><p>矩阵</p>
+<p>加上attention层，再使用RNN(GRU)</p>
+<p>首先，一条时序数据被分为长期的历史数据{$X_{i}$}和最近的历史数据$Q$ ，{$X_{i}$}和$Q$没有重合部分。<br>每一个X_{i}通过$Encoder_{m}$网络得到表示$m_{i}$ ；$Q$通过$Encoder_{in}$网络得到表示$u$。<br>其中$Encoder_{m}$和$Encoder_{in}$的结构都为上节所述的 Encoder 网络。</p>
 <p>将$u$和每一个$m_{i}$做内积，在通过Softmax函数归一化，得到一系列的权重$p_{i}$。</p>
 <script type="math/tex; mode=display">
 p_{i} = Softmax(u^{T}m_{i})</script><p><strong>本文的亮点是attention的设计，即权重$p_{i}$的得到。权重$p_{i}$越大表示Q和X_{i}位置之前的一段序列的相似程度大，则该段序列对于当前的预测更重要</strong></p>
