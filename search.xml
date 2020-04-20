@@ -16,8 +16,14 @@ p(z|x) = \frac{p(z,x)}{p(x)} = \frac{p(x|z)p(z)}{p(x)}</script><h3 id="AE-自编
 <h3 id="VAE-差分自编码器"><a href="#VAE-差分自编码器" class="headerlink" title="VAE-差分自编码器"></a>VAE-差分自编码器</h3><p>假设给定样本x，希望在给定x的条件下推出z的分布，即p(z|x)</p>
 <p>根据贝叶斯公式:</p>
 <script type="math/tex; mode=display">
-p(z|x) = \frac{p(z,x)}{p(x)} = \frac{p(x|z)p(z)}{p(x)}</script><p>因为无法得知p(x),使用q(z|x)去近似p(z|x),满足minKL(q(z|x)||p(z|x))</p>
-]]></content>
+p(z|x) = \frac{p(z,x)}{p(x)} = \frac{p(x|z)p(z)}{p(x)}</script><p>因为无法得知p(x),使用q(z|x)去近似p(z|x),满足</p>
+<script type="math/tex; mode=display">
+minKL(q(z|x)||p(z|x))</script><script type="math/tex; mode=display">
+KL(q(z|x)||p(z|x)) = \int q(z|x)log\frac{q(z|x)}{p(z|x)}d(z) = \int q(z|x)log\frac{q(z|x)}{\frac{p(x|z)p(z)}{p(x)}}d(z)</script><script type="math/tex; mode=display">
+= \int q(z|x)logq(z|x)d(z) + \int q(z|x)logp(x)d(z) - \int q(z|x)logp(x|z)p(z)d(z)</script><p>显然</p>
+<script type="math/tex; mode=display">
+\int q(z|x)d(z) = 1</script><script type="math/tex; mode=display">
+= logp(x) + \int q(z|x)logq(z|x)d(z) - \int q(z|x)logp(x|z)p(z)d(z)</script>]]></content>
       <categories>
         <category>NLP</category>
       </categories>

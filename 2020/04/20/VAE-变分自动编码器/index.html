@@ -59,7 +59,7 @@
 <meta property="og:description" content="Variational Auto-Encoder">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;pic3.zhimg.com&#x2F;80&#x2F;v2-8ae0e598375aeeed45488edd064e1cfa_1440w.jpg">
-<meta property="og:updated_time" content="2020-04-20T07:46:10.345Z">
+<meta property="og:updated_time" content="2020-04-20T07:59:31.009Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;pic3.zhimg.com&#x2F;80&#x2F;v2-8ae0e598375aeeed45488edd064e1cfa_1440w.jpg">
 
@@ -240,7 +240,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-04-20 15:20:14 / 修改时间：15:46:10" itemprop="dateCreated datePublished" datetime="2020-04-20T15:20:14+08:00">2020-04-20</time>
+              <time title="创建时间：2020-04-20 15:20:14 / 修改时间：15:59:31" itemprop="dateCreated datePublished" datetime="2020-04-20T15:20:14+08:00">2020-04-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,7 +267,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>500</span>
+              <span>765</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -299,8 +299,14 @@ p(z|x) = \frac{p(z,x)}{p(x)} = \frac{p(x|z)p(z)}{p(x)}</script><h3 id="AE-自编
 <h3 id="VAE-差分自编码器"><a href="#VAE-差分自编码器" class="headerlink" title="VAE-差分自编码器"></a>VAE-差分自编码器</h3><p>假设给定样本x，希望在给定x的条件下推出z的分布，即p(z|x)</p>
 <p>根据贝叶斯公式:</p>
 <script type="math/tex; mode=display">
-p(z|x) = \frac{p(z,x)}{p(x)} = \frac{p(x|z)p(z)}{p(x)}</script><p>因为无法得知p(x),使用q(z|x)去近似p(z|x),满足minKL(q(z|x)||p(z|x))</p>
-
+p(z|x) = \frac{p(z,x)}{p(x)} = \frac{p(x|z)p(z)}{p(x)}</script><p>因为无法得知p(x),使用q(z|x)去近似p(z|x),满足</p>
+<script type="math/tex; mode=display">
+minKL(q(z|x)||p(z|x))</script><script type="math/tex; mode=display">
+KL(q(z|x)||p(z|x)) = \int q(z|x)log\frac{q(z|x)}{p(z|x)}d(z) = \int q(z|x)log\frac{q(z|x)}{\frac{p(x|z)p(z)}{p(x)}}d(z)</script><script type="math/tex; mode=display">
+= \int q(z|x)logq(z|x)d(z) + \int q(z|x)logp(x)d(z) - \int q(z|x)logp(x|z)p(z)d(z)</script><p>显然</p>
+<script type="math/tex; mode=display">
+\int q(z|x)d(z) = 1</script><script type="math/tex; mode=display">
+= logp(x) + \int q(z|x)logq(z|x)d(z) - \int q(z|x)logp(x|z)p(z)d(z)</script>
     </div>
 
     
@@ -489,7 +495,7 @@ p(z|x) = \frac{p(z,x)}{p(x)} = \frac{p(x|z)p(z)}{p(x)}</script><p>因为无法�
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:36</span>
+    <span title="站点阅读时长">1:37</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
