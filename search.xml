@@ -4,9 +4,9 @@
     <title>VAE-变分自动编码器</title>
     <url>/2020/04/20/VAE-%E5%8F%98%E5%88%86%E8%87%AA%E5%8A%A8%E7%BC%96%E7%A0%81%E5%99%A8/</url>
     <content><![CDATA[<p>Variational Auto-Encoder<br><a id="more"></a></p>
-<h3 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h3><script type="math/tex; mode=display">
-I(x) = -logp(x)</script><p>p(x) 为事件x发生的概率</p>
-]]></content>
+<h3 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h3><h4 id="信息量"><a href="#信息量" class="headerlink" title="信息量"></a>信息量</h4><script type="math/tex; mode=display">
+I(x) = -logp(x)</script><p>p(x) 为事件x发生的概率，当log底数为e时，信息量的单位为nat（奈特），当log底数为2时，信息量的单位为bit（比特）。</p>
+<h4 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h4>]]></content>
       <categories>
         <category>NLP</category>
       </categories>
