@@ -23,7 +23,11 @@ KL(q(z|x)||p(z|x)) = \int q(z|x)log\frac{q(z|x)}{p(z|x)}d(z) = \int q(z|x)log\fr
 = \int q(z|x)logq(z|x)d(z) + \int q(z|x)logp(x)d(z) - \int q(z|x)logp(x|z)p(z)d(z)</script><p>显然</p>
 <script type="math/tex; mode=display">
 \int q(z|x)d(z) = 1</script><script type="math/tex; mode=display">
-= logp(x) + \int q(z|x)logq(z|x)d(z) - \int q(z|x)logp(x|z)p(z)d(z)</script>]]></content>
+= logp(x) + \int q(z|x)logq(z|x)d(z) - \int q(z|x)logp(x|z)p(z)d(z)</script><p>p(x)为定值，因此</p>
+<script type="math/tex; mode=display">
+minKL(q(z|x)||p(z|x)) = > min(L) = min(\int q(z|x)logq(z|x)d(z) - \int q(z|x)logp(x|z)p(z)d(z))</script><script type="math/tex; mode=display">
+= \int q(z|x)logq(z|x)d(z) - \int q(z|x)logp(x|z)d(z) - \int q(z|x)logp(z)d(z)</script><script type="math/tex; mode=display">
+= \int q(z|x)log\frac{q(z|x)}{p(z)}d(z) - \int q(z|x)logp(x|z)d(z)</script>]]></content>
       <categories>
         <category>NLP</category>
       </categories>

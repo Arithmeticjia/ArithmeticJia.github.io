@@ -59,7 +59,7 @@
 <meta property="og:description" content="Variational Auto-Encoder">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;pic3.zhimg.com&#x2F;80&#x2F;v2-8ae0e598375aeeed45488edd064e1cfa_1440w.jpg">
-<meta property="og:updated_time" content="2020-04-20T07:59:31.009Z">
+<meta property="og:updated_time" content="2020-04-20T08:04:06.791Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;pic3.zhimg.com&#x2F;80&#x2F;v2-8ae0e598375aeeed45488edd064e1cfa_1440w.jpg">
 
@@ -240,7 +240,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-04-20 15:20:14 / 修改时间：15:59:31" itemprop="dateCreated datePublished" datetime="2020-04-20T15:20:14+08:00">2020-04-20</time>
+              <time title="创建时间：2020-04-20 15:20:14 / 修改时间：16:04:06" itemprop="dateCreated datePublished" datetime="2020-04-20T15:20:14+08:00">2020-04-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,7 +267,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>765</span>
+              <span>992</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -306,7 +306,11 @@ KL(q(z|x)||p(z|x)) = \int q(z|x)log\frac{q(z|x)}{p(z|x)}d(z) = \int q(z|x)log\fr
 = \int q(z|x)logq(z|x)d(z) + \int q(z|x)logp(x)d(z) - \int q(z|x)logp(x|z)p(z)d(z)</script><p>显然</p>
 <script type="math/tex; mode=display">
 \int q(z|x)d(z) = 1</script><script type="math/tex; mode=display">
-= logp(x) + \int q(z|x)logq(z|x)d(z) - \int q(z|x)logp(x|z)p(z)d(z)</script>
+= logp(x) + \int q(z|x)logq(z|x)d(z) - \int q(z|x)logp(x|z)p(z)d(z)</script><p>p(x)为定值，因此</p>
+<script type="math/tex; mode=display">
+minKL(q(z|x)||p(z|x)) = > min(L) = min(\int q(z|x)logq(z|x)d(z) - \int q(z|x)logp(x|z)p(z)d(z))</script><script type="math/tex; mode=display">
+= \int q(z|x)logq(z|x)d(z) - \int q(z|x)logp(x|z)d(z) - \int q(z|x)logp(z)d(z)</script><script type="math/tex; mode=display">
+= \int q(z|x)log\frac{q(z|x)}{p(z)}d(z) - \int q(z|x)logp(x|z)d(z)</script>
     </div>
 
     
