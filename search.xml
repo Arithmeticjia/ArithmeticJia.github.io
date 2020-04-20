@@ -13,6 +13,10 @@ H = \int -\log p(x) * p(x)d(x)</script><h3 id="K-L散度（Kullback-Leibler-dive
 <h3 id="贝叶斯公式（Bayes-Rule）"><a href="#贝叶斯公式（Bayes-Rule）" class="headerlink" title="贝叶斯公式（Bayes Rule）"></a>贝叶斯公式（Bayes Rule）</h3><script type="math/tex; mode=display">
 p(z|x) = \frac{p(z,x)}{p(x)} = \frac{p(x|z)p(z)}{p(x)}</script><h3 id="AE-自编码器"><a href="#AE-自编码器" class="headerlink" title="AE-自编码器"></a>AE-自编码器</h3><p>encoder-decoder结构</p>
 <p><img src="https://pic3.zhimg.com/80/v2-8ae0e598375aeeed45488edd064e1cfa_1440w.jpg" alt=""></p>
+<h3 id="VAE-差分自编码器"><a href="#VAE-差分自编码器" class="headerlink" title="VAE-差分自编码器"></a>VAE-差分自编码器</h3><p>假设给定样本x，希望在给定x的条件下推出z的分布，即p(z|x)</p>
+<p>根据贝叶斯公式:</p>
+<script type="math/tex; mode=display">
+p(z|x) = \frac{p(z,x)}{p(x)} = \frac{p(x|z)p(z)}{p(x)}</script><p>因为无法得知p(x),使用q(z|x)去近似p(z|x),满足minKL(q(z|x)||p(z|x))</p>
 ]]></content>
       <categories>
         <category>NLP</category>
