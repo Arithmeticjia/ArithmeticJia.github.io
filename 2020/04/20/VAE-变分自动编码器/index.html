@@ -59,7 +59,7 @@
 <meta property="og:description" content="Variational Auto-Encoder">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;pic3.zhimg.com&#x2F;80&#x2F;v2-8ae0e598375aeeed45488edd064e1cfa_1440w.jpg">
-<meta property="og:updated_time" content="2020-04-20T08:08:28.122Z">
+<meta property="og:updated_time" content="2020-04-21T09:51:31.417Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;pic3.zhimg.com&#x2F;80&#x2F;v2-8ae0e598375aeeed45488edd064e1cfa_1440w.jpg">
 
@@ -238,10 +238,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-04-20 15:20:14 / 修改时间：16:08:28" itemprop="dateCreated datePublished" datetime="2020-04-20T15:20:14+08:00">2020-04-20</time>
+              <time title="创建时间：2020-04-20 15:20:14" itemprop="dateCreated datePublished" datetime="2020-04-20T15:20:14+08:00">2020-04-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-04-21 17:51:31" itemprop="dateModified" datetime="2020-04-21T17:51:31+08:00">2020-04-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -267,7 +273,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -311,7 +317,13 @@ KL(q(z|x)||p(z|x)) = \int q(z|x)log\frac{q(z|x)}{p(z|x)}d(z) = \int q(z|x)log\fr
 minKL(q(z|x)||p(z|x)) = > min(L) = min(\int q(z|x)logq(z|x)d(z) - \int q(z|x)logp(x|z)p(z)d(z))</script><script type="math/tex; mode=display">
 = \int q(z|x)logq(z|x)d(z) - \int q(z|x)logp(x|z)d(z) - \int q(z|x)logp(z)d(z)</script><script type="math/tex; mode=display">
 = \int q(z|x)log\frac{q(z|x)}{p(z)}d(z) - \int q(z|x)logp(x|z)d(z)</script><script type="math/tex; mode=display">
-= KL(q(z|x)||p(z)) - E_{z服从q(z|x)}[logp(x|z)]</script>
+= KL(q(z|x)||p(z)) - E_{z服从q(z|x)}[logp(x|z)]</script><ul>
+<li>给定真实样本$X_{k}$,假设存在专属$X_{k}$的分布$p(Z|X_{k})$,目的是训练生成器$X=g(Z)$，把从分布$p(Z|X_{k})$中采样的$Z_{k}$还原为$X_{k}$</li>
+<li>给每个$X_{k}$配上专属的正态分布，使用神经网络训练均值和方差$\mu_{k}$和$\sigma^{2}_{k}$,此时我知道了$X_{k}$的均值和方差,然后从专属分布$p(Z|X_{k})$中采样出$Z_{k}$,然后经过生成器得到$\hat{X} = g(Z_{k})$,最小化$D(\hat{X},X_{k})$,同时每个$P(Z|X)$趋向$N~(0,1)$正态分布</li>
+<li>对于两个损失的比例问题，原论文直接计算了各分量独立的正态分布和标准正态分布的KL散度<script type="math/tex; mode=display">
+KL(N(\mu,\sigma^{2})||N(0,1))</script></li>
+</ul>
+
     </div>
 
     
@@ -361,7 +373,10 @@ minKL(q(z|x)||p(z|x)) = > min(L) = min(\int q(z|x)logq(z|x)d(z) - \int q(z|x)log
     <a href="/2020/04/17/2020-04-17%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/" rel="prev" title="2020-04-17周报-单沙嘉">
       <i class="fa fa-chevron-left"></i> 2020-04-17周报-单沙嘉
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/04/21/TopicRNN/" rel="next" title="TopicRNN">
+      TopicRNN <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -415,7 +430,7 @@ minKL(q(z|x)||p(z|x)) = > min(L) = min(\int q(z|x)logq(z|x)d(z) - \int q(z|x)log
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -495,7 +510,7 @@ minKL(q(z|x)||p(z|x)) = > min(L) = min(\int q(z|x)logq(z|x)d(z) - \int q(z|x)log
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">106k</span>
+    <span title="站点总字数">107k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>

@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>TopicRNN</title>
+    <url>/2020/04/21/TopicRNN/</url>
+    <content><![CDATA[<p>A RECURRENT NEURAL NETWORK WITH LONG-RANGE SEMANTIC DEPENDENCY<br><a id="more"></a></p>
+<h3 id="INTRODUCTION"><a href="#INTRODUCTION" class="headerlink" title="INTRODUCTION"></a>INTRODUCTION</h3><ul>
+<li>提出了TopicRNN语言模型，通过潜在的主题捕获长距离的语义信息。</li>
+<li>这些topic提供context信息给RNN，以这样的方式考虑句子（文章）的上下文信息。</li>
+</ul>
+<h3 id="TopicRNN-Model"><a href="#TopicRNN-Model" class="headerlink" title="TopicRNN-Model"></a>TopicRNN-Model</h3><ul>
+<li>首先得到主题向量$\theta ~ N(0,I$(高斯分布)</li>
+<li>给定$y_{1:t-1}$，对于文档中的第$t$个词</li>
+<li>计算隐藏态$h_{t}=f_{W}(x_{t},h_{t-1})$</li>
+</ul>
+]]></content>
+      <categories>
+        <category>NLP</category>
+      </categories>
+  </entry>
+  <entry>
     <title>VAE-变分自动编码器</title>
     <url>/2020/04/20/VAE-%E5%8F%98%E5%88%86%E8%87%AA%E5%8A%A8%E7%BC%96%E7%A0%81%E5%99%A8/</url>
     <content><![CDATA[<p>Variational Auto-Encoder<br><a id="more"></a></p>
@@ -28,7 +46,13 @@ KL(q(z|x)||p(z|x)) = \int q(z|x)log\frac{q(z|x)}{p(z|x)}d(z) = \int q(z|x)log\fr
 minKL(q(z|x)||p(z|x)) = > min(L) = min(\int q(z|x)logq(z|x)d(z) - \int q(z|x)logp(x|z)p(z)d(z))</script><script type="math/tex; mode=display">
 = \int q(z|x)logq(z|x)d(z) - \int q(z|x)logp(x|z)d(z) - \int q(z|x)logp(z)d(z)</script><script type="math/tex; mode=display">
 = \int q(z|x)log\frac{q(z|x)}{p(z)}d(z) - \int q(z|x)logp(x|z)d(z)</script><script type="math/tex; mode=display">
-= KL(q(z|x)||p(z)) - E_{z服从q(z|x)}[logp(x|z)]</script>]]></content>
+= KL(q(z|x)||p(z)) - E_{z服从q(z|x)}[logp(x|z)]</script><ul>
+<li>给定真实样本$X_{k}$,假设存在专属$X_{k}$的分布$p(Z|X_{k})$,目的是训练生成器$X=g(Z)$，把从分布$p(Z|X_{k})$中采样的$Z_{k}$还原为$X_{k}$</li>
+<li>给每个$X_{k}$配上专属的正态分布，使用神经网络训练均值和方差$\mu_{k}$和$\sigma^{2}_{k}$,此时我知道了$X_{k}$的均值和方差,然后从专属分布$p(Z|X_{k})$中采样出$Z_{k}$,然后经过生成器得到$\hat{X} = g(Z_{k})$,最小化$D(\hat{X},X_{k})$,同时每个$P(Z|X)$趋向$N~(0,1)$正态分布</li>
+<li>对于两个损失的比例问题，原论文直接计算了各分量独立的正态分布和标准正态分布的KL散度<script type="math/tex; mode=display">
+KL(N(\mu,\sigma^{2})||N(0,1))</script></li>
+</ul>
+]]></content>
       <categories>
         <category>NLP</category>
       </categories>
@@ -914,8 +938,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>python</tag>
         <tag>restframework</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
