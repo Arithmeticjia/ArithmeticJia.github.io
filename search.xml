@@ -3,7 +3,7 @@
   <entry>
     <title>Gibbs-Sampling</title>
     <url>/2020/05/11/Gibbs-Sampling/</url>
-    <content><![CDATA[<p>Gibbs Sampling<br><a id="more"></a></p>
+    <content><![CDATA[<p><meta name="referrer" content="no-referrer"/><br>Gibbs Sampling<br><a id="more"></a></p>
 <p>假设二维场景下，状态(x, y)转移到(x’, y’)，可以分为三种场景</p>
 <ul>
 <li>平行于y轴转移，如上图中从状态A转移到状态B</li>
@@ -1191,9 +1191,9 @@ y = wx + b</script><p>这是一个基本的网络Net，它只包含一个全连�
       </categories>
       <tags>
         <tag>python</tag>
+        <tag>leetcode</tag>
         <tag>list</tag>
         <tag>pop</tag>
-        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
@@ -1456,8 +1456,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>django</tag>
         <tag>celery</tag>
+        <tag>django</tag>
       </tags>
   </entry>
   <entry>
