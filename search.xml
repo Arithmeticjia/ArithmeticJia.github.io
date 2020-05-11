@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Topic-Compositional-Neural-Language-Model</title>
+    <url>/2020/05/11/Topic-Compositional-Neural-Language-Model/</url>
+    <content><![CDATA[<p>Topic Compositional Neural Language Model<br><a id="more"></a></p>
+]]></content>
+      <categories>
+        <category>NLP</category>
+      </categories>
+      <tags>
+        <tag>nlp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TopicRNN</title>
     <url>/2020/04/21/TopicRNN/</url>
     <content><![CDATA[<p>A RECURRENT NEURAL NETWORK WITH LONG-RANGE SEMANTIC DEPENDENCY<br><a id="more"></a></p>
@@ -13,6 +25,7 @@
 <li>给定$y_{1:t-1}$，对于文档中的第$t$个词</li>
 <li>计算隐藏态$h_{t}=f_{W}(x_{t},h_{t-1})$</li>
 </ul>
+<p>自从Neural Language Model（NLM）流行以来，期望能够把NLM和话题模型（Topic Model）进行结合的想法就屡见不鲜。这篇论文也是这个方向的一次尝试。NLM的主要优势是在句子以下的结构上对字句进行建模，而话题模型则往往能够在真个文档甚至更高的层次上对文本的语义进行建模。把这两者结合起来就是想利用这两方面的优势。在这篇文章里，话题模型通过Variational Autoencoder的框架来捕捉到文档的话题（Topic）隐变量。之后，这个变量成为了对不同的语言模型进行加权的权重，而语言文字的产生则利用了Mixture-of-Experts的框架来对不同的RNN语言模型进行整合。需要注意的是，在这篇文章提出的方法里，话题模型对文字的整体数据和语言模型对单独的字句都进行了建模，也就是说，一个文档分别有两个产生过程，一个针对全局文字，一个针对有顺序的字句。</p>
 ]]></content>
       <categories>
         <category>NLP</category>
@@ -938,8 +951,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>restframework</tag>
         <tag>python</tag>
+        <tag>restframework</tag>
       </tags>
   </entry>
   <entry>
