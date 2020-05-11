@@ -60,7 +60,7 @@
 <meta property="og:description" content="Gibbs Sampling">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;452535&#x2F;201810&#x2F;452535-20181005001150218-101842018.png">
-<meta property="og:updated_time" content="2020-05-11T14:00:54.640Z">
+<meta property="og:updated_time" content="2020-05-11T14:34:20.636Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;img2018.cnblogs.com&#x2F;blog&#x2F;452535&#x2F;201810&#x2F;452535-20181005001150218-101842018.png">
 
@@ -241,7 +241,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-11 21:18:37 / 修改时间：22:00:54" itemprop="dateCreated datePublished" datetime="2020-05-11T21:18:37+08:00">2020-05-11</time>
+              <time title="创建时间：2020-05-11 21:18:37 / 修改时间：22:34:20" itemprop="dateCreated datePublished" datetime="2020-05-11T21:18:37+08:00">2020-05-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -309,7 +309,10 @@ P(A) * 0 = P(D) * 0</script><p>实际上，从状态A转移到状态D可以通�
 <script type="math/tex; mode=display">
 Q(A->B) = p(y_{B}|x_{1})---x_{A} = x_{B} = x_{1}</script><script type="math/tex; mode=display">
 Q(A->C) = p(x_{C}|y_{1})---y_{A} = y_{C} = y_{1}</script><script type="math/tex; mode=display">
-Q(A->D) = 0---其他</script><p>对于这样的概率转移Q，很容易验证对于平面上任意两点X和Y，满足细致平稳条件:</p>
+Q(A->D) = 0---其他</script><p>这里的$y_{B}$就是$y_{2}$,$x_{C}$就是$x_{2}$,由此可得:</p>
+<script type="math/tex; mode=display">
+p(A)Q(A->B) = p(B)Q(B->A)</script><script type="math/tex; mode=display">
+p(A)Q(A->C) = p(C)Q(C->A)</script><p>对于这样的概率转移Q，很容易验证对于平面上任意两点X和Y，满足细致平稳条件:</p>
 <script type="math/tex; mode=display">
 p(X)P(X->Y) = p(Y)P(Y->X)</script><p><strong><em>什么是细致平稳条件？</em></strong></p>
 <p>假设向量v:</p>
