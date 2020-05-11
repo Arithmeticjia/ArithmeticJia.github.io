@@ -9,7 +9,15 @@
 V(vocabulary set): \{y_{1},...,y_{M}\}</script><script type="math/tex; mode=display">
 p(y_{1},...,y_{M}) = p(y_{1})\prod_{m=2}^{M}p(y_{m}|y_{1:m-1})</script></li>
 </ul>
-]]></content>
+<p>把$y_{1:m}$个单词作为隐藏态</p>
+<script type="math/tex; mode=display">
+p(y_{m}|y_{1:m-1}) = p(y_{m}|h_{m})</script><p>根据RNN，可得</p>
+<script type="math/tex; mode=display">
+h_{m} = f(h_{m-1},x_{m})</script><ul>
+<li>Topic Model</li>
+</ul>
+<p>LDA model</p>
+<h3 id="Topic-Compositional-Neural-Language-Model"><a href="#Topic-Compositional-Neural-Language-Model" class="headerlink" title="Topic Compositional Neural Language Model"></a>Topic Compositional Neural Language Model</h3>]]></content>
       <categories>
         <category>NLP</category>
       </categories>
