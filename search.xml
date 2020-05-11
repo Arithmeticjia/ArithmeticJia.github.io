@@ -17,7 +17,9 @@ h_{m} = f(h_{m-1},x_{m})</script><ul>
 <li>Topic Model</li>
 </ul>
 <p>LDA model</p>
-<h3 id="Topic-Compositional-Neural-Language-Model"><a href="#Topic-Compositional-Neural-Language-Model" class="headerlink" title="Topic Compositional Neural Language Model"></a>Topic Compositional Neural Language Model</h3>]]></content>
+<h3 id="Topic-Compositional-Neural-Language-Model"><a href="#Topic-Compositional-Neural-Language-Model" class="headerlink" title="Topic Compositional Neural Language Model"></a>Topic Compositional Neural Language Model</h3><h4 id="neural-topic-model-神经主题模型"><a href="#neural-topic-model-神经主题模型" class="headerlink" title="neural topic model(神经主题模型)"></a>neural topic model(神经主题模型)</h4><p>capture the long-range semantic meanings across the document(捕获文档中的远距离语义)</p>
+<h4 id="neural-language-model-神经语言模型"><a href="#neural-language-model-神经语言模型" class="headerlink" title="neural language model(神经语言模型)"></a>neural language model(神经语言模型)</h4><p>learn the local semantic and syntactic relationships between words(学习单词之间的本地语义和句法关系)</p>
+]]></content>
       <categories>
         <category>NLP</category>
       </categories>
