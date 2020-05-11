@@ -4,6 +4,11 @@
     <title>Topic-Compositional-Neural-Language-Model</title>
     <url>/2020/05/11/Topic-Compositional-Neural-Language-Model/</url>
     <content><![CDATA[<p>Topic Compositional Neural Language Model<br><a id="more"></a></p>
+<h3 id="Preliminaries"><a href="#Preliminaries" class="headerlink" title="Preliminaries"></a>Preliminaries</h3><ul>
+<li>RNN-based language model<script type="math/tex; mode=display">
+V(vocabulary set): \{y_{1},...,y_{M}\}</script><script type="math/tex; mode=display">
+p(y_{1},...,y_{M}) = p(y_{1})\prod_{m=2}^{M}p(y_{m}|y_{1:m-1})</script></li>
+</ul>
 ]]></content>
       <categories>
         <category>NLP</category>
@@ -951,8 +956,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>python</tag>
         <tag>restframework</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
@@ -1378,8 +1383,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>celery</tag>
         <tag>django</tag>
+        <tag>celery</tag>
       </tags>
   </entry>
   <entry>
