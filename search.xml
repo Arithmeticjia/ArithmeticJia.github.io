@@ -44,6 +44,11 @@ P = \begin{bmatrix}
 <script type="math/tex; mode=display">
 π_{i}P_{ij} = π_{j}P_{ji}</script><p>则此马尔科夫链具有一个平稳分布（Stationary Distribution）π</p>
 <p>回到上面，直观理解就是<strong>从X点走到Y点，需要沿着坐标轴轮换着走若干步，其路径就是一条折线</strong><br>最后这个二维空间的马氏链会收敛到平稳分布p(x,y)</p>
+<p>最后，Gibbs Sampling算法的大概流程</p>
+<ul>
+<li>随机初始化$X_{0}=x_{0}$,$Y_{0}=y_{0}$</li>
+<li>对t=0,1,2,…,循环采样<br>  1、$y_{t+1}$ ~ p(y|x_{t})<br>  2、$x_{t+1}$ ~ p(x|y_{t+1})</li>
+</ul>
 ]]></content>
       <categories>
         <category>NLP</category>
