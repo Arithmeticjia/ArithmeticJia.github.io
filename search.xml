@@ -21,7 +21,8 @@ P(A)p(y_{2}|x_{1}) = P(B)p(y_{1}|x_{1})</script><p>同理，对于场景二:</p>
 <script type="math/tex; mode=display">
 P(A)p(x_{2}|y_{1}) = P(C)p(x_{1}|y_{1})</script><p>对于场景三，规定不允许转移</p>
 <script type="math/tex; mode=display">
-P(A) * 0 = P(D) * 0</script>]]></content>
+P(A) * 0 = P(D) * 0</script><p>实际上，从状态A转移到状态D可以通过一次场景一转移和一次场景二转移得到。所以即使规定A到D的转移概率为0，也满足A到D可以经过有限次转移达到。</p>
+]]></content>
       <categories>
         <category>NLP</category>
       </categories>
