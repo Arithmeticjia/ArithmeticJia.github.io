@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Gibbs-Sampling</title>
+    <url>/2020/05/11/Gibbs-Sampling/</url>
+    <content><![CDATA[<p>Gibbs Sampling<br><a id="more"></a></p>
+<p>假设二维场景下，状态(x, y)转移到(x’, y’)，可以分为三种场景</p>
+<ul>
+<li>平行于y轴转移，如上图中从状态A转移到状态B</li>
+<li>平行于x轴转移，如上图中从状态A转移到状态C</li>
+<li>其他情况转移，如上图从状态A转移到状态D</li>
+</ul>
+]]></content>
+      <categories>
+        <category>NLP</category>
+      </categories>
+      <tags>
+        <tag>nlp</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Topic-Compositional-Neural-Language-Model</title>
     <url>/2020/05/11/Topic-Compositional-Neural-Language-Model/</url>
     <content><![CDATA[<p>Topic Compositional Neural Language Model<br><a id="more"></a></p>
@@ -18,6 +36,11 @@ h_{m} = f(h_{m-1},x_{m})</script><ul>
 </ul>
 <p>LDA model</p>
 <h3 id="Topic-Compositional-Neural-Language-Model"><a href="#Topic-Compositional-Neural-Language-Model" class="headerlink" title="Topic Compositional Neural Language Model"></a>Topic Compositional Neural Language Model</h3><h4 id="neural-topic-model-神经主题模型"><a href="#neural-topic-model-神经主题模型" class="headerlink" title="neural topic model(神经主题模型)"></a>neural topic model(神经主题模型)</h4><p>capture the long-range semantic meanings across the document(捕获文档中的远距离语义)</p>
+<ul>
+<li>d:bag-of-words</li>
+<li>D:vocabulary size</li>
+</ul>
+<p>pass a Gaussian random vector through a softmax function to parameterize the multinomial document topic distributions(通过一个softmax函数传递高斯随机向量来参数化多项式文档主题分布)</p>
 <h4 id="neural-language-model-神经语言模型"><a href="#neural-language-model-神经语言模型" class="headerlink" title="neural language model(神经语言模型)"></a>neural language model(神经语言模型)</h4><p>learn the local semantic and syntactic relationships between words(学习单词之间的本地语义和句法关系)</p>
 ]]></content>
       <categories>
