@@ -112,7 +112,7 @@ h_{m} = f(h_{m-1},x_{m})</script><ul>
   <entry>
     <title>VAE-变分自动编码器</title>
     <url>/2020/04/20/VAE-%E5%8F%98%E5%88%86%E8%87%AA%E5%8A%A8%E7%BC%96%E7%A0%81%E5%99%A8/</url>
-    <content><![CDATA[<p>Variational Auto-Encoder<br><a id="more"></a></p>
+    <content><![CDATA[<p><meta name="referrer" content="no-referrer" /><br>Variational Auto-Encoder<br><a id="more"></a></p>
 <h3 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h3><h4 id="信息量"><a href="#信息量" class="headerlink" title="信息量"></a>信息量</h4><script type="math/tex; mode=display">
 I(x) = -logp(x)</script><p>p(x) 为事件x发生的概率，当log底数为e时，信息量的单位为nat（奈特），当log底数为2时，信息量的单位为bit（比特）。</p>
 <h4 id="信息熵"><a href="#信息熵" class="headerlink" title="信息熵"></a>信息熵</h4><p>表示随机变量x在离散和连续情况下的信息熵H:</p>
@@ -1191,9 +1191,9 @@ y = wx + b</script><p>这是一个基本的网络Net，它只包含一个全连�
       </categories>
       <tags>
         <tag>python</tag>
-        <tag>leetcode</tag>
         <tag>list</tag>
         <tag>pop</tag>
+        <tag>leetcode</tag>
       </tags>
   </entry>
   <entry>
