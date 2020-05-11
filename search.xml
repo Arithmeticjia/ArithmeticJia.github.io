@@ -23,9 +23,9 @@ P(A)p(x_{2}|y_{1}) = P(C)p(x_{1}|y_{1})</script><p>对于场景三，规定不�
 <script type="math/tex; mode=display">
 P(A) * 0 = P(D) * 0</script><p>实际上，从状态A转移到状态D可以通过一次场景一转移和一次场景二转移得到。所以即使规定A到D的转移概率为0，也满足A到D可以经过有限次转移达到。<br>于是，我们可以构造二维平面上任意两点之间的转移概率矩阵Q:</p>
 <script type="math/tex; mode=display">
-Q(A->B) = p(y_{B}|x_{1})--------x_{A} = x_{B} = x_{1}
-Q(A->C) = p(x_{C}|y_{1})--------y_{A} = y_{C} = y_{1}
-Q(A->D) = 0--------其他</script>]]></content>
+Q(A->B) = p(y_{B}|x_{1})---x_{A} = x_{B} = x_{1}</script><script type="math/tex; mode=display">
+Q(A->C) = p(x_{C}|y_{1})---y_{A} = y_{C} = y_{1}</script><script type="math/tex; mode=display">
+Q(A->D) = 0---其他</script>]]></content>
       <categories>
         <category>NLP</category>
       </categories>
