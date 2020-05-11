@@ -25,7 +25,17 @@ P(A) * 0 = P(D) * 0</script><p>实际上，从状态A转移到状态D可以通�
 <script type="math/tex; mode=display">
 Q(A->B) = p(y_{B}|x_{1})---x_{A} = x_{B} = x_{1}</script><script type="math/tex; mode=display">
 Q(A->C) = p(x_{C}|y_{1})---y_{A} = y_{C} = y_{1}</script><script type="math/tex; mode=display">
-Q(A->D) = 0---其他</script>]]></content>
+Q(A->D) = 0---其他</script><p>对于这样的概率转移Q，很容易验证对于平面上任意两点X和Y，满足细致平稳条件。<br>什么是细致平稳条件？</p>
+<p>假设向量v:</p>
+<script type="math/tex; mode=display">
+v = [0.6,0.4]</script><p>和一个概率转移矩阵P:</p>
+<script type="math/tex; mode=display">
+P = \begin{bmatrix}
+ 0.7&0.3 \\ 
+ 0,8& 0.2
+\end{bmatrix}</script><p>当v与n个P相乘，n趋于无穷大时，发现最后得到的向量会收敛到一个稳定值:</p>
+<script type="math/tex; mode=display">
+\lim_{n->\infty }vp^{n} = [0.73,0.27]</script>]]></content>
       <categories>
         <category>NLP</category>
       </categories>
