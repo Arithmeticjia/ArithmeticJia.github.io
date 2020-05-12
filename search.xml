@@ -110,6 +110,15 @@ h_{m} = f(h_{m-1},x_{m})</script><ul>
 </ul>
 <script type="math/tex; mode=display">
 p(y_{m}) = \sum_{k=1}^{T} t_{k} * softmax(Vh_{m}^{(k)})</script><script type="math/tex; mode=display">
+h_{m}^{(k)} = \sigma (W[k]x_{m}+U[k]h_{m-1})</script><ul>
+<li>$t_{k}$ 第k个主题</li>
+<li>RNN生成$y_{m}$</li>
+<li>$t_{k}$是主题k的利用率？</li>
+<li>k个RNN单元循环，k个隐藏态，然后softmax，算出m时刻各个隐藏态的概率分布（和为1）<br>有个疑问，RNN生成$y_{m}$不是一个确定的值么，为啥算概率$p(y_{m})$???</li>
+</ul>
+<p>然后作者认为这样的MoE模块在计算上具有抑制性，并且存储量过大。训练过程效率低下，甚至在实践中不可行。改为</p>
+<script type="math/tex; mode=display">
+p(y_{m}) = softmax(Vh_{m}^{(k)})</script><script type="math/tex; mode=display">
 h_{m}^{(k)} = \sigma (W[k]x_{m}+U[k]h_{m-1})</script>]]></content>
       <categories>
         <category>NLP</category>
