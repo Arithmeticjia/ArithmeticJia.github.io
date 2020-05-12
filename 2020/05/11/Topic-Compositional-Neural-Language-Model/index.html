@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="请叫我算术嘉的博客">
 <meta property="og:description" content="Topic Compositional Neural Language Model">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-12T15:03:54.459Z">
+<meta property="og:updated_time" content="2020-05-12T15:10:36.810Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://arithmeticjia.github.io/2020/05/11/Topic-Compositional-Neural-Language-Model/">
@@ -245,7 +245,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-12 23:03:54" itemprop="dateModified" datetime="2020-05-12T23:03:54+08:00">2020-05-12</time>
+                <time title="修改时间：2020-05-12 23:10:36" itemprop="dateModified" datetime="2020-05-12T23:10:36+08:00">2020-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -272,7 +272,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>742</span>
+              <span>796</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -314,9 +314,10 @@ h_{m} = f(h_{m-1},x_{m})</script><ul>
 <h4 id="neural-language-model-神经语言模型"><a href="#neural-language-model-神经语言模型" class="headerlink" title="neural language model(神经语言模型)"></a>neural language model(神经语言模型)</h4><p>learn the local semantic and syntactic relationships between words(学习单词之间的本地语义和句法关系)</p>
 <ul>
 <li>Mixture-of-Experts (MoE) language model</li>
-<li>expert networks($E_{1}$,$E_{2}$,…,$E_{T}$)</li>
+<li>expert networks($E_{1}$,$E_{2}$,…,$E_{T}$) - RNN</li>
 </ul>
-
+<script type="math/tex; mode=display">
+p(y_{m}) = \sum_{k=1}^{T} t_{k} * softmax(Vh_{m}^{(k)})</script>
     </div>
 
     

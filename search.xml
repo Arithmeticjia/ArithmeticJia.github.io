@@ -106,9 +106,10 @@ h_{m} = f(h_{m-1},x_{m})</script><ul>
 <h4 id="neural-language-model-神经语言模型"><a href="#neural-language-model-神经语言模型" class="headerlink" title="neural language model(神经语言模型)"></a>neural language model(神经语言模型)</h4><p>learn the local semantic and syntactic relationships between words(学习单词之间的本地语义和句法关系)</p>
 <ul>
 <li>Mixture-of-Experts (MoE) language model</li>
-<li>expert networks($E_{1}$,$E_{2}$,…,$E_{T}$)</li>
+<li>expert networks($E_{1}$,$E_{2}$,…,$E_{T}$) - RNN</li>
 </ul>
-]]></content>
+<script type="math/tex; mode=display">
+p(y_{m}) = \sum_{k=1}^{T} t_{k} * softmax(Vh_{m}^{(k)})</script>]]></content>
       <categories>
         <category>NLP</category>
       </categories>
