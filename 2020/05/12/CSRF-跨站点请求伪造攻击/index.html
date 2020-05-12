@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="请叫我算术嘉的博客">
 <meta property="og:description" content="什么是CSRF跨站点请求伪造(Cross—Site Request Forgery)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-12T01:23:39.754Z">
+<meta property="og:updated_time" content="2020-05-12T01:28:58.136Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://arithmeticjia.github.io/2020/05/12/CSRF-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%94%BB%E5%87%BB/">
@@ -239,7 +239,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-12 09:13:00 / 修改时间：09:23:39" itemprop="dateCreated datePublished" datetime="2020-05-12T09:13:00+08:00">2020-05-12</time>
+              <time title="创建时间：2020-05-12 09:13:00 / 修改时间：09:28:58" itemprop="dateCreated datePublished" datetime="2020-05-12T09:13:00+08:00">2020-05-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,7 +266,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>223</span>
+              <span>489</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -289,6 +289,9 @@
 
 <p>什么是CSRF跨站点请求伪造(Cross—Site Request Forgery)<br><a id="more"></a></p>
 <h3 id="CSRF攻击原理"><a href="#CSRF攻击原理" class="headerlink" title="CSRF攻击原理"></a>CSRF攻击原理</h3><p>1、用户浏览并登录信任网站A<br>2、A验证通过，在用户处产生A的cookie<br>3、用户在没有登出A网站的情况下，访问危险网站B<br>4、这时候B(危险的)要求访问A(安全的)，发出一个请求<br>5、这时候，浏览器会携带(2)的cookie访问A<br>6、虽然A不知道这个请求是来自B发出的还是用户在浏览器发出的，但是，由于请求携带了cookie，所以A认为这是一个正常的请求</p>
+<h3 id="CSRF防御策略"><a href="#CSRF防御策略" class="headerlink" title="CSRF防御策略"></a>CSRF防御策略</h3><p>方法一、Token 验证：（用的最多）<br>（1）服务器发送给客户端一个token；<br>（2）客户端提交的表单中带着这个token。<br>（3）如果这个 token 不合法，那么服务器拒绝这个请求。<br>在Django中，服务器在页面返回\{\% csrf_token \%\}，每次表单提交都必须携带</p>
+<p>方法二、隐藏令牌：<br>把 token 隐藏在 http 的 head头中。<br>方法二和方法一有点像，本质上没有太大区别，只是使用方式上有区别。</p>
+<p>方法三、Referer 验证：<br>Referer 指的是页面请求来源。意思是，只接受本站的请求，服务器才做响应；如果不是，就拦截。</p>
 
     </div>
 
@@ -380,7 +383,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF攻击原理"><span class="nav-number">1.</span> <span class="nav-text">CSRF攻击原理</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF攻击原理"><span class="nav-number">1.</span> <span class="nav-text">CSRF攻击原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF防御策略"><span class="nav-number">2.</span> <span class="nav-text">CSRF防御策略</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
