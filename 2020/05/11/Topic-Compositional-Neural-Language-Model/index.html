@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="请叫我算术嘉的博客">
 <meta property="og:description" content="Topic Compositional Neural Language Model">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-12T15:37:00.939Z">
+<meta property="og:updated_time" content="2020-05-12T15:48:37.886Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://arithmeticjia.github.io/2020/05/11/Topic-Compositional-Neural-Language-Model/">
@@ -245,7 +245,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-12 23:37:00" itemprop="dateModified" datetime="2020-05-12T23:37:00+08:00">2020-05-12</time>
+                <time title="修改时间：2020-05-12 23:48:37" itemprop="dateModified" datetime="2020-05-12T23:48:37+08:00">2020-05-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -320,17 +320,18 @@ h_{m} = f(h_{m-1},x_{m})</script><ul>
 p(y_{m}) = \sum_{k=1}^{T} t_{k} * softmax(Vh_{m}^{(k)})</script><script type="math/tex; mode=display">
 h_{m}^{(k)} = \sigma (W[k]x_{m}+U[k]h_{m-1})</script><ul>
 <li>$t_{k}$ 第k个主题</li>
-<li>RNN生成$y_{m}$</li>
+<li>RNN生成$h_{m}$，注意，这里的$y_{m}$不是通常意义上由RNN生成的</li>
 <li>$t_{k}$是主题k的利用率？</li>
-<li>k个RNN单元循环，k个隐藏态，然后softmax，算出m时刻各个隐藏态的概率分布（和为1）<br>有个疑问，RNN生成$y_{m}$不是一个确定的值么，为啥算概率$p(y_{m})$???</li>
+<li>k个RNN单元循环，k个隐藏态，然后softmax，算出m时刻各个隐藏态的概率分布（和为1）</li>
+<li>算出每个$y_{m}$的概率</li>
 </ul>
 <p>然后作者认为这样的MoE模块在计算上具有抑制性，并且存储量过大。训练过程效率低下，甚至在实践中不可行。改为</p>
 <script type="math/tex; mode=display">
 p(y_{m}) = softmax(Vh_{m}^{(k)})</script><script type="math/tex; mode=display">
 h_{m}^{(k)} = \sigma (W(t)x_{m}+U(t)h_{m-1})</script><p>and</p>
 <script type="math/tex; mode=display">
-W(t) = \sum_{k=1}^{T} t_{k}·\bm{W[k]}</script><script type="math/tex; mode=display">
-U(t) = \sum_{k=1}^{T} t_{k}·\bm{U[k]}</script>
+W(t) = \sum_{k=1}^{T} t_{k}·w[k]</script><script type="math/tex; mode=display">
+U(t) = \sum_{k=1}^{T} t_{k}·u[k]</script>
     </div>
 
     
