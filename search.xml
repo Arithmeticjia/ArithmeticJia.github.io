@@ -111,9 +111,8 @@ h_{m} = f(h_{m-1},x_{m})</script><ul>
 <script type="math/tex; mode=display">
 p(y_{m}) = \sum_{k=1}^{T} t_{k} * softmax(Vh_{m}^{(k)})</script><script type="math/tex; mode=display">
 h_{m}^{(k)} = \sigma (W[k]x_{m}+U[k]h_{m-1})</script><ul>
-<li>$t_{k}$ 第k个主题</li>
+<li>$t_{k}$ 第k个主题的利用率</li>
 <li>RNN生成$h_{m}$，注意，这里的$y_{m}$不是通常意义上由RNN生成的，这里的$y_{m}$是每个词（上文中提到）</li>
-<li>$t_{k}$是主题k的利用率？</li>
 <li>k个RNN单元循环，k个隐藏态，然后softmax，算出m时刻各个隐藏态的概率分布（和为1）</li>
 <li>算出每个$y_{m}$（词）的概率</li>
 </ul>
