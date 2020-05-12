@@ -109,7 +109,8 @@ h_{m} = f(h_{m-1},x_{m})</script><ul>
 <li>expert networks($E_{1}$,$E_{2}$,…,$E_{T}$) - RNN</li>
 </ul>
 <script type="math/tex; mode=display">
-p(y_{m}) = \sum_{k=1}^{T} t_{k} * softmax(Vh_{m}^{(k)})</script>]]></content>
+p(y_{m}) = \sum_{k=1}^{T} t_{k} * softmax(Vh_{m}^{(k)})</script><script type="math/tex; mode=display">
+h_{m}^{(k)} = \sigma (W[k]x_{m}+U[k]h_{m-1})</script>]]></content>
       <categories>
         <category>NLP</category>
       </categories>
