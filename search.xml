@@ -104,6 +104,10 @@ h_{m} = f(h_{m-1},x_{m})</script><ul>
 </ul>
 <p>pass a Gaussian random vector through a softmax function to parameterize the multinomial document topic distributions(通过一个softmax函数传递高斯随机向量来参数化多项式文档主题分布)</p>
 <h4 id="neural-language-model-神经语言模型"><a href="#neural-language-model-神经语言模型" class="headerlink" title="neural language model(神经语言模型)"></a>neural language model(神经语言模型)</h4><p>learn the local semantic and syntactic relationships between words(学习单词之间的本地语义和句法关系)</p>
+<ul>
+<li>Mixture-of-Experts (MoE) language model</li>
+<li>expert networks($E_{1}$,$E_{2}$,…,$E_{T}$)</li>
+</ul>
 ]]></content>
       <categories>
         <category>NLP</category>
@@ -1051,8 +1055,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>python</tag>
         <tag>restframework</tag>
+        <tag>python</tag>
       </tags>
   </entry>
   <entry>
