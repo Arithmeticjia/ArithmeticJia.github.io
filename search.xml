@@ -6,6 +6,7 @@
     <content><![CDATA[<meta name="referrer" content="no-referrer" />
 
 <p>什么是CSRF跨站点请求伪造(Cross—Site Request Forgery)<br><a id="more"></a></p>
+<h3 id="CSRF攻击原理"><a href="#CSRF攻击原理" class="headerlink" title="CSRF攻击原理"></a>CSRF攻击原理</h3><p>1、用户浏览并登录信任网站A<br>2、A验证通过，在用户处产生A的cookie<br>3、用户在没有登出A网站的情况下，访问危险网站B<br>4、这时候B(危险的)要求访问A(安全的)，发出一个请求<br>5、这时候，浏览器会携带(2)的cookie访问A<br>6、虽然A不知道这个请求是来自B发出的还是用户在浏览器发出的，但是，由于请求携带了cookie，所以A认为这是一个正常的请求</p>
 ]]></content>
       <categories>
         <category>WEB安全</category>
