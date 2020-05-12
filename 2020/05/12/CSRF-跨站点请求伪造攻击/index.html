@@ -59,7 +59,7 @@
 <meta property="og:site_name" content="请叫我算术嘉的博客">
 <meta property="og:description" content="什么是CSRF跨站点请求伪造(Cross—Site Request Forgery)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-12T01:28:58.136Z">
+<meta property="og:updated_time" content="2020-05-12T01:31:42.940Z">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://arithmeticjia.github.io/2020/05/12/CSRF-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%94%BB%E5%87%BB/">
@@ -239,7 +239,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-12 09:13:00 / 修改时间：09:28:58" itemprop="dateCreated datePublished" datetime="2020-05-12T09:13:00+08:00">2020-05-12</time>
+              <time title="创建时间：2020-05-12 09:13:00 / 修改时间：09:31:42" itemprop="dateCreated datePublished" datetime="2020-05-12T09:13:00+08:00">2020-05-12</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,7 +266,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>489</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -289,9 +289,13 @@
 
 <p>什么是CSRF跨站点请求伪造(Cross—Site Request Forgery)<br><a id="more"></a></p>
 <h3 id="CSRF攻击原理"><a href="#CSRF攻击原理" class="headerlink" title="CSRF攻击原理"></a>CSRF攻击原理</h3><p>1、用户浏览并登录信任网站A<br>2、A验证通过，在用户处产生A的cookie<br>3、用户在没有登出A网站的情况下，访问危险网站B<br>4、这时候B(危险的)要求访问A(安全的)，发出一个请求<br>5、这时候，浏览器会携带(2)的cookie访问A<br>6、虽然A不知道这个请求是来自B发出的还是用户在浏览器发出的，但是，由于请求携带了cookie，所以A认为这是一个正常的请求</p>
-<h3 id="CSRF防御策略"><a href="#CSRF防御策略" class="headerlink" title="CSRF防御策略"></a>CSRF防御策略</h3><p>方法一、Token 验证：（用的最多）<br>（1）服务器发送给客户端一个token；<br>（2）客户端提交的表单中带着这个token。<br>（3）如果这个 token 不合法，那么服务器拒绝这个请求。<br>在Django中，服务器在页面返回\{\% csrf_token \%\}，每次表单提交都必须携带</p>
+<h3 id="CSRF防御策略"><a href="#CSRF防御策略" class="headerlink" title="CSRF防御策略"></a>CSRF防御策略</h3><p>方法一、Token 验证：（用的最多）<br>（1）服务器发送给客户端一个token(注意，这个token是不存在cookie中的)；<br>（2）客户端提交的表单中带着这个token。<br>（3）如果这个 token 不合法，那么服务器拒绝这个请求。<br>在Django中，服务器在页面返回\{\% csrf_token \%\}，每次表单提交都必须携带</p>
 <p>方法二、隐藏令牌：<br>把 token 隐藏在 http 的 head头中。<br>方法二和方法一有点像，本质上没有太大区别，只是使用方式上有区别。</p>
 <p>方法三、Referer 验证：<br>Referer 指的是页面请求来源。意思是，只接受本站的请求，服务器才做响应；如果不是，就拦截。</p>
+<p>根据 HTTP 协议，在 HTTP 头中有一个字段叫 Referer，它记录了该 HTTP 请求的来源地址。在通常情况下，访问一个安全受限页面的请求来自于同一个网站，比如需要访问 <a href="http://bank.example/withdraw?account=bob&amp;amount=1000000&amp;for=Mallory，用户必须先登陆" target="_blank" rel="noopener">http://bank.example/withdraw?account=bob&amp;amount=1000000&amp;for=Mallory，用户必须先登陆</a> bank.example，然后通过点击页面上的按钮来触发转账事件。这时，该转帐请求的 Referer 值就会是转账按钮所在的页面的 URL，通常是以 bank.example 域名开头的地址。而如果黑客要对银行网站实施 CSRF 攻击，他只能在他自己的网站构造请求，当用户通过黑客的网站发送请求到银行时，该请求的 Referer 是指向黑客自己的网站。因此，要防御 CSRF 攻击，银行网站只需要对于每一个转账请求验证其 Referer 值，如果是以 bank.example 开头的域名，则说明该请求是来自银行网站自己的请求，是合法的。如果 Referer 是其他网站的话，则有可能是黑客的 CSRF 攻击，拒绝该请求。</p>
+<p>这种方法的显而易见的好处就是简单易行，网站的普通开发人员不需要操心 CSRF 的漏洞，只需要在最后给所有安全敏感的请求统一增加一个拦截器来检查 Referer 的值就可以。特别是对于当前现有的系统，不需要改变当前系统的任何已有代码和逻辑，没有风险，非常便捷。</p>
+<p>然而，这种方法并非万无一失。Referer 的值是由浏览器提供的，虽然 HTTP 协议上有明确的要求，但是每个浏览器对于 Referer 的具体实现可能有差别，并不能保证浏览器自身没有安全漏洞。使用验证 Referer 值的方法，就是把安全性都依赖于第三方（即浏览器）来保障，从理论上来讲，这样并不安全。事实上，对于某些浏览器，比如 IE6 或 FF2，目前已经有一些方法可以篡改 Referer 值。如果 bank.example 网站支持 IE6 浏览器，黑客完全可以把用户浏览器的 Referer 值设为以 bank.example 域名开头的地址，这样就可以通过验证，从而进行 CSRF 攻击。</p>
+<p>即便是使用最新的浏览器，黑客无法篡改 Referer 值，这种方法仍然有问题。因为 Referer 值会记录下用户的访问来源，有些用户认为这样会侵犯到他们自己的隐私权，特别是有些组织担心 Referer 值会把组织内网中的某些信息泄露到外网中。因此，用户自己可以设置浏览器使其在发送请求时不再提供 Referer。当他们正常访问银行网站时，网站会因为请求没有 Referer 值而认为是 CSRF 攻击，拒绝合法用户的访问。</p>
 
     </div>
 
@@ -479,12 +483,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="站点总字数">110k</span>
+    <span title="站点总字数">111k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:40</span>
+    <span title="站点阅读时长">1:41</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v4.0.0
   </div>
