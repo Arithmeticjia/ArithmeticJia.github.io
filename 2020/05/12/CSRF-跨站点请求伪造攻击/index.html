@@ -51,16 +51,18 @@
   };
 </script>
 
-  <meta name="description" content="遇事不决，量子力学">
-<meta property="og:type" content="website">
-<meta property="og:title" content="请叫我算术嘉的博客">
-<meta property="og:url" content="http:&#x2F;&#x2F;arithmeticjia.github.io&#x2F;archives&#x2F;page&#x2F;5&#x2F;index.html">
+  <meta name="description" content="什么是CSRF跨站点请求伪造(Cross—Site Request Forgery)">
+<meta name="keywords" content="csrf">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSRF-跨站点请求伪造攻击">
+<meta property="og:url" content="http:&#x2F;&#x2F;arithmeticjia.github.io&#x2F;2020&#x2F;05&#x2F;12&#x2F;CSRF-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%94%BB%E5%87%BB&#x2F;index.html">
 <meta property="og:site_name" content="请叫我算术嘉的博客">
-<meta property="og:description" content="遇事不决，量子力学">
+<meta property="og:description" content="什么是CSRF跨站点请求伪造(Cross—Site Request Forgery)">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-05-12T01:13:57.569Z">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://arithmeticjia.github.io/archives/page/5/">
+<link rel="canonical" href="http://arithmeticjia.github.io/2020/05/12/CSRF-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%94%BB%E5%87%BB/">
 
 
 <script id="page-configurations">
@@ -68,13 +70,13 @@
   CONFIG.page = {
     sidebar: "",
     isHome: false,
-    isPost: false,
+    isPost: true,
     isPage: false,
-    isArchive: true
+    isArchive: false
   };
 </script>
 
-  <title>归档 | 请叫我算术嘉的博客</title>
+  <title>CSRF-跨站点请求伪造攻击 | 请叫我算术嘉的博客</title>
   
 
 
@@ -208,233 +210,147 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+      
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        
-        <span class="collection-header">不错! 目前共计 52 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://arithmeticjia.github.io/2020/05/12/CSRF-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%94%BB%E5%87%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://www.guanacossj.com/media/jiablogimages/IMG_0323.JPG">
+      <meta itemprop="name" content="请叫我算术嘉">
+      <meta itemprop="description" content="遇事不决，量子力学">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="请叫我算术嘉的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CSRF-跨站点请求伪造攻击
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-05-12 09:13:00 / 修改时间：09:13:57" itemprop="dateCreated datePublished" datetime="2020-05-12T09:13:00+08:00">2020-05-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/WEB%E5%AE%89%E5%85%A8/" itemprop="url" rel="index">
+                    <span itemprop="name">WEB安全</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/05/12/CSRF-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%94%BB%E5%87%BB/" class="post-meta-item leancloud_visitors" data-flag-title="CSRF-跨站点请求伪造攻击" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>40</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2019</h1>
-    </div>
+        <meta name="referrer" content="no-referrer" />
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-28T20:57:47+08:00"
-              content="2019-11-28">
-          11-28
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/28/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-%E7%99%BB%E5%BD%95%E7%99%BB%E5%87%BA%E6%A8%A1%E5%9D%97/" itemprop="url">
-            <span itemprop="name">Django个人博客搭建教程-登录登出模块</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-27T21:50:55+08:00"
-              content="2019-11-27">
-          11-27
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/27/Flask%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B-%E6%95%B0%E6%8D%AE%E5%BA%93%E8%BF%9E%E6%8E%A5%E4%B8%8E%E6%95%B0%E6%8D%AE%E6%A8%A1%E5%9E%8B%E6%8B%86%E5%88%86/" itemprop="url">
-            <span itemprop="name">Flask入门教程-数据库连接与数据模型拆分</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-27T21:33:23+08:00"
-              content="2019-11-27">
-          11-27
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/27/Flask%E5%85%A5%E9%97%A8%E6%95%99%E7%A8%8B-%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AAflask%E7%A8%8B%E5%BA%8F/" itemprop="url">
-            <span itemprop="name">Flask入门教程-你的第一个flask程序</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-26T21:48:50+08:00"
-              content="2019-11-26">
-          11-26
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/26/Django2-1-7%E9%9B%86%E6%88%90Celery4-3-0%E4%BB%BB%E5%8A%A1%E9%98%9F%E5%88%97%E8%B7%AF%E7%94%B1/" itemprop="url">
-            <span itemprop="name">Django2.1.7集成Celery4.3.0任务队列路由</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-24T21:52:41+08:00"
-              content="2019-11-24">
-          11-24
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/24/GitHub%E5%8D%9A%E5%AE%A2Hexo%E9%85%8D%E5%90%88next%E4%B8%BB%E9%A2%98%E5%A2%9E%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E9%AA%8C%E8%AF%81/" itemprop="url">
-            <span itemprop="name">GitHub博客Hexo配合next主题增加搜索引擎验证</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-24T20:34:30+08:00"
-              content="2019-11-24">
-          11-24
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/24/MacOS%E4%B8%8BGit%E4%B8%8EGitHub/" itemprop="url">
-            <span itemprop="name">MacOS下Git与GitHub</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-24T16:20:40+08:00"
-              content="2019-11-24">
-          11-24
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-%E9%98%BF%E9%87%8C%E4%BA%91%E9%83%A8%E7%BD%B2(Ubuntu+Nginx+uwsgi)%E5%8D%87%E7%BA%A7https/" itemprop="url">
-            <span itemprop="name">Django个人博客搭建教程-阿里云部署(Ubuntu+Nginx+uwsgi)升级https</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-24T16:03:17+08:00"
-              content="2019-11-24">
-          11-24
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/24/Django%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B-REST%E9%A3%8E%E6%A0%BCAPI/" itemprop="url">
-            <span itemprop="name">Django个人博客搭建教程-REST风格API</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-23T19:41:17+08:00"
-              content="2019-11-23">
-          11-23
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/23/Vue-js%E5%85%A5%E9%97%A8%EF%BC%88%E5%9B%9B%EF%BC%89-%E7%94%A8Pycharm%E5%88%9B%E5%BB%BA%E4%BD%A0%E7%9A%84%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%AE%8C%E6%95%B4%E7%9A%84HelloVue/" itemprop="url">
-            <span itemprop="name">Vue.js入门（四）---用Pycharm创建你的第一个完整的HelloVue</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2019-11-23T16:13:53+08:00"
-              content="2019-11-23">
-          11-23
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/2019/11/23/%E8%85%BE%E8%AE%AF%E4%BA%91Ubuntu%E4%B8%8BCollectd-Grafana-Influxdb%E7%9A%84%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/" itemprop="url">
-            <span itemprop="name">腾讯云Ubuntu下Collectd+Grafana+Influxdb的搭建教程</span>
-          </a>
-      </h2>
-
-    </header>
-  </article>
-
+<p>什么是CSRF跨站点请求伪造(Cross—Site Request Forgery)<br><a id="more"></a></p>
 
     </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button disable="enable" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="请叫我算术嘉 微信支付">
+        <p>微信支付</p>
+      </div>
+
   </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>请叫我算术嘉
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://arithmeticjia.github.io/2020/05/12/CSRF-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%94%BB%E5%87%BB/" title="CSRF-跨站点请求伪造攻击">http://arithmeticjia.github.io/2020/05/12/CSRF-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%94%BB%E5%87%BB/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/null" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/csrf/" rel="tag"># csrf</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/05/11/Gibbs-Sampling/" rel="prev" title="Gibbs-Sampling">
+      <i class="fa fa-chevron-left"></i> Gibbs-Sampling
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
   
   
   
 
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/page/4/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="extend next" rel="next" href="/archives/page/6/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
+  </div>
 
 
           </div>

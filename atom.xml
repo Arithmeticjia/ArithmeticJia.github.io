@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://arithmeticjia.github.io/"/>
-  <updated>2020-05-11T15:08:24.470Z</updated>
+  <updated>2020-05-12T01:13:57.569Z</updated>
   <id>http://arithmeticjia.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSRF-跨站点请求伪造攻击</title>
+    <link href="http://arithmeticjia.github.io/2020/05/12/CSRF-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%94%BB%E5%87%BB/"/>
+    <id>http://arithmeticjia.github.io/2020/05/12/CSRF-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%94%BB%E5%87%BB/</id>
+    <published>2020-05-12T01:13:00.000Z</published>
+    <updated>2020-05-12T01:13:57.569Z</updated>
+    
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer" /><p>什么是CSRF跨站点请求伪造(Cross—Site Request Forgery)<br><a id="more"></a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot; /&gt;
+
+&lt;p&gt;什么是CSRF跨站点请求伪造(Cross—Site Request Forgery)&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="WEB安全" scheme="http://arithmeticjia.github.io/categories/WEB%E5%AE%89%E5%85%A8/"/>
+    
+    
+      <category term="csrf" scheme="http://arithmeticjia.github.io/tags/csrf/"/>
+    
+  </entry>
   
   <entry>
     <title>Gibbs-Sampling</title>
@@ -428,31 +453,6 @@
     
       <category term="周报" scheme="http://arithmeticjia.github.io/categories/%E5%91%A8%E6%8A%A5/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>Leetcode38Count-and-Say</title>
-    <link href="http://arithmeticjia.github.io/2019/12/24/Leetcode38Count-and-Say/"/>
-    <id>http://arithmeticjia.github.io/2019/12/24/Leetcode38Count-and-Say/</id>
-    <published>2019-12-24T08:01:01.000Z</published>
-    <updated>2019-12-24T08:02:18.323Z</updated>
-    
-    <content type="html"><![CDATA[<p>Nothing<br><a id="more"></a><br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">countAndSay</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">"1"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        String str = countAndSay(n-<span class="number">1</span>) + <span class="string">"*"</span>;<span class="comment">// 这样末尾的数才能被循环处理到</span></span><br><span class="line">        <span class="keyword">char</span>[] str_c = str.toCharArray();</span><br><span class="line">        <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">        StringBuilder temp = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (i &lt; str_c.length-<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(str_c[i] == str_c[i+<span class="number">1</span>])&#123;</span><br><span class="line">                count++;  <span class="comment">//遇到相同的计数器加</span></span><br><span class="line">                i++;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                temp.append(Integer.toString(count)+ str_c[i]);</span><br><span class="line">                <span class="comment">// 遇到不同的，先append计数器的值，再append最后一个相同的值</span></span><br><span class="line">                <span class="comment">// temp.append("" + count + str_c[i]);</span></span><br><span class="line">                count = <span class="number">1</span>;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> temp.toString();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Nothing&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="Leetcode" scheme="http://arithmeticjia.github.io/categories/Leetcode/"/>
-    
-    
-      <category term="leetcode" scheme="http://arithmeticjia.github.io/tags/leetcode/"/>
-    
-      <category term="java" scheme="http://arithmeticjia.github.io/tags/java/"/>
     
   </entry>
   
