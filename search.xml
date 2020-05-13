@@ -17,7 +17,9 @@ P(X=k) = \begin{pmatrix} n\\ k \end{pmatrix} p^{k}(1-p)^{n-k}</script><ul>
 <script type="math/tex; mode=display">
 P(x_{1},x_{2},...,p_{k};n,p_{1},p_{2},...,p_{k}) = \frac{n!}{x_{1}!x_{2}!x_{3}!..x_{k}!}p_{1}^{x_{1}}p_{2}^{x_{2}}...p_{k}^{x_{k}}</script><h4 id="Gamma函数"><a href="#Gamma函数" class="headerlink" title="Gamma函数"></a>Gamma函数</h4><p>我觉得不需要理解</p>
 <h4 id="Beta分布"><a href="#Beta分布" class="headerlink" title="Beta分布"></a>Beta分布</h4><p>我觉得也不需要理解</p>
-]]></content>
+<h4 id="共轭先验分布"><a href="#共轭先验分布" class="headerlink" title="共轭先验分布"></a>共轭先验分布</h4><p>这个一定要懂！<br>看一下贝叶斯公式最原始的状态</p>
+<script type="math/tex; mode=display">
+p(\theta | x) = \frac{p(\theta ,x)}{p(x)}</script>]]></content>
   </entry>
   <entry>
     <title>CSRF-跨站点请求伪造攻击</title>
