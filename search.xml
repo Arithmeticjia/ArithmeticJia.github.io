@@ -19,7 +19,8 @@ P(x_{1},x_{2},...,p_{k};n,p_{1},p_{2},...,p_{k}) = \frac{n!}{x_{1}!x_{2}!x_{3}!.
 <h4 id="Beta分布"><a href="#Beta分布" class="headerlink" title="Beta分布"></a>Beta分布</h4><p>我觉得也不需要理解</p>
 <h4 id="共轭先验分布"><a href="#共轭先验分布" class="headerlink" title="共轭先验分布"></a>共轭先验分布</h4><p>这个一定要懂！<br>看一下贝叶斯公式最原始的状态</p>
 <script type="math/tex; mode=display">
-p(\theta | x) = \frac{p(\theta ,x)}{p(x)}</script>]]></content>
+p(\theta | X) = \frac{p(\theta ,X)}{p()}</script><p>$p(\theta)$（先验分布）, $p(\theta|X)$（后验分布）, p(X), $p(X|\theta)$ （似然函数）</p>
+]]></content>
   </entry>
   <entry>
     <title>CSRF-跨站点请求伪造攻击</title>
