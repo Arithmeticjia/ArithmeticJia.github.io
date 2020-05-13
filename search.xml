@@ -15,7 +15,9 @@ P(X=k) = \begin{pmatrix} n\\ k \end{pmatrix} p^{k}(1-p)^{n-k}</script><ul>
 </ul>
 <h4 id="多项分布"><a href="#多项分布" class="headerlink" title="多项分布"></a>多项分布</h4><p>多项分布，是二项分布扩展到多维的情况，通俗来讲，二项分布每次的结果只有两个，如果现在还是做n次试验，但是每次试验结果可以有m个，而且m个结果互斥且和为1，那么这就是多项分布</p>
 <script type="math/tex; mode=display">
-P(x_{1},x_{2},...,p_{k};n,p_{1},p_{2},...,p_{k}) = \frac{n!}{x_{1}!x_{2}!x_{3}!..x_{k}!}p_{1}^{x_{1}}p_{2}^{x_{2}}...p_{k}^{x_{k}}</script>]]></content>
+P(x_{1},x_{2},...,p_{k};n,p_{1},p_{2},...,p_{k}) = \frac{n!}{x_{1}!x_{2}!x_{3}!..x_{k}!}p_{1}^{x_{1}}p_{2}^{x_{2}}...p_{k}^{x_{k}}</script><h4 id="Gamma函数"><a href="#Gamma函数" class="headerlink" title="Gamma函数"></a>Gamma函数</h4><p>我觉得不需要理解</p>
+<h4 id="Beta分布"><a href="#Beta分布" class="headerlink" title="Beta分布"></a>Beta分布</h4><p>我觉得也不需要理解</p>
+]]></content>
   </entry>
   <entry>
     <title>CSRF-跨站点请求伪造攻击</title>
