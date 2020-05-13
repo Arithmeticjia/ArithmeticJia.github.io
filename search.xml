@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>小白都能读懂的LDA</title>
+    <url>/2020/05/13/%E5%B0%8F%E7%99%BD%E9%83%BD%E8%83%BD%E8%AF%BB%E6%87%82%E7%9A%84LDA/</url>
+    <content><![CDATA[<meta name="referrer" content="no-referrer" />
+
+<p>Latent Dirichlet Allocation<br><a id="more"></a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>CSRF-跨站点请求伪造攻击</title>
     <url>/2020/05/12/CSRF-%E8%B7%A8%E7%AB%99%E7%82%B9%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0%E6%94%BB%E5%87%BB/</url>
     <content><![CDATA[<meta name="referrer" content="no-referrer" />
@@ -1069,8 +1077,8 @@ x^{*} = \frac{x-min}{max-min }</script><h5 id="Bi-GRU-Attention"><a href="#Bi-GR
       </categories>
       <tags>
         <tag>django</tag>
-        <tag>restframework</tag>
         <tag>python</tag>
+        <tag>restframework</tag>
       </tags>
   </entry>
   <entry>
