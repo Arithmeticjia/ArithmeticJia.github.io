@@ -6,7 +6,9 @@
     <content><![CDATA[<meta name="referrer" content="no-referrer" />
 
 <p>Latent Dirichlet Allocation<br><a id="more"></a></p>
-]]></content>
+<h3 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h3><h4 id="二项分布"><a href="#二项分布" class="headerlink" title="二项分布"></a>二项分布</h4><p>通俗来讲，就是从n个数中取k个，假设k发生大的概率是p，那么</p>
+<script type="math/tex; mode=display">
+P(K=k) = \begin{pmatrix} n\\ k \end{pmatrix} p^{k}(1-p)^{n-k}</script><h4 id="多项分布"><a href="#多项分布" class="headerlink" title="多项分布"></a>多项分布</h4>]]></content>
   </entry>
   <entry>
     <title>CSRF-跨站点请求伪造攻击</title>
