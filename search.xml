@@ -19,6 +19,7 @@ l^{t}_{i}=v_{d}^{T}tanh(W_{d}[d_{t-1};s^{'}_{t-1}]+U_{d}h_{i}), 1\leqslant i \le
 \tilde{h_{t}} = tanh(W_{k}[c_{t}; h_{t-1}])</script><p>作为每次传递的隐藏态</p>
 <h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><p>这里实验感觉decoder用双层lstm效果不理想，用了单层<br><img src="https://www.guanacossj.com/media/jiablogimages/1589529731232.jpg" alt></p>
 <figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">test </span>nRMSE：0.287</span><br></pre></td></tr></table></figure>
+<h3 id="考虑模型对于不同数据集的复用"><a href="#考虑模型对于不同数据集的复用" class="headerlink" title="考虑模型对于不同数据集的复用"></a>考虑模型对于不同数据集的复用</h3><p>最大的问题是输入数据的维度(主要是特征数量不一致)，暂时还没有特别好的办法，其他模型参数、结构都可以复用</p>
 ]]></content>
       <categories>
         <category>周报</category>
