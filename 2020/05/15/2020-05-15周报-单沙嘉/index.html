@@ -60,7 +60,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;jiablogimages&#x2F;1589529731232.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;jiablogimages&#x2F;1589531812829.jpg">
-<meta property="og:updated_time" content="2020-05-15T08:39:20.813Z">
+<meta property="og:updated_time" content="2020-05-15T09:02:53.292Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;jiablogimages&#x2F;1589529731232.jpg">
 
@@ -241,7 +241,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-15 15:04:09 / 修改时间：16:39:20" itemprop="dateCreated datePublished" datetime="2020-05-15T15:04:09+08:00">2020-05-15</time>
+              <time title="创建时间：2020-05-15 15:04:09 / 修改时间：17:02:53" itemprop="dateCreated datePublished" datetime="2020-05-15T15:04:09+08:00">2020-05-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -268,7 +268,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>653</span>
+              <span>679</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -303,8 +303,8 @@ l^{t}_{i}=v_{d}^{T}tanh(W_{d}[d_{t-1};s^{'}_{t-1}]+U_{d}h_{i}), 1\leqslant i \le
 \tilde{h_{t}} = tanh(W_{k}[c_{t}; h_{t-1}])</script><p>作为每次传递的隐藏态</p>
 <h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><p>这里实验感觉decoder用双层lstm效果不理想，用了单层<br><img src="https://www.guanacossj.com/media/jiablogimages/1589529731232.jpg" alt></p>
 <figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">test </span>nRMSE：0.287</span><br></pre></td></tr></table></figure>
-<p><img src="https://www.guanacossj.com/media/jiablogimages/1589531812829.jpg" alt></p>
-<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">test </span>nRMSE：0.322</span><br></pre></td></tr></table></figure>
+<p>对于NASDQ这个数据集，上面的模型效果没有之前的好<br><img src="https://www.guanacossj.com/media/jiablogimages/1589531812829.jpg" alt></p>
+<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">test </span>nRMSE：0.072</span><br></pre></td></tr></table></figure>
 <h3 id="考虑模型对于不同数据集的复用"><a href="#考虑模型对于不同数据集的复用" class="headerlink" title="考虑模型对于不同数据集的复用"></a>考虑模型对于不同数据集的复用</h3><p>最大的问题是输入数据的维度(主要是特征数量不一致)，暂时还没有特别好的办法，其他模型参数、结构都可以复用</p>
 
     </div>
