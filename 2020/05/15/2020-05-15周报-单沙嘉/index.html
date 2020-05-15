@@ -58,11 +58,12 @@
 <meta property="og:site_name" content="请叫我算术嘉的博客">
 <meta property="og:description" content="模型改进1、对于decoder网络，输入是前T个时间步长的编码，对应每个步长的隐藏态以及预测值2、首先进行attention操作，具体如下： l^{t}_{i}=v_{d}^{T}tanh(W_{d}[d_{t-1};s^{&amp;apos;}_{t-1}]+U_{d}h_{i}), 1\leqslant i \leqslant T">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https:&#x2F;&#x2F;ss.csdn.net&#x2F;p?http:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_png&#x2F;ptp8P184xjxeRHqppry03SX1TTiblocHfwRjsqKSasVsrlEicd9jplibpVwwf9FibdAO5q8GomickOE5HAG5OQ1DNIQ&#x2F;0?wx_fmt=png">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;jiablogimages&#x2F;1589529731232.jpg">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;jiablogimages&#x2F;1589531812829.jpg">
-<meta property="og:updated_time" content="2020-05-15T09:02:53.292Z">
+<meta property="og:updated_time" content="2020-05-15T10:58:22.397Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;www.guanacossj.com&#x2F;media&#x2F;jiablogimages&#x2F;1589529731232.jpg">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;ss.csdn.net&#x2F;p?http:&#x2F;&#x2F;mmbiz.qpic.cn&#x2F;mmbiz_png&#x2F;ptp8P184xjxeRHqppry03SX1TTiblocHfwRjsqKSasVsrlEicd9jplibpVwwf9FibdAO5q8GomickOE5HAG5OQ1DNIQ&#x2F;0?wx_fmt=png">
 
 <link rel="canonical" href="http://arithmeticjia.github.io/2020/05/15/2020-05-15%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/">
 
@@ -241,7 +242,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-05-15 15:04:09 / 修改时间：17:02:53" itemprop="dateCreated datePublished" datetime="2020-05-15T15:04:09+08:00">2020-05-15</time>
+              <time title="创建时间：2020-05-15 15:04:09 / 修改时间：18:58:22" itemprop="dateCreated datePublished" datetime="2020-05-15T15:04:09+08:00">2020-05-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -268,7 +269,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>679</span>
+              <span>698</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -301,6 +302,8 @@ l^{t}_{i}=v_{d}^{T}tanh(W_{d}[d_{t-1};s^{'}_{t-1}]+U_{d}h_{i}), 1\leqslant i \le
 \tilde{y} = y_{t} * c_{t}</script><p>再加线性层—-&gt;(batch_size,out_feat)，送入LSTM<br>把hidden和context(上下文向量)concat，再加线性层(不然维度不对)</p>
 <script type="math/tex; mode=display">
 \tilde{h_{t}} = tanh(W_{k}[c_{t}; h_{t-1}])</script><p>作为每次传递的隐藏态</p>
+<p>上下文的结合这一步参考这张图的网络结构</p>
+<p><img src="https://ss.csdn.net/p?http://mmbiz.qpic.cn/mmbiz_png/ptp8P184xjxeRHqppry03SX1TTiblocHfwRjsqKSasVsrlEicd9jplibpVwwf9FibdAO5q8GomickOE5HAG5OQ1DNIQ/0?wx_fmt=png" alt></p>
 <h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><p>这里实验感觉decoder用双层lstm效果不理想，用了单层<br><img src="https://www.guanacossj.com/media/jiablogimages/1589529731232.jpg" alt></p>
 <figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">test </span>nRMSE：0.287</span><br></pre></td></tr></table></figure>
 <p>对于NASDQ这个数据集，上面的模型效果没有之前的好<br><img src="https://www.guanacossj.com/media/jiablogimages/1589531812829.jpg" alt></p>

@@ -17,6 +17,8 @@ l^{t}_{i}=v_{d}^{T}tanh(W_{d}[d_{t-1};s^{'}_{t-1}]+U_{d}h_{i}), 1\leqslant i \le
 \tilde{y} = y_{t} * c_{t}</script><p>再加线性层—-&gt;(batch_size,out_feat)，送入LSTM<br>把hidden和context(上下文向量)concat，再加线性层(不然维度不对)</p>
 <script type="math/tex; mode=display">
 \tilde{h_{t}} = tanh(W_{k}[c_{t}; h_{t-1}])</script><p>作为每次传递的隐藏态</p>
+<p>上下文的结合这一步参考这张图的网络结构</p>
+<p><img src="https://ss.csdn.net/p?http://mmbiz.qpic.cn/mmbiz_png/ptp8P184xjxeRHqppry03SX1TTiblocHfwRjsqKSasVsrlEicd9jplibpVwwf9FibdAO5q8GomickOE5HAG5OQ1DNIQ/0?wx_fmt=png" alt></p>
 <h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><p>这里实验感觉decoder用双层lstm效果不理想，用了单层<br><img src="https://www.guanacossj.com/media/jiablogimages/1589529731232.jpg" alt></p>
 <figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">test </span>nRMSE：0.287</span><br></pre></td></tr></table></figure>
 <p>对于NASDQ这个数据集，上面的模型效果没有之前的好<br><img src="https://www.guanacossj.com/media/jiablogimages/1589531812829.jpg" alt></p>
@@ -1546,8 +1548,8 @@ flowRate_{KLT_{i}} = \frac{Q_{KLT_{i}}}{c_{p}*\rho *\Delta{T_{KLT_{i}}}}</script
         <category>Django</category>
       </categories>
       <tags>
-        <tag>django</tag>
         <tag>celery</tag>
+        <tag>django</tag>
       </tags>
   </entry>
   <entry>
