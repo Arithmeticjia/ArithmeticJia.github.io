@@ -11,7 +11,14 @@ l^{t}_{i}=v_{d}^{T}tanh(W_{d}[d_{t-1};s^{'}_{t-1}]+U_{d}h_{i}), 1\leqslant i \le
 <script type="math/tex; mode=display">
 \beta ^{i}_{t}=\frac{exp(l_{t}^{i})}{\sum_{j=1}^{T}exp(l_{t}^{j})}</script><script type="math/tex; mode=display">
 {c_{t}} =\sum_{i=1}^{T}\beta ^{i}_{t}h_{i}</script><p>这里的${c_{t}}$就是t时刻的上下文向量，包含了decoder中lstm传递的隐藏态信息、encoder中的前T个时刻的拼接的隐藏态信息</p>
-<p>3、</p>
+<p>3、然后我考虑的是context和y(预测值)的结合</p>
+<p>这里别人用的是concat</p>
+<script type="math/tex; mode=display">
+\tilde{y} = y_{t} * c_{t}</script><p>再加线性层—-&gt;(batch_size,out_feat)，送入LSTM<br>把hidden和context(上下文向量)concat，再加线性层(不然维度不对)</p>
+<script type="math/tex; mode=display">
+\tilde{h_{t}} = tanh(W_{k}[c_{t}; h_{t-1}])</script><p>作为每次传递的隐藏态</p>
+<h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><p>这里实验感觉decoder用双层lstm效果不理想，用了单层<br><img src="https://www.guanacossj.com/media/jiablogimages/1589529731232.jpg" alt></p>
+<figure class="highlight subunit"><table><tr><td class="code"><pre><span class="line"><span class="keyword">test </span>nRMSE：0.287</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>周报</category>
