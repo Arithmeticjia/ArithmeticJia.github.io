@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://arithmeticjia.github.io/"/>
-  <updated>2020-05-15T07:05:06.597Z</updated>
+  <updated>2020-05-15T07:28:29.711Z</updated>
   <id>http://arithmeticjia.github.io/</id>
   
   <author>
@@ -21,15 +21,15 @@
     <link href="http://arithmeticjia.github.io/2020/05/15/2020-05-15%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/"/>
     <id>http://arithmeticjia.github.io/2020/05/15/2020-05-15%E5%91%A8%E6%8A%A5-%E5%8D%95%E6%B2%99%E5%98%89/</id>
     <published>2020-05-15T07:04:09.000Z</published>
-    <updated>2020-05-15T07:05:06.597Z</updated>
+    <updated>2020-05-15T07:28:29.711Z</updated>
     
-    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer">]]></content>
+    <content type="html"><![CDATA[<meta name="referrer" content="no-referrer"><h3 id="模型改进"><a href="#模型改进" class="headerlink" title="模型改进"></a>模型改进</h3><p>1、对于decoder网络，输入是前T个时间步长的编码，对应每个步长的隐藏态以及预测值<br>2、首先进行attention操作，具体如下：</p><script type="math/tex; mode=display">l^{t}_{i}=v_{d}^{T}tanh(W_{d}[d_{t-1};s^{'}_{t-1}]+U_{d}h_{i}), 1\leqslant i \leqslant T</script>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
+        &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;&lt;h3 id=&quot;模型改进&quot;&gt;&lt;a href=&quot;#模型改进&quot; class=&quot;headerlink&quot; title=&quot;模型改进&quot;&gt;&lt;/a&gt;模型改进&lt;/h3&gt;&lt;p&gt;1、对于decoder网络，输入是前
       
     
     </summary>
